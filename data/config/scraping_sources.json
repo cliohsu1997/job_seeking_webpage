@@ -2100,14 +2100,14 @@
               "url": "https://postings.yale.edu/",
               "scraping_method": "html_parser",
               "notes": "Yale job postings - filter by Economics department",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             },
             {
               "name": "Management",
               "url": "https://postings.yale.edu/",
               "scraping_method": "html_parser",
               "notes": "Yale job postings - filter by School of Management",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -2126,14 +2126,14 @@
               "url": "https://aprecruit.berkeley.edu/",
               "scraping_method": "html_parser",
               "notes": "UC Berkeley Academic Personnel - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://aprecruit.berkeley.edu/",
               "scraping_method": "html_parser",
               "notes": "UC Berkeley Academic Personnel - filter by Haas School of Business",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2152,14 +2152,14 @@
               "url": "https://facultysearches.provost.upenn.edu/",
               "scraping_method": "html_parser",
               "notes": "UPenn faculty searches - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "timeout"
             },
             {
               "name": "Management",
               "url": "https://facultysearches.provost.upenn.edu/",
               "scraping_method": "html_parser",
               "notes": "UPenn faculty searches - filter by Wharton School",
-              "url_status": "pending_verification"
+              "url_status": "timeout"
             }
           ],
           "location": {
@@ -2178,14 +2178,14 @@
               "url": "https://academicjobs.columbia.edu/",
               "scraping_method": "html_parser",
               "notes": "Columbia academic jobs - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             },
             {
               "name": "Management",
               "url": "https://academicjobs.columbia.edu/",
               "scraping_method": "html_parser",
               "notes": "Columbia academic jobs - filter by Business School",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -2204,14 +2204,14 @@
               "url": "https://apply.interfolio.com/",
               "scraping_method": "html_parser",
               "notes": "NYU uses Interfolio - search for Economics positions",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://apply.interfolio.com/",
               "scraping_method": "html_parser",
               "notes": "NYU uses Interfolio - search for Stern School positions",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2230,14 +2230,14 @@
               "url": "https://www.northwestern.edu/hr/careers/",
               "scraping_method": "html_parser",
               "notes": "Northwestern careers - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://www.northwestern.edu/hr/careers/",
               "scraping_method": "html_parser",
               "notes": "Northwestern careers - filter by Kellogg School",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2256,14 +2256,14 @@
               "url": "https://recruit.apo.ucla.edu/",
               "scraping_method": "html_parser",
               "notes": "UCLA Academic Personnel - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://recruit.apo.ucla.edu/",
               "scraping_method": "html_parser",
               "notes": "UCLA Academic Personnel - filter by Anderson School",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2282,14 +2282,14 @@
               "url": "https://careers.umich.edu/",
               "scraping_method": "html_parser",
               "notes": "University of Michigan careers - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://careers.umich.edu/",
               "scraping_method": "html_parser",
               "notes": "University of Michigan careers - filter by Ross School",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2308,14 +2308,14 @@
               "url": "https://academicjobsonline.org/ajo/jobs",
               "scraping_method": "html_parser",
               "notes": "Duke uses Academic Jobs Online - search for Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://academicjobsonline.org/ajo/jobs",
               "scraping_method": "html_parser",
               "notes": "Duke uses Academic Jobs Online - search for Fuqua School",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2334,14 +2334,14 @@
               "url": "https://academicjobsonline.org/ajo/jobs",
               "scraping_method": "html_parser",
               "notes": "Cornell uses Academic Jobs Online - search for Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://academicjobsonline.org/ajo/jobs",
               "scraping_method": "html_parser",
               "notes": "Cornell uses Academic Jobs Online - search for Johnson School",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2360,14 +2360,14 @@
               "url": "https://utaustin.wd1.myworkdayjobs.com/UTAustin",
               "scraping_method": "html_parser",
               "notes": "UT Austin Workday portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             },
             {
               "name": "Management",
               "url": "https://utaustin.wd1.myworkdayjobs.com/UTAustin",
               "scraping_method": "html_parser",
               "notes": "UT Austin Workday portal - filter by McCombs School",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             }
           ],
           "location": {
@@ -2386,7 +2386,7 @@
               "url": "https://jobs.wisc.edu/",
               "scraping_method": "html_parser",
               "notes": "UW-Madison jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2405,7 +2405,7 @@
               "url": "https://apol-recruit.ucsd.edu/",
               "scraping_method": "html_parser",
               "notes": "UCSD Academic Personnel - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2424,7 +2424,7 @@
               "url": "https://academicjobsonline.org/ajo/jobs",
               "scraping_method": "html_parser",
               "notes": "Boston University uses Academic Jobs Online - search for Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2443,7 +2443,7 @@
               "url": "https://recruit.ucdavis.edu/",
               "scraping_method": "html_parser",
               "notes": "UC Davis recruit portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2462,7 +2462,7 @@
               "url": "https://ejobs.umd.edu/",
               "scraping_method": "html_parser",
               "notes": "UMD eJobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2481,7 +2481,7 @@
               "url": "https://psu.wd1.myworkdayjobs.com/PSU_Academic",
               "scraping_method": "html_parser",
               "notes": "Penn State Workday portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2500,7 +2500,7 @@
               "url": "https://osujoblinks.com/",
               "scraping_method": "html_parser",
               "notes": "Ohio State job links - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2519,7 +2519,7 @@
               "url": "https://jobs.illinois.edu/",
               "scraping_method": "html_parser",
               "notes": "UIUC jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2538,7 +2538,7 @@
               "url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
               "scraping_method": "html_parser",
               "notes": "UVA Workday portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2557,7 +2557,7 @@
               "url": "https://unc.peopleadmin.com/",
               "scraping_method": "html_parser",
               "notes": "UNC PeopleAdmin portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2576,7 +2576,7 @@
               "url": "https://ecsr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience",
               "scraping_method": "html_parser",
               "notes": "Vanderbilt Oracle Cloud - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2595,7 +2595,7 @@
               "url": "https://jobs.rice.edu/",
               "scraping_method": "html_parser",
               "notes": "Rice jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2614,7 +2614,7 @@
               "url": "https://jobs.wustl.edu/",
               "scraping_method": "html_parser",
               "notes": "WashU jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2633,7 +2633,7 @@
               "url": "https://www.rochester.edu/working/hr/jobs/",
               "scraping_method": "html_parser",
               "notes": "Rochester jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2652,14 +2652,14 @@
               "url": "https://jobs.usc.edu/",
               "scraping_method": "html_parser",
               "notes": "USC jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             },
             {
               "name": "Management",
               "url": "https://jobs.usc.edu/",
               "scraping_method": "html_parser",
               "notes": "USC jobs portal - filter by Marshall School",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -2678,7 +2678,7 @@
               "url": "https://www.cmu.edu/jobs/",
               "scraping_method": "html_parser",
               "notes": "CMU jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2697,7 +2697,7 @@
               "url": "https://jobs.jhu.edu/",
               "scraping_method": "html_parser",
               "notes": "JHU jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "forbidden"
             }
           ],
           "location": {
@@ -2716,7 +2716,7 @@
               "url": "https://cfo.asu.edu/applicant",
               "scraping_method": "html_parser",
               "notes": "ASU applicant portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2735,7 +2735,7 @@
               "url": "https://uacareers.com/",
               "scraping_method": "html_parser",
               "notes": "UA careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2754,7 +2754,7 @@
               "url": "https://recruit.ap.uci.edu/",
               "scraping_method": "html_parser",
               "notes": "UCI recruit portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2773,7 +2773,7 @@
               "url": "https://ap.ucsb.edu/",
               "scraping_method": "html_parser",
               "notes": "UCSB Academic Personnel - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2792,7 +2792,7 @@
               "url": "https://aprecruit.ucr.edu/",
               "scraping_method": "html_parser",
               "notes": "UCR recruit portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2811,7 +2811,7 @@
               "url": "https://recruit.ucsc.edu/",
               "scraping_method": "html_parser",
               "notes": "UCSC recruit portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2830,7 +2830,7 @@
               "url": "https://jobs.colorado.edu/",
               "scraping_method": "html_parser",
               "notes": "CU Boulder jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2849,7 +2849,7 @@
               "url": "https://jobs.fsu.edu/",
               "scraping_method": "html_parser",
               "notes": "FSU jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2868,7 +2868,7 @@
               "url": "https://explore.jobs.ufl.edu/",
               "scraping_method": "html_parser",
               "notes": "UF jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2887,7 +2887,7 @@
               "url": "https://gsu.taleo.net/careersection/2/jobsearch.ftl",
               "scraping_method": "html_parser",
               "notes": "GSU Taleo portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2906,7 +2906,7 @@
               "url": "https://careers.gatech.edu/",
               "scraping_method": "html_parser",
               "notes": "Georgia Tech careers - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2925,7 +2925,7 @@
               "url": "https://jobs.iu.edu/",
               "scraping_method": "html_parser",
               "notes": "IU jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2944,7 +2944,7 @@
               "url": "https://careers.purdue.edu/",
               "scraping_method": "html_parser",
               "notes": "Purdue careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2963,7 +2963,7 @@
               "url": "https://www.jobs.iastate.edu/",
               "scraping_method": "html_parser",
               "notes": "ISU jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2982,7 +2982,7 @@
               "url": "https://jobs.uiowa.edu/",
               "scraping_method": "html_parser",
               "notes": "UI jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3001,7 +3001,7 @@
               "url": "https://employment.ku.edu/",
               "scraping_method": "html_parser",
               "notes": "KU employment portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3020,7 +3020,7 @@
               "url": "https://lsu.wd1.myworkdayjobs.com/LSU",
               "scraping_method": "html_parser",
               "notes": "LSU Workday portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3039,7 +3039,7 @@
               "url": "https://careers.umass.edu/",
               "scraping_method": "html_parser",
               "notes": "UMass careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3058,7 +3058,7 @@
               "url": "https://careers.msu.edu/",
               "scraping_method": "html_parser",
               "notes": "MSU careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3077,7 +3077,7 @@
               "url": "https://humanresources.umn.edu/jobs",
               "scraping_method": "html_parser",
               "notes": "UMN jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3096,7 +3096,7 @@
               "url": "https://hrs.missouri.edu/find-a-job/",
               "scraping_method": "html_parser",
               "notes": "Mizzou jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3115,7 +3115,7 @@
               "url": "https://employment.unl.edu/",
               "scraping_method": "html_parser",
               "notes": "UNL employment portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3134,7 +3134,7 @@
               "url": "https://jobs.rutgers.edu/",
               "scraping_method": "html_parser",
               "notes": "Rutgers jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3153,7 +3153,7 @@
               "url": "https://jobs.unm.edu/",
               "scraping_method": "html_parser",
               "notes": "UNM jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3172,7 +3172,7 @@
               "url": "https://www.stonybrook.edu/commcms/oea/",
               "scraping_method": "html_parser",
               "notes": "Stony Brook OEA portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3191,7 +3191,7 @@
               "url": "https://www.ubjobs.buffalo.edu/",
               "scraping_method": "html_parser",
               "notes": "SUNY Buffalo jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3210,7 +3210,7 @@
               "url": "https://careers.uoregon.edu/",
               "scraping_method": "html_parser",
               "notes": "UO careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "error"
             }
           ],
           "location": {
@@ -3229,7 +3229,7 @@
               "url": "https://jobs.oregonstate.edu/",
               "scraping_method": "html_parser",
               "notes": "OSU jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3248,7 +3248,7 @@
               "url": "https://temple.taleo.net/careersection/2/jobsearch.ftl",
               "scraping_method": "html_parser",
               "notes": "Temple Taleo portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3267,7 +3267,7 @@
               "url": "https://www.careers.pitt.edu/",
               "scraping_method": "html_parser",
               "notes": "Pitt careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "forbidden"
             }
           ],
           "location": {
@@ -3286,7 +3286,7 @@
               "url": "https://www.clemson.edu/hr/jobs/",
               "scraping_method": "html_parser",
               "notes": "Clemson jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             }
           ],
           "location": {
@@ -3305,7 +3305,7 @@
               "url": "https://uscjobs.sc.edu/",
               "scraping_method": "html_parser",
               "notes": "USC jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3324,7 +3324,7 @@
               "url": "https://utah.peopleadmin.com/",
               "scraping_method": "html_parser",
               "notes": "Utah PeopleAdmin portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3343,7 +3343,7 @@
               "url": "https://careers.pageuppeople.com/968/cw/en-us/listing/",
               "scraping_method": "html_parser",
               "notes": "VT PageUp portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3362,7 +3362,7 @@
               "url": "https://wsu.wd5.myworkdayjobs.com/WSU_Jobs",
               "scraping_method": "html_parser",
               "notes": "WSU Workday portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3381,7 +3381,7 @@
               "url": "https://ap.washington.edu/ahr/positions/",
               "scraping_method": "html_parser",
               "notes": "UW Academic HR - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             }
           ],
           "location": {
@@ -3422,7 +3422,7 @@
             "country": "United States"
           },
           "notes": "Federal Reserve Bank - research positions",
-          "url_status": "pending_verification"
+          "url_status": "accessible"
         },
         {
           "name": "Federal Reserve Bank of San Francisco",
@@ -3437,7 +3437,7 @@
             "country": "United States"
           },
           "notes": "Federal Reserve Bank - research positions",
-          "url_status": "pending_verification"
+          "url_status": "accessible"
         },
         {
           "name": "Federal Reserve Bank of Chicago",
@@ -3452,7 +3452,7 @@
             "country": "United States"
           },
           "notes": "Federal Reserve Bank - research positions",
-          "url_status": "pending_verification"
+          "url_status": "accessible"
         },
         {
           "name": "Brookings Institution",
@@ -3467,7 +3467,7 @@
             "country": "United States"
           },
           "notes": "Leading think tank - economics research",
-          "url_status": "pending_verification"
+          "url_status": "accessible"
         },
         {
           "name": "Peterson Institute for International Economics (PIIE)",
@@ -3482,7 +3482,7 @@
             "country": "United States"
           },
           "notes": "Leading economics research institute",
-          "url_status": "pending_verification"
+          "url_status": "forbidden"
         }
       ],
       "think_tanks": []
@@ -3551,14 +3551,14 @@
                   "url": "https://www.jobs.cam.ac.uk/",
                   "scraping_method": "html_parser",
                   "notes": "Cambridge jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 },
                 {
                   "name": "Management",
                   "url": "https://www.jobs.cam.ac.uk/",
                   "scraping_method": "html_parser",
                   "notes": "Cambridge jobs portal - filter by Judge Business School",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -3576,7 +3576,7 @@
                   "url": "https://atsv7.wcn.co.uk/search_engine/jobs.cgi",
                   "scraping_method": "html_parser",
                   "notes": "UCL jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -3594,7 +3594,7 @@
                   "url": "https://atsv7.wcn.co.uk/search_engine/jobs.cgi",
                   "scraping_method": "html_parser",
                   "notes": "Warwick jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -3612,7 +3612,7 @@
                   "url": "https://www.ed.ac.uk/human-resources/working-here/jobs",
                   "scraping_method": "html_parser",
                   "notes": "Edinburgh jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3677,7 +3677,7 @@
                   "url": "https://www.hr.ubc.ca/careers/",
                   "scraping_method": "html_parser",
                   "notes": "UBC careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -3696,7 +3696,7 @@
                   "url": "https://www.mcgill.ca/hr/careers",
                   "scraping_method": "html_parser",
                   "notes": "McGill careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -3715,7 +3715,7 @@
                   "url": "https://www.queensu.ca/facultyrelations/careers",
                   "scraping_method": "html_parser",
                   "notes": "Queen's careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3766,7 +3766,7 @@
                   "url": "https://jobs.anu.edu.au/",
                   "scraping_method": "html_parser",
                   "notes": "ANU jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -3785,7 +3785,7 @@
                   "url": "https://usyd.wd3.myworkdayjobs.com/USYD",
                   "scraping_method": "html_parser",
                   "notes": "Sydney Workday portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -3804,7 +3804,7 @@
                   "url": "https://search.jobs.uq.edu.au/",
                   "scraping_method": "html_parser",
                   "notes": "UQ jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "connection_error"
                 }
               ],
               "location": {
@@ -3823,7 +3823,7 @@
                   "url": "https://www.monash.edu/jobs",
                   "scraping_method": "html_parser",
                   "notes": "Monash jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -3842,7 +3842,7 @@
                   "url": "https://www.jobs.unsw.edu.au/",
                   "scraping_method": "html_parser",
                   "notes": "UNSW jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -3861,7 +3861,7 @@
                   "url": "https://external.jobs.uwa.edu.au/",
                   "scraping_method": "html_parser",
                   "notes": "UWA jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -3880,7 +3880,7 @@
                   "url": "https://careers.adelaide.edu.au/",
                   "scraping_method": "html_parser",
                   "notes": "Adelaide careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -3899,7 +3899,7 @@
                   "url": "https://qut.nga.net.au/",
                   "scraping_method": "html_parser",
                   "notes": "QUT jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -3918,7 +3918,7 @@
                   "url": "https://www.uts.edu.au/staff/working-at-uts/careers",
                   "scraping_method": "html_parser",
                   "notes": "UTS careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3937,7 +3937,7 @@
                   "url": "https://mq.wd3.myworkdayjobs.com/MQ_Jobs",
                   "scraping_method": "html_parser",
                   "notes": "Macquarie Workday portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3956,7 +3956,7 @@
                   "url": "https://www.griffith.edu.au/about-griffith/employment",
                   "scraping_method": "html_parser",
                   "notes": "Griffith employment portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3975,7 +3975,7 @@
                   "url": "https://www.deakin.edu.au/about-deakin/work-at-deakin",
                   "scraping_method": "html_parser",
                   "notes": "Deakin jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -3994,7 +3994,7 @@
                   "url": "https://www.latrobe.edu.au/jobs",
                   "scraping_method": "html_parser",
                   "notes": "La Trobe jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -4013,7 +4013,7 @@
                   "url": "https://www.uow.edu.au/about/employment/",
                   "scraping_method": "html_parser",
                   "notes": "UOW employment portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4032,7 +4032,7 @@
                   "url": "https://staff.curtin.edu.au/jobs/",
                   "scraping_method": "html_parser",
                   "notes": "Curtin jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4051,7 +4051,7 @@
                   "url": "https://www.rmit.edu.au/about/our-people/work-at-rmit",
                   "scraping_method": "html_parser",
                   "notes": "RMIT jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4070,7 +4070,7 @@
                   "url": "https://workingatunisa.nga.net.au/",
                   "scraping_method": "html_parser",
                   "notes": "UniSA jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -4089,7 +4089,7 @@
                   "url": "https://www.flinders.edu.au/employment",
                   "scraping_method": "html_parser",
                   "notes": "Flinders employment portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -4108,7 +4108,7 @@
                   "url": "https://www.jcu.edu.au/careers-at-jcu",
                   "scraping_method": "html_parser",
                   "notes": "JCU careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -4127,7 +4127,7 @@
                   "url": "https://www.newcastle.edu.au/about-uon/jobs-at-uon",
                   "scraping_method": "html_parser",
                   "notes": "Newcastle jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -4146,7 +4146,7 @@
                   "url": "https://www.swinburne.edu.au/about/jobs/",
                   "scraping_method": "html_parser",
                   "notes": "Swinburne jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -4171,7 +4171,7 @@
                   "url": "https://www.uni-muenchen.de/aktuelles/stellenangebote/index.html",
                   "scraping_method": "html_parser",
                   "notes": "LMU job postings - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4189,7 +4189,7 @@
                   "url": "https://www.uni-bonn.de/en/university/university/administration/jobs",
                   "scraping_method": "html_parser",
                   "notes": "Bonn job postings - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4213,7 +4213,7 @@
                 "country": "Germany"
               },
               "notes": "Leading economics research institute",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "think_tanks": []
@@ -4228,7 +4228,7 @@
                   "url": "https://www.parisschoolofeconomics.eu/en/",
                   "scraping_method": "html_parser",
                   "notes": "PSE job postings - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -4252,7 +4252,7 @@
                   "url": "https://www.uva.nl/en/about-the-uva/working-at-the-uva/vacancies/vacancies.html",
                   "scraping_method": "html_parser",
                   "notes": "UvA vacancies - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -4270,7 +4270,7 @@
                   "url": "https://www.eur.nl/en/working-at-eur/vacancies",
                   "scraping_method": "html_parser",
                   "notes": "EUR vacancies - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4294,7 +4294,7 @@
                   "url": "https://careers.nus.edu.sg/",
                   "scraping_method": "html_parser",
                   "notes": "NUS careers - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -4312,7 +4312,7 @@
                   "url": "https://www.ntu.edu.sg/careers",
                   "scraping_method": "html_parser",
                   "notes": "NTU careers - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4336,7 +4336,7 @@
                   "url": "https://ethz.ch/en/the-eth-zurich/working-teaching-and-research.html",
                   "scraping_method": "html_parser",
                   "notes": "ETH Zurich jobs - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
