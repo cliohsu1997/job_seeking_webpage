@@ -28,14 +28,29 @@ job-seeking-webpage/
 
 ## Setup
 
-1. Install Python dependencies:
+1. Install Poetry (if not already installed):
 ```bash
-pip install -r requirements.txt
+# See https://python-poetry.org/docs/#installation for installation instructions
 ```
 
-2. Configure universities to scrape in `data/config/universities.json`
+2. Install project dependencies using Poetry:
+```bash
+poetry install
+```
 
-3. Run the scraper:
+3. Activate the Poetry shell:
+```bash
+poetry shell
+```
+
+Or run commands using Poetry:
+```bash
+poetry run python scripts/scheduler.py
+```
+
+3. Configure universities to scrape in `data/config/universities.json`
+
+4. Run the scraper:
 ```bash
 python scripts/scheduler.py
 ```
