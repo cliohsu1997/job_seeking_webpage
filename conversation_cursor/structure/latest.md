@@ -38,6 +38,12 @@ job-seeking-webpage/
 │   ├── js/                         # JavaScript files
 │   └── images/                     # Image assets
 │
+├── tests/                          # Test files organized by phase
+│   ├── setup-project/              # Phase 0 tests
+│   ├── load-data-collection/       # Phase 1 tests
+│   ├── transform-data-processing/  # Phase 2 tests
+│   └── export-output-generation/   # Phase 3 tests
+│
 ├── environment/                    # Environment management tools
 │   ├── python/
 │   │   ├── tools/                 # Environment management tool configs
@@ -81,7 +87,8 @@ job-seeking-webpage/
 - Each phase has dedicated folder in `scripts/`
 
 ### To-Do List Naming
-- Format: `YYYY-MM-DD_phase-name.md` (e.g., `2025-12-31_project-setup.md`)
+- Format: `YYYY-MM-DD_phase-name.md` (e.g., `2025-12-31_setup-project.md`)
+- Phase names start with verb, are informative (e.g., `setup-project`, `load-data-collection`)
 - Name corresponds to the phase in progress
 - Each to-do list contains subtasks for one complete phase
 
@@ -99,3 +106,4 @@ job-seeking-webpage/
 - **2025-12-31**: Cleaned up unnecessary .gitkeep files
 - **2025-12-31**: Renamed to-do list to match phase name (`2025-12-31_project-setup.md`)
 - **2025-12-31**: Reorganized progress to show "What We've Accomplished" and "What's Next"
+- **2025-12-31**: Created test folder structure with phase-based subfolders (`tests/setup-project/`, `tests/load-data-collection/`, etc.)
