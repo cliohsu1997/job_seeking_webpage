@@ -2100,14 +2100,14 @@
               "url": "https://your.yale.edu/work-yale/careers",
               "scraping_method": "html_parser",
               "notes": "Yale careers portal - filter by Economics department",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://your.yale.edu/work-yale/careers",
               "scraping_method": "html_parser",
               "notes": "Yale careers portal - filter by School of Management",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2152,14 +2152,14 @@
               "url": "https://www.hr.upenn.edu/Jobs",
               "scraping_method": "html_parser",
               "notes": "UPenn HR jobs portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             },
             {
               "name": "Management",
               "url": "https://www.hr.upenn.edu/Jobs",
               "scraping_method": "html_parser",
               "notes": "UPenn HR jobs portal - filter by Wharton School",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -2178,14 +2178,14 @@
               "url": "https://opportunities.columbia.edu/",
               "scraping_method": "html_parser",
               "notes": "Columbia opportunities portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://opportunities.columbia.edu/",
               "scraping_method": "html_parser",
               "notes": "Columbia opportunities portal - filter by Business School",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2360,14 +2360,14 @@
               "url": "https://utaustin.wd1.myworkdayjobs.com/en-US/UTAustin",
               "scraping_method": "html_parser",
               "notes": "UT Austin Workday portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             },
             {
               "name": "Management",
               "url": "https://utaustin.wd1.myworkdayjobs.com/en-US/UTAustin",
               "scraping_method": "html_parser",
               "notes": "UT Austin Workday portal - filter by McCombs School",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             }
           ],
           "location": {
@@ -2652,14 +2652,14 @@
               "url": "https://usccareers.usc.edu/",
               "scraping_method": "html_parser",
               "notes": "USC careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://usccareers.usc.edu/",
               "scraping_method": "html_parser",
               "notes": "USC careers portal - filter by Marshall School",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -2697,7 +2697,7 @@
               "url": "https://jobs.jhu.edu/careers-home/",
               "scraping_method": "html_parser",
               "notes": "JHU careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "forbidden"
             }
           ],
           "location": {
@@ -3210,7 +3210,7 @@
               "url": "https://careers.uoregon.edu/cw/en-us/listing/",
               "scraping_method": "html_parser",
               "notes": "UO careers portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3267,7 +3267,7 @@
               "url": "https://www.join.pitt.edu/",
               "scraping_method": "html_parser",
               "notes": "Pitt join portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3286,7 +3286,7 @@
               "url": "https://clemson.taleo.net/careersection/2/jobsearch.ftl",
               "scraping_method": "html_parser",
               "notes": "Clemson Taleo portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -3381,7 +3381,7 @@
               "url": "https://ap.washington.edu/ahr/",
               "scraping_method": "html_parser",
               "notes": "UW Academic HR - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -3482,7 +3482,7 @@
             "country": "United States"
           },
           "notes": "Leading economics research institute",
-          "url_status": "pending_verification"
+          "url_status": "forbidden"
         }
       ],
       "think_tanks": []
@@ -3551,14 +3551,14 @@
                   "url": "https://www.jobs.cam.ac.uk/job/",
                   "scraping_method": "html_parser",
                   "notes": "Cambridge jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 },
                 {
                   "name": "Management",
                   "url": "https://www.jobs.cam.ac.uk/job/",
                   "scraping_method": "html_parser",
                   "notes": "Cambridge jobs portal - filter by Judge Business School",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -3612,7 +3612,7 @@
                   "url": "https://www.ed.ac.uk/human-resources/working-here",
                   "scraping_method": "html_parser",
                   "notes": "Edinburgh HR portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3715,7 +3715,7 @@
                   "url": "https://www.queensu.ca/facultyrelations/faculty-positions",
                   "scraping_method": "html_parser",
                   "notes": "Queen's faculty positions - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3766,7 +3766,7 @@
                   "url": "https://jobs.anu.edu.au/cw/en/listing/",
                   "scraping_method": "html_parser",
                   "notes": "ANU jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -3785,7 +3785,7 @@
                   "url": "https://usyd.wd3.myworkdayjobs.com/en-US/USYD",
                   "scraping_method": "html_parser",
                   "notes": "Sydney Workday portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -3804,7 +3804,7 @@
                   "url": "https://jobs.uq.edu.au/",
                   "scraping_method": "html_parser",
                   "notes": "UQ jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "connection_error"
                 }
               ],
               "location": {
@@ -3823,7 +3823,7 @@
                   "url": "https://www.monash.edu/jobs/careers",
                   "scraping_method": "html_parser",
                   "notes": "Monash careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -3861,7 +3861,7 @@
                   "url": "https://external.jobs.uwa.edu.au/cw/en/listing/",
                   "scraping_method": "html_parser",
                   "notes": "UWA jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -3880,7 +3880,7 @@
                   "url": "https://careers.adelaide.edu.au/cw/en/listing/",
                   "scraping_method": "html_parser",
                   "notes": "Adelaide careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -3918,7 +3918,7 @@
                   "url": "https://www.uts.edu.au/about/careers-at-uts",
                   "scraping_method": "html_parser",
                   "notes": "UTS careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3937,7 +3937,7 @@
                   "url": "https://mq.wd3.myworkdayjobs.com/en-US/MQ_Jobs",
                   "scraping_method": "html_parser",
                   "notes": "Macquarie Workday portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3956,7 +3956,7 @@
                   "url": "https://www.griffith.edu.au/about-griffith/employment/careers",
                   "scraping_method": "html_parser",
                   "notes": "Griffith careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -3975,7 +3975,7 @@
                   "url": "https://www.deakin.edu.au/about-deakin/careers",
                   "scraping_method": "html_parser",
                   "notes": "Deakin careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -4013,7 +4013,7 @@
                   "url": "https://www.uow.edu.au/about/employment",
                   "scraping_method": "html_parser",
                   "notes": "UOW employment portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4032,7 +4032,7 @@
                   "url": "https://staff.curtin.edu.au/jobs",
                   "scraping_method": "html_parser",
                   "notes": "Curtin jobs portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4051,7 +4051,7 @@
                   "url": "https://www.rmit.edu.au/about/our-people/careers",
                   "scraping_method": "html_parser",
                   "notes": "RMIT careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4108,7 +4108,7 @@
                   "url": "https://www.jcu.edu.au/careers",
                   "scraping_method": "html_parser",
                   "notes": "JCU careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -4127,7 +4127,7 @@
                   "url": "https://www.newcastle.edu.au/about-uon/careers",
                   "scraping_method": "html_parser",
                   "notes": "Newcastle careers portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "forbidden"
                 }
               ],
               "location": {
@@ -4171,7 +4171,7 @@
                   "url": "https://www.uni-muenchen.de/aktuelles/stellenangebote/",
                   "scraping_method": "html_parser",
                   "notes": "LMU job postings - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4189,7 +4189,7 @@
                   "url": "https://www.uni-bonn.de/en/university/administration/jobs",
                   "scraping_method": "html_parser",
                   "notes": "Bonn job postings - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -4228,7 +4228,7 @@
                   "url": "https://www.parisschoolofeconomics.eu/en/positions/",
                   "scraping_method": "html_parser",
                   "notes": "PSE positions portal - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "error"
                 }
               ],
               "location": {
@@ -4270,7 +4270,7 @@
                   "url": "https://www.eur.nl/en/working-at-eur/vacancies/",
                   "scraping_method": "html_parser",
                   "notes": "EUR vacancies - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
@@ -4312,7 +4312,7 @@
                   "url": "https://www.ntu.edu.sg/about-ntu/careers",
                   "scraping_method": "html_parser",
                   "notes": "NTU careers - filter by Economics",
-                  "url_status": "pending_verification"
+                  "url_status": "not_found"
                 }
               ],
               "location": {
