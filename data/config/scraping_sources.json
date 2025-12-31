@@ -21,8 +21,136 @@
     "united_states": {
       "ranking_source": "QS World University Rankings - Economics & Econometrics",
       "coverage": "Top 100 universities",
-      "universities": [],
-      "research_institutes": [],
+      "universities": [
+        {
+          "name": "Harvard University",
+          "departments": [
+            {
+              "name": "Economics",
+              "url": "https://economics.harvard.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Check for faculty positions page"
+            },
+            {
+              "name": "Management",
+              "url": "https://www.hbs.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Harvard Business School"
+            }
+          ],
+          "location": {
+            "city": "Cambridge",
+            "state": "MA",
+            "country": "United States"
+          },
+          "scraping_method": "html_parser",
+          "notes": "Top-ranked economics program"
+        },
+        {
+          "name": "Massachusetts Institute of Technology (MIT)",
+          "departments": [
+            {
+              "name": "Economics",
+              "url": "https://economics.mit.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Check for employment opportunities"
+            },
+            {
+              "name": "Management",
+              "url": "https://mitsloan.mit.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "MIT Sloan School of Management"
+            }
+          ],
+          "location": {
+            "city": "Cambridge",
+            "state": "MA",
+            "country": "United States"
+          },
+          "scraping_method": "html_parser",
+          "notes": "Top-ranked economics program"
+        },
+        {
+          "name": "Stanford University",
+          "departments": [
+            {
+              "name": "Economics",
+              "url": "https://economics.stanford.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Check for job openings"
+            },
+            {
+              "name": "Management",
+              "url": "https://www.gsb.stanford.edu/faculty-research/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Stanford Graduate School of Business"
+            }
+          ],
+          "location": {
+            "city": "Stanford",
+            "state": "CA",
+            "country": "United States"
+          },
+          "scraping_method": "html_parser",
+          "notes": "Top-ranked economics program"
+        },
+        {
+          "name": "University of Chicago",
+          "departments": [
+            {
+              "name": "Economics",
+              "url": "https://economics.uchicago.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Check for faculty positions"
+            },
+            {
+              "name": "Management",
+              "url": "https://www.chicagobooth.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Booth School of Business"
+            }
+          ],
+          "location": {
+            "city": "Chicago",
+            "state": "IL",
+            "country": "United States"
+          },
+          "scraping_method": "html_parser",
+          "notes": "Top-ranked economics program"
+        },
+        {
+          "name": "Princeton University",
+          "departments": [
+            {
+              "name": "Economics",
+              "url": "https://economics.princeton.edu/faculty/positions",
+              "scraping_method": "html_parser",
+              "notes": "Check for faculty positions"
+            }
+          ],
+          "location": {
+            "city": "Princeton",
+            "state": "NJ",
+            "country": "United States"
+          },
+          "scraping_method": "html_parser",
+          "notes": "Top-ranked economics program"
+        }
+      ],
+      "research_institutes": [
+        {
+          "name": "National Bureau of Economic Research (NBER)",
+          "url": "https://www.nber.org/jobs",
+          "scraping_method": "html_parser",
+          "departments": ["Economics"],
+          "location": {
+            "city": "Cambridge",
+            "state": "MA",
+            "country": "United States"
+          },
+          "notes": "Leading economics research organization"
+        }
+      ],
       "think_tanks": []
     },
     "other_countries": {
@@ -30,17 +158,126 @@
       "coverage": "Top 30 universities per country",
       "countries": {
         "uk": {
-          "universities": [],
-          "research_institutes": [],
+          "universities": [
+            {
+              "name": "London School of Economics and Political Science (LSE)",
+              "departments": [
+                {
+                  "name": "Economics",
+                  "url": "https://www.lse.ac.uk/economics/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Check for job openings"
+                },
+                {
+                  "name": "Management",
+                  "url": "https://www.lse.ac.uk/management/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Department of Management"
+                }
+              ],
+              "location": {
+                "city": "London",
+                "country": "United Kingdom"
+              },
+              "scraping_method": "html_parser",
+              "notes": "Top-ranked economics program in UK"
+            },
+            {
+              "name": "University of Oxford",
+              "departments": [
+                {
+                  "name": "Economics",
+                  "url": "https://www.economics.ox.ac.uk/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Department of Economics"
+                },
+                {
+                  "name": "Management",
+                  "url": "https://www.sbs.ox.ac.uk/about/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Saïd Business School"
+                }
+              ],
+              "location": {
+                "city": "Oxford",
+                "country": "United Kingdom"
+              },
+              "scraping_method": "html_parser",
+              "notes": "Top-ranked economics program in UK"
+            }
+          ],
+          "research_institutes": [
+            {
+              "name": "Centre for Economic Policy Research (CEPR)",
+              "url": "https://cepr.org/jobs",
+              "scraping_method": "html_parser",
+              "departments": ["Economics"],
+              "location": {
+                "city": "London",
+                "country": "United Kingdom"
+              },
+              "notes": "Leading European economics research network"
+            }
+          ],
           "think_tanks": []
         },
         "canada": {
-          "universities": [],
+          "universities": [
+            {
+              "name": "University of Toronto",
+              "departments": [
+                {
+                  "name": "Economics",
+                  "url": "https://www.economics.utoronto.ca/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Department of Economics"
+                },
+                {
+                  "name": "Management",
+                  "url": "https://www.rotman.utoronto.ca/faculty/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Rotman School of Management"
+                }
+              ],
+              "location": {
+                "city": "Toronto",
+                "province": "ON",
+                "country": "Canada"
+              },
+              "scraping_method": "html_parser",
+              "notes": "Top-ranked economics program in Canada"
+            }
+          ],
           "research_institutes": [],
           "think_tanks": []
         },
         "australia": {
-          "universities": [],
+          "universities": [
+            {
+              "name": "University of Melbourne",
+              "departments": [
+                {
+                  "name": "Economics",
+                  "url": "https://fbe.unimelb.edu.au/economics/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Department of Economics"
+                },
+                {
+                  "name": "Management",
+                  "url": "https://fbe.unimelb.edu.au/management/jobs",
+                  "scraping_method": "html_parser",
+                  "notes": "Department of Management"
+                }
+              ],
+              "location": {
+                "city": "Melbourne",
+                "state": "VIC",
+                "country": "Australia"
+              },
+              "scraping_method": "html_parser",
+              "notes": "Top-ranked economics program in Australia"
+            }
+          ],
           "research_institutes": [],
           "think_tanks": []
         }
