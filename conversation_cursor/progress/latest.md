@@ -23,16 +23,25 @@ The project follows a **Load → Transform → Export** workflow structure for a
 ## What's Next
 
 ### 🔄 Phase 1: LOAD - Data Collection (IN PROGRESS)
-**Status**: Configuration setup in progress, ready for HTML parsing analysis
+**Status**: Configuration setup completed, URL verification in progress, ready for HTML parsing analysis
 - [x] Scraping strategy proposal created and approved (`design-scraping-strategy.md`)
 - [x] Scraping sources configuration structure designed (`scraping_sources.json`)
 - [x] HTML parsing approach analysis task defined (class-based vs pattern-based comparison)
-- [x] Project guidelines updated (`read_it.md` - token monitoring, proposal finding, dependency management, progress tracking, new conversation summary rule)
-- [x] Initial configuration setup started (9 universities, 2 research institutes added to `scraping_sources.json`)
+- [x] Project guidelines updated (`read_it.md` - token monitoring, proposal finding, dependency management, progress tracking, new conversation summary rule, poetry run instructions)
+- [x] Expanded `scraping_sources.json` to comprehensive coverage:
+  - [x] Mainland China: 100 universities added
+  - [x] United States: ~60 universities (expanded from 5)
+  - [x] Australia: 20 universities (expanded from 1)
+  - [x] Other countries: Expanded UK, Canada, added Germany, France, Netherlands, Singapore, Switzerland
+  - [x] Research institutes: Added Federal Reserve Banks (NY, SF, Chicago), Brookings, PIIE, IZA
 - [x] Dependencies installed (32 packages via Poetry)
-- [x] Sample download script created (`scripts/scraper/download_samples.py`)
-- [x] URL verification script created (`scripts/scraper/check_config/verify_urls.py`)
-- [x] All URLs verified and updated in `scraping_sources.json` (20/20 accessible, url_status labels added)
+- [x] Sample download script created and updated (`scripts/scraper/download_samples.py` - now reads from scraping_sources.json)
+- [x] URL verification script created and enhanced (`scripts/scraper/check_config/verify_urls.py` - supports mainland_china region)
+- [x] URL verification completed: 113/139 URLs accessible (81% success rate)
+  - [x] Verified US universities, research institutes, and other countries
+  - [x] Fixed problematic URLs (40 URLs updated with alternative paths)
+  - [x] Chinese university URLs ready for verification (pending_verification status)
+- [ ] Complete Chinese university URL verification (100+ URLs to check)
 - [ ] HTML parsing approach analysis (download samples, compare approaches)
 - [ ] Base scraper framework created
 - [ ] AEA JOE scraper implemented
@@ -41,10 +50,10 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [ ] Multi-campus handling implemented
 - [ ] Raw data storage validated
 - **Coverage**: 
-  - Mainland China: Top 100 universities (QS Economics ranking)
-  - United States: Top 100 universities (QS Economics ranking)
-  - Other Countries: Top 30 per country (QS Economics ranking)
-  - Research institutes and think tanks
+  - Mainland China: 100 universities (QS Economics ranking) - URLs added, verification in progress
+  - United States: ~60 universities (target: 100) - 113 accessible URLs verified
+  - Other Countries: Expanded coverage - UK, Canada, Australia (20), Germany, France, Netherlands, Singapore, Switzerland
+  - Research institutes and think tanks: 6 institutes added
 - **To-Do List**: `2025-12-31_load-data-collection.md`
 - **Proposal**: `conversation_cursor/dates/2025-12-31/design-scraping-strategy.md`
 
@@ -75,8 +84,9 @@ The project follows a **Load → Transform → Export** workflow structure for a
 **Phase 1: LOAD - Data Collection** is in progress. 
 
 **Next Steps**:
-1. Download sample HTML files from diverse sources (AEA JOE, universities, research institutes)
-2. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
-3. Choose optimal parsing approach and document decision
-4. Create base scraper framework using chosen approach
-5. Implement AEA JOE scraper (priority)
+1. Complete Chinese university URL verification (100+ URLs)
+2. Download sample HTML files from diverse sources (AEA JOE, universities, research institutes) - 113 accessible URLs ready
+3. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
+4. Choose optimal parsing approach and document decision
+5. Create base scraper framework using chosen approach
+6. Implement AEA JOE scraper (priority)

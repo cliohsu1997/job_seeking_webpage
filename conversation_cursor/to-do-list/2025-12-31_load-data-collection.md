@@ -26,17 +26,20 @@
 - [x] Updated verification script to add url_status labels directly to `scraping_sources.json`
 - [x] Verified all URLs in initial entries (20/20 accessible, all marked with url_status="accessible")
 - [x] Deleted deprecated files (universities.json, url_verification_results.json)
-- [ ] Compile remaining university lists from QS Economics & Econometrics rankings
-  - [ ] Mainland China: Top 100 universities (start with top 20)
-  - [ ] United States: Expand to top 100 universities (currently 5)
-  - [ ] Other Countries: Expand to top 30 per country (currently 1-2 each)
-- [ ] Identify additional research institutes and think tanks to include
-  - [ ] US: Federal Reserve Banks, additional research institutes
-  - [ ] International: IZA, additional institutes
-- [ ] Complete `scraping_sources.json` population
-  - [ ] Verify and update all department URLs
-  - [ ] Handle multiple campuses separately if different posting pages
-  - [ ] Document scraping methods and special considerations
+- [x] Compiled comprehensive university lists from QS Economics & Econometrics rankings
+  - [x] Mainland China: 100 universities added to scraping_sources.json
+  - [x] United States: Expanded to ~60 universities (target: 100)
+  - [x] Other Countries: Expanded coverage - UK (5), Canada (4), Australia (20), added Germany (2), France (1), Netherlands (2), Singapore (2), Switzerland (1)
+- [x] Identified and added additional research institutes and think tanks
+  - [x] US: Federal Reserve Banks (NY, San Francisco, Chicago), Brookings Institution, PIIE
+  - [x] International: IZA (Germany)
+- [x] Completed major `scraping_sources.json` population
+  - [x] Added ~200+ university entries across all regions
+  - [x] Verified and updated department URLs (113/139 accessible, 81% success rate)
+  - [x] Fixed 40 problematic URLs with alternative paths
+  - [x] All URLs marked with url_status (accessible, not_found, forbidden, error, pending_verification)
+  - [x] Handled multiple departments per university (Economics, Management, Marketing)
+- [ ] Complete Chinese university URL verification (100+ URLs currently pending_verification)
 - [ ] Update `scraping_rules.json` with additional patterns if needed
 
 ### Environment Setup
@@ -46,7 +49,8 @@
 
 ### HTML Parsing Approach Analysis
 - [x] Created sample download script (`scripts/scraper/download_samples.py`)
-- [ ] Download sample HTML files from diverse sources
+- [x] Updated download script to read from scraping_sources.json (extracts all accessible URLs automatically)
+- [ ] Download sample HTML files from diverse sources (113 accessible URLs ready)
   - [ ] AEA JOE job listings page
   - [ ] Sample university job posting pages (different structures)
   - [ ] Research institute job pages
@@ -148,12 +152,13 @@
 
 ## Phase 1 Status: 🔄 IN PROGRESS
 
-**Current Focus**: HTML parsing approach analysis
+**Current Focus**: Complete URL verification, then HTML parsing approach analysis
 
 **Next Steps**:
-1. Download sample HTML files from diverse sources (AEA JOE, universities, research institutes)
-2. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
-3. Choose optimal parsing approach and document decision
-4. Create base scraper framework using chosen approach
-5. Implement AEA JOE scraper (priority)
+1. Complete Chinese university URL verification (100+ URLs with pending_verification status)
+2. Download sample HTML files from diverse sources (113 accessible URLs ready, more after Chinese verification)
+3. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
+4. Choose optimal parsing approach and document decision
+5. Create base scraper framework using chosen approach
+6. Implement AEA JOE scraper (priority)
 

@@ -85,8 +85,10 @@ job-seeking-webpage/
 - **Processed data**: Can be archived for historical reference
 - **Config**: Centralized in `data/config/`
   - **scraping_sources.json**: All scraping sources organized by region (mainland_china, united_states, other_countries) and job nature (universities, research_institutes, think_tanks, job_portals)
+  - Coverage: ~200+ institutions (100 China, ~60 US, 20 Australia, plus other countries and research institutes)
   - Each entry includes: institution name, department(s) [Economics, Management, Marketing], URL(s), scraping method, campus info, notes
-  - Each URL entry includes: `url_status` field ("accessible", "not_found", "forbidden", etc.) for verification tracking
+  - Each URL entry includes: `url_status` field ("accessible", "not_found", "forbidden", "error", "pending_verification") for verification tracking
+  - Current status: 113/139 URLs verified as accessible (81% success rate), Chinese universities pending verification
 
 ### Code Organization
 - **Separation of concerns**: scraper → processor → generator
@@ -129,3 +131,13 @@ job-seeking-webpage/
 - **2025-12-31**: Updated verification script to add url_status labels directly to scraping_sources.json
 - **2025-12-31**: Verified all initial URLs (20/20 accessible), added url_status="accessible" to each URL entry
 - **2025-12-31**: Deleted deprecated files: universities.json (replaced by scraping_sources.json), url_verification_results.json (status now in scraping_sources.json)
+- **2025-12-31**: Expanded scraping_sources.json to comprehensive coverage:
+  - Mainland China: 100 universities
+  - United States: ~60 universities
+  - Australia: 20 universities
+  - Other countries: Expanded UK, Canada, added Germany, France, Netherlands, Singapore, Switzerland
+  - Research institutes: Added Federal Reserve Banks, Brookings, PIIE, IZA
+- **2025-12-31**: Updated download_samples.py to automatically extract URLs from scraping_sources.json
+- **2025-12-31**: Enhanced verify_urls.py to support mainland_china region extraction
+- **2025-12-31**: Completed URL verification: 113/139 URLs accessible (81% success rate)
+- **2025-12-31**: Updated read_it.md with poetry run instructions for running Python scripts
