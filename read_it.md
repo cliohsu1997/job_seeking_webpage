@@ -52,8 +52,22 @@ poetry update                # Update all dependencies
 ```
 
 ### Run Python
-After activating the virtual environment:
+**Preferred method**: Use `poetry run` (no need to activate virtual environment):
 ```bash
+poetry run python script.py
+poetry run python -m module_name
+poetry run python scripts/scraper/check_config/verify_urls.py
+```
+
+**Alternative method**: Activate virtual environment first:
+```bash
+# Windows PowerShell
+.\environment\python\venv\Scripts\Activate.ps1
+
+# Windows CMD
+.\environment\python\venv\Scripts\activate.bat
+
+# Then run
 python script.py
 python -m module_name
 ```
