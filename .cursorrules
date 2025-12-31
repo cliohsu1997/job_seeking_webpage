@@ -1,0 +1,33 @@
+# Cursor Rules for Job Seeking Webpage Project
+
+## MANDATORY: Read read_it.md First
+
+**CRITICAL RULE:** Before starting ANY operation, conversation, or task, you MUST:
+1. Read the `read_it.md` file in the project root
+2. Review the latest entries in `conversation_cursor/progress`, `conversation_cursor/structure`, and `conversation_cursor/to-do-list`
+3. Check today's dated folder in `conversation_cursor/dates/` for any relevant context
+4. Confirm that any new request aligns with previously recorded goals to avoid duplicate work
+5. Mention `read_it.md` when summarizing updates so the user knows this rule is being followed
+
+This rule applies to EVERY conversation start and should be the first action taken.
+
+## Project-Specific Workflow Rules
+
+### Code Formatting
+- Break each argument out on its own line when writing or explaining code snippets
+- Always explain the code in the cursor window before implementing or sharing it
+
+### Default Workflow Structure
+- Preserve the `load → transform → export` structure as the default flow for any coding work
+
+### Task Management
+- When analysis is involved, summarize the resulting tasks into discrete, small items stored inside today's dated folder (e.g., `conversation_cursor/dates/YYYY-MM-DD`)
+- Create a proposal for new work inside today's dated folder. Name the file starting with a verb (for example `create-cursor-rule.md`) so it clearly states the action
+- After writing execution files and testing them, log the latest updates inside:
+  - `conversation_cursor/progress/latest.md`
+  - `conversation_cursor/structure/latest.md`
+  - `conversation_cursor/to-do-list/latest.md`
+
+### Communication Style
+- Keep the workflow conversational; treat each exchange as part of that dialogue
+
