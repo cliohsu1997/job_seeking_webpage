@@ -8,7 +8,7 @@ job-seeking-webpage/
 ├── .gitignore                      # Git ignore rules
 ├── read_it.md                      # Project guidelines (read first)
 ├── pyproject.toml                  # Poetry configuration
-├── poetry.lock                     # Poetry lock file
+├── poetry.lock                     # Poetry lock file (also in environment/python/tools/)
 ├── requirements.txt                # Legacy requirements (kept for reference)
 ├── README.md                       # Project documentation
 ├── index.html                      # Main landing page
@@ -38,20 +38,31 @@ job-seeking-webpage/
 │   ├── js/                         # JavaScript files
 │   └── images/                     # Image assets
 │
+├── environment/                    # Environment management tools
+│   ├── python/
+│   │   ├── tools/                 # Environment management tool configs
+│   │   │   ├── poetry.lock        # Poetry lock file (also in root)
+│   │   │   └── README.md         # Tools documentation
+│   │   └── venv/                 # Actual virtual environment (managed by Poetry)
+│   └── README.md                  # Environment folder documentation
+│
 └── conversation_cursor/             # Project management
     ├── dates/                      # Dated conversation records
     ├── progress/                   # High-level pipeline status
     ├── structure/                  # Project structure documentation
-    └── to-do-list/                 # Explicit task lists (dated)
+    └── to-do-list/                 # Explicit task lists (dated with phase names)
 ```
 
 ## Environment Management
 
 **Tool**: Poetry
-- Virtual environment: Managed by Poetry (location: `C:\Users\clioh\AppData\Local\pypoetry\Cache\virtualenvs\`)
-- Configuration: `pyproject.toml`
-- Lock file: `poetry.lock`
-- Dependencies: All installed and locked
+- **Poetry Location**: `C:\Users\clioh\AppData\Roaming\pypoetry\venv\Scripts\poetry.exe`
+- **Python Location**: `C:\Users\clioh\AppData\Local\Programs\Python\Python313\python.exe` (Python 3.13.5)
+- **Virtual environment**: Configured to use `./environment/python/venv/` folder
+- **Environment tools**: Lock files and configs stored in `./environment/python/tools/`
+- **Configuration**: `pyproject.toml` (package-mode = false) - kept in root (Poetry requirement)
+- **Lock file**: `poetry.lock` - stored in `environment/python/tools/` and root (Poetry requirement)
+- **Dependencies**: All installed and locked
 
 ## Key Structural Decisions
 
@@ -69,8 +80,22 @@ job-seeking-webpage/
 - Follows `load → transform → export` pattern
 - Each phase has dedicated folder in `scripts/`
 
+### To-Do List Naming
+- Format: `YYYY-MM-DD_phase-name.md` (e.g., `2025-12-31_project-setup.md`)
+- Name corresponds to the phase in progress
+- Each to-do list contains subtasks for one complete phase
+
+## Current Structure Status
+
+✅ **Complete**: All folders and configuration files are in place
+✅ **Environment**: Poetry virtual environment configured and dependencies installed
+✅ **Documentation**: All documentation files created and organized
+⏸️ **Code**: Scripts folders ready but empty (waiting for Phase 1)
+
 ## Recent Structural Changes
 
-- **2025-12-31**: Migrated from venv to Poetry for environment management
-- **2025-12-31**: Created complete folder structure
-- **2025-12-31**: Set up configuration files and templates directories
+- **2025-12-31**: Phase 0 (Project Setup) completed
+- **2025-12-31**: Organized environment folder: `python/tools/` for management tools, `python/venv/` for virtual environment
+- **2025-12-31**: Cleaned up unnecessary .gitkeep files
+- **2025-12-31**: Renamed to-do list to match phase name (`2025-12-31_project-setup.md`)
+- **2025-12-31**: Reorganized progress to show "What We've Accomplished" and "What's Next"

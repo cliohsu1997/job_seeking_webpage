@@ -3,9 +3,14 @@ venv/
 env/
 ENV/
 .venv
+environment/python/venv/
+# Allow environment management tools and docs
+!environment/python/tools/
+!environment/**/*.md
 
 # Poetry
-# Note: poetry.lock should be committed for reproducible builds
+# Note: poetry.lock should be committed (stored in environment/python/tools/ and root)
+environment/python/venv/
 
 # Python
 __pycache__/
