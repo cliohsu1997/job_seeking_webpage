@@ -14,7 +14,7 @@ A daily-updated webpage that aggregates economics department faculty recruiting 
 ```
 job-seeking-webpage/
 ├── data/                    # Data storage
-│   ├── raw/                # Raw scraped data
+│   ├── raw/                # Raw scraped data (latest only, overwrites daily)
 │   ├── processed/          # Cleaned, structured data
 │   └── config/             # Configuration files
 ├── scripts/                 # Automation scripts
@@ -51,9 +51,10 @@ The project follows a **Load → Transform → Export** structure:
 ## Daily Updates
 
 The scraper runs automatically via scheduler (cron/Task Scheduler) to:
-- Collect new job postings
+- Collect new job postings (raw data overwrites previous version)
+- Process and structure the data
 - Update the jobs.html webpage
-- Maintain historical archive
+- Archive processed data (raw data not archived, only latest kept)
 
 ## Documentation
 

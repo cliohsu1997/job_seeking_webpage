@@ -14,18 +14,16 @@ job-seeking-webpage/
 ├── requirements.txt                      # Python dependencies
 │
 ├── data/                                 # All data storage
-│   ├── raw/                             # Raw scraped data (unprocessed)
+│   ├── raw/                             # Raw scraped data (unprocessed, latest only)
 │   │   ├── aea/                         # AEA JOE scrapes
 │   │   │   ├── .gitkeep
-│   │   │   └── YYYY-MM-DD/              # Daily folders (created on run)
-│   │   │       └── listings.html        # Raw HTML from AEA
+│   │   │   └── listings.html            # Latest raw HTML from AEA (overwrites daily)
 │   │   │
 │   │   └── universities/                # University website scrapes
 │   │       ├── .gitkeep
-│   │       └── YYYY-MM-DD/              # Daily folders
-│   │           ├── harvard.html
-│   │           ├── mit.html
-│   │           └── stanford.html
+│   │       ├── harvard.html             # Latest scrape (overwrites daily)
+│   │       ├── mit.html                 # Latest scrape (overwrites daily)
+│   │       └── stanford.html            # Latest scrape (overwrites daily)
 │   │
 │   ├── processed/                       # Cleaned, structured data
 │   │   ├── jobs.json                    # Current job listings (JSON)
@@ -91,7 +89,8 @@ job-seeking-webpage/
 ### `/data`
 - **Purpose**: Store all data (raw scrapes, processed data, configuration)
 - **Structure**: Separated by data type and processing stage
-- **Archive**: Keep historical data for reference and analysis
+- **Raw Data**: Only latest version kept (overwrites on each scrape)
+- **Archive**: Processed data can be archived for historical reference
 
 ### `/scripts`
 - **Purpose**: All automation and processing code
@@ -117,10 +116,11 @@ job-seeking-webpage/
 ## Data Flow Through Folders
 
 ```
-1. Scraper writes → data/raw/aea/YYYY-MM-DD/
-2. Parser reads → data/raw/ and writes → data/processed/jobs.json
-3. Generator reads → data/processed/jobs.json and writes → jobs.html
-4. Archive script moves old data → data/processed/archive/YYYY-MM-DD/
+1. Scraper writes → data/raw/aea/listings.html (overwrites previous)
+2. Scraper writes → data/raw/universities/*.html (overwrites previous)
+3. Parser reads → data/raw/ and writes → data/processed/jobs.json
+4. Generator reads → data/processed/jobs.json and writes → jobs.html
+5. Archive script (optional) moves old processed data → data/processed/archive/YYYY-MM-DD/
 ```
 
 ## Expansion Points

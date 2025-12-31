@@ -25,7 +25,9 @@
                     ▼
         ┌─────────────────────────────┐
         │  Raw Data Storage           │
-        │  data/raw/YYYY-MM-DD/       │
+        │  data/raw/aea/listings.html │
+        │  data/raw/universities/*.html│
+        │  (overwrites latest only)   │
         └─────────────────────────────┘
                     │
                     ▼
@@ -87,14 +89,14 @@ Scheduler Triggers (Daily at 6 AM)
     ├─→ AEA Scraper
     │   ├─→ Fetch AEA JOE listings
     │   ├─→ Parse HTML/XML
-    │   └─→ Save to data/raw/aea/YYYY-MM-DD/
+    │   └─→ Save to data/raw/aea/listings.html (overwrites previous)
     │
     └─→ University Scrapers (Parallel)
         ├─→ Harvard Economics
         ├─→ MIT Economics
         ├─→ Stanford Economics
         └─→ ... (20+ universities)
-            └─→ Save to data/raw/universities/YYYY-MM-DD/
+            └─→ Save to data/raw/universities/*.html (overwrites previous)
 ```
 
 ### Phase 2: TRANSFORM (Data Processing)
@@ -224,7 +226,8 @@ Daily Schedule:
 └─→ 6:25 AM: Update webpage
 
 Weekly Maintenance:
-├─→ Archive old data (keep last 90 days)
+├─→ Archive old processed data (keep last 90 days in archive/)
+├─→ Raw data automatically overwrites (no archiving needed)
 ├─→ Update scraping rules if needed
 └─→ Review error logs
 ```

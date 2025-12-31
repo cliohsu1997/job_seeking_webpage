@@ -91,11 +91,11 @@ job-seeking-webpage/
 ├── index.html                    # Main landing page
 ├── jobs.html                     # Job listings page (generated)
 ├── data/                         # Raw and processed data
-│   ├── raw/                      # Raw scraped data
+│   ├── raw/                      # Raw scraped data (latest only, overwrites daily)
 │   │   ├── aea/                  # AEA scrapes
-│   │   │   └── YYYY-MM-DD/       # Daily folders
+│   │   │   └── listings.html     # Latest raw HTML (overwrites)
 │   │   └── universities/         # University scrapes
-│   │       └── YYYY-MM-DD/
+│   │       └── *.html            # Latest scrapes per university (overwrites)
 │   ├── processed/                # Cleaned, structured data
 │   │   ├── jobs.json             # Current job listings (JSON)
 │   │   ├── jobs.csv              # Current job listings (CSV)
