@@ -1,0 +1,39 @@
+{
+  "rate_limiting": {
+    "delay_between_requests": 2,
+    "max_retries": 3,
+    "timeout_seconds": 30
+  },
+  "data_extraction": {
+    "deadline_patterns": [
+      "deadline",
+      "application deadline",
+      "closing date",
+      "due date"
+    ],
+    "application_link_keywords": [
+      "apply",
+      "application",
+      "submit",
+      "jobs",
+      "careers"
+    ],
+    "materials_keywords": [
+      "cv",
+      "resume",
+      "cover letter",
+      "research papers",
+      "letters of recommendation",
+      "teaching statement",
+      "research statement"
+    ]
+  },
+  "date_formats": [
+    "YYYY-MM-DD",
+    "MM/DD/YYYY",
+    "DD/MM/YYYY",
+    "Month DD, YYYY",
+    "DD Month YYYY"
+  ]
+}
+

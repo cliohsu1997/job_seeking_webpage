@@ -8,7 +8,7 @@
 
 **Coding & Workflow Rules:**
 - Break each argument out on its own line when writing or explaining code snippets.
-- Preserve the `load → data → transform → export` structure as the default flow for any coding work.
+- Preserve the `load  → transform → export` structure as the default flow for any coding work.
 - When analysis is involved, summarize the resulting tasks into discrete, small items stored inside today’s dated folder (e.g., `conversation_cursor/dates/2025-12-31`).
 - Always explain the code in the cursor window before implementing or sharing it.
 - Keep the workflow conversational; treat each exchange as part of that dialogue.

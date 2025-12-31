@@ -1,0 +1,32 @@
+{
+  "universities": [
+    {
+      "name": "Harvard University",
+      "department": "Department of Economics",
+      "url": "https://economics.harvard.edu/faculty/positions",
+      "scraping_method": "html_parser",
+      "notes": "Check for faculty positions page"
+    },
+    {
+      "name": "MIT",
+      "department": "Department of Economics",
+      "url": "https://economics.mit.edu/faculty/positions",
+      "scraping_method": "html_parser",
+      "notes": "Check for employment opportunities"
+    },
+    {
+      "name": "Stanford University",
+      "department": "Department of Economics",
+      "url": "https://economics.stanford.edu/faculty/positions",
+      "scraping_method": "html_parser",
+      "notes": "Check for job openings"
+    }
+  ],
+  "aea": {
+    "name": "American Economic Association",
+    "url": "https://www.aeaweb.org/joe/",
+    "scraping_method": "rss_or_html",
+    "notes": "Primary source for economics job listings"
+  }
+}
+

@@ -1,0 +1,19 @@
+# Web Scraping
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+lxml>=4.9.0
+selenium>=4.15.0
+
+# Data Processing
+pandas>=2.1.0
+python-dateutil>=2.8.0
+
+# HTML/JSON Generation
+jinja2>=3.1.0
+
+# Scheduling (optional, for automated runs)
+schedule>=1.2.0
+
+# Utilities
+python-dotenv>=1.0.0
+
