@@ -104,6 +104,10 @@ python -m module_name
 ### Git & File Management
 - **Commits**: Each commit = one minimum complete task
 - **.gitkeep files**: Only keep essential ones. Remove when folders contain actual files.
+- **Git Pager**: For scripts/automation, use commands that don't trigger the pager:
+  - `git status --porcelain` - Machine-readable status
+  - `git log --oneline` - Compact one-line log
+  - `git --no-pager <command>` - Disable pager for specific command
 
 ### End of Conversation/Task
 - Reorganize structure/progress/to-do files to show:
