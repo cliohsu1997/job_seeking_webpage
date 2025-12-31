@@ -19,7 +19,7 @@
 - **Poetry**: `C:\Users\clioh\AppData\Roaming\pypoetry\venv\Scripts\poetry.exe`
 - **Virtual Environment**: `./environment/python/venv/`
 - **Environment Tools**: `./environment/python/tools/` (all Poetry-related files: poetry.lock, pyproject.toml copy, configs)
-- **Poetry Rule**: All Poetry-related files must be kept in `environment/python/tools/`. `pyproject.toml` must also exist in root (Poetry requirement), but tools/ is the source of truth.
+- **Poetry Rule**: All Poetry-related files must be kept in `environment/python/tools/` (source of truth). Root `pyproject.toml` and `poetry.lock` are ignored in git - they exist locally for Poetry to function but are copies from tools/.
 
 ## Coding & Workflow Rules
 

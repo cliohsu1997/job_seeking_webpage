@@ -9,7 +9,10 @@ environment/python/venv/
 !environment/**/*.md
 
 # Poetry
-# Note: poetry.lock should be committed (stored in environment/python/tools/ and root)
+# Root Poetry files are ignored - source of truth is in environment/python/tools/
+# Root files are kept for Poetry to function, but only tools/ versions are tracked in git
+poetry.lock
+pyproject.toml
 environment/python/venv/
 
 # Python

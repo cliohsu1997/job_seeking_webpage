@@ -8,9 +8,15 @@ This folder is the **source of truth** for all Poetry-related files and environm
 - `poetry.lock` - Lock file for reproducible builds
 - `pyproject.toml` - Poetry configuration (authoritative copy)
 
-## Note on pyproject.toml
+## Note on Root Files
 
-Poetry requires `pyproject.toml` to exist in the project root. The root version is a copy that Poetry needs to function. The authoritative version is kept here in `tools/`. When making changes to Poetry configuration, update the file in this folder first, then sync to root.
+Poetry **requires** `pyproject.toml` and `poetry.lock` to exist in the project root to function. However:
+- Root files are **ignored in git** (see `.gitignore`)
+- **Source of truth**: Files in this `tools/` folder are tracked in git
+- **Root files**: Local copies needed for Poetry to work (not tracked in git)
+- **Workflow**: When updating Poetry config, update files in `tools/` first, then copy to root
+
+**After cloning the repo**: Copy `pyproject.toml` and `poetry.lock` from `environment/python/tools/` to the project root for Poetry to function.
 
 ## Contents
 
