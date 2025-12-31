@@ -95,6 +95,45 @@ job-seeking-webpage/
 - **Templates**: Separate from code for easy styling updates
 - **Static assets**: Organized by type (css/js/images)
 
+#### download_samples.py Implementation Details
+
+The `scripts/scraper/download_samples.py` script downloads sample HTML files from all accessible URLs in `scraping_sources.json` for parsing approach analysis.
+
+**Key Functions:**
+
+1. **`sanitize_filename(name)`**: Converts human-readable names to safe filenames
+   - Removes special characters (keeps only word chars, spaces, hyphens)
+   - Replaces spaces/hyphens with underscores
+   - Converts to lowercase
+   - Example: `"Harvard University - Economics"` → `"harvard_university_economics"`
+
+2. **`extract_sources_from_config(config_data)`**: Extracts all accessible URLs from scraping_sources.json
+   - Filters entries with `url_status == "accessible"`
+   - Builds list of source dictionaries with: `name`, `url`, `filename`, `type`
+   - Supports: job_portals, united_states (universities, research_institutes), other_countries regions
+
+**Filename Patterns:**
+
+Generated filenames follow structured patterns to identify source type and location:
+
+- **Job Portals**: `portal_<sanitized_name>.html`
+  - Example: `portal_aea_joe.html`
+
+- **United States Universities**: `us_<university>_<department>.html`
+  - Example: `us_harvard_university_economics.html`
+
+- **United States Research Institutes**: `us_institute_<name>.html`
+  - Example: `us_institute_nber.html`
+
+- **Other Countries Universities**: `<country>_<university>_<department>.html`
+  - Example: `uk_london_school_of_economics_economics.html`
+  - Country codes: `uk`, `ca`, `au`, `de`, `fr`, `nl`, `sg`, `ch`, etc.
+
+- **Other Countries Research Institutes**: `<country>_institute_<name>.html`
+  - Example: `uk_institute_cepr.html`
+
+**Usage:** Script automatically discovers and downloads from all 113+ accessible URLs in the configuration file.
+
 ### Workflow Structure
 - Follows `load → transform → export` pattern
 - Each phase has dedicated folder in `scripts/`
@@ -141,3 +180,4 @@ job-seeking-webpage/
 - **2025-12-31**: Enhanced verify_urls.py to support mainland_china region extraction
 - **2025-12-31**: Completed URL verification: 113/139 URLs accessible (81% success rate)
 - **2025-12-31**: Updated read_it.md with poetry run instructions for running Python scripts
+- **2025-12-31**: Documented download_samples.py implementation details (filename patterns, functions) in structure/latest.md
