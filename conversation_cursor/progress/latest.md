@@ -22,13 +22,26 @@ The project follows a **Load → Transform → Export** workflow structure for a
 
 ## What's Next
 
-### 🔄 Phase 1: LOAD - Data Collection (NEXT)
-**Status**: Ready to begin
+### 🔄 Phase 1: LOAD - Data Collection (IN PROGRESS)
+**Status**: Strategy designed, parsing approach analysis planned
+- [x] Scraping strategy proposal created and approved (`design-scraping-strategy.md`)
+- [x] Scraping sources configuration structure designed (`scraping_sources.json`)
+- [x] HTML parsing approach analysis task defined (class-based vs pattern-based comparison)
+- [x] Project guidelines updated (`read_it.md` - token monitoring, proposal finding)
+- [ ] HTML parsing approach analysis (download samples, compare approaches)
 - [ ] Base scraper framework created
 - [ ] AEA JOE scraper implemented
-- [ ] University scrapers implemented
+- [ ] University scrapers implemented (Economics, Management, Marketing departments)
+- [ ] Research institute and think tank scrapers implemented
+- [ ] Multi-campus handling implemented
 - [ ] Raw data storage validated
-- **To-Do List**: To be created as `YYYY-MM-DD_load-data-collection.md` when Phase 1 begins
+- **Coverage**: 
+  - Mainland China: Top 100 universities (QS Economics ranking)
+  - United States: Top 100 universities (QS Economics ranking)
+  - Other Countries: Top 30 per country (QS Economics ranking)
+  - Research institutes and think tanks
+- **To-Do List**: `2025-12-31_load-data-collection.md`
+- **Proposal**: `conversation_cursor/dates/2025-12-31/design-scraping-strategy.md`
 
 ### ⏸️ Phase 2: TRANSFORM - Data Processing (PENDING)
 **Status**: Waiting for Phase 1
@@ -54,4 +67,4 @@ The project follows a **Load → Transform → Export** workflow structure for a
 
 ## Current Focus
 
-**Phase 1: LOAD - Data Collection** is the next milestone. Begin by creating the base scraper framework.
+**Phase 1: LOAD - Data Collection** is in progress. Next step: Download sample HTML files and analyze parsing approaches (class-based vs pattern-based) to determine optimal extraction method.

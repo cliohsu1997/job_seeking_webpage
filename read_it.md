@@ -6,12 +6,13 @@
 
 1. Read `conversation_cursor/progress/latest.md` to identify main tasks (phases) in progress
 2. Read corresponding to-do list in `conversation_cursor/to-do-list/` (format: `YYYY-MM-DD_phase-name.md`)
-3. Read `conversation_cursor/structure/latest.md` for project structure
-4. Check today's dated folder in `conversation_cursor/dates/YYYY-MM-DD/` for context
-5. Confirm new requests align with recorded goals to avoid duplicate work
-6. Mention this file when summarizing updates
+3. After reading the to-do list, find and read the corresponding proposal document in `conversation_cursor/dates/YYYY-MM-DD/` (proposals typically named with verbs like `design-`, `create-`, etc.)
+4. Read `conversation_cursor/structure/latest.md` for project structure
+5. Check today's dated folder in `conversation_cursor/dates/YYYY-MM-DD/` for context
+6. Confirm new requests align with recorded goals to avoid duplicate work
+7. Mention this file when summarizing updates
 
-**Workflow**: Progress shows main tasks → To-do lists show subtasks
+**Workflow**: Progress shows main tasks → To-do lists show subtasks → Proposals provide detailed design/strategy
 
 ## Environment Information
 
@@ -81,3 +82,4 @@ python tests/setup-project/test_python_setup.py
 
 ### Communication
 - Keep workflow conversational
+- **Token Usage**: Monitor token usage and remind the user when approaching token limits (e.g., when usage exceeds 80% of available tokens)

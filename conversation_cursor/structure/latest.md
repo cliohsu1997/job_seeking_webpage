@@ -17,13 +17,16 @@ job-seeking-webpage/
 ├── data/                           # Data storage
 │   ├── raw/                        # Raw scraped data (latest only)
 │   │   ├── aea/                    # AEA JOE scrapes
-│   │   └── universities/           # University scrapes
+│   │   ├── universities/           # University scrapes
+│   │   ├── institutes/             # Research institutes and think tanks scrapes
+│   │   └── samples/                # Sample HTML files for parsing approach analysis
 │   ├── processed/                  # Cleaned, structured data
 │   │   ├── jobs.json               # Current listings (not in git)
 │   │   ├── jobs.csv                # Current listings (not in git)
 │   │   └── archive/                # Historical processed data
 │   └── config/                     # Configuration files
-│       ├── universities.json       # University URLs to scrape
+│       ├── scraping_sources.json   # All scraping sources organized by region/job nature
+│       ├── universities.json       # Legacy: University URLs (deprecated, use scraping_sources.json)
 │       └── scraping_rules.json     # Scraping rules and patterns
 │
 ├── scripts/                        # Automation scripts
@@ -76,8 +79,11 @@ job-seeking-webpage/
 
 ### Data Storage
 - **Raw data**: Only latest version kept (overwrites daily)
+  - Organized by source type: `aea/`, `universities/`, `institutes/`
 - **Processed data**: Can be archived for historical reference
 - **Config**: Centralized in `data/config/`
+  - **scraping_sources.json**: All scraping sources organized by region (mainland_china, united_states, other_countries) and job nature (universities, research_institutes, think_tanks, job_portals)
+  - Each entry includes: institution name, department(s) [Economics, Management, Marketing], URL(s), scraping method, campus info, notes
 
 ### Code Organization
 - **Separation of concerns**: scraper → processor → generator
@@ -109,3 +115,9 @@ job-seeking-webpage/
 - **2025-12-31**: Renamed to-do list to match phase name (`2025-12-31_project-setup.md`)
 - **2025-12-31**: Reorganized progress to show "What We've Accomplished" and "What's Next"
 - **2025-12-31**: Created test folder structure with phase-based subfolders (`tests/setup-project/`, `tests/load-data-collection/`, etc.)
+- **2025-12-31**: Created `scraping_sources.json` to organize all scraping sources by region and job nature
+- **2025-12-31**: Updated data structure to include research institutes and think tanks
+- **2025-12-31**: Expanded department coverage to include Economics, Management, and Marketing
+- **2025-12-31**: Added `data/raw/samples/` folder for HTML parsing approach analysis
+- **2025-12-31**: Updated `read_it.md` with token monitoring reminder and proposal finding workflow
+- **2025-12-31**: Created Phase 1 scraping strategy proposal (`design-scraping-strategy.md`)

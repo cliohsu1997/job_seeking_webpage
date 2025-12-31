@@ -1,0 +1,57 @@
+{
+  "job_portals": {
+    "aea": {
+      "name": "American Economic Association JOE",
+      "url": "https://www.aeaweb.org/joe/",
+      "scraping_method": "rss_or_html",
+      "region": "global",
+      "job_nature": "portal",
+      "departments": ["Economics"],
+      "notes": "Primary source for economics job listings"
+    }
+  },
+  "regions": {
+    "mainland_china": {
+      "ranking_source": "QS World University Rankings - Economics & Econometrics",
+      "coverage": "Top 100 universities",
+      "universities": [],
+      "research_institutes": [],
+      "think_tanks": []
+    },
+    "united_states": {
+      "ranking_source": "QS World University Rankings - Economics & Econometrics",
+      "coverage": "Top 100 universities",
+      "universities": [],
+      "research_institutes": [],
+      "think_tanks": []
+    },
+    "other_countries": {
+      "ranking_source": "QS World University Rankings - Economics & Econometrics",
+      "coverage": "Top 30 universities per country",
+      "countries": {
+        "uk": {
+          "universities": [],
+          "research_institutes": [],
+          "think_tanks": []
+        },
+        "canada": {
+          "universities": [],
+          "research_institutes": [],
+          "think_tanks": []
+        },
+        "australia": {
+          "universities": [],
+          "research_institutes": [],
+          "think_tanks": []
+        }
+      }
+    }
+  },
+  "notes": {
+    "departments": "Include Economics, Management, and Marketing departments",
+    "multiple_campuses": "Treat separately if they have different job posting pages/URLs",
+    "institution_types": "Include universities, research institutes, and think tanks",
+    "organization": "Sources organized by region and job nature for better management"
+  }
+}
+
