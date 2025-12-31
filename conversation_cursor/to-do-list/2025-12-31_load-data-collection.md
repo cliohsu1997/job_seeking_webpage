@@ -21,6 +21,8 @@
   - [x] Added NBER (US research institute)
   - [x] Added CEPR (UK research institute)
   - [x] Established entry structure with departments array
+- [x] Created URL verification script (`scripts/scraper/check_config/verify_urls.py`)
+- [x] Organized configuration verification scripts in `scripts/scraper/check_config/` subfolder
 - [ ] Verify all URLs in initial entries (see `data/config/URL_VERIFICATION.md`)
 - [ ] Compile remaining university lists from QS Economics & Econometrics rankings
   - [ ] Mainland China: Top 100 universities (start with top 20)

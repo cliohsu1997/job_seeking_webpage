@@ -31,6 +31,9 @@ job-seeking-webpage/
 │
 ├── scripts/                        # Automation scripts
 │   ├── scraper/                    # Web scraping modules
+│   │   ├── check_config/           # Configuration verification scripts
+│   │   │   └── verify_urls.py      # URL verification script
+│   │   └── download_samples.py     # Sample HTML download script
 │   ├── processor/                  # Data processing modules
 │   ├── generator/                  # Output generation modules
 │   └── scheduler.py                # Main scheduler (to be created)
@@ -121,3 +124,5 @@ job-seeking-webpage/
 - **2025-12-31**: Added `data/raw/samples/` folder for HTML parsing approach analysis
 - **2025-12-31**: Updated `read_it.md` with token monitoring reminder and proposal finding workflow
 - **2025-12-31**: Created Phase 1 scraping strategy proposal (`design-scraping-strategy.md`)
+- **2025-12-31**: Created `scripts/scraper/check_config/` subfolder for configuration verification scripts
+- **2025-12-31**: Moved URL verification script to `scripts/scraper/check_config/verify_urls.py`
