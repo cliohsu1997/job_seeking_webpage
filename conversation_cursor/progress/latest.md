@@ -23,11 +23,14 @@ The project follows a **Load → Transform → Export** workflow structure for a
 ## What's Next
 
 ### 🔄 Phase 1: LOAD - Data Collection (IN PROGRESS)
-**Status**: Strategy designed, parsing approach analysis planned
+**Status**: Configuration setup in progress, ready for HTML parsing analysis
 - [x] Scraping strategy proposal created and approved (`design-scraping-strategy.md`)
 - [x] Scraping sources configuration structure designed (`scraping_sources.json`)
 - [x] HTML parsing approach analysis task defined (class-based vs pattern-based comparison)
-- [x] Project guidelines updated (`read_it.md` - token monitoring, proposal finding)
+- [x] Project guidelines updated (`read_it.md` - token monitoring, proposal finding, dependency management, progress tracking, new conversation summary rule)
+- [x] Initial configuration setup started (9 universities, 2 research institutes added to `scraping_sources.json`)
+- [x] Dependencies installed (32 packages via Poetry)
+- [x] Sample download script created (`scripts/scraper/download_samples.py`)
 - [ ] HTML parsing approach analysis (download samples, compare approaches)
 - [ ] Base scraper framework created
 - [ ] AEA JOE scraper implemented
@@ -67,4 +70,11 @@ The project follows a **Load → Transform → Export** workflow structure for a
 
 ## Current Focus
 
-**Phase 1: LOAD - Data Collection** is in progress. Next step: Download sample HTML files and analyze parsing approaches (class-based vs pattern-based) to determine optimal extraction method.
+**Phase 1: LOAD - Data Collection** is in progress. 
+
+**Next Steps**:
+1. Download sample HTML files from diverse sources (AEA JOE, universities, research institutes)
+2. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
+3. Choose optimal parsing approach and document decision
+4. Create base scraper framework using chosen approach
+5. Implement AEA JOE scraper (priority)

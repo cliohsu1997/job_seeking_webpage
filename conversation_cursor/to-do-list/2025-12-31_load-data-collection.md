@@ -12,21 +12,36 @@
 - [x] Updated project structure documentation
 
 ### Configuration Setup
-- [ ] Compile initial university lists from QS Economics & Econometrics rankings
-  - [ ] Mainland China: Top 100 universities
-  - [ ] United States: Top 100 universities
-  - [ ] Other Countries: Top 30 per country (start with UK, Canada, Australia)
-- [ ] Identify research institutes and think tanks to include
-  - [ ] US: Federal Reserve Banks, NBER, etc.
-  - [ ] International: CEPR, IZA, etc.
-- [ ] Populate `scraping_sources.json` with initial sources
-  - [ ] Add university entries with department URLs (Economics, Management, Marketing)
+- [x] Created configuration helper documentation (`data/config/README.md`)
+- [x] Populated `scraping_sources.json` with initial examples (structure established)
+  - [x] Added 5 top US universities (Harvard, MIT, Stanford, Chicago, Princeton)
+  - [x] Added 2 UK universities (LSE, Oxford)
+  - [x] Added 1 Canadian university (Toronto)
+  - [x] Added 1 Australian university (Melbourne)
+  - [x] Added NBER (US research institute)
+  - [x] Added CEPR (UK research institute)
+  - [x] Established entry structure with departments array
+- [ ] Verify all URLs in initial entries (see `data/config/URL_VERIFICATION.md`)
+- [ ] Compile remaining university lists from QS Economics & Econometrics rankings
+  - [ ] Mainland China: Top 100 universities (start with top 20)
+  - [ ] United States: Expand to top 100 universities (currently 5)
+  - [ ] Other Countries: Expand to top 30 per country (currently 1-2 each)
+- [ ] Identify additional research institutes and think tanks to include
+  - [ ] US: Federal Reserve Banks, additional research institutes
+  - [ ] International: IZA, additional institutes
+- [ ] Complete `scraping_sources.json` population
+  - [ ] Verify and update all department URLs
   - [ ] Handle multiple campuses separately if different posting pages
-  - [ ] Add research institutes and think tanks
   - [ ] Document scraping methods and special considerations
 - [ ] Update `scraping_rules.json` with additional patterns if needed
 
+### Environment Setup
+- [x] Installed all dependencies via Poetry (`poetry install` - 32 packages)
+- [x] Updated `read_it.md` with dependency installation and update instructions
+- [x] Virtual environment created and configured
+
 ### HTML Parsing Approach Analysis
+- [x] Created sample download script (`scripts/scraper/download_samples.py`)
 - [ ] Download sample HTML files from diverse sources
   - [ ] AEA JOE job listings page
   - [ ] Sample university job posting pages (different structures)
@@ -129,13 +144,12 @@
 
 ## Phase 1 Status: 🔄 IN PROGRESS
 
-**Current Focus**: Configuration setup and base scraper framework
+**Current Focus**: HTML parsing approach analysis
 
 **Next Steps**:
-1. Download sample HTML files from diverse sources
-2. Analyze HTML structures to determine optimal parsing approach (class-based vs pattern-based)
-3. Compile initial university lists from QS rankings
-4. Populate `scraping_sources.json`
-5. Create base scraper framework (using chosen parsing approach)
-6. Implement AEA JOE scraper (priority)
+1. Download sample HTML files from diverse sources (AEA JOE, universities, research institutes)
+2. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
+3. Choose optimal parsing approach and document decision
+4. Create base scraper framework using chosen approach
+5. Implement AEA JOE scraper (priority)
 

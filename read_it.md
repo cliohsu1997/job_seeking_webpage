@@ -14,6 +14,14 @@
 
 **Workflow**: Progress shows main tasks → To-do lists show subtasks → Proposals provide detailed design/strategy
 
+### New Conversation Rule
+**At the start of every new conversation**, provide a summary that includes:
+1. **Current Progress**: What phase you're in, what's been accomplished, and what's next
+2. **To-Do List**: Current tasks and their status
+3. **Relevant Proposals**: Key proposals related to the current phase/work
+
+This helps maintain context and alignment across conversations.
+
 ## Environment Information
 
 - **Python**: `C:\Users\clioh\AppData\Local\Programs\Python\Python313\python.exe` (3.13.5)
@@ -23,6 +31,16 @@
 - **Poetry Rule**: All Poetry-related files must be kept in `environment/python/tools/` (source of truth). Root `pyproject.toml` and `poetry.lock` are ignored in git - they exist locally for Poetry to function but are copies from tools/.
 
 ## Running Python
+
+### Install/Update Dependencies
+```bash
+poetry install              # Install all dependencies (creates venv if needed)
+poetry lock                 # Update lock file if pyproject.toml changed
+poetry add package-name      # Add new dependency
+poetry remove package-name   # Remove dependency
+poetry update                # Update all dependencies
+```
+**Note**: After updating, copy `poetry.lock` to `environment/python/tools/` (source of truth).
 
 ### Activate Virtual Environment
 ```bash
@@ -34,10 +52,10 @@
 ```
 
 ### Run Python
+After activating the virtual environment:
 ```bash
 python script.py
 python -m module_name
-python tests/setup-project/test_python_setup.py
 ```
 
 ## Coding & Workflow Rules
@@ -55,22 +73,23 @@ python tests/setup-project/test_python_setup.py
 - Default flow: `load → transform → export`
 
 ### Phase & File Naming
-- **Phase names**: Start with verb, be informative (e.g., `setup-project`, `load-data-collection`, `transform-data-processing`, `export-output-generation`)
+- **Phase names**: Start with verb, be informative (e.g., `setup-project`, `load-data-collection`)
 - **To-do lists**: `YYYY-MM-DD_phase-name.md` (matches phase naming)
-- **Proposals**: Name with verb (e.g., `create-cursor-rule.md`)
+- **Proposals**: Name with verb (e.g., `design-scraping-strategy.md`)
 
 ### Progress & To-Do Lists
 - Each to-do list = one complete phase task
 - Use checkboxes `- [ ]` and `- [x]`
 - When all tasks complete, mark phase complete in progress file
 - Progress = high-level stages; To-do = actionable subtasks
+- **After completing any task**: Check `conversation_cursor/progress/latest.md` to see which phase/step it belongs to, then update the corresponding to-do list to mark the task as complete
 
 ### Test Structure
 - Tests in `tests/` with subfolders matching phase names (e.g., `tests/setup-project/`, `tests/load-data-collection/`)
 
 ### Git & File Management
 - **Commits**: Each commit = one minimum complete task
-- **.gitkeep files**: Only keep essential ones (e.g., empty folders that must exist). Do not regenerate unnecessarily. Remove when folders contain actual files.
+- **.gitkeep files**: Only keep essential ones. Remove when folders contain actual files.
 
 ### End of Conversation/Task
 - Reorganize structure/progress/to-do files to show:
