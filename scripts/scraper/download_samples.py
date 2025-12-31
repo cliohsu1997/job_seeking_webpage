@@ -1,58 +1,127 @@
 """
 Download sample HTML files from various sources for parsing approach analysis.
 
-This script downloads HTML samples to compare class-based vs pattern-based extraction.
+This script reads from scraping_sources.json and downloads HTML samples from all
+accessible URLs to compare class-based vs pattern-based extraction.
 """
 
-import os
+import json
+import re
 import requests
 import time
 from pathlib import Path
-from bs4 import BeautifulSoup
 
 # Base directory for samples
 SAMPLES_DIR = Path("data/raw/samples")
 SAMPLES_DIR.mkdir(parents=True, exist_ok=True)
+
+# Configuration file
+CONFIG_FILE = Path("data/config/scraping_sources.json")
 
 # User agent to avoid blocking
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 
-# Sample sources to download
-SAMPLE_SOURCES = [
-    {
-        "name": "AEA_JOE",
-        "url": "https://www.aeaweb.org/joe/",
-        "filename": "aea_joe.html"
-    },
-    {
-        "name": "Harvard_Economics",
-        "url": "https://economics.harvard.edu/faculty/positions",
-        "filename": "harvard_economics.html"
-    },
-    {
-        "name": "MIT_Economics",
-        "url": "https://economics.mit.edu/faculty/positions",
-        "filename": "mit_economics.html"
-    },
-    {
-        "name": "Stanford_Economics",
-        "url": "https://economics.stanford.edu/faculty/positions",
-        "filename": "stanford_economics.html"
-    },
-    {
-        "name": "LSE_Economics",
-        "url": "https://www.lse.ac.uk/economics/jobs",
-        "filename": "lse_economics.html"
-    }
-]
+
+def sanitize_filename(name):
+    """Convert a name to a safe filename."""
+    # Remove special characters and replace spaces with underscores
+    name = re.sub(r'[^\w\s-]', '', name)
+    name = re.sub(r'[-\s]+', '_', name)
+    return name.lower()
 
 
-def download_html(url, filename):
+def extract_sources_from_config(config_data):
+    """Extract all accessible URLs from scraping_sources.json."""
+    sources = []
+    
+    # Extract from job portals
+    if "job_portals" in config_data:
+        for portal_key, portal_data in config_data["job_portals"].items():
+            if portal_data.get("url_status") == "accessible" and "url" in portal_data:
+                name = sanitize_filename(portal_data.get("name", portal_key))
+                filename = f"portal_{name}.html"
+                sources.append({
+                    "name": portal_data.get("name", portal_key),
+                    "url": portal_data["url"],
+                    "filename": filename,
+                    "type": "portal"
+                })
+    
+    # Extract from regions
+    if "regions" in config_data:
+        regions = config_data["regions"]
+        
+        # United States universities
+        if "united_states" in regions and "universities" in regions["united_states"]:
+            for uni in regions["united_states"]["universities"]:
+                uni_name = sanitize_filename(uni["name"])
+                if "departments" in uni:
+                    for dept in uni["departments"]:
+                        if dept.get("url_status") == "accessible" and "url" in dept:
+                            dept_name = sanitize_filename(dept["name"])
+                            filename = f"us_{uni_name}_{dept_name}.html"
+                            sources.append({
+                                "name": f"{uni['name']} - {dept['name']}",
+                                "url": dept["url"],
+                                "filename": filename,
+                                "type": "university"
+                            })
+        
+        # United States research institutes
+        if "united_states" in regions and "research_institutes" in regions["united_states"]:
+            for inst in regions["united_states"]["research_institutes"]:
+                if inst.get("url_status") == "accessible" and "url" in inst:
+                    name = sanitize_filename(inst["name"])
+                    filename = f"us_institute_{name}.html"
+                    sources.append({
+                        "name": inst["name"],
+                        "url": inst["url"],
+                        "filename": filename,
+                        "type": "institute"
+                    })
+        
+        # Other countries
+        if "other_countries" in regions and "countries" in regions["other_countries"]:
+            for country_key, country_data in regions["other_countries"]["countries"].items():
+                # Universities
+                if "universities" in country_data:
+                    for uni in country_data["universities"]:
+                        uni_name = sanitize_filename(uni["name"])
+                        if "departments" in uni:
+                            for dept in uni["departments"]:
+                                if dept.get("url_status") == "accessible" and "url" in dept:
+                                    dept_name = sanitize_filename(dept["name"])
+                                    filename = f"{country_key}_{uni_name}_{dept_name}.html"
+                                    sources.append({
+                                        "name": f"{uni['name']} - {dept['name']}",
+                                        "url": dept["url"],
+                                        "filename": filename,
+                                        "type": "university"
+                                    })
+                
+                # Research institutes
+                if "research_institutes" in country_data:
+                    for inst in country_data["research_institutes"]:
+                        if inst.get("url_status") == "accessible" and "url" in inst:
+                            name = sanitize_filename(inst["name"])
+                            filename = f"{country_key}_institute_{name}.html"
+                            sources.append({
+                                "name": inst["name"],
+                                "url": inst["url"],
+                                "filename": filename,
+                                "type": "institute"
+                            })
+    
+    return sources
+
+
+def download_html(url, filename, name):
     """Download HTML from URL and save to file."""
     try:
-        print(f"Downloading {filename} from {url}...")
+        print(f"Downloading {name}...")
+        print(f"  URL: {url}")
         response = requests.get(url, headers=HEADERS, timeout=30)
         response.raise_for_status()
         
@@ -60,31 +129,63 @@ def download_html(url, filename):
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(response.text)
         
-        print(f"✓ Saved {filename} ({len(response.text)} characters)")
+        size_kb = len(response.text) / 1024
+        print(f"  ✓ Saved {filename} ({size_kb:.1f} KB)")
         return True
     except requests.exceptions.RequestException as e:
-        print(f"✗ Failed to download {filename}: {e}")
+        print(f"  ✗ Failed: {e}")
         return False
 
 
 def main():
-    """Download all sample HTML files."""
-    print("=" * 60)
+    """Download all sample HTML files from scraping_sources.json."""
+    print("=" * 70)
     print("Downloading sample HTML files for parsing approach analysis")
-    print("=" * 60)
+    print("=" * 70)
     print()
     
+    # Load configuration
+    if not CONFIG_FILE.exists():
+        print(f"✗ Error: Configuration file not found: {CONFIG_FILE}")
+        return
+    
+    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+        config_data = json.load(f)
+    
+    # Extract all accessible sources
+    sources = extract_sources_from_config(config_data)
+    
+    if not sources:
+        print("✗ No accessible sources found in configuration file.")
+        return
+    
+    print(f"Found {len(sources)} accessible sources to download")
+    print()
+    
+    # Download all sources
     success_count = 0
-    for source in SAMPLE_SOURCES:
-        if download_html(source["url"], source["filename"]):
-            success_count += 1
-        time.sleep(2)  # Rate limiting
+    failed_sources = []
     
-    print()
-    print("=" * 60)
-    print(f"Download complete: {success_count}/{len(SAMPLE_SOURCES)} files downloaded")
-    print(f"Sample files saved to: {SAMPLES_DIR}")
-    print("=" * 60)
+    for i, source in enumerate(sources, 1):
+        print(f"[{i}/{len(sources)}] {source['type'].upper()}: {source['name']}")
+        if download_html(source["url"], source["filename"], source["name"]):
+            success_count += 1
+        else:
+            failed_sources.append(source)
+        time.sleep(2)  # Rate limiting
+        print()
+    
+    # Summary
+    print("=" * 70)
+    print(f"Download Summary:")
+    print(f"  ✓ Success: {success_count}/{len(sources)} files downloaded")
+    if failed_sources:
+        print(f"  ✗ Failed: {len(failed_sources)} files")
+        print("\nFailed sources:")
+        for source in failed_sources:
+            print(f"  - {source['name']}: {source['url']}")
+    print(f"\nSample files saved to: {SAMPLES_DIR.absolute()}")
+    print("=" * 70)
 
 
 if __name__ == "__main__":
