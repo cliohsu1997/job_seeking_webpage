@@ -25,8 +25,7 @@ job-seeking-webpage/
 │   │   ├── jobs.csv                # Current listings (not in git)
 │   │   └── archive/                # Historical processed data
 │   └── config/                     # Configuration files
-│       ├── scraping_sources.json   # All scraping sources organized by region/job nature
-│       ├── universities.json       # Legacy: University URLs (deprecated, use scraping_sources.json)
+│       ├── scraping_sources.json   # All scraping sources organized by region/job nature (includes url_status)
 │       └── scraping_rules.json     # Scraping rules and patterns
 │
 ├── scripts/                        # Automation scripts
@@ -87,6 +86,7 @@ job-seeking-webpage/
 - **Config**: Centralized in `data/config/`
   - **scraping_sources.json**: All scraping sources organized by region (mainland_china, united_states, other_countries) and job nature (universities, research_institutes, think_tanks, job_portals)
   - Each entry includes: institution name, department(s) [Economics, Management, Marketing], URL(s), scraping method, campus info, notes
+  - Each URL entry includes: `url_status` field ("accessible", "not_found", "forbidden", etc.) for verification tracking
 
 ### Code Organization
 - **Separation of concerns**: scraper → processor → generator
@@ -126,3 +126,6 @@ job-seeking-webpage/
 - **2025-12-31**: Created Phase 1 scraping strategy proposal (`design-scraping-strategy.md`)
 - **2025-12-31**: Created `scripts/scraper/check_config/` subfolder for configuration verification scripts
 - **2025-12-31**: Moved URL verification script to `scripts/scraper/check_config/verify_urls.py`
+- **2025-12-31**: Updated verification script to add url_status labels directly to scraping_sources.json
+- **2025-12-31**: Verified all initial URLs (20/20 accessible), added url_status="accessible" to each URL entry
+- **2025-12-31**: Deleted deprecated files: universities.json (replaced by scraping_sources.json), url_verification_results.json (status now in scraping_sources.json)

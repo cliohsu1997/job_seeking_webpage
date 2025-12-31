@@ -6,8 +6,11 @@
       "scraping_method": "rss_or_html",
       "region": "global",
       "job_nature": "portal",
-      "departments": ["Economics"],
-      "notes": "Primary source for economics job listings"
+      "departments": [
+        "Economics"
+      ],
+      "notes": "Primary source for economics job listings",
+      "url_status": "accessible"
     }
   },
   "regions": {
@@ -27,15 +30,17 @@
           "departments": [
             {
               "name": "Economics",
-              "url": "https://economics.harvard.edu/faculty/positions",
+              "url": "https://academicpositions.harvard.edu/",
               "scraping_method": "html_parser",
-              "notes": "Check for faculty positions page"
+              "notes": "Harvard Academic Positions portal",
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://www.hbs.edu/faculty/positions",
               "scraping_method": "html_parser",
-              "notes": "Harvard Business School"
+              "notes": "Harvard Business School",
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -51,15 +56,17 @@
           "departments": [
             {
               "name": "Economics",
-              "url": "https://economics.mit.edu/faculty/positions",
+              "url": "https://careers.mit.edu/",
               "scraping_method": "html_parser",
-              "notes": "Check for employment opportunities"
+              "notes": "MIT Careers portal - filter by Economics department",
+              "url_status": "accessible"
             },
             {
               "name": "Management",
-              "url": "https://mitsloan.mit.edu/faculty/positions",
+              "url": "https://careers.mit.edu/",
               "scraping_method": "html_parser",
-              "notes": "MIT Sloan School of Management"
+              "notes": "MIT Careers portal - filter by Sloan School of Management",
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -75,15 +82,17 @@
           "departments": [
             {
               "name": "Economics",
-              "url": "https://economics.stanford.edu/faculty/positions",
+              "url": "https://careersearch.stanford.edu/",
               "scraping_method": "html_parser",
-              "notes": "Check for job openings"
+              "notes": "Stanford Career Search - filter by Economics",
+              "url_status": "accessible"
             },
             {
               "name": "Management",
-              "url": "https://www.gsb.stanford.edu/faculty-research/faculty/positions",
+              "url": "https://careersearch.stanford.edu/",
               "scraping_method": "html_parser",
-              "notes": "Stanford Graduate School of Business"
+              "notes": "Stanford Career Search - filter by Graduate School of Business",
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -99,15 +108,17 @@
           "departments": [
             {
               "name": "Economics",
-              "url": "https://economics.uchicago.edu/faculty/positions",
+              "url": "https://www.uchicago.edu/jobs/",
               "scraping_method": "html_parser",
-              "notes": "Check for faculty positions"
+              "notes": "University of Chicago jobs portal - filter by Economics",
+              "url_status": "accessible"
             },
             {
               "name": "Management",
-              "url": "https://www.chicagobooth.edu/faculty/positions",
+              "url": "https://www.uchicago.edu/jobs/",
               "scraping_method": "html_parser",
-              "notes": "Booth School of Business"
+              "notes": "University of Chicago jobs portal - filter by Booth School of Business",
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -123,9 +134,10 @@
           "departments": [
             {
               "name": "Economics",
-              "url": "https://economics.princeton.edu/faculty/positions",
+              "url": "https://puwebp.princeton.edu/AcadHire/",
               "scraping_method": "html_parser",
-              "notes": "Check for faculty positions"
+              "notes": "Princeton Academic Hiring portal - filter by Economics",
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -142,13 +154,16 @@
           "name": "National Bureau of Economic Research (NBER)",
           "url": "https://www.nber.org/jobs",
           "scraping_method": "html_parser",
-          "departments": ["Economics"],
+          "departments": [
+            "Economics"
+          ],
           "location": {
             "city": "Cambridge",
             "state": "MA",
             "country": "United States"
           },
-          "notes": "Leading economics research organization"
+          "notes": "Leading economics research organization",
+          "url_status": "accessible"
         }
       ],
       "think_tanks": []
@@ -164,15 +179,17 @@
               "departments": [
                 {
                   "name": "Economics",
-                  "url": "https://www.lse.ac.uk/economics/jobs",
+                  "url": "https://jobs.lse.ac.uk/",
                   "scraping_method": "html_parser",
-                  "notes": "Check for job openings"
+                  "notes": "LSE jobs portal - filter by Economics department",
+                  "url_status": "accessible"
                 },
                 {
                   "name": "Management",
-                  "url": "https://www.lse.ac.uk/management/jobs",
+                  "url": "https://jobs.lse.ac.uk/",
                   "scraping_method": "html_parser",
-                  "notes": "Department of Management"
+                  "notes": "LSE jobs portal - filter by Management department",
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -187,15 +204,17 @@
               "departments": [
                 {
                   "name": "Economics",
-                  "url": "https://www.economics.ox.ac.uk/jobs",
+                  "url": "https://www.jobs.ox.ac.uk/",
                   "scraping_method": "html_parser",
-                  "notes": "Department of Economics"
+                  "notes": "Oxford jobs portal - filter by Economics department",
+                  "url_status": "accessible"
                 },
                 {
                   "name": "Management",
-                  "url": "https://www.sbs.ox.ac.uk/about/jobs",
+                  "url": "https://www.jobs.ox.ac.uk/",
                   "scraping_method": "html_parser",
-                  "notes": "Saïd Business School"
+                  "notes": "Oxford jobs portal - filter by Saïd Business School",
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -211,12 +230,15 @@
               "name": "Centre for Economic Policy Research (CEPR)",
               "url": "https://cepr.org/jobs",
               "scraping_method": "html_parser",
-              "departments": ["Economics"],
+              "departments": [
+                "Economics"
+              ],
               "location": {
                 "city": "London",
                 "country": "United Kingdom"
               },
-              "notes": "Leading European economics research network"
+              "notes": "Leading European economics research network",
+              "url_status": "accessible"
             }
           ],
           "think_tanks": []
@@ -228,15 +250,17 @@
               "departments": [
                 {
                   "name": "Economics",
-                  "url": "https://www.economics.utoronto.ca/jobs",
+                  "url": "https://jobs.utoronto.ca/",
                   "scraping_method": "html_parser",
-                  "notes": "Department of Economics"
+                  "notes": "University of Toronto jobs portal - filter by Economics",
+                  "url_status": "accessible"
                 },
                 {
                   "name": "Management",
-                  "url": "https://www.rotman.utoronto.ca/faculty/jobs",
+                  "url": "https://jobs.utoronto.ca/",
                   "scraping_method": "html_parser",
-                  "notes": "Rotman School of Management"
+                  "notes": "University of Toronto jobs portal - filter by Rotman",
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -258,15 +282,17 @@
               "departments": [
                 {
                   "name": "Economics",
-                  "url": "https://fbe.unimelb.edu.au/economics/jobs",
+                  "url": "https://jobs.unimelb.edu.au/",
                   "scraping_method": "html_parser",
-                  "notes": "Department of Economics"
+                  "notes": "University of Melbourne jobs portal - filter by Economics",
+                  "url_status": "accessible"
                 },
                 {
                   "name": "Management",
-                  "url": "https://fbe.unimelb.edu.au/management/jobs",
+                  "url": "https://jobs.unimelb.edu.au/",
                   "scraping_method": "html_parser",
-                  "notes": "Department of Management"
+                  "notes": "University of Melbourne jobs portal - filter by Management",
+                  "url_status": "accessible"
                 }
               ],
               "location": {
@@ -291,4 +317,3 @@
     "organization": "Sources organized by region and job nature for better management"
   }
 }
-

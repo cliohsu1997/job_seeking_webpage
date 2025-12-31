@@ -32,6 +32,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] Dependencies installed (32 packages via Poetry)
 - [x] Sample download script created (`scripts/scraper/download_samples.py`)
 - [x] URL verification script created (`scripts/scraper/check_config/verify_urls.py`)
+- [x] All URLs verified and updated in `scraping_sources.json` (20/20 accessible, url_status labels added)
 - [ ] HTML parsing approach analysis (download samples, compare approaches)
 - [ ] Base scraper framework created
 - [ ] AEA JOE scraper implemented

@@ -23,7 +23,9 @@
   - [x] Established entry structure with departments array
 - [x] Created URL verification script (`scripts/scraper/check_config/verify_urls.py`)
 - [x] Organized configuration verification scripts in `scripts/scraper/check_config/` subfolder
-- [ ] Verify all URLs in initial entries (see `data/config/URL_VERIFICATION.md`)
+- [x] Updated verification script to add url_status labels directly to `scraping_sources.json`
+- [x] Verified all URLs in initial entries (20/20 accessible, all marked with url_status="accessible")
+- [x] Deleted deprecated files (universities.json, url_verification_results.json)
 - [ ] Compile remaining university lists from QS Economics & Econometrics rankings
   - [ ] Mainland China: Top 100 universities (start with top 20)
   - [ ] United States: Expand to top 100 universities (currently 5)
