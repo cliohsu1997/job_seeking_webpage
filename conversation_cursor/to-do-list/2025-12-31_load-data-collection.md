@@ -39,7 +39,12 @@
   - [x] Fixed 40 problematic URLs with alternative paths
   - [x] All URLs marked with url_status (accessible, not_found, forbidden, error, pending_verification)
   - [x] Handled multiple departments per university (Economics, Management, Marketing)
-- [ ] Complete Chinese university URL verification (100+ URLs currently pending_verification)
+- [x] Enhanced URL verification script with Chinese keyword detection (18 Chinese job-related keywords: 招聘, 职位, 岗位, 人才, etc.)
+- [x] Updated verification script to re-check Chinese URLs for keyword detection
+- [x] Completed Chinese university URL verification with improved keyword detection
+  - [x] 58 Chinese university URLs newly verified
+  - [x] Many Chinese URLs now properly detect Chinese job-related keywords (招聘, 岗位, 人才, 工作, 人才招聘, etc.)
+  - [x] Final status: 172/250 URLs accessible (69% success rate)
 - [ ] Update `scraping_rules.json` with additional patterns if needed
 
 ### Environment Setup

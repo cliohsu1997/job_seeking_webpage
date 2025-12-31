@@ -22,11 +22,37 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 
-# Keywords to check if page might contain job postings
-JOB_KEYWORDS = [
+# Keywords to check if page might contain job postings (English)
+JOB_KEYWORDS_EN = [
     "job", "position", "employment", "career", "faculty", "recruit",
     "opening", "vacancy", "hire", "application", "apply", "posting"
 ]
+
+# Chinese keywords for job postings (Simplified Chinese)
+JOB_KEYWORDS_CN = [
+    "招聘",      # recruitment
+    "职位",      # position/job
+    "岗位",      # position/post
+    "人才",      # talent
+    "应聘",      # application
+    "申请",      # application
+    "工作",      # work/job
+    "就业",      # employment
+    "职位信息",   # job information
+    "招聘信息",   # recruitment information
+    "人才招聘",   # talent recruitment
+    "教师招聘",   # faculty recruitment
+    "教学岗位",   # teaching position
+    "科研岗位",   # research position
+    "人事",      # human resources
+    "人事处",     # human resources office
+    "人才引进",   # talent introduction/recruitment
+    "师资",      # faculty/staff
+    "师资招聘",   # faculty recruitment
+]
+
+# Combined keywords for checking
+JOB_KEYWORDS = JOB_KEYWORDS_EN + JOB_KEYWORDS_CN
 
 
 def load_config() -> Dict:
@@ -205,6 +231,11 @@ def set_url_status(config: Dict, path: List, status: str):
     obj["url_status"] = status
 
 
+def is_chinese_url(url: str, description: str) -> bool:
+    """Check if URL is for a Chinese university/institution."""
+    return "(China)" in description or ".edu.cn" in url or ".cn" in url
+
+
 def check_url(url: str, description: str) -> Dict:
     """
     Check if URL is accessible.
@@ -218,9 +249,13 @@ def check_url(url: str, description: str) -> Dict:
         "content_check": None
     }
     
+    is_chinese = is_chinese_url(url, description)
+    
     try:
         print(f"Checking: {description}")
         print(f"  URL: {url}")
+        if is_chinese:
+            print(f"  [Chinese URL - checking for Chinese keywords]")
         
         response = requests.get(
             url,
@@ -229,14 +264,29 @@ def check_url(url: str, description: str) -> Dict:
             allow_redirects=True
         )
         
+        # Set encoding for Chinese content
+        if is_chinese:
+            response.encoding = response.apparent_encoding or 'utf-8'
+        
         result["status_code"] = response.status_code
         
         if response.status_code == 200:
             result["status"] = "accessible"
             
             # Quick content check - look for job-related keywords in text
-            text_lower = response.text.lower()
-            found_keywords = [kw for kw in JOB_KEYWORDS if kw in text_lower]
+            # For Chinese URLs, check both English and Chinese keywords
+            # For non-Chinese URLs, primarily check English keywords
+            text_content = response.text
+            
+            if is_chinese:
+                # Check both English and Chinese keywords for Chinese URLs
+                found_keywords_en = [kw for kw in JOB_KEYWORDS_EN if kw.lower() in text_content.lower()]
+                found_keywords_cn = [kw for kw in JOB_KEYWORDS_CN if kw in text_content]
+                found_keywords = found_keywords_en + found_keywords_cn
+            else:
+                # For non-Chinese URLs, check English keywords
+                text_lower = text_content.lower()
+                found_keywords = [kw for kw in JOB_KEYWORDS_EN if kw in text_lower]
             
             if found_keywords:
                 result["content_check"] = "likely_contains_jobs"
@@ -245,7 +295,11 @@ def check_url(url: str, description: str) -> Dict:
             
             print(f"  ✓ Accessible (Status: {response.status_code}, Size: {len(response.text)} chars)")
             if result["content_check"] == "likely_contains_jobs":
-                print(f"  ✓ Found job-related keywords: {', '.join(found_keywords[:5])}")
+                # Show keywords found (limit display)
+                keywords_display = found_keywords[:5]
+                if len(found_keywords) > 5:
+                    keywords_display.append(f"... and {len(found_keywords) - 5} more")
+                print(f"  ✓ Found job-related keywords: {', '.join(keywords_display)}")
             else:
                 print(f"  ⚠ No job-related keywords found (may still be a job page)")
         
@@ -298,13 +352,22 @@ def verify_urls(config: Dict) -> Tuple[Dict, List[Dict]]:
     urls_with_path = extract_urls_with_path(config)
     
     # Separate URLs that need verification from those already verified
+    # Also re-check Chinese URLs that are already accessible to detect Chinese keywords
     urls_to_check = []
     verified_count = 0
+    chinese_accessible_count = 0
     
     for url, source_type, description, path in urls_with_path:
         current_status = get_url_status(config, path)
+        is_chinese = is_chinese_url(url, description)
+        
         if current_status == "accessible":
-            verified_count += 1
+            # Re-check Chinese URLs to detect Chinese keywords
+            if is_chinese:
+                urls_to_check.append((url, source_type, description, path))
+                chinese_accessible_count += 1
+            else:
+                verified_count += 1
         else:
             urls_to_check.append((url, source_type, description, path))
     
@@ -314,6 +377,8 @@ def verify_urls(config: Dict) -> Tuple[Dict, List[Dict]]:
     print("=" * 80)
     print(f"URL Verification - Total URLs: {total_urls}")
     print(f"  ✓ Previously verified (skipped): {verified_count}")
+    if chinese_accessible_count > 0:
+        print(f"  🔍 Re-checking Chinese URLs for keyword detection: {chinese_accessible_count}")
     print(f"  🔍 Checking now: {check_count}")
     print("=" * 80)
     print()

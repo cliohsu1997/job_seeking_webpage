@@ -37,11 +37,13 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] Dependencies installed (32 packages via Poetry)
 - [x] Sample download script created and updated (`scripts/scraper/download_samples.py` - now reads from scraping_sources.json)
 - [x] URL verification script created and enhanced (`scripts/scraper/check_config/verify_urls.py` - supports mainland_china region)
-- [x] URL verification completed: 113/139 URLs accessible (81% success rate)
-  - [x] Verified US universities, research institutes, and other countries
+- [x] URL verification script enhanced with Chinese keyword detection (18 Chinese job-related keywords added: 招聘, 职位, 岗位, 人才, etc.)
+- [x] URL verification script updated to re-check Chinese URLs for keyword detection
+- [x] URL verification completed: 172/250 URLs accessible (69% success rate)
+  - [x] Verified US universities, research institutes, and other countries (113 accessible)
   - [x] Fixed problematic URLs (40 URLs updated with alternative paths)
-  - [x] Chinese university URLs ready for verification (pending_verification status)
-- [ ] Complete Chinese university URL verification (100+ URLs to check)
+  - [x] Chinese university URLs verified with Chinese keyword detection (58 newly verified, many showing Chinese keywords like 招聘, 岗位, 人才, 工作, 人才招聘)
+  - [x] Chinese keyword detection working - many accessible Chinese URLs now properly detect job-related content
 - [ ] HTML parsing approach analysis (download samples, compare approaches)
 - [ ] Base scraper framework created
 - [ ] AEA JOE scraper implemented

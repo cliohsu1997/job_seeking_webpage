@@ -26,14 +26,14 @@
               "url": "https://hr.pku.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "Peking University HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://hr.pku.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "Peking University HR portal - filter by Management",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -51,14 +51,14 @@
               "url": "https://www.tsinghua.edu.cn/en/hr/",
               "scraping_method": "html_parser",
               "notes": "Tsinghua HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             },
             {
               "name": "Management",
               "url": "https://www.tsinghua.edu.cn/en/hr/",
               "scraping_method": "html_parser",
               "notes": "Tsinghua HR portal - filter by Management",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             }
           ],
           "location": {
@@ -76,14 +76,14 @@
               "url": "https://hr.fudan.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "Fudan HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://hr.fudan.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "Fudan HR portal - filter by Management",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -101,14 +101,14 @@
               "url": "https://join.sjtu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SJTU join portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://join.sjtu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SJTU join portal - filter by Management",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -126,14 +126,14 @@
               "url": "https://hr.zju.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ZJU HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             },
             {
               "name": "Management",
               "url": "https://hr.zju.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ZJU HR portal - filter by Management",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -151,7 +151,7 @@
               "url": "https://rsc.nju.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NJU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -169,7 +169,7 @@
               "url": "https://rsc.sysu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SYSU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -187,7 +187,7 @@
               "url": "https://rsb.whu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "WHU RSB portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -205,7 +205,7 @@
               "url": "https://hr.hust.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HUST HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -223,7 +223,7 @@
               "url": "https://rsc.xmu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "XMU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -241,7 +241,7 @@
               "url": "https://hr.ruc.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "RUC HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -259,7 +259,7 @@
               "url": "https://hr.bnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "BNU HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -277,7 +277,7 @@
               "url": "https://hr.tongji.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "Tongji HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -295,7 +295,7 @@
               "url": "https://rsc.nankai.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "Nankai RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -313,7 +313,7 @@
               "url": "https://www.rsc.sdu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SDU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -331,7 +331,7 @@
               "url": "https://rsc.scu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SCU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -349,7 +349,7 @@
               "url": "https://rsc.jlu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "JLU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -367,7 +367,7 @@
               "url": "https://rsc.hit.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HIT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -385,7 +385,7 @@
               "url": "https://rsc.xjtu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "XJTU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -403,7 +403,7 @@
               "url": "https://rsc.cufe.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CUFE RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -421,7 +421,7 @@
               "url": "https://rsc.swufe.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SWUFE RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -439,7 +439,7 @@
               "url": "https://rsc.dufe.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "DUFE RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -457,7 +457,7 @@
               "url": "https://rsc.shufe.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SUFE RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -475,7 +475,7 @@
               "url": "https://rsc.zuel.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ZUEL RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -493,7 +493,7 @@
               "url": "https://hr.tju.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "TJU HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -511,7 +511,7 @@
               "url": "https://rsc.dlut.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "DUT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -529,7 +529,7 @@
               "url": "https://rsc.nenu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NENU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -547,7 +547,7 @@
               "url": "https://hr.ecnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ECNU HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -565,7 +565,7 @@
               "url": "https://rsc.scnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SCNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -583,7 +583,7 @@
               "url": "https://rsc.bit.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "BIT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -601,7 +601,7 @@
               "url": "https://hr.bjut.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "BJUT HR portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -619,7 +619,7 @@
               "url": "https://rsc.cueb.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CUEB RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -637,7 +637,7 @@
               "url": "https://rsc.jxufe.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "JUFE RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -655,7 +655,7 @@
               "url": "https://rsc.sxu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SXU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -673,7 +673,7 @@
               "url": "https://rsc.lzu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "LZU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -691,7 +691,7 @@
               "url": "https://rsc.ynu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "YNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -709,7 +709,7 @@
               "url": "https://rsc.gxu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "GXU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -727,7 +727,7 @@
               "url": "https://rsc.imu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "IMU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -745,7 +745,7 @@
               "url": "https://rsc.xju.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "XJU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -763,7 +763,7 @@
               "url": "https://rsc.bjtu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "BJTU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -781,7 +781,7 @@
               "url": "https://rsc.bfsu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "BFSU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -799,7 +799,7 @@
               "url": "https://rsc.buct.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "BUCT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -817,7 +817,7 @@
               "url": "https://rsc.cumt.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CUMT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -835,7 +835,7 @@
               "url": "https://rsc.cup.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CUP RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -853,7 +853,7 @@
               "url": "https://rsc.cau.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CAU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -871,7 +871,7 @@
               "url": "https://rsc.cug.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CUG RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "forbidden"
             }
           ],
           "location": {
@@ -889,7 +889,7 @@
               "url": "https://rsc.cupl.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CUPL RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -907,7 +907,7 @@
               "url": "https://rsc.csu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CSU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -925,7 +925,7 @@
               "url": "https://rsc.cqu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "CQU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -943,7 +943,7 @@
               "url": "https://rsc.dlmu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "DLMU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "timeout"
             }
           ],
           "location": {
@@ -961,7 +961,7 @@
               "url": "https://rsc.ecust.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ECUST RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -979,7 +979,7 @@
               "url": "https://rsc.fjnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "FJNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -997,7 +997,7 @@
               "url": "https://rsc.fzu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "FZU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1015,7 +1015,7 @@
               "url": "https://rsc.gdufs.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "GDUFS RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1033,7 +1033,7 @@
               "url": "https://rsc.gxnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "GXNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1051,7 +1051,7 @@
               "url": "https://rsc.gzu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "GZU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1069,7 +1069,7 @@
               "url": "https://rsc.hainanu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "error"
             }
           ],
           "location": {
@@ -1087,7 +1087,7 @@
               "url": "https://rsc.hrbeu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HEU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "timeout"
             }
           ],
           "location": {
@@ -1105,7 +1105,7 @@
               "url": "https://rsc.hbu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HBU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1123,7 +1123,7 @@
               "url": "https://rsc.hebut.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HEBUT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "forbidden"
             }
           ],
           "location": {
@@ -1141,7 +1141,7 @@
               "url": "https://rsc.henu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HENU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1159,7 +1159,7 @@
               "url": "https://rsc.htu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HTU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1177,7 +1177,7 @@
               "url": "https://rsc.hhu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HHU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1195,7 +1195,7 @@
               "url": "https://rsc.hunnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HUNNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1213,7 +1213,7 @@
               "url": "https://rsc.hnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1231,7 +1231,7 @@
               "url": "https://rsc.jsnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "JSNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "timeout"
             }
           ],
           "location": {
@@ -1249,7 +1249,7 @@
               "url": "https://rsc.ujs.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "UJS RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1267,7 +1267,7 @@
               "url": "https://rsc.jlnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "JLNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1285,7 +1285,7 @@
               "url": "https://rsc.jnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "JNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1303,7 +1303,7 @@
               "url": "https://rsc.lnnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "LNNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1321,7 +1321,7 @@
               "url": "https://rsc.lnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "LNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1339,7 +1339,7 @@
               "url": "https://rsc.njau.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NJAU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1357,7 +1357,7 @@
               "url": "https://rsc.njnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NJNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "error"
             }
           ],
           "location": {
@@ -1375,7 +1375,7 @@
               "url": "https://rsc.nuaa.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NUAA RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1393,7 +1393,7 @@
               "url": "https://rsc.njust.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NJUST RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1411,7 +1411,7 @@
               "url": "https://rsc.nbu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NBU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1429,7 +1429,7 @@
               "url": "https://rsc.ncepu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NCEPU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "timeout"
             }
           ],
           "location": {
@@ -1447,7 +1447,7 @@
               "url": "https://rsc.nefu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NEFU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1465,7 +1465,7 @@
               "url": "https://rsc.nwafu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NWAFU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1483,7 +1483,7 @@
               "url": "https://rsc.nwnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NWNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1501,7 +1501,7 @@
               "url": "https://rsc.nwu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "NWU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1519,7 +1519,7 @@
               "url": "https://rsc.qdu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "QDU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1537,7 +1537,7 @@
               "url": "https://rsc.qfnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "QFNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1555,7 +1555,7 @@
               "url": "https://rsc.sdnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SDNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1573,7 +1573,7 @@
               "url": "https://rsc.shisu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SISU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1591,7 +1591,7 @@
               "url": "https://rsc.shnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SHNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1609,7 +1609,7 @@
               "url": "https://rsc.shu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SHU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1627,7 +1627,7 @@
               "url": "https://rsc.szu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SZU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1645,7 +1645,7 @@
               "url": "https://rsc.sicau.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SICAU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1663,7 +1663,7 @@
               "url": "https://rsc.sicnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SICNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "error"
             }
           ],
           "location": {
@@ -1681,7 +1681,7 @@
               "url": "https://rsc.suda.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SUDA RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1699,7 +1699,7 @@
               "url": "https://rsc.scut.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SCUT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1717,7 +1717,7 @@
               "url": "https://rsc.seu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SEU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1735,7 +1735,7 @@
               "url": "https://rsc.swjtu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SWJTU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1753,7 +1753,7 @@
               "url": "https://rsc.swu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "SWU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1771,7 +1771,7 @@
               "url": "https://rsc.tyut.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "TYUT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1789,7 +1789,7 @@
               "url": "https://rsc.tjnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "TJNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1807,7 +1807,7 @@
               "url": "https://rsc.tjufe.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "TUFE RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1825,7 +1825,7 @@
               "url": "https://rsc.wzu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "WZU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1843,7 +1843,7 @@
               "url": "https://rsc.xidian.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "XDU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1861,7 +1861,7 @@
               "url": "https://career.xjtlu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "XJTLU career portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "not_found"
             }
           ],
           "location": {
@@ -1879,7 +1879,7 @@
               "url": "https://rsc.ysu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "YSU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1897,7 +1897,7 @@
               "url": "https://rsc.ynnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "YNNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1915,7 +1915,7 @@
               "url": "https://rsc.zjnu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ZJNU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "accessible"
             }
           ],
           "location": {
@@ -1933,7 +1933,7 @@
               "url": "https://rsc.zjut.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ZJUT RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -1951,7 +1951,7 @@
               "url": "https://rsc.zzu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "ZZU RSC portal - filter by Economics",
-              "url_status": "pending_verification"
+              "url_status": "connection_error"
             }
           ],
           "location": {
@@ -3880,7 +3880,7 @@
                   "url": "https://careers.adelaide.edu.au/",
                   "scraping_method": "html_parser",
                   "notes": "Adelaide careers portal - filter by Economics",
-                  "url_status": "error"
+                  "url_status": "accessible"
                 }
               ],
               "location": {
