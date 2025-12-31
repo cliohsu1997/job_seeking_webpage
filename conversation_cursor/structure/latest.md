@@ -46,8 +46,9 @@ job-seeking-webpage/
 │
 ├── environment/                    # Environment management tools
 │   ├── python/
-│   │   ├── tools/                 # Environment management tool configs
-│   │   │   ├── poetry.lock        # Poetry lock file (also in root)
+│   │   ├── tools/                 # Environment management tool configs (source of truth)
+│   │   │   ├── poetry.lock        # Poetry lock file
+│   │   │   ├── pyproject.toml     # Poetry configuration (copy, root version required by Poetry)
 │   │   │   └── README.md         # Tools documentation
 │   │   └── venv/                 # Actual virtual environment (managed by Poetry)
 │   └── README.md                  # Environment folder documentation
@@ -65,9 +66,10 @@ job-seeking-webpage/
 - **Poetry Location**: `C:\Users\clioh\AppData\Roaming\pypoetry\venv\Scripts\poetry.exe`
 - **Python Location**: `C:\Users\clioh\AppData\Local\Programs\Python\Python313\python.exe` (Python 3.13.5)
 - **Virtual environment**: Configured to use `./environment/python/venv/` folder
-- **Environment tools**: Lock files and configs stored in `./environment/python/tools/`
-- **Configuration**: `pyproject.toml` (package-mode = false) - kept in root (Poetry requirement)
-- **Lock file**: `poetry.lock` - stored in `environment/python/tools/` and root (Poetry requirement)
+- **Environment tools**: All Poetry-related files stored in `./environment/python/tools/` (source of truth)
+- **Poetry Rule**: All Poetry-related files (poetry.lock, pyproject.toml, configs) must be kept in `environment/python/tools/`
+- **Configuration**: `pyproject.toml` must also exist in root (Poetry requirement), but tools/ version is authoritative
+- **Lock file**: `poetry.lock` - stored in `environment/python/tools/` (source of truth)
 - **Dependencies**: All installed and locked
 
 ## Key Structural Decisions
