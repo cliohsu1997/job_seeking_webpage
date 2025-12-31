@@ -100,6 +100,41 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                         ["regions", "united_states", "think_tanks", tank_idx, "url"]
                     ))
         
+        # Mainland China
+        if "mainland_china" in regions:
+            china_region = regions["mainland_china"]
+            
+            # Universities
+            for uni_idx, uni in enumerate(china_region.get("universities", [])):
+                for dept_idx, dept in enumerate(uni.get("departments", [])):
+                    if "url" in dept:
+                        urls.append((
+                            dept["url"],
+                            "university_department",
+                            f"{uni.get('name', 'Unknown')} (China) - {dept.get('name', 'Unknown')}",
+                            ["regions", "mainland_china", "universities", uni_idx, "departments", dept_idx, "url"]
+                        ))
+            
+            # Research institutes
+            for inst_idx, inst in enumerate(china_region.get("research_institutes", [])):
+                if "url" in inst:
+                    urls.append((
+                        inst["url"],
+                        "research_institute",
+                        f"{inst.get('name', 'Unknown')} (China)",
+                        ["regions", "mainland_china", "research_institutes", inst_idx, "url"]
+                    ))
+            
+            # Think tanks
+            for tank_idx, tank in enumerate(china_region.get("think_tanks", [])):
+                if "url" in tank:
+                    urls.append((
+                        tank["url"],
+                        "think_tank",
+                        f"{tank.get('name', 'Unknown')} (China)",
+                        ["regions", "mainland_china", "think_tanks", tank_idx, "url"]
+                    ))
+        
         # Other countries
         if "other_countries" in regions:
             oc_region = regions["other_countries"]
