@@ -8,7 +8,7 @@
 2. Read corresponding to-do list in `conversation_cursor/to-do-list/` (format: `YYYY-MM-DD_phase-name.md`)
 3. After reading the to-do list, find and read the corresponding proposal document in `conversation_cursor/dates/YYYY-MM-DD/` (proposals typically named with verbs like `design-`, `create-`, etc.)
 4. Read `conversation_cursor/structure/latest.md` for project structure
-5. Check today's dated folder in `conversation_cursor/dates/YYYY-MM-DD/` for context
+5. Check the folder closest to today in `conversation_cursor/dates/YYYY-MM-DD/` for context
 6. Confirm new requests align with recorded goals to avoid duplicate work
 7. Mention this file when summarizing updates
 
