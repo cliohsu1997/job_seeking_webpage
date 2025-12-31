@@ -21,6 +21,24 @@
 - **Environment Tools**: `./environment/python/tools/` (all Poetry-related files: poetry.lock, pyproject.toml copy, configs)
 - **Poetry Rule**: All Poetry-related files must be kept in `environment/python/tools/` (source of truth). Root `pyproject.toml` and `poetry.lock` are ignored in git - they exist locally for Poetry to function but are copies from tools/.
 
+## Running Python
+
+### Activate Virtual Environment
+```bash
+# Windows PowerShell
+.\environment\python\venv\Scripts\Activate.ps1
+
+# Windows CMD
+.\environment\python\venv\Scripts\activate.bat
+```
+
+### Run Python
+```bash
+python script.py
+python -m module_name
+python tests/setup-project/test_python_setup.py
+```
+
 ## Coding & Workflow Rules
 
 ### Code Formatting

@@ -16,6 +16,8 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - Documentation framework established (read_it.md, .cursorrules, README.md)
 - Environment management organized (tools/ and venv/ separation)
 - Progress tracking system established (progress, structure, to-do lists)
+- Test structure created with phase-based subfolders
+- Python execution documented and tested
 - **To-Do List**: `2025-12-31_project-setup.md` (all tasks completed)
 
 ## What's Next
