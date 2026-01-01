@@ -48,11 +48,16 @@ Or run commands using Poetry:
 poetry run python scripts/scheduler.py
 ```
 
-3. Configure universities to scrape in `data/config/universities.json`
+3. Configure sources to scrape in `data/config/scraping_sources.json` (see `data/config/README.md`)
 
-4. Run the scraper:
+4. (Optional) Verify URLs before scraping:
 ```bash
-python scripts/scheduler.py
+poetry run python scripts/scraper/check_config/verify_urls.py
+```
+
+5. Run the scraper:
+```bash
+poetry run python scripts/scraper/aea_scraper.py
 ```
 
 ## Workflow
@@ -62,6 +67,44 @@ The project follows a **Load → Transform → Export** structure:
 1. **LOAD**: Scrape job listings from AEA and university websites
 2. **TRANSFORM**: Parse, normalize, and deduplicate the data
 3. **EXPORT**: Generate HTML webpage and JSON/CSV files
+
+## Scraping
+
+### Current Coverage
+
+- **176 accessible URLs** across multiple regions:
+  - Mainland China: 100 universities
+  - United States: ~60 universities
+  - Other Countries: UK, Canada, Australia, Germany, France, Netherlands, Singapore, Switzerland
+  - Research Institutes: NBER, CEPR, Federal Reserve Banks, and more
+
+### Scraper Framework
+
+The scraper framework includes:
+- **AEA JOE Scraper**: RSS/HTML fallback for AEA job listings
+- **University Scraper**: Generic scraper for university websites
+- **Institute Scraper**: Scraper for research institutes and think tanks
+- **Parsers**: HTML, RSS, text extraction, and date parsing
+- **Utilities**: Rate limiting, retry handling, user agent rotation
+
+### Usage
+
+```bash
+# Run AEA scraper
+poetry run python scripts/scraper/aea_scraper.py
+
+# Scrape all universities from configuration
+poetry run python -c "from scripts.scraper.university_scraper import scrape_all_universities; scrape_all_universities()"
+
+# Verify URLs in configuration
+poetry run python scripts/scraper/check_config/verify_urls.py
+```
+
+### Documentation
+
+- **Scraper Usage**: See `scripts/scraper/README.md` for detailed scraper documentation
+- **Adding Sources**: See `docs/SCRAPING_GUIDE.md` for guide on adding new sources
+- **Configuration**: See `data/config/README.md` for configuration file structure
 
 ## Daily Updates
 

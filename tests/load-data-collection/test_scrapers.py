@@ -14,7 +14,11 @@ import unittest
 import sys
 from pathlib import Path
 
-# Add tests directory to path
+# Add project root to path for imports
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root / "scripts" / "scraper"))
+
+# Add tests directory to path for test modules
 test_dir = Path(__file__).parent
 sys.path.insert(0, str(test_dir))
 

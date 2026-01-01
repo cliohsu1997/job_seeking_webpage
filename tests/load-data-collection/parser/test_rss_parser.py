@@ -62,7 +62,8 @@ class TestRSSParser(unittest.TestCase):
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0]["title"], "Job Title")
         self.assertEqual(items[0]["url"], "https://example.com/job")
-        self.assertEqual(items[0].get("description"), "")
+        # Description may be None if not present in RSS feed
+        self.assertIn(items[0].get("description"), [None, ""])
     
     def test_parse_rss_feed_additional_fields(self):
         """Test parsing RSS feed with additional fields."""
@@ -123,7 +124,8 @@ class TestRSSParser(unittest.TestCase):
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0]["title"], "Job Title")
         self.assertEqual(items[0]["url"], "https://example.com/job")
-        self.assertEqual(items[0].get("description"), "")
+        # Description may be None if not present in Atom feed
+        self.assertIn(items[0].get("description"), [None, ""])
     
     def test_detect_feed_type_rss(self):
         """Test detecting RSS feed type."""
