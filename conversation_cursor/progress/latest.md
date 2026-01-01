@@ -61,12 +61,28 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [ ] Webpage styling completion
 - **To-Do List**: To be created as `YYYY-MM-DD_export-output-generation.md` when Phase 3 begins
 
+### ⏸️ Phase 4: DEPLOY - Deployment & Automation (PENDING)
+**Status**: Waiting for Phase 3
+- [ ] Web hosting setup and configuration
+- [ ] Automated scheduling system implementation
+- [ ] Daily/weekly scraping automation
+- [ ] Ongoing URL verification and maintenance (verify more URLs, update non-accessible URLs)
+- [ ] Error monitoring and alerting
+- [ ] Performance optimization
+- [ ] Backup and recovery procedures
+- [ ] Documentation for deployment and operations
+- **To-Do List**: To be created as `YYYY-MM-DD_deploy-automation.md` when Phase 4 begins
+
 ## Pipeline Flow
 
 ```
-[✅ COMPLETED] Setup → [🔄 NEXT] Load → [⏸️ PENDING] Transform → [⏸️ PENDING] Export
+[✅ COMPLETED] Setup → [🔄 NEXT] Load → [⏸️ PENDING] Transform → [⏸️ PENDING] Export → [⏸️ PENDING] Deploy
 ```
 
 ## Current Focus
 
 **Phase 1: LOAD - Data Collection** is in progress. Configuration setup is complete. Next: HTML parsing approach analysis and scraper framework development.
+
+## Future Phases
+
+**Phase 4: DEPLOY - Deployment & Automation** will handle web hosting, automated scheduling, monitoring, and ongoing maintenance of the job aggregator system.
