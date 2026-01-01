@@ -1,64 +1,50 @@
-# Configuration Files Guide
+# Configuration Guide
 
-## scraping_sources.json
+Configuration files for scraping sources and rules.
 
-This file contains all sources for scraping job listings, organized by region and job nature.
+## Files
 
-### Structure
+- **`scraping_sources.json`**: All sources organized by accessibility and region
+- **`scraping_rules.json`**: Patterns for extracting data (deadlines, keywords, dates)
 
-Each university/institution entry should include:
-- `name`: Full institution name
-- `departments`: Array of department objects with:
-  - `name`: Department name (Economics, Management, Marketing)
-  - `url`: URL to job postings page
-  - `scraping_method`: html_parser, rss, or javascript
-- `location`: Object with city, state/province, country
-- `campus`: Campus name if multiple campuses (only if separate posting pages)
-- `scraping_method`: Primary scraping method
-- `notes`: Any special considerations
-
-### Example Entry
+## Structure
 
 ```json
 {
-  "name": "Harvard University",
-  "departments": [
-    {
-      "name": "Economics",
-      "url": "https://economics.harvard.edu/faculty/positions",
-      "scraping_method": "html_parser"
-    },
-    {
-      "name": "Management",
-      "url": "https://www.hbs.edu/faculty/positions",
-      "scraping_method": "html_parser"
+  "accessible": {
+    "job_portals": { ... },
+    "regions": {
+      "united_states": { ... },
+      "mainland_china": { ... },
+      "other_countries": { ... }
     }
-  ],
-  "location": {
-    "city": "Cambridge",
-    "state": "MA",
-    "country": "United States"
   },
-  "scraping_method": "html_parser",
-  "notes": "Check for faculty positions page"
+  "non_accessible": { ... }
 }
 ```
 
-## scraping_rules.json
+## Adding a Source
 
-Contains patterns and rules for extracting data from HTML:
-- Deadline patterns (regex)
-- Link patterns
-- Material keywords
-- Date formats
+1. Add entry to appropriate region in `scraping_sources.json`
+2. Run `scripts/scraper/check_config/verify_urls.py` to verify
+3. Verified URLs move from `non_accessible` to `accessible`
 
-## Compilation Process
+## Entry Format
 
-1. Use QS World University Rankings - Economics & Econometrics subject ranking
-2. For each university, find:
-   - Economics department job posting URL
-   - Management/Business school job posting URL
-   - Marketing department job posting URL (if separate)
-3. Verify URLs are accessible
-4. Note any special considerations (authentication, JavaScript, etc.)
+```json
+{
+  "name": "University Name",
+  "departments": [{
+    "name": "Economics",
+    "url": "https://example.edu/jobs",
+    "scraping_method": "html_parser"
+  }]
+}
+```
 
+## Current Status
+
+- **176 accessible URLs** (70% success rate)
+- **74 non-accessible URLs** (pending verification)
+
+See `docs/SCRAPING_GUIDE.md` for detailed adding instructions.
