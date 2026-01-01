@@ -20,7 +20,7 @@ job-seeking-webpage/
 │   │   ├── jobs.csv                # Current listings (not in git)
 │   │   └── archive/                # Historical processed data
 │   └── config/                     # Configuration files
-│       ├── scraping_sources.json   # All scraping sources (171 accessible, 79 non-accessible URLs)
+│       ├── scraping_sources.json   # All scraping sources (176 accessible, 74 non-accessible URLs)
 │       └── scraping_rules.json     # Scraping patterns and rules (deadlines, keywords, date formats)
 │
 ├── scripts/                        # Automation scripts
@@ -93,7 +93,7 @@ job-seeking-webpage/
 **`data/config/scraping_sources.json`**
 - Master configuration for all scraping sources
 - Organized by accessibility: `accessible` / `non_accessible` top-level categories
-- Contains 171 accessible URLs across job portals, universities, and research institutes
+- Contains 176 accessible URLs across job portals, universities, and research institutes
 - Each entry includes: institution name, department(s), URL(s), scraping method, notes
 
 **`data/config/scraping_rules.json`**
@@ -160,9 +160,14 @@ job-seeking-webpage/
 
 ### Testing
 
-**`tests/load-data-collection/test_scrapers.py`**
-- Unit tests for scraper utilities and parsers
-- Tests: rate limiter, user agent rotator, text extractor, date parser, HTML parser
+**`tests/load-data-collection/`**
+- Comprehensive test suite organized by category:
+  - **`scraper/`** - Scraper class tests (base_scraper, aea_scraper, university_scraper, institute_scraper)
+  - **`parser/`** - Parser module tests (html_parser, rss_parser, text_extractor, date_parser)
+  - **`configuration/`** - Configuration loader tests (config_loader)
+  - **`utils/`** - Utility module tests (rate_limiter, retry_handler, user_agent)
+- **`test_scrapers.py`** - Test suite runner that loads all tests from subfolders
+- **`README.md`** - Test organization documentation
 
 ### Project Management
 

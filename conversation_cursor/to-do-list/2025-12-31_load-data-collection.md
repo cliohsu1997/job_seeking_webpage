@@ -44,17 +44,17 @@
 - [x] Completed Chinese university URL verification with improved keyword detection
   - [x] 58 Chinese university URLs newly verified
   - [x] Many Chinese URLs now properly detect Chinese job-related keywords (招聘, 岗位, 人才, 工作, 人才招聘, etc.)
-  - [x] Final status: 171/250 URLs accessible (68% success rate)
+  - [x] Final status: 176/250 URLs accessible (70% success rate)
 - [x] Optimized configuration structure for efficiency:
   - [x] Created config utility module (`scripts/scraper/utils/config_loader.py`) with functions for loading and filtering config
-  - [x] Generated accessible-only configuration file (`scraping_sources_accessible.json`) containing 171 accessible URLs
+  - [x] Generated accessible-only configuration file (`scraping_sources_accessible.json`) containing 176 accessible URLs
   - [x] Created script to generate accessible config (`scripts/scraper/check_config/generate_accessible_config.py`)
   - [x] Updated verification script to use config loader and auto-regenerate accessible config after verification
   - [x] Updated download_samples.py to use accessible-only config for faster loading (no need to filter in runtime)
 - [x] Reorganized configuration to accessible/non_accessible top-level structure:
   - [x] Created migration script (`scripts/scraper/check_config/migrate_config_structure.py`)
   - [x] Migrated scraping_sources.json to new structure (accessible/non_accessible categories)
-  - [x] Successfully migrated: 171 accessible URLs, 79 non-accessible URLs
+  - [x] Successfully migrated: 176 accessible URLs, 74 non-accessible URLs
   - [x] Updated config_loader.py to work with new structure
   - [x] Updated verify_urls.py to only check non_accessible section and move items to accessible when verified
   - [x] Updated download_samples.py for new structure
@@ -154,6 +154,9 @@
   - [x] Test university scraper with sample universities (framework tests created)
   - [x] Test error handling and retry logic (tested in test_scrapers.py)
   - [x] Test rate limiting (tested in test_scrapers.py)
+- [x] Organize tests into subfolders by category (scraper/, parser/, configuration/, utils/)
+- [x] Create comprehensive test suite with separate test files for each component
+- [x] Update test runner to load tests from organized subfolders
 - [x] Run integration tests (basic tests created, can be expanded)
 - [ ] Validate extracted data quality (basic validation in place, can be enhanced)
 
@@ -181,7 +184,8 @@
 5. ✅ Implemented AEA JOE scraper with RSS/HTML fallback
 6. ✅ Implemented generic university scraper with pattern-based extraction
 7. ✅ Implemented research institute scraper
-8. ✅ Created basic test suite
+8. ✅ Created comprehensive test suite organized by category (scraper, parser, configuration, utils)
+9. ✅ Updated accessible HTML count to 176 (70% success rate)
 
 **Next Phase**: Phase 2 - TRANSFORM (Data Processing) - ready to begin
 
