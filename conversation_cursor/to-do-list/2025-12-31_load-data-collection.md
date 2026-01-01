@@ -185,3 +185,15 @@
 
 **Next Phase**: Phase 2 - TRANSFORM (Data Processing) - ready to begin
 
+## Future Improvements (Optional)
+
+### Testing & Optimization
+- [ ] Expand test coverage (integration tests, end-to-end scraper tests with real URLs)
+- [ ] Add performance tests (scraping speed, memory usage)
+- [ ] Test error handling with various failure scenarios
+- [ ] Optimize scraper performance (caching, parallel processing, connection pooling)
+- [ ] Enhance HTML parsing accuracy based on real-world scraping results
+- [ ] Add scraper-specific optimizations (university-specific parsers, AEA structure refinements)
+- [ ] Benchmark scraper performance and identify bottlenecks
+- [ ] Add monitoring and logging improvements for production use
+

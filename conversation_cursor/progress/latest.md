@@ -55,6 +55,13 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [ ] Data schema definition and validation
 - **To-Do List**: To be created as `YYYY-MM-DD_transform-data-processing.md` when Phase 2 begins
 
+### 🔄 Phase 1 Follow-up: Testing & Optimization (FUTURE IMPROVEMENTS)
+**Status**: Optional improvements for Phase 1 scrapers
+- [ ] Expand test coverage (integration tests, end-to-end scraper tests)
+- [ ] Optimize scraper performance (caching, parallel processing)
+- [ ] Enhance HTML parsing accuracy based on real-world results
+- [ ] Add scraper-specific optimizations (university-specific parsers, AEA structure refinements)
+
 ### ⏸️ Phase 3: EXPORT - Output Generation (PENDING)
 **Status**: Waiting for Phase 2
 - [ ] HTML template creation
