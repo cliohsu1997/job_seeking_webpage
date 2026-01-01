@@ -49,8 +49,25 @@ job-seeking-webpage/
 │
 ├── tests/                          # Test files organized by phase
 │   ├── setup-project/              # Phase 0 tests
-│   ├── load-data-collection/       # Phase 1 tests
-│   │   └── test_scrapers.py        # Tests for scraper utilities and parsers
+│   ├── load-data-collection/       # Phase 1 tests (organized by category)
+│   │   ├── scraper/                # Scraper class tests
+│   │   │   ├── test_base_scraper.py
+│   │   │   ├── test_aea_scraper.py
+│   │   │   ├── test_university_scraper.py
+│   │   │   └── test_institute_scraper.py
+│   │   ├── parser/                # Parser module tests
+│   │   │   ├── test_html_parser.py
+│   │   │   ├── test_rss_parser.py
+│   │   │   ├── test_text_extractor.py
+│   │   │   └── test_date_parser.py
+│   │   ├── configuration/          # Configuration tests
+│   │   │   └── test_config_loader.py
+│   │   ├── utils/                  # Utility module tests
+│   │   │   ├── test_rate_limiter.py
+│   │   │   ├── test_retry_handler.py
+│   │   │   └── test_user_agent.py
+│   │   ├── test_scrapers.py        # Test suite runner
+│   │   └── README.md               # Test organization documentation
 │   ├── transform-data-processing/  # Phase 2 tests (to be created)
 │   └── export-output-generation/   # Phase 3 tests (to be created)
 │
