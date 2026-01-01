@@ -52,9 +52,10 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - [x] Text cleaner utility (`utils/text_cleaner.py`)
   - [x] ID generator utility (`utils/id_generator.py`)
   - [x] Basic normalizer (`normalizer.py`)
-  - [x] Parser manager (`parser_manager.py`)
+  - [x] Parser manager (`parser_manager.py`) - Phase 1 parser integration completed
   - [x] Basic pipeline orchestrator (`pipeline.py`)
   - [x] Component tests created and passing
+  - [x] Test structure organized into subfolders (parser/, utils/, integration/)
 - [ ] Phase 2B: Complete normalization & enrichment
   - [x] Location parser utility (`utils/location_parser.py`) - comprehensive parsing for US, China, and other countries with region detection
 - [ ] Phase 2C: Deduplication
@@ -71,4 +72,4 @@ The project follows a **Load → Transform → Export** workflow structure for a
 
 ## Current Focus
 
-**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed. Phase 2B in progress: Location parser utility completed with comprehensive parsing for US, China, and other countries. Ready to continue with complete normalizer integration and enricher implementation.
+**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed, including Phase 1 parser integration into parser manager. Parser manager can now extract job listings from raw HTML/XML files (176 files scanned, successfully parsing institute files). Phase 2B in progress: Location parser utility completed. Ready to continue with complete normalizer integration and enricher implementation.

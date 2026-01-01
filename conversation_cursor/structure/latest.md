@@ -47,7 +47,10 @@ job-seeking-webpage/
 ├── tests/                          # Tests organized by phase
 │   ├── setup-project/              # Phase 0 tests
 │   ├── load-data-collection/       # Phase 1 tests
-│   ├── transform-data-processing/  # Phase 2 tests (✅ Phase 2A component tests, ✅ location parser tests)
+│   ├── transform-data-processing/  # Phase 2 tests
+│   │   ├── parser/                 # Parser manager tests (✅ Phase 1 integration)
+│   │   ├── utils/                  # Utility tests (✅ location parser, 41 tests)
+│   │   └── integration/            # Integration tests (✅ Phase 2A components)
 │   └── export-output-generation/   # Phase 3 tests (to be created)
 │
 ├── templates/                      # HTML templates (Phase 3)
@@ -86,7 +89,7 @@ job-seeking-webpage/
 - **`scripts/processor/schema.py`**: Data schema definition (29 fields, validation functions) ✅
 - **`scripts/processor/utils/`**: ID generator ✅, location parser ✅, text cleaner ✅
 - **`scripts/processor/pipeline.py`**: Main processing pipeline orchestrator ✅ Phase 2A
-- **`scripts/processor/parser_manager.py`**: Routes raw data to parsers ✅ Phase 2A
+- **`scripts/processor/parser_manager.py`**: Routes raw data to parsers ✅ Phase 2A (Phase 1 integration complete)
 - **`scripts/processor/normalizer.py`**: Basic data normalization ✅ Phase 2A
 
 ## Workflow

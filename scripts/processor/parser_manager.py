@@ -6,11 +6,37 @@ and routes files to appropriate extraction methods (reusing Phase 1 parsers).
 """
 
 import logging
+import re
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Iterator
 from datetime import datetime
 
 from .diagnostics import DiagnosticTracker
+
+# Import Phase 1 parsers and scrapers
+import sys
+from pathlib import Path as PathLib
+
+# Add project root to path for imports (allows importing from scripts.scraper)
+project_root = Path(__file__).parent.parent.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+# Import scrapers and parsers
+try:
+    from scripts.scraper.aea_scraper import AEAScraper
+    from scripts.scraper.university_scraper import UniversityScraper
+    from scripts.scraper.institute_scraper import InstituteScraper
+    from scripts.scraper.parsers.rss_parser import parse_feed, detect_feed_type
+except ImportError:
+    # Fallback: try adding scraper directory to path
+    scraper_dir = Path(__file__).parent.parent / "scraper"
+    if str(scraper_dir) not in sys.path:
+        sys.path.insert(0, str(scraper_dir))
+    from aea_scraper import AEAScraper
+    from university_scraper import UniversityScraper
+    from institute_scraper import InstituteScraper
+    from parsers.rss_parser import parse_feed, detect_feed_type
 
 logger = logging.getLogger(__name__)
 
@@ -104,41 +130,277 @@ class ParserManager:
             logger.warning(f"File {file_path} is not within raw_data_dir {self.raw_data_dir}")
             return None
     
+    def _parse_filename(self, filename: str, source_type: str) -> Dict[str, Any]:
+        """
+        Parse filename to extract metadata (university name, department, institute name).
+        
+        Args:
+            filename: Name of the file (without extension)
+            source_type: Source type ("aea", "university", "institute")
+        
+        Returns:
+            Dictionary with extracted metadata
+        """
+        metadata = {}
+        filename_no_ext = filename.replace(".html", "").replace(".xml", "")
+        
+        if source_type == "university":
+            # Pattern: {country}_{university_name}_{department}.html
+            # Examples: us_harvard_university_economics.html, cn_peking_university_economics.html
+            parts = filename_no_ext.split("_")
+            if len(parts) >= 3:
+                metadata["country"] = parts[0]
+                # University name is everything between country and last part (department)
+                university_parts = parts[1:-1]
+                metadata["university_name"] = " ".join(university_parts).replace("_", " ").title()
+                metadata["department"] = parts[-1].title()
+        
+        elif source_type == "institute":
+            # Pattern: {country}_institute_{institute_name}.html
+            # Examples: us_institute_brookings_institution.html
+            parts = filename_no_ext.split("_")
+            if len(parts) >= 3 and parts[1] == "institute":
+                metadata["country"] = parts[0]
+                # Institute name is everything after "institute"
+                institute_parts = parts[2:]
+                metadata["institute_name"] = " ".join(institute_parts).replace("_", " ").title()
+        
+        elif source_type == "aea":
+            # AEA files: portal_american_economic_association_joe.html
+            metadata["source_name"] = "AEA JOE"
+        
+        return metadata
+    
+    def _read_file_content(self, file_path: Path) -> Optional[str]:
+        """
+        Read file content from disk.
+        
+        Args:
+            file_path: Path to the file
+        
+        Returns:
+            File content as string or None if failed
+        """
+        try:
+            with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+                return f.read()
+        except Exception as e:
+            logger.error(f"Failed to read file {file_path}: {e}")
+            return None
+    
+    def _is_xml_feed(self, content: str) -> bool:
+        """
+        Check if content is an XML/RSS feed.
+        
+        Args:
+            content: File content
+        
+        Returns:
+            True if content appears to be XML/RSS
+        """
+        content_lower = content.strip().lower()
+        return (
+            content_lower.startswith("<?xml") or
+            content_lower.startswith("<rss") or
+            content_lower.startswith("<feed") or
+            "<rss" in content_lower[:500] or
+            "<feed" in content_lower[:500]
+        )
+    
+    def _parse_aea_file(self, content: str, file_path: Path) -> List[Dict[str, Any]]:
+        """
+        Parse AEA file (can be RSS/XML or HTML).
+        
+        Args:
+            content: File content
+            file_path: Path to the file
+        
+        Returns:
+            List of job listing dictionaries
+        """
+        listings = []
+        
+        # Check if it's an RSS/XML feed
+        if self._is_xml_feed(content):
+            try:
+                rss_listings = parse_feed(content)
+                # Normalize RSS listings to our format
+                for listing in rss_listings:
+                    normalized = {
+                        "title": listing.get("title", ""),
+                        "source": "aea",
+                        "source_url": listing.get("url", ""),
+                        "description": listing.get("description", ""),
+                        "published_date": listing.get("published_date", ""),
+                        "scraped_date": datetime.now().strftime("%Y-%m-%d"),
+                    }
+                    listings.append(normalized)
+            except Exception as e:
+                logger.warning(f"Failed to parse AEA file as RSS/XML: {e}, trying HTML parser")
+                # Fall through to HTML parsing
+        
+        # Try HTML parsing (either as fallback or primary method)
+        try:
+            # Create a minimal AEA scraper instance for parsing
+            scraper = AEAScraper(output_dir=self.raw_data_dir / "aea")
+            html_listings = scraper.parse(content)
+            listings.extend(html_listings)
+        except Exception as e:
+            logger.error(f"Failed to parse AEA file as HTML: {e}")
+        
+        return listings
+    
+    def _parse_university_file(
+        self,
+        content: str,
+        file_path: Path,
+        metadata: Dict[str, Any]
+    ) -> List[Dict[str, Any]]:
+        """
+        Parse university file.
+        
+        Args:
+            content: File content
+            file_path: Path to the file
+            metadata: Extracted metadata from filename
+        
+        Returns:
+            List of job listing dictionaries
+        """
+        university_name = metadata.get("university_name", "Unknown University")
+        department = metadata.get("department", "")
+        
+        try:
+            # Create a minimal university scraper instance for parsing
+            # We don't need the URL since we're parsing from file
+            scraper = UniversityScraper(
+                university_name=university_name,
+                url="",  # Not needed for parsing from file
+                department=department,
+                output_dir=self.raw_data_dir / "universities"
+            )
+            listings = scraper.parse(content)
+            
+            # Enhance listings with metadata from filename
+            for listing in listings:
+                if "institution" not in listing or not listing["institution"]:
+                    listing["institution"] = university_name
+                if "department" not in listing or not listing["department"]:
+                    listing["department"] = department
+                if "institution_type" not in listing:
+                    listing["institution_type"] = "university"
+            
+            return listings
+        except Exception as e:
+            logger.error(f"Failed to parse university file {file_path}: {e}")
+            return []
+    
+    def _parse_institute_file(
+        self,
+        content: str,
+        file_path: Path,
+        metadata: Dict[str, Any]
+    ) -> List[Dict[str, Any]]:
+        """
+        Parse institute file.
+        
+        Args:
+            content: File content
+            file_path: Path to the file
+            metadata: Extracted metadata from filename
+        
+        Returns:
+            List of job listing dictionaries
+        """
+        institute_name = metadata.get("institute_name", "Unknown Institute")
+        
+        try:
+            # Create a minimal institute scraper instance for parsing
+            scraper = InstituteScraper(
+                institute_name=institute_name,
+                url="",  # Not needed for parsing from file
+                output_dir=self.raw_data_dir / "institutes"
+            )
+            listings = scraper.parse(content)
+            
+            # Enhance listings with metadata from filename
+            for listing in listings:
+                if "institution" not in listing or not listing["institution"]:
+                    listing["institution"] = institute_name
+                if "institution_type" not in listing:
+                    listing["institution_type"] = "research_institute"
+            
+            return listings
+        except Exception as e:
+            logger.error(f"Failed to parse institute file {file_path}: {e}")
+            return []
+    
     def parse_file(self, file_metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
         Parse a single file and extract job listings.
         
-        This is a placeholder that will be expanded to integrate with Phase 1 parsers.
-        For Phase 2A, this returns an empty list as a basic structure.
+        Integrates with Phase 1 parsers to extract structured data from raw HTML/XML files.
         
         Args:
             file_metadata: File metadata dictionary from scan_raw_files()
         
         Returns:
-            List of extracted job listing dictionaries (empty for now)
+            List of extracted job listing dictionaries
         """
         file_path = file_metadata["file_path"]
         source_type = file_metadata["source_type"]
+        filename = file_metadata["filename"]
         
         try:
-            # TODO: Integrate with Phase 1 parsers
-            # For Phase 2A, this is a placeholder structure
-            # Phase 2A focuses on pipeline structure, full parsing integration comes later
+            logger.debug(f"Parsing {source_type} file: {filename}")
             
-            logger.debug(f"Parsing {source_type} file: {file_path.name}")
+            # Read file content
+            content = self._read_file_content(file_path)
+            if not content:
+                logger.warning(f"Could not read file content: {file_path}")
+                if self.diagnostics:
+                    self.diagnostics.track_parsing_issue(
+                        source=source_type,
+                        file_path=str(file_path),
+                        error="Could not read file content",
+                        error_type="READ_ERROR"
+                    )
+                return []
             
-            # Track parsing attempt
-            if self.diagnostics:
-                # For now, just log that we attempted to parse
-                # Actual parsing logic will be added when integrating Phase 1 parsers
-                pass
+            # Parse filename to extract metadata
+            metadata = self._parse_filename(filename, source_type)
             
-            # Return empty list for now - actual extraction will be implemented
-            # when integrating with Phase 1 scraper parsers
-            return []
+            # Route to appropriate parser based on source type
+            listings = []
+            
+            if source_type == "aea":
+                listings = self._parse_aea_file(content, file_path)
+            elif source_type == "university":
+                listings = self._parse_university_file(content, file_path, metadata)
+            elif source_type == "institute":
+                listings = self._parse_institute_file(content, file_path, metadata)
+            else:
+                logger.warning(f"Unknown source type: {source_type}")
+                if self.diagnostics:
+                    self.diagnostics.track_parsing_issue(
+                        source=source_type,
+                        file_path=str(file_path),
+                        error=f"Unknown source type: {source_type}",
+                        error_type="UNKNOWN_SOURCE"
+                    )
+                return []
+            
+            # Add source file information to each listing
+            for listing in listings:
+                listing["source_file"] = str(file_path.relative_to(self.raw_data_dir))
+                if "scraped_date" not in listing:
+                    listing["scraped_date"] = datetime.now().strftime("%Y-%m-%d")
+            
+            logger.debug(f"Extracted {len(listings)} listings from {filename}")
+            return listings
             
         except Exception as e:
-            logger.error(f"Error parsing file {file_path}: {e}")
+            logger.error(f"Error parsing file {file_path}: {e}", exc_info=True)
             if self.diagnostics:
                 self.diagnostics.track_parsing_issue(
                     source=source_type,
