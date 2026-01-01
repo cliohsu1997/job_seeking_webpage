@@ -121,6 +121,13 @@ python -m module_name
   - Ensure to-do list names match phase names
   - Clean up unnecessary files (including .gitkeep)
 
+### Documentation & README Files
+- **README Connection Rule**: Whenever a README file is created or updated, it MUST be connected to the root `README.md`
+- The root README serves as the navigation hub - all documentation should be discoverable from there
+- Update the root README's "Documentation Map" section when adding new README files
+- Keep README files succinct and focused - use the root README to show how documents connect
+- If a README becomes too long, split it and update the root README to reference both
+
 ### Communication
 - Keep workflow conversational
 - **Token Usage**: Monitor token usage and remind the user when approaching token limits (e.g., when usage exceeds 80% of available tokens)
