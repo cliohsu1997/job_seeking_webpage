@@ -17,9 +17,6 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 CONFIG_DIR = PROJECT_ROOT / "data/config"
 MASTER_CONFIG_FILE = CONFIG_DIR / "scraping_sources.json"
 
-# Alias for backward compatibility
-load_master_config = load_config
-
 
 def load_config() -> Dict:
     """Load the configuration file."""
@@ -31,6 +28,10 @@ def save_config(config: Dict):
     """Save the configuration file."""
     with open(MASTER_CONFIG_FILE, "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2, ensure_ascii=False)
+
+
+# Alias for backward compatibility
+load_master_config = load_config
 
 
 def get_accessible_config(config: Optional[Dict] = None) -> Dict:

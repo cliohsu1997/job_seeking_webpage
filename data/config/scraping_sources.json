@@ -942,6 +942,91 @@
             },
             "scraping_method": "html_parser",
             "notes": "Economics program in China"
+          },
+          {
+            "name": "Dalian Maritime University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.dlmu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "DLMU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Dalian",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "Harbin Engineering University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.hrbeu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "HEU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Harbin",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "Hebei University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.hbu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "HBU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Baoding",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "Sichuan Normal University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.sicnu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "SICNU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Chengdu",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "Southwest Jiaotong University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.swjtu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "SWJTU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Chengdu",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
           }
         ]
       },
@@ -3095,23 +3180,6 @@
             "notes": "Economics program in China"
           },
           {
-            "name": "Dalian Maritime University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.dlmu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "DLMU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Dalian",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
             "name": "East China University of Science and Technology",
             "departments": [
               {
@@ -3197,23 +3265,6 @@
             "notes": "Economics program in China"
           },
           {
-            "name": "Hebei University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.hbu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "HBU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Baoding",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
             "name": "Hebei University of Technology",
             "departments": [
               {
@@ -3225,23 +3276,6 @@
             ],
             "location": {
               "city": "Tianjin",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
-            "name": "Henan Normal University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.htu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "HTU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Xinxiang",
               "country": "China"
             },
             "scraping_method": "html_parser",
@@ -3571,23 +3605,6 @@
             "notes": "Economics program in China"
           },
           {
-            "name": "Southwest University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.swu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "SWU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Chongqing",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
             "name": "Taiyuan University of Technology",
             "departments": [
               {
@@ -3616,23 +3633,6 @@
             ],
             "location": {
               "city": "Xi'an",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
-            "name": "Xi'an Jiaotong-Liverpool University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://career.xjtlu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "XJTLU career portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Suzhou",
               "country": "China"
             },
             "scraping_method": "html_parser",

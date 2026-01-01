@@ -10,6 +10,7 @@ import requests
 import time
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
+from urllib.parse import urlparse, urlunparse, quote, unquote
 import sys
 
 # Add parent directories to path for imports
@@ -22,8 +23,15 @@ from utils.config_loader import load_master_config, CONFIG_DIR, save_config
 CONFIG_FILE = CONFIG_DIR / "scraping_sources.json"
 TIMEOUT = 30
 DELAY_BETWEEN_REQUESTS = 2  # Rate limiting
+MAX_RETRIES = 3
+RETRY_DELAY_BASE = 1  # Base delay for exponential backoff
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1"
 }
 
 # Keywords to check if page might contain job postings (English)
@@ -473,9 +481,74 @@ def is_chinese_url(url: str, description: str) -> bool:
     return "(China)" in description or ".edu.cn" in url or ".cn" in url
 
 
-def check_url(url: str, description: str) -> Dict:
+def encode_url(url: str) -> str:
     """
-    Check if URL is accessible.
+    Properly encode URL, handling Chinese characters and other special characters.
+    
+    Only encodes the path and query parts, preserves scheme, netloc, etc.
+    """
+    try:
+        parsed = urlparse(url)
+        # Encode path and query parts
+        encoded_path = quote(parsed.path, safe='/')
+        encoded_query = quote(parsed.query, safe='=&') if parsed.query else ''
+        encoded_fragment = quote(parsed.fragment, safe='') if parsed.fragment else ''
+        
+        # Reconstruct URL
+        encoded = urlunparse((
+            parsed.scheme,
+            parsed.netloc,
+            encoded_path,
+            parsed.params,
+            encoded_query if encoded_query else parsed.query,
+            encoded_fragment if encoded_fragment else parsed.fragment
+        ))
+        return encoded
+    except Exception as e:
+        # If encoding fails, return original URL
+        print(f"  ⚠ URL encoding warning: {e}")
+        return url
+
+
+def get_alternative_urls(base_url: str) -> List[str]:
+    """
+    Generate alternative URL patterns to try if the original fails.
+    Common patterns for Chinese university HR portals.
+    """
+    alternatives = []
+    parsed = urlparse(base_url)
+    base_path = parsed.path.rstrip('/')
+    
+    # Common alternative paths for Chinese universities
+    alternative_paths = [
+        f"{base_path}/index.html",
+        f"{base_path}/index.php",
+        f"{base_path}/recruit",
+        f"{base_path}/recruitment",
+        f"{base_path}/jobs",
+        f"{base_path}/positions",
+        f"{base_path}/zhaopin",  # 招聘 (recruitment in Chinese)
+        f"{base_path}/zhaopin/index.html",
+        f"{base_path}/zhaopin/index.php",
+    ]
+    
+    for alt_path in alternative_paths:
+        alt_url = urlunparse((
+            parsed.scheme,
+            parsed.netloc,
+            alt_path,
+            parsed.params,
+            parsed.query,
+            parsed.fragment
+        ))
+        alternatives.append(alt_url)
+    
+    return alternatives
+
+
+def check_url_with_retry(url: str, description: str, session: requests.Session, max_retries: int = MAX_RETRIES) -> Dict:
+    """
+    Check URL with retry logic and exponential backoff.
     
     Returns dict with status and other details.
     """
@@ -483,96 +556,166 @@ def check_url(url: str, description: str) -> Dict:
         "status": "unknown",
         "status_code": None,
         "error": None,
-        "content_check": None
+        "content_check": None,
+        "final_url": None
     }
     
     is_chinese = is_chinese_url(url, description)
     
-    try:
-        print(f"Checking: {description}")
-        print(f"  URL: {url}")
-        if is_chinese:
-            print(f"  [Chinese URL - checking for Chinese keywords]")
-        
-        response = requests.get(
-            url,
-            headers=HEADERS,
-            timeout=TIMEOUT,
-            allow_redirects=True
-        )
-        
-        # Set encoding for Chinese content
-        if is_chinese:
-            response.encoding = response.apparent_encoding or 'utf-8'
-        
-        result["status_code"] = response.status_code
-        
-        if response.status_code == 200:
-            result["status"] = "accessible"
+    # Encode URL if it contains non-ASCII characters
+    encoded_url = encode_url(url)
+    if encoded_url != url:
+        print(f"  [URL encoded for special characters]")
+    
+    for attempt in range(max_retries):
+        try:
+            if attempt > 0:
+                delay = RETRY_DELAY_BASE * (2 ** (attempt - 1))
+                print(f"  [Retry {attempt}/{max_retries - 1} after {delay}s...]")
+                time.sleep(delay)
             
-            # Quick content check - look for job-related keywords in text
-            text_content = response.text
+            response = session.get(
+                encoded_url,
+                headers=HEADERS,
+                timeout=TIMEOUT,
+                allow_redirects=True
+            )
             
+            # Set encoding for Chinese content
             if is_chinese:
-                # Check both English and Chinese keywords for Chinese URLs
-                found_keywords_en = [kw for kw in JOB_KEYWORDS_EN if kw.lower() in text_content.lower()]
-                found_keywords_cn = [kw for kw in JOB_KEYWORDS_CN if kw in text_content]
-                found_keywords = found_keywords_en + found_keywords_cn
-            else:
-                # For non-Chinese URLs, check English keywords
-                text_lower = text_content.lower()
-                found_keywords = [kw for kw in JOB_KEYWORDS_EN if kw in text_lower]
+                response.encoding = response.apparent_encoding or 'utf-8'
             
-            if found_keywords:
-                result["content_check"] = "likely_contains_jobs"
-            else:
-                result["content_check"] = "no_job_keywords_found"
+            result["status_code"] = response.status_code
+            result["final_url"] = response.url
             
-            print(f"  ✓ Accessible (Status: {response.status_code}, Size: {len(response.text)} chars)")
-            if result["content_check"] == "likely_contains_jobs":
-                # Show keywords found (limit display)
-                keywords_display = found_keywords[:5]
-                if len(found_keywords) > 5:
-                    keywords_display.append(f"... and {len(found_keywords) - 5} more")
-                print(f"  ✓ Found job-related keywords: {', '.join(keywords_display)}")
+            if response.status_code == 200:
+                result["status"] = "accessible"
+                
+                # Quick content check - look for job-related keywords in text
+                text_content = response.text
+                
+                if is_chinese:
+                    # Check both English and Chinese keywords for Chinese URLs
+                    found_keywords_en = [kw for kw in JOB_KEYWORDS_EN if kw.lower() in text_content.lower()]
+                    found_keywords_cn = [kw for kw in JOB_KEYWORDS_CN if kw in text_content]
+                    found_keywords = found_keywords_en + found_keywords_cn
+                else:
+                    # For non-Chinese URLs, check English keywords
+                    text_lower = text_content.lower()
+                    found_keywords = [kw for kw in JOB_KEYWORDS_EN if kw in text_lower]
+                
+                if found_keywords:
+                    result["content_check"] = "likely_contains_jobs"
+                else:
+                    result["content_check"] = "no_job_keywords_found"
+                
+                print(f"  ✓ Accessible (Status: {response.status_code}, Size: {len(response.text)} chars)")
+                if result["content_check"] == "likely_contains_jobs":
+                    # Show keywords found (limit display)
+                    keywords_display = found_keywords[:5]
+                    if len(found_keywords) > 5:
+                        keywords_display.append(f"... and {len(found_keywords) - 5} more")
+                    print(f"  ✓ Found job-related keywords: {', '.join(keywords_display)}")
+                else:
+                    print(f"  ⚠ No job-related keywords found (may still be a job page)")
+                return result
+            
+            elif response.status_code in [301, 302, 303, 307, 308]:
+                result["status"] = "redirect"
+                result["error"] = f"Redirected to: {response.url}"
+                print(f"  ⚠ Redirected (Status: {response.status_code})")
+                print(f"  Final URL: {response.url}")
+                return result
+            
+            elif response.status_code == 404:
+                # Don't retry on 404
+                result["status"] = "not_found"
+                result["error"] = "Page not found (404)"
+                print(f"  ✗ Not found (404)")
+                return result
+            
+            elif response.status_code == 403:
+                # Don't retry on 403
+                result["status"] = "forbidden"
+                result["error"] = "Access forbidden (403)"
+                print(f"  ✗ Forbidden (403)")
+                return result
+            
             else:
-                print(f"  ⚠ No job-related keywords found (may still be a job page)")
+                # Retry on other HTTP errors
+                result["status"] = "error"
+                result["error"] = f"HTTP {response.status_code}"
+                if attempt == max_retries - 1:
+                    print(f"  ✗ Error (Status: {response.status_code})")
+                    return result
         
-        elif response.status_code in [301, 302, 303, 307, 308]:
-            result["status"] = "redirect"
-            result["error"] = f"Redirected to: {response.url}"
-            print(f"  ⚠ Redirected (Status: {response.status_code})")
-            print(f"  Final URL: {response.url}")
+        except requests.exceptions.Timeout:
+            if attempt == max_retries - 1:
+                result["status"] = "timeout"
+                result["error"] = "Request timed out"
+                print(f"  ✗ Timeout")
+                return result
         
-        elif response.status_code == 404:
-            result["status"] = "not_found"
-            result["error"] = "Page not found (404)"
-            print(f"  ✗ Not found (404)")
+        except requests.exceptions.ConnectionError as e:
+            if attempt == max_retries - 1:
+                result["status"] = "connection_error"
+                result["error"] = f"Connection error: {str(e)}"
+                print(f"  ✗ Connection error")
+                return result
         
-        elif response.status_code == 403:
-            result["status"] = "forbidden"
-            result["error"] = "Access forbidden (403)"
-            print(f"  ✗ Forbidden (403)")
-        
-        else:
-            result["status"] = "error"
-            result["error"] = f"HTTP {response.status_code}"
-            print(f"  ✗ Error (Status: {response.status_code})")
+        except requests.exceptions.RequestException as e:
+            if attempt == max_retries - 1:
+                result["status"] = "error"
+                result["error"] = f"Request error: {str(e)}"
+                print(f"  ✗ Error: {str(e)}")
+                return result
     
-    except requests.exceptions.Timeout:
-        result["status"] = "timeout"
-        result["error"] = "Request timed out"
-        print(f"  ✗ Timeout")
+    return result
+
+
+def check_url(url: str, description: str, session: Optional[requests.Session] = None) -> Dict:
+    """
+    Check if URL is accessible, trying original and alternative patterns.
     
-    except requests.exceptions.ConnectionError as e:
-        result["status"] = "connection_error"
-        result["error"] = f"Connection error: {str(e)}"
-        print(f"  ✗ Connection error")
+    Returns dict with status and other details.
+    """
+    is_chinese = is_chinese_url(url, description)
     
-    except requests.exceptions.RequestException as e:
-        result["status"] = "error"
-        result["error"] = f"Request error: {str(e)}"
-        print(f"  ✗ Error: {str(e)}")
+    print(f"Checking: {description}")
+    print(f"  URL: {url}")
+    if is_chinese:
+        print(f"  [Chinese URL - checking for Chinese keywords]")
+    
+    # Use provided session or create a new one
+    if session is None:
+        session = requests.Session()
+        use_session = False
+    else:
+        use_session = True
+    
+    # Try original URL first
+    result = check_url_with_retry(url, description, session)
+    
+    # If original URL failed and it's a Chinese URL, try alternative patterns
+    if result["status"] != "accessible" and is_chinese:
+        alternative_urls = get_alternative_urls(url)
+        print(f"  [Trying {len(alternative_urls)} alternative URL patterns...]")
+        
+        for alt_url in alternative_urls[:5]:  # Limit to 5 alternatives to avoid too many requests
+            print(f"  Trying alternative: {alt_url}")
+            alt_result = check_url_with_retry(alt_url, description, session, max_retries=1)
+            
+            if alt_result["status"] == "accessible":
+                result = alt_result
+                result["original_url"] = url
+                result["working_url"] = alt_url
+                print(f"  ✓ Found working alternative URL!")
+                break
+            time.sleep(0.5)  # Small delay between alternative attempts
+    
+    # Close session if we created it
+    if not use_session:
+        session.close()
     
     print()
     return result
@@ -591,6 +734,7 @@ def verify_urls(config: Dict) -> Tuple[Dict, List[Dict]]:
     print("=" * 80)
     print(f"URL Verification - Checking non-accessible URLs")
     print(f"  🔍 URLs to check: {total_urls}")
+    print(f"  ⚙️  Optimizations: URL encoding, retry logic, session reuse, alternative patterns")
     print("=" * 80)
     print()
     
@@ -601,32 +745,44 @@ def verify_urls(config: Dict) -> Tuple[Dict, List[Dict]]:
         print()
         return config, results
     
-    # Verify URLs
-    moved_count = 0
-    for i, (url, source_type, description, location_info) in enumerate(urls_with_location, 1):
-        print(f"[{i}/{total_urls}] {source_type.upper()}")
-        result = check_url(url, description)
-        result["url"] = url
-        result["description"] = description
-        result["source_type"] = source_type
-        result["location_info"] = location_info
-        results.append(result)
-        
-        # If accessible, move from non_accessible to accessible
-        if result["status"] == "accessible":
-            remove_from_non_accessible(config, location_info)
-            add_to_accessible(config, location_info)
-            moved_count += 1
-            print(f"  → Moved to accessible section")
-        
-        # Rate limiting
-        if i < len(urls_with_location):
-            time.sleep(DELAY_BETWEEN_REQUESTS)
+    # Create a session for better performance (connection reuse)
+    session = requests.Session()
+    session.headers.update(HEADERS)
     
-    if moved_count > 0:
-        print()
-        print(f"✓ Moved {moved_count} URLs from non_accessible to accessible")
-        print()
+    try:
+        # Verify URLs
+        moved_count = 0
+        for i, (url, source_type, description, location_info) in enumerate(urls_with_location, 1):
+            print(f"[{i}/{total_urls}] {source_type.upper()}")
+            result = check_url(url, description, session=session)
+            result["url"] = url
+            result["description"] = description
+            result["source_type"] = source_type
+            result["location_info"] = location_info
+            results.append(result)
+            
+            # If accessible, move from non_accessible to accessible
+            if result["status"] == "accessible":
+                remove_from_non_accessible(config, location_info)
+                add_to_accessible(config, location_info)
+                moved_count += 1
+                print(f"  → Moved to accessible section")
+                
+                # Update URL if we found a working alternative
+                if "working_url" in result:
+                    location_info["item"]["url"] = result["working_url"]
+                    print(f"  → Updated URL to working alternative")
+            
+            # Rate limiting
+            if i < len(urls_with_location):
+                time.sleep(DELAY_BETWEEN_REQUESTS)
+        
+        if moved_count > 0:
+            print()
+            print(f"✓ Moved {moved_count} URLs from non_accessible to accessible")
+            print()
+    finally:
+        session.close()
     
     return config, results
 
