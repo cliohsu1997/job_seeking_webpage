@@ -51,6 +51,14 @@
   - [x] Created script to generate accessible config (`scripts/scraper/check_config/generate_accessible_config.py`)
   - [x] Updated verification script to use config loader and auto-regenerate accessible config after verification
   - [x] Updated download_samples.py to use accessible-only config for faster loading (no need to filter in runtime)
+- [x] Reorganized configuration to accessible/non_accessible top-level structure:
+  - [x] Created migration script (`scripts/scraper/check_config/migrate_config_structure.py`)
+  - [x] Migrated scraping_sources.json to new structure (accessible/non_accessible categories)
+  - [x] Successfully migrated: 171 accessible URLs, 79 non-accessible URLs
+  - [x] Updated config_loader.py to work with new structure
+  - [ ] Update verify_urls.py to only check non_accessible section and move items to accessible when verified
+  - [ ] Update download_samples.py for new structure
+  - [ ] Delete unnecessary configuration files (scraping_sources_accessible.json, generate_accessible_config.py, verify_urls.py.old, backup files)
 - [ ] Update `scraping_rules.json` with additional patterns if needed
 
 ### Environment Setup
