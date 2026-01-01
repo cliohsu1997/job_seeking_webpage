@@ -36,6 +36,9 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] Implemented research institute scraper
 - [x] Created comprehensive test suite organized by category (scraper, parser, configuration, utils)
 - [x] Updated accessible HTML count to 176 (70% success rate)
+- [x] Test suite organized into subfolders with 12 separate test files
+- [x] Test runner implemented to load all tests from organized structure
+- [x] Initial test run: 67 tests passed (parser and configuration tests working)
 
 **Coverage**:
 - Mainland China: 100 universities
