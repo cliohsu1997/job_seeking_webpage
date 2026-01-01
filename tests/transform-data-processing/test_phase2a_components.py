@@ -14,8 +14,9 @@ Tests all Phase 2A components:
 import sys
 from pathlib import Path
 
-# Add to path
-sys.path.insert(0, str(Path(__file__).parent))
+# Add project root to path
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
 
 print("Testing Phase 2A Components...")
 print("=" * 60)
