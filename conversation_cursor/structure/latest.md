@@ -34,8 +34,8 @@ job-seeking-webpage/
 │   │   │   ├── config_loader.py    # Configuration loading utilities (load, filter, count URLs)
 │   │   │   └── __init__.py         # Utils package init
 │   │   ├── check_config/           # Configuration verification scripts
-│   │   │   ├── verify_urls.py      # URL verification script (uses config_loader)
-│   │   │   └── generate_accessible_config.py  # Generate accessible-only config file
+│   │   │   ├── verify_urls.py      # URL verification script (checks non_accessible, moves to accessible when verified)
+│   │   │   └── migrate_config_structure.py  # Migration script for config structure changes
 │   │   └── download_samples.py     # Sample HTML download script (uses config_loader)
 │   ├── processor/                  # Data processing modules
 │   ├── generator/                  # Output generation modules
@@ -196,3 +196,6 @@ Generated filenames follow structured patterns to identify source type and locat
 - **2025-12-31**: Updated config_loader.py for new structure (171 accessible, 79 non-accessible URLs)
 - **2025-12-31**: Updated read_it.md with poetry run instructions for running Python scripts
 - **2025-12-31**: Documented download_samples.py implementation details (filename patterns, functions) in structure/latest.md
+- **2025-12-31**: Updated verify_urls.py and download_samples.py to work with new accessible/non_accessible structure
+- **2025-12-31**: Cleaned up old/backup files (verify_urls.py.old, scraping_sources.json.backup, scraping_sources_accessible.json, generate_accessible_config.py)
+- **2025-12-31**: Optimized progress and to-do list structure - moved detailed tasks from progress to to-do lists

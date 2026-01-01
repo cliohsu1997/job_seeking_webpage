@@ -95,6 +95,10 @@ python -m module_name
 - Each to-do list = one complete phase task
 - Use checkboxes `- [ ]` and `- [x]`
 - When all tasks complete, mark phase complete in progress file
+- **CRITICAL SEPARATION RULE**: 
+  - **Progress file** (`conversation_cursor/progress/latest.md`): Contains ONLY high-level accomplishments and next steps. NO detailed task lists. Keep it concise and strategic.
+  - **To-do lists** (`conversation_cursor/to-do-list/YYYY-MM-DD_phase-name.md`): Contains ALL detailed, actionable tasks with checkboxes. This is where all specific work items live.
+  - **When updating**: Move detailed tasks from progress to to-do lists. Progress should reference the to-do list, not duplicate its content.
 - Progress = high-level stages; To-do = actionable subtasks
 - **After completing any task**: Check `conversation_cursor/progress/latest.md` to see which phase/step it belongs to, then update the corresponding to-do list to mark the task as complete
 

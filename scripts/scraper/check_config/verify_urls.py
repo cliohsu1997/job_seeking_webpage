@@ -1,9 +1,8 @@
 """
 Verify URLs in scraping_sources.json before scraping.
 
-This script checks if all URLs are accessible and updates url_status
-directly in scraping_sources.json. Only URLs without url_status="accessible"
-will be checked.
+This script checks URLs in the non_accessible section and moves them to
+accessible section when verified. Only URLs in non_accessible will be checked.
 """
 
 import json
@@ -17,7 +16,7 @@ import sys
 SCRIPT_DIR = Path(__file__).parent
 sys.path.insert(0, str(SCRIPT_DIR.parent))
 
-from utils.config_loader import load_master_config, CONFIG_DIR
+from utils.config_loader import load_master_config, CONFIG_DIR, save_config
 
 # Configuration
 CONFIG_FILE = CONFIG_DIR / "scraping_sources.json"
@@ -60,40 +59,35 @@ JOB_KEYWORDS_CN = [
 JOB_KEYWORDS = JOB_KEYWORDS_EN + JOB_KEYWORDS_CN
 
 
-def load_config() -> Dict:
-    """Load scraping_sources.json configuration."""
-    return load_master_config()
-
-
-def save_config(config: Dict):
-    """Save scraping_sources.json configuration."""
-    with open(CONFIG_FILE, "w", encoding="utf-8") as f:
-        json.dump(config, f, indent=2, ensure_ascii=False)
-
-
-def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]]:
+def extract_urls_from_non_accessible(config: Dict) -> List[Tuple[str, str, str, Dict]]:
     """
-    Extract all URLs from configuration with their path for updating.
+    Extract all URLs from non_accessible section with their location info.
     
-    Returns list of tuples: (url, source_type, description, path_to_update)
-    path_to_update is a list of keys to navigate to the URL field in the config
+    Returns list of tuples: (url, source_type, description, location_info)
+    location_info contains: category ("non_accessible"), path to item, and item data
     """
     urls = []
+    non_accessible = config.get("non_accessible", {})
     
     # Job portals
-    if "job_portals" in config:
-        for portal_id, portal_data in config["job_portals"].items():
+    if "job_portals" in non_accessible:
+        for portal_id, portal_data in non_accessible["job_portals"].items():
             if "url" in portal_data:
                 urls.append((
                     portal_data["url"],
                     "job_portal",
                     f"{portal_data.get('name', portal_id)}",
-                    ["job_portals", portal_id, "url"]
+                    {
+                        "category": "non_accessible",
+                        "type": "job_portal",
+                        "key": portal_id,
+                        "item": portal_data.copy()
+                    }
                 ))
     
     # Regions
-    if "regions" in config:
-        regions = config["regions"]
+    if "regions" in non_accessible:
+        regions = non_accessible["regions"]
         
         # United States
         if "united_states" in regions:
@@ -107,7 +101,15 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                             dept["url"],
                             "university_department",
                             f"{uni.get('name', 'Unknown')} - {dept.get('name', 'Unknown')}",
-                            ["regions", "united_states", "universities", uni_idx, "departments", dept_idx, "url"]
+                            {
+                                "category": "non_accessible",
+                                "type": "university_department",
+                                "region": "united_states",
+                                "uni_idx": uni_idx,
+                                "dept_idx": dept_idx,
+                                "item": dept.copy(),
+                                "uni_data": uni.copy()
+                            }
                         ))
             
             # Research institutes
@@ -117,7 +119,13 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                         inst["url"],
                         "research_institute",
                         inst.get("name", "Unknown"),
-                        ["regions", "united_states", "research_institutes", inst_idx, "url"]
+                        {
+                            "category": "non_accessible",
+                            "type": "research_institute",
+                            "region": "united_states",
+                            "inst_idx": inst_idx,
+                            "item": inst.copy()
+                        }
                     ))
             
             # Think tanks
@@ -127,7 +135,13 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                         tank["url"],
                         "think_tank",
                         tank.get("name", "Unknown"),
-                        ["regions", "united_states", "think_tanks", tank_idx, "url"]
+                        {
+                            "category": "non_accessible",
+                            "type": "think_tank",
+                            "region": "united_states",
+                            "tank_idx": tank_idx,
+                            "item": tank.copy()
+                        }
                     ))
         
         # Mainland China
@@ -142,7 +156,15 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                             dept["url"],
                             "university_department",
                             f"{uni.get('name', 'Unknown')} (China) - {dept.get('name', 'Unknown')}",
-                            ["regions", "mainland_china", "universities", uni_idx, "departments", dept_idx, "url"]
+                            {
+                                "category": "non_accessible",
+                                "type": "university_department",
+                                "region": "mainland_china",
+                                "uni_idx": uni_idx,
+                                "dept_idx": dept_idx,
+                                "item": dept.copy(),
+                                "uni_data": uni.copy()
+                            }
                         ))
             
             # Research institutes
@@ -152,7 +174,13 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                         inst["url"],
                         "research_institute",
                         f"{inst.get('name', 'Unknown')} (China)",
-                        ["regions", "mainland_china", "research_institutes", inst_idx, "url"]
+                        {
+                            "category": "non_accessible",
+                            "type": "research_institute",
+                            "region": "mainland_china",
+                            "inst_idx": inst_idx,
+                            "item": inst.copy()
+                        }
                     ))
             
             # Think tanks
@@ -162,7 +190,13 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                         tank["url"],
                         "think_tank",
                         f"{tank.get('name', 'Unknown')} (China)",
-                        ["regions", "mainland_china", "think_tanks", tank_idx, "url"]
+                        {
+                            "category": "non_accessible",
+                            "type": "think_tank",
+                            "region": "mainland_china",
+                            "tank_idx": tank_idx,
+                            "item": tank.copy()
+                        }
                     ))
         
         # Other countries
@@ -179,7 +213,16 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                                     dept["url"],
                                     "university_department",
                                     f"{uni.get('name', 'Unknown')} ({country_id}) - {dept.get('name', 'Unknown')}",
-                                    ["regions", "other_countries", "countries", country_id, "universities", uni_idx, "departments", dept_idx, "url"]
+                                    {
+                                        "category": "non_accessible",
+                                        "type": "university_department",
+                                        "region": "other_countries",
+                                        "country_id": country_id,
+                                        "uni_idx": uni_idx,
+                                        "dept_idx": dept_idx,
+                                        "item": dept.copy(),
+                                        "uni_data": uni.copy()
+                                    }
                                 ))
                     
                     # Research institutes
@@ -189,7 +232,14 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                                 inst["url"],
                                 "research_institute",
                                 f"{inst.get('name', 'Unknown')} ({country_id})",
-                                ["regions", "other_countries", "countries", country_id, "research_institutes", inst_idx, "url"]
+                                {
+                                    "category": "non_accessible",
+                                    "type": "research_institute",
+                                    "region": "other_countries",
+                                    "country_id": country_id,
+                                    "inst_idx": inst_idx,
+                                    "item": inst.copy()
+                                }
                             ))
                     
                     # Think tanks
@@ -199,40 +249,223 @@ def extract_urls_with_path(config: Dict) -> List[Tuple[str, str, str, List[str]]
                                 tank["url"],
                                 "think_tank",
                                 f"{tank.get('name', 'Unknown')} ({country_id})",
-                                ["regions", "other_countries", "countries", country_id, "think_tanks", tank_idx, "url"]
+                                {
+                                    "category": "non_accessible",
+                                    "type": "think_tank",
+                                    "region": "other_countries",
+                                    "country_id": country_id,
+                                    "tank_idx": tank_idx,
+                                    "item": tank.copy()
+                                }
                             ))
     
     return urls
 
 
-def get_url_status(config: Dict, path: List) -> Optional[str]:
-    """Get url_status from config using path (path should point to url field, we check for url_status at same level)."""
-    # Navigate to parent of URL field
-    obj = config
-    for key in path[:-1]:
-        if isinstance(key, int):
-            obj = obj[key]
-        else:
-            obj = obj.get(key, {})
+def remove_from_non_accessible(config: Dict, location_info: Dict):
+    """Remove item from non_accessible section."""
+    non_accessible = config.get("non_accessible", {})
+    item_type = location_info["type"]
     
-    # Check for url_status at same level as url
-    return obj.get("url_status")
+    if item_type == "job_portal":
+        portal_id = location_info["key"]
+        if "job_portals" in non_accessible and portal_id in non_accessible["job_portals"]:
+            del non_accessible["job_portals"][portal_id]
+    
+    elif item_type == "university_department":
+        region = location_info["region"]
+        uni_idx = location_info["uni_idx"]
+        dept_idx = location_info["dept_idx"]
+        
+        if region in ["united_states", "mainland_china"]:
+            if "regions" in non_accessible and region in non_accessible["regions"]:
+                region_data = non_accessible["regions"][region]
+                if "universities" in region_data and uni_idx < len(region_data["universities"]):
+                    uni = region_data["universities"][uni_idx]
+                    if "departments" in uni and dept_idx < len(uni["departments"]):
+                        del uni["departments"][dept_idx]
+                        # If no departments left, remove university
+                        if not uni["departments"]:
+                            del region_data["universities"][uni_idx]
+        elif region == "other_countries":
+            country_id = location_info["country_id"]
+            if "regions" in non_accessible and "other_countries" in non_accessible["regions"]:
+                oc_region = non_accessible["regions"]["other_countries"]
+                if "countries" in oc_region and country_id in oc_region["countries"]:
+                    country_data = oc_region["countries"][country_id]
+                    if "universities" in country_data and uni_idx < len(country_data["universities"]):
+                        uni = country_data["universities"][uni_idx]
+                        if "departments" in uni and dept_idx < len(uni["departments"]):
+                            del uni["departments"][dept_idx]
+                            if not uni["departments"]:
+                                del country_data["universities"][uni_idx]
+    
+    elif item_type == "research_institute":
+        region = location_info["region"]
+        inst_idx = location_info["inst_idx"]
+        
+        if region in ["united_states", "mainland_china"]:
+            if "regions" in non_accessible and region in non_accessible["regions"]:
+                region_data = non_accessible["regions"][region]
+                if "research_institutes" in region_data and inst_idx < len(region_data["research_institutes"]):
+                    del region_data["research_institutes"][inst_idx]
+        elif region == "other_countries":
+            country_id = location_info["country_id"]
+            if "regions" in non_accessible and "other_countries" in non_accessible["regions"]:
+                oc_region = non_accessible["regions"]["other_countries"]
+                if "countries" in oc_region and country_id in oc_region["countries"]:
+                    country_data = oc_region["countries"][country_id]
+                    if "research_institutes" in country_data and inst_idx < len(country_data["research_institutes"]):
+                        del country_data["research_institutes"][inst_idx]
+    
+    elif item_type == "think_tank":
+        region = location_info["region"]
+        tank_idx = location_info["tank_idx"]
+        
+        if region in ["united_states", "mainland_china"]:
+            if "regions" in non_accessible and region in non_accessible["regions"]:
+                region_data = non_accessible["regions"][region]
+                if "think_tanks" in region_data and tank_idx < len(region_data["think_tanks"]):
+                    del region_data["think_tanks"][tank_idx]
+        elif region == "other_countries":
+            country_id = location_info["country_id"]
+            if "regions" in non_accessible and "other_countries" in non_accessible["regions"]:
+                oc_region = non_accessible["regions"]["other_countries"]
+                if "countries" in oc_region and country_id in oc_region["countries"]:
+                    country_data = oc_region["countries"][country_id]
+                    if "think_tanks" in country_data and tank_idx < len(country_data["think_tanks"]):
+                        del country_data["think_tanks"][tank_idx]
 
 
-def set_url_status(config: Dict, path: List, status: str):
-    """Set url_status in config using path (path should point to url field, we set url_status at same level)."""
-    # Navigate to parent of URL field
-    obj = config
-    for key in path[:-1]:
-        if isinstance(key, int):
-            obj = obj[key]
-        else:
-            if key not in obj:
-                obj[key] = {}
-            obj = obj[key]
+def add_to_accessible(config: Dict, location_info: Dict):
+    """Add item to accessible section."""
+    accessible = config.get("accessible", {})
+    item_type = location_info["type"]
+    item = location_info["item"]
     
-    # Set url_status at same level as url
-    obj["url_status"] = status
+    if item_type == "job_portal":
+        portal_id = location_info["key"]
+        if "job_portals" not in accessible:
+            accessible["job_portals"] = {}
+        accessible["job_portals"][portal_id] = item
+    
+    elif item_type == "university_department":
+        region = location_info["region"]
+        uni_data = location_info.get("uni_data", {})
+        
+        if "regions" not in accessible:
+            accessible["regions"] = {}
+        if region not in accessible["regions"]:
+            accessible["regions"][region] = {}
+            # Copy metadata if exists
+            if region in config.get("non_accessible", {}).get("regions", {}):
+                source_region = config["non_accessible"]["regions"][region]
+                for meta_key in ["ranking_source", "coverage"]:
+                    if meta_key in source_region:
+                        accessible["regions"][region][meta_key] = source_region[meta_key]
+        
+        if region in ["united_states", "mainland_china"]:
+            if "universities" not in accessible["regions"][region]:
+                accessible["regions"][region]["universities"] = []
+            
+            # Find or create university
+            uni_name = uni_data.get("name", "Unknown")
+            uni_found = False
+            for existing_uni in accessible["regions"][region]["universities"]:
+                if existing_uni.get("name") == uni_name:
+                    if "departments" not in existing_uni:
+                        existing_uni["departments"] = []
+                    existing_uni["departments"].append(item)
+                    uni_found = True
+                    break
+            
+            if not uni_found:
+                new_uni = uni_data.copy()
+                new_uni["departments"] = [item]
+                accessible["regions"][region]["universities"].append(new_uni)
+        
+        elif region == "other_countries":
+            country_id = location_info["country_id"]
+            if "other_countries" not in accessible["regions"]:
+                accessible["regions"]["other_countries"] = {}
+            if "countries" not in accessible["regions"]["other_countries"]:
+                accessible["regions"]["other_countries"]["countries"] = {}
+            if country_id not in accessible["regions"]["other_countries"]["countries"]:
+                accessible["regions"]["other_countries"]["countries"][country_id] = {}
+            
+            country_data = accessible["regions"]["other_countries"]["countries"][country_id]
+            if "universities" not in country_data:
+                country_data["universities"] = []
+            
+            # Find or create university
+            uni_name = uni_data.get("name", "Unknown")
+            uni_found = False
+            for existing_uni in country_data["universities"]:
+                if existing_uni.get("name") == uni_name:
+                    if "departments" not in existing_uni:
+                        existing_uni["departments"] = []
+                    existing_uni["departments"].append(item)
+                    uni_found = True
+                    break
+            
+            if not uni_found:
+                new_uni = uni_data.copy()
+                new_uni["departments"] = [item]
+                country_data["universities"].append(new_uni)
+    
+    elif item_type == "research_institute":
+        region = location_info["region"]
+        
+        if "regions" not in accessible:
+            accessible["regions"] = {}
+        if region not in accessible["regions"]:
+            accessible["regions"][region] = {}
+        
+        if region in ["united_states", "mainland_china"]:
+            if "research_institutes" not in accessible["regions"][region]:
+                accessible["regions"][region]["research_institutes"] = []
+            accessible["regions"][region]["research_institutes"].append(item)
+        
+        elif region == "other_countries":
+            country_id = location_info["country_id"]
+            if "other_countries" not in accessible["regions"]:
+                accessible["regions"]["other_countries"] = {}
+            if "countries" not in accessible["regions"]["other_countries"]:
+                accessible["regions"]["other_countries"]["countries"] = {}
+            if country_id not in accessible["regions"]["other_countries"]["countries"]:
+                accessible["regions"]["other_countries"]["countries"][country_id] = {}
+            
+            country_data = accessible["regions"]["other_countries"]["countries"][country_id]
+            if "research_institutes" not in country_data:
+                country_data["research_institutes"] = []
+            country_data["research_institutes"].append(item)
+    
+    elif item_type == "think_tank":
+        region = location_info["region"]
+        
+        if "regions" not in accessible:
+            accessible["regions"] = {}
+        if region not in accessible["regions"]:
+            accessible["regions"][region] = {}
+        
+        if region in ["united_states", "mainland_china"]:
+            if "think_tanks" not in accessible["regions"][region]:
+                accessible["regions"][region]["think_tanks"] = []
+            accessible["regions"][region]["think_tanks"].append(item)
+        
+        elif region == "other_countries":
+            country_id = location_info["country_id"]
+            if "other_countries" not in accessible["regions"]:
+                accessible["regions"]["other_countries"] = {}
+            if "countries" not in accessible["regions"]["other_countries"]:
+                accessible["regions"]["other_countries"]["countries"] = {}
+            if country_id not in accessible["regions"]["other_countries"]["countries"]:
+                accessible["regions"]["other_countries"]["countries"][country_id] = {}
+            
+            country_data = accessible["regions"]["other_countries"]["countries"][country_id]
+            if "think_tanks" not in country_data:
+                country_data["think_tanks"] = []
+            country_data["think_tanks"].append(item)
 
 
 def is_chinese_url(url: str, description: str) -> bool:
@@ -278,8 +511,6 @@ def check_url(url: str, description: str) -> Dict:
             result["status"] = "accessible"
             
             # Quick content check - look for job-related keywords in text
-            # For Chinese URLs, check both English and Chinese keywords
-            # For non-Chinese URLs, primarily check English keywords
             text_content = response.text
             
             if is_chinese:
@@ -349,71 +580,58 @@ def check_url(url: str, description: str) -> Dict:
 
 def verify_urls(config: Dict) -> Tuple[Dict, List[Dict]]:
     """
-    Verify URLs in configuration and update url_status in config.
+    Verify URLs in non_accessible section and move to accessible when verified.
     
     Returns (updated_config, list of results)
     """
-    urls_with_path = extract_urls_with_path(config)
+    urls_with_location = extract_urls_from_non_accessible(config)
     
-    # Separate URLs that need verification from those already verified
-    # Also re-check Chinese URLs that are already accessible to detect Chinese keywords
-    urls_to_check = []
-    verified_count = 0
-    chinese_accessible_count = 0
-    
-    for url, source_type, description, path in urls_with_path:
-        current_status = get_url_status(config, path)
-        is_chinese = is_chinese_url(url, description)
-        
-        if current_status == "accessible":
-            # Re-check Chinese URLs to detect Chinese keywords
-            if is_chinese:
-                urls_to_check.append((url, source_type, description, path))
-                chinese_accessible_count += 1
-            else:
-                verified_count += 1
-        else:
-            urls_to_check.append((url, source_type, description, path))
-    
-    total_urls = len(urls_with_path)
-    check_count = len(urls_to_check)
+    total_urls = len(urls_with_location)
     
     print("=" * 80)
-    print(f"URL Verification - Total URLs: {total_urls}")
-    print(f"  ✓ Previously verified (skipped): {verified_count}")
-    if chinese_accessible_count > 0:
-        print(f"  🔍 Re-checking Chinese URLs for keyword detection: {chinese_accessible_count}")
-    print(f"  🔍 Checking now: {check_count}")
+    print(f"URL Verification - Checking non-accessible URLs")
+    print(f"  🔍 URLs to check: {total_urls}")
     print("=" * 80)
     print()
     
     results = []
     
-    if check_count == 0:
-        print("All URLs have been previously verified as accessible. No checks needed.")
+    if total_urls == 0:
+        print("No URLs in non_accessible section to verify.")
         print()
         return config, results
     
-    # Verify URLs that need checking
-    for i, (url, source_type, description, path) in enumerate(urls_to_check, 1):
-        print(f"[{i}/{check_count}] {source_type.upper()}")
+    # Verify URLs
+    moved_count = 0
+    for i, (url, source_type, description, location_info) in enumerate(urls_with_location, 1):
+        print(f"[{i}/{total_urls}] {source_type.upper()}")
         result = check_url(url, description)
         result["url"] = url
         result["description"] = description
         result["source_type"] = source_type
+        result["location_info"] = location_info
         results.append(result)
         
-        # Update status in config
-        set_url_status(config, path, result["status"])
+        # If accessible, move from non_accessible to accessible
+        if result["status"] == "accessible":
+            remove_from_non_accessible(config, location_info)
+            add_to_accessible(config, location_info)
+            moved_count += 1
+            print(f"  → Moved to accessible section")
         
         # Rate limiting
-        if i < len(urls_to_check):
+        if i < len(urls_with_location):
             time.sleep(DELAY_BETWEEN_REQUESTS)
+    
+    if moved_count > 0:
+        print()
+        print(f"✓ Moved {moved_count} URLs from non_accessible to accessible")
+        print()
     
     return config, results
 
 
-def print_summary(results: List[Dict], total_urls: int, verified_count: int):
+def print_summary(results: List[Dict], total_urls: int):
     """Print verification summary."""
     print()
     print("=" * 80)
@@ -421,16 +639,13 @@ def print_summary(results: List[Dict], total_urls: int, verified_count: int):
     print("=" * 80)
     print()
     
-    newly_checked = len(results)
     newly_accessible = sum(1 for r in results if r["status"] == "accessible")
     not_found = sum(1 for r in results if r["status"] == "not_found")
     forbidden = sum(1 for r in results if r["status"] == "forbidden")
     errors = sum(1 for r in results if r["status"] not in ["accessible", "redirect"])
     
-    total_accessible = verified_count + newly_accessible
-    
-    print(f"Total URLs in config: {total_urls}")
-    print(f"✓ Accessible: {total_accessible} ({verified_count} previously + {newly_accessible} newly verified)")
+    print(f"Total URLs checked: {total_urls}")
+    print(f"✓ Accessible (moved): {newly_accessible}")
     print(f"✗ Not Found (404): {not_found}")
     print(f"✗ Forbidden (403): {forbidden}")
     print(f"✗ Other Errors: {errors - not_found - forbidden}")
@@ -438,7 +653,7 @@ def print_summary(results: List[Dict], total_urls: int, verified_count: int):
     
     # List newly accessible URLs
     if newly_accessible > 0:
-        print("NEWLY VERIFIED ACCESSIBLE URLs:")
+        print("NEWLY VERIFIED ACCESSIBLE URLs (moved to accessible section):")
         print("-" * 80)
         for r in results:
             if r["status"] == "accessible":
@@ -449,7 +664,7 @@ def print_summary(results: List[Dict], total_urls: int, verified_count: int):
     
     # List problematic URLs
     if errors > 0:
-        print("PROBLEMATIC URLs (need attention):")
+        print("PROBLEMATIC URLs (still in non_accessible):")
         print("-" * 80)
         for r in results:
             if r["status"] != "accessible":
@@ -461,7 +676,7 @@ def print_summary(results: List[Dict], total_urls: int, verified_count: int):
     # Redirects
     redirects = [r for r in results if r["status"] == "redirect"]
     if redirects:
-        print("REDIRECTS (may need URL update):")
+        print("REDIRECTS (may need URL update, still in non_accessible):")
         print("-" * 80)
         for r in redirects:
             print(f"⚠ {r['description']}")
@@ -473,42 +688,29 @@ def print_summary(results: List[Dict], total_urls: int, verified_count: int):
 def main():
     """Main verification function."""
     print("Loading configuration...")
-    config = load_config()
+    config = load_master_config()
     print(f"Configuration loaded from: {CONFIG_FILE}")
     print()
     
     # Verify URLs and update config
     updated_config, results = verify_urls(config)
     
-    # Count total accessible
-    urls_with_path = extract_urls_with_path(updated_config)
-    verified_count = sum(1 for _, _, _, path in urls_with_path if get_url_status(updated_config, path) == "accessible")
-    total_urls = len(urls_with_path)
+    total_urls = len(results)
     
-    print_summary(results, total_urls, verified_count - len([r for r in results if r["status"] == "accessible"]))
+    print_summary(results, total_urls)
     
     # Save updated config
     save_config(updated_config)
     print(f"Configuration updated and saved to: {CONFIG_FILE}")
     print()
     
-    # Regenerate accessible-only config file
-    try:
-        from utils.config_loader import save_accessible_config
-        save_accessible_config(updated_config)
-        print(f"✓ Regenerated accessible-only configuration file")
-        print()
-    except Exception as e:
-        print(f"⚠ Warning: Could not regenerate accessible config: {e}")
-        print()
-    
     # Exit with error code if there are issues
     errors = sum(1 for r in results if r["status"] not in ["accessible", "redirect"])
     if errors > 0:
-        print(f"⚠ Warning: {errors} URLs have issues and may need to be updated")
+        print(f"⚠ Warning: {errors} URLs have issues and remain in non_accessible section")
         return 1
     else:
-        print("✓ All URLs are accessible!")
+        print("✓ All checked URLs are accessible!")
         return 0
 
 

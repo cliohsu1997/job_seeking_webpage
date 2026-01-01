@@ -56,9 +56,9 @@
   - [x] Migrated scraping_sources.json to new structure (accessible/non_accessible categories)
   - [x] Successfully migrated: 171 accessible URLs, 79 non-accessible URLs
   - [x] Updated config_loader.py to work with new structure
-  - [ ] Update verify_urls.py to only check non_accessible section and move items to accessible when verified
-  - [ ] Update download_samples.py for new structure
-  - [ ] Delete unnecessary configuration files (scraping_sources_accessible.json, generate_accessible_config.py, verify_urls.py.old, backup files)
+  - [x] Updated verify_urls.py to only check non_accessible section and move items to accessible when verified
+  - [x] Updated download_samples.py for new structure
+  - [x] Deleted unnecessary configuration files (scraping_sources_accessible.json, generate_accessible_config.py, verify_urls.py.old, backup files)
 - [ ] Update `scraping_rules.json` with additional patterns if needed
 
 ### Environment Setup
@@ -171,13 +171,12 @@
 
 ## Phase 1 Status: 🔄 IN PROGRESS
 
-**Current Focus**: Complete URL verification, then HTML parsing approach analysis
+**Current Focus**: HTML parsing approach analysis and scraper framework development
 
 **Next Steps**:
-1. Complete Chinese university URL verification (100+ URLs with pending_verification status)
-2. Download sample HTML files from diverse sources (113 accessible URLs ready, more after Chinese verification)
-3. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
-4. Choose optimal parsing approach and document decision
-5. Create base scraper framework using chosen approach
-6. Implement AEA JOE scraper (priority)
+1. Download sample HTML files from diverse sources (171 accessible URLs ready)
+2. Analyze HTML structures to compare parsing approaches (class-based vs pattern-based)
+3. Choose optimal parsing approach and document decision
+4. Create base scraper framework using chosen approach
+5. Implement AEA JOE scraper (priority)
 

@@ -14,7 +14,7 @@ import sys
 # Add parent directories to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
-from utils.config_loader import get_config
+from utils.config_loader import get_accessible_config
 
 # Base directory for samples
 SAMPLES_DIR = Path("data/raw/samples")
@@ -163,7 +163,7 @@ def main():
     print()
     
     # Load configuration (accessible URLs only for efficiency)
-    config_data = get_config(accessible_only=True)
+    config_data = get_accessible_config()
     
     # Extract all accessible sources
     sources = extract_sources_from_config(config_data)

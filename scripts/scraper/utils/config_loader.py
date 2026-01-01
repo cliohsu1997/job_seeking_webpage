@@ -17,6 +17,9 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 CONFIG_DIR = PROJECT_ROOT / "data/config"
 MASTER_CONFIG_FILE = CONFIG_DIR / "scraping_sources.json"
 
+# Alias for backward compatibility
+load_master_config = load_config
+
 
 def load_config() -> Dict:
     """Load the configuration file."""
