@@ -56,6 +56,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - [x] Basic pipeline orchestrator (`pipeline.py`)
   - [x] Component tests created and passing
 - [ ] Phase 2B: Complete normalization & enrichment
+  - [x] Location parser utility (`utils/location_parser.py`) - comprehensive parsing for US, China, and other countries with region detection
 - [ ] Phase 2C: Deduplication
 - [ ] Phase 2D: Validation & quality
 - [ ] Phase 2E: Integration & testing
@@ -70,4 +71,4 @@ The project follows a **Load → Transform → Export** workflow structure for a
 
 ## Current Focus
 
-**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed. All core components implemented and tested. Ready for Phase 2B (complete normalization & enrichment) or Phase 1 parser integration.
+**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed. Phase 2B in progress: Location parser utility completed with comprehensive parsing for US, China, and other countries. Ready to continue with complete normalizer integration and enricher implementation.
