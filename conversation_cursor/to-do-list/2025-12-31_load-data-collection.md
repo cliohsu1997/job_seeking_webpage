@@ -44,7 +44,13 @@
 - [x] Completed Chinese university URL verification with improved keyword detection
   - [x] 58 Chinese university URLs newly verified
   - [x] Many Chinese URLs now properly detect Chinese job-related keywords (招聘, 岗位, 人才, 工作, 人才招聘, etc.)
-  - [x] Final status: 172/250 URLs accessible (69% success rate)
+  - [x] Final status: 171/250 URLs accessible (68% success rate)
+- [x] Optimized configuration structure for efficiency:
+  - [x] Created config utility module (`scripts/scraper/utils/config_loader.py`) with functions for loading and filtering config
+  - [x] Generated accessible-only configuration file (`scraping_sources_accessible.json`) containing 171 accessible URLs
+  - [x] Created script to generate accessible config (`scripts/scraper/check_config/generate_accessible_config.py`)
+  - [x] Updated verification script to use config loader and auto-regenerate accessible config after verification
+  - [x] Updated download_samples.py to use accessible-only config for faster loading (no need to filter in runtime)
 - [ ] Update `scraping_rules.json` with additional patterns if needed
 
 ### Environment Setup

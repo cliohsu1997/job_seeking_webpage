@@ -5,18 +5,20 @@ This script reads from scraping_sources.json and downloads HTML samples from all
 accessible URLs to compare class-based vs pattern-based extraction.
 """
 
-import json
 import re
 import requests
 import time
 from pathlib import Path
+import sys
+
+# Add parent directories to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+
+from utils.config_loader import get_config
 
 # Base directory for samples
 SAMPLES_DIR = Path("data/raw/samples")
 SAMPLES_DIR.mkdir(parents=True, exist_ok=True)
-
-# Configuration file
-CONFIG_FILE = Path("data/config/scraping_sources.json")
 
 # User agent to avoid blocking
 HEADERS = {
@@ -33,13 +35,13 @@ def sanitize_filename(name):
 
 
 def extract_sources_from_config(config_data):
-    """Extract all accessible URLs from scraping_sources.json."""
+    """Extract all accessible URLs from configuration (assumes config already filtered to accessible only)."""
     sources = []
     
     # Extract from job portals
     if "job_portals" in config_data:
         for portal_key, portal_data in config_data["job_portals"].items():
-            if portal_data.get("url_status") == "accessible" and "url" in portal_data:
+            if "url" in portal_data:
                 name = sanitize_filename(portal_data.get("name", portal_key))
                 filename = f"portal_{name}.html"
                 sources.append({
@@ -59,7 +61,7 @@ def extract_sources_from_config(config_data):
                 uni_name = sanitize_filename(uni["name"])
                 if "departments" in uni:
                     for dept in uni["departments"]:
-                        if dept.get("url_status") == "accessible" and "url" in dept:
+                        if "url" in dept:
                             dept_name = sanitize_filename(dept["name"])
                             filename = f"us_{uni_name}_{dept_name}.html"
                             sources.append({
@@ -72,7 +74,7 @@ def extract_sources_from_config(config_data):
         # United States research institutes
         if "united_states" in regions and "research_institutes" in regions["united_states"]:
             for inst in regions["united_states"]["research_institutes"]:
-                if inst.get("url_status") == "accessible" and "url" in inst:
+                if "url" in inst:
                     name = sanitize_filename(inst["name"])
                     filename = f"us_institute_{name}.html"
                     sources.append({
@@ -81,6 +83,22 @@ def extract_sources_from_config(config_data):
                         "filename": filename,
                         "type": "institute"
                     })
+        
+        # Mainland China (added support)
+        if "mainland_china" in regions and "universities" in regions["mainland_china"]:
+            for uni in regions["mainland_china"]["universities"]:
+                uni_name = sanitize_filename(uni["name"])
+                if "departments" in uni:
+                    for dept in uni["departments"]:
+                        if "url" in dept:
+                            dept_name = sanitize_filename(dept["name"])
+                            filename = f"cn_{uni_name}_{dept_name}.html"
+                            sources.append({
+                                "name": f"{uni['name']} - {dept['name']}",
+                                "url": dept["url"],
+                                "filename": filename,
+                                "type": "university"
+                            })
         
         # Other countries
         if "other_countries" in regions and "countries" in regions["other_countries"]:
@@ -91,7 +109,7 @@ def extract_sources_from_config(config_data):
                         uni_name = sanitize_filename(uni["name"])
                         if "departments" in uni:
                             for dept in uni["departments"]:
-                                if dept.get("url_status") == "accessible" and "url" in dept:
+                                if "url" in dept:
                                     dept_name = sanitize_filename(dept["name"])
                                     filename = f"{country_key}_{uni_name}_{dept_name}.html"
                                     sources.append({
@@ -104,7 +122,7 @@ def extract_sources_from_config(config_data):
                 # Research institutes
                 if "research_institutes" in country_data:
                     for inst in country_data["research_institutes"]:
-                        if inst.get("url_status") == "accessible" and "url" in inst:
+                        if "url" in inst:
                             name = sanitize_filename(inst["name"])
                             filename = f"{country_key}_institute_{name}.html"
                             sources.append({
@@ -144,13 +162,8 @@ def main():
     print("=" * 70)
     print()
     
-    # Load configuration
-    if not CONFIG_FILE.exists():
-        print(f"✗ Error: Configuration file not found: {CONFIG_FILE}")
-        return
-    
-    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
-        config_data = json.load(f)
+    # Load configuration (accessible URLs only for efficiency)
+    config_data = get_config(accessible_only=True)
     
     # Extract all accessible sources
     sources = extract_sources_from_config(config_data)

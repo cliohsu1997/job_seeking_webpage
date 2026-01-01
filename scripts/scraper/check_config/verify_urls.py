@@ -11,11 +11,16 @@ import requests
 import time
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
+import sys
 
-# Configuration - paths relative to script location (scripts/scraper/check_config/)
+# Add parent directories to path for imports
 SCRIPT_DIR = Path(__file__).parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent.parent
-CONFIG_FILE = PROJECT_ROOT / "data/config/scraping_sources.json"
+sys.path.insert(0, str(SCRIPT_DIR.parent))
+
+from utils.config_loader import load_master_config, CONFIG_DIR
+
+# Configuration
+CONFIG_FILE = CONFIG_DIR / "scraping_sources.json"
 TIMEOUT = 30
 DELAY_BETWEEN_REQUESTS = 2  # Rate limiting
 HEADERS = {
@@ -57,8 +62,7 @@ JOB_KEYWORDS = JOB_KEYWORDS_EN + JOB_KEYWORDS_CN
 
 def load_config() -> Dict:
     """Load scraping_sources.json configuration."""
-    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+    return load_master_config()
 
 
 def save_config(config: Dict):
@@ -487,6 +491,16 @@ def main():
     save_config(updated_config)
     print(f"Configuration updated and saved to: {CONFIG_FILE}")
     print()
+    
+    # Regenerate accessible-only config file
+    try:
+        from utils.config_loader import save_accessible_config
+        save_accessible_config(updated_config)
+        print(f"✓ Regenerated accessible-only configuration file")
+        print()
+    except Exception as e:
+        print(f"⚠ Warning: Could not regenerate accessible config: {e}")
+        print()
     
     # Exit with error code if there are issues
     errors = sum(1 for r in results if r["status"] not in ["accessible", "redirect"])

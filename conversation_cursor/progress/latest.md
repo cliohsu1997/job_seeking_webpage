@@ -39,7 +39,12 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] URL verification script created and enhanced (`scripts/scraper/check_config/verify_urls.py` - supports mainland_china region)
 - [x] URL verification script enhanced with Chinese keyword detection (18 Chinese job-related keywords added: 招聘, 职位, 岗位, 人才, etc.)
 - [x] URL verification script updated to re-check Chinese URLs for keyword detection
-- [x] URL verification completed: 172/250 URLs accessible (69% success rate)
+- [x] Configuration structure optimized for efficiency:
+  - [x] Created config utility module (`scripts/scraper/utils/config_loader.py`) for efficient config loading
+  - [x] Generated accessible-only configuration file (`scraping_sources_accessible.json`) - 171/250 URLs
+  - [x] Updated verification script to use config loader and auto-regenerate accessible config
+  - [x] Updated download_samples.py to use accessible-only config for faster loading
+- [x] URL verification completed: 171/250 URLs accessible (68% success rate)
   - [x] Verified US universities, research institutes, and other countries (113 accessible)
   - [x] Fixed problematic URLs (40 URLs updated with alternative paths)
   - [x] Chinese university URLs verified with Chinese keyword detection (58 newly verified, many showing Chinese keywords like 招聘, 岗位, 人才, 工作, 人才招聘)
