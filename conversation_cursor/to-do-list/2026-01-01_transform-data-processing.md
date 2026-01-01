@@ -29,46 +29,46 @@
 ### 🔧 Phase 2A: Core Pipeline Foundation
 
 #### Diagnostic Tracker
-- [ ] Create `scripts/processor/diagnostics.py`
-- [ ] Implement `DiagnosticTracker` class to track issues throughout pipeline
-- [ ] Implement tracking methods for: URL issues, scraping issues, parsing issues, extraction issues, normalization issues, enrichment issues
-- [ ] Store diagnostic data in structured format (dictionary/JSON)
-- [ ] Add methods to retrieve diagnostic data by category
+- [x] Create `scripts/processor/diagnostics.py`
+- [x] Implement `DiagnosticTracker` class to track issues throughout pipeline
+- [x] Implement tracking methods for: URL issues, scraping issues, parsing issues, extraction issues, normalization issues, enrichment issues
+- [x] Store diagnostic data in structured format (dictionary/JSON)
+- [x] Add methods to retrieve diagnostic data by category
 
 #### Text Cleaner Utility
-- [ ] Create `scripts/processor/utils/text_cleaner.py`
-- [ ] Implement text cleaning functions (whitespace, encoding, HTML tags removal)
-- [ ] Implement special character handling
+- [x] Create `scripts/processor/utils/text_cleaner.py`
+- [x] Implement text cleaning functions (whitespace, encoding, HTML tags removal)
+- [x] Implement special character handling
 
 #### ID Generator
-- [ ] Create `scripts/processor/utils/id_generator.py`
-- [ ] Implement unique hash-based ID generation (SHA256 of institution + title + deadline)
-- [ ] Handle edge cases (missing fields, variations)
+- [x] Create `scripts/processor/utils/id_generator.py`
+- [x] Implement unique hash-based ID generation (SHA256 of institution + title + deadline)
+- [x] Handle edge cases (missing fields, variations)
 
 #### Basic Normalizer
-- [ ] Create `scripts/processor/normalizer.py`
-- [ ] Implement date normalization (convert to YYYY-MM-DD, generate display format) - reuse Phase 1 date parser
-- [ ] Implement text cleaning (use text_cleaner utility)
-- [ ] Implement basic URL normalization (format, resolve relative URLs)
-- [ ] Add logging for normalization changes
-- [ ] Integrate diagnostic tracking for normalization failures
+- [x] Create `scripts/processor/normalizer.py`
+- [x] Implement date normalization (convert to YYYY-MM-DD, generate display format) - reuse Phase 1 date parser
+- [x] Implement text cleaning (use text_cleaner utility)
+- [x] Implement basic URL normalization (format, resolve relative URLs)
+- [x] Add logging for normalization changes
+- [x] Integrate diagnostic tracking for normalization failures
 
 #### Parser Manager
-- [ ] Create `scripts/processor/parser_manager.py`
-- [ ] Implement function to scan `data/raw/` directory for HTML/XML files
-- [ ] Implement source type identification (AEA, university, institute) based on directory structure
-- [ ] Implement routing logic to appropriate extraction methods (reuse Phase 1 parsers)
-- [ ] Create wrapper to adapt scraper output format to processor input format
-- [ ] Implement batch processing of multiple files
-- [ ] Add logging for parsing statistics (success/failure counts)
-- [ ] Integrate diagnostic tracking: Track which sources failed parsing and why
+- [x] Create `scripts/processor/parser_manager.py`
+- [x] Implement function to scan `data/raw/` directory for HTML/XML files
+- [x] Implement source type identification (AEA, university, institute) based on directory structure
+- [x] Implement routing logic structure (placeholder for Phase 1 parser integration)
+- [x] Create wrapper structure for scraper output format adaptation
+- [x] Implement batch processing of multiple files
+- [x] Add logging for parsing statistics (success/failure counts)
+- [x] Integrate diagnostic tracking: Track which sources failed parsing and why
 
 #### Simple Pipeline
-- [ ] Create `scripts/processor/pipeline.py` with basic structure
-- [ ] Implement basic pipeline orchestrator that calls parser manager → normalizer → ID generator
-- [ ] Implement basic output to JSON format (`data/processed/jobs.json`)
-- [ ] Test pipeline with small sample dataset
-- [ ] Verify output structure matches schema
+- [x] Create `scripts/processor/pipeline.py` with basic structure
+- [x] Implement basic pipeline orchestrator that calls parser manager → normalizer → ID generator
+- [x] Implement basic output to JSON format (`data/processed/jobs.json`)
+- [ ] Test pipeline with small sample dataset (pending Phase 1 parser integration)
+- [ ] Verify output structure matches schema (pending Phase 1 parser integration)
 
 ### 🔄 Phase 2B: Complete Normalization & Enrichment
 

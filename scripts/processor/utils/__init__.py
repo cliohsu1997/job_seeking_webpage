@@ -1,8 +1,8 @@
 """
-Processor Utilities Module
+Phase 2: TRANSFORM - Data Processing Utilities
 
-Utility functions for data processing:
-- id_generator.py: Generate unique IDs for job listings
-- location_parser.py: Parse and normalize location data
-- text_cleaner.py: Text cleaning utilities
+Utility modules for data processing pipeline:
+- text_cleaner: Text cleaning and normalization
+- id_generator: Unique ID generation for job listings
+- location_parser: Location parsing and normalization (to be implemented)
 """
