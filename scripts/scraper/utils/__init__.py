@@ -1,20 +1,19 @@
 """Utility modules for scraping scripts."""
 
 from .config_loader import (
-    load_master_config,
-    load_accessible_config,
-    filter_accessible_urls,
-    save_accessible_config,
-    get_config,
+    load_config,
+    save_config,
+    get_accessible_config,
+    get_non_accessible_config,
+    get_all_config,
     count_urls,
 )
 
 __all__ = [
-    "load_master_config",
-    "load_accessible_config",
-    "filter_accessible_urls",
-    "save_accessible_config",
-    "get_config",
+    "load_config",
+    "save_config",
+    "get_accessible_config",
+    "get_non_accessible_config",
+    "get_all_config",
     "count_urls",
 ]
-

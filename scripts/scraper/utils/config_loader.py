@@ -1,7 +1,11 @@
 """
 Configuration loader utility for scraping sources.
 
-Provides efficient functions to load and filter scraping configuration.
+Provides efficient functions to load scraping configuration with new structure:
+{
+  "accessible": { "job_portals": {...}, "regions": {...} },
+  "non_accessible": { "job_portals": {...}, "regions": {...} }
+}
 """
 
 import json
@@ -12,215 +16,147 @@ from typing import Dict, List, Optional, Tuple
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 CONFIG_DIR = PROJECT_ROOT / "data/config"
 MASTER_CONFIG_FILE = CONFIG_DIR / "scraping_sources.json"
-ACCESSIBLE_CONFIG_FILE = CONFIG_DIR / "scraping_sources_accessible.json"
 
 
-def load_master_config() -> Dict:
-    """Load the master configuration file."""
+def load_config() -> Dict:
+    """Load the configuration file."""
     with open(MASTER_CONFIG_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def load_accessible_config() -> Optional[Dict]:
-    """Load the accessible-only configuration file if it exists."""
-    if ACCESSIBLE_CONFIG_FILE.exists():
-        with open(ACCESSIBLE_CONFIG_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return None
+def save_config(config: Dict):
+    """Save the configuration file."""
+    with open(MASTER_CONFIG_FILE, "w", encoding="utf-8") as f:
+        json.dump(config, f, indent=2, ensure_ascii=False)
 
 
-def filter_accessible_urls(config: Dict) -> Dict:
+def get_accessible_config(config: Optional[Dict] = None) -> Dict:
     """
-    Filter configuration to include only accessible URLs.
-    
-    Returns a new dict with the same structure but only containing
-    entries with url_status="accessible".
-    """
-    filtered = {"job_portals": {}, "regions": {}}
-    
-    # Filter job portals
-    if "job_portals" in config:
-        for portal_key, portal_data in config["job_portals"].items():
-            if portal_data.get("url_status") == "accessible":
-                filtered["job_portals"][portal_key] = portal_data.copy()
-    
-    # Filter regions
-    if "regions" in config:
-        regions = config["regions"]
-        filtered_regions = filtered["regions"]
-        
-        # Mainland China
-        if "mainland_china" in regions:
-            china_config = filter_region(regions["mainland_china"])
-            if any(china_config.values()):
-                filtered_regions["mainland_china"] = china_config
-        
-        # United States
-        if "united_states" in regions:
-            us_config = filter_region(regions["united_states"])
-            if any(us_config.values()):
-                filtered_regions["united_states"] = us_config
-        
-        # Other countries
-        if "other_countries" in regions:
-            oc_config = filter_other_countries(regions["other_countries"])
-            if oc_config.get("countries"):
-                filtered_regions["other_countries"] = oc_config
-    
-    return filtered
-
-
-def filter_region(region_data: Dict) -> Dict:
-    """Filter a region (mainland_china or united_states) to only accessible URLs."""
-    filtered = {}
-    
-    # Copy metadata
-    for key in ["ranking_source", "coverage"]:
-        if key in region_data:
-            filtered[key] = region_data[key]
-    
-    # Filter universities
-    if "universities" in region_data:
-        filtered_universities = []
-        for uni in region_data["universities"]:
-            filtered_depts = []
-            for dept in uni.get("departments", []):
-                if dept.get("url_status") == "accessible":
-                    filtered_depts.append(dept.copy())
-            
-            if filtered_depts:
-                filtered_uni = uni.copy()
-                filtered_uni["departments"] = filtered_depts
-                filtered_universities.append(filtered_uni)
-        
-        if filtered_universities:
-            filtered["universities"] = filtered_universities
-    
-    # Filter research institutes
-    if "research_institutes" in region_data:
-        filtered_institutes = [
-            inst.copy() for inst in region_data["research_institutes"]
-            if inst.get("url_status") == "accessible"
-        ]
-        if filtered_institutes:
-            filtered["research_institutes"] = filtered_institutes
-    
-    # Filter think tanks
-    if "think_tanks" in region_data:
-        filtered_tanks = [
-            tank.copy() for tank in region_data["think_tanks"]
-            if tank.get("url_status") == "accessible"
-        ]
-        if filtered_tanks:
-            filtered["think_tanks"] = filtered_tanks
-    
-    return filtered
-
-
-def filter_other_countries(oc_data: Dict) -> Dict:
-    """Filter other_countries region to only accessible URLs."""
-    filtered = {"countries": {}}
-    
-    if "countries" in oc_data:
-        for country_key, country_data in oc_data["countries"].items():
-            filtered_country = filter_region(country_data)
-            if any(filtered_country.values()):
-                filtered["countries"][country_key] = filtered_country
-    
-    return filtered
-
-
-def save_accessible_config(config: Dict):
-    """Save the filtered accessible-only configuration to file."""
-    filtered = filter_accessible_urls(config)
-    with open(ACCESSIBLE_CONFIG_FILE, "w", encoding="utf-8") as f:
-        json.dump(filtered, f, indent=2, ensure_ascii=False)
-
-
-def get_config(accessible_only: bool = False) -> Dict:
-    """
-    Get configuration, optionally filtered to only accessible URLs.
+    Get only the accessible URLs section from configuration.
     
     Args:
-        accessible_only: If True, return only accessible URLs.
-                        First tries to load from accessible config file,
-                        otherwise filters master config.
+        config: Optional config dict. If None, loads from file.
     
     Returns:
-        Configuration dictionary
+        Configuration dictionary with only accessible URLs
     """
-    if accessible_only:
-        # Try to load from accessible config file first
-        accessible_config = load_accessible_config()
-        if accessible_config:
-            return accessible_config
-        
-        # Otherwise filter master config
-        master_config = load_master_config()
-        return filter_accessible_urls(master_config)
-    else:
-        return load_master_config()
+    if config is None:
+        config = load_config()
+    return config.get("accessible", {"job_portals": {}, "regions": {}})
 
 
-def count_urls(config: Dict) -> Tuple[int, int]:
+def get_non_accessible_config(config: Optional[Dict] = None) -> Dict:
+    """
+    Get only the non-accessible URLs section from configuration.
+    
+    Args:
+        config: Optional config dict. If None, loads from file.
+    
+    Returns:
+        Configuration dictionary with only non-accessible URLs
+    """
+    if config is None:
+        config = load_config()
+    return config.get("non_accessible", {"job_portals": {}, "regions": {}})
+
+
+def get_all_config(config: Optional[Dict] = None) -> Dict:
+    """
+    Get all configuration (both accessible and non-accessible combined).
+    
+    Args:
+        config: Optional config dict. If None, loads from file.
+    
+    Returns:
+        Combined configuration dictionary
+    """
+    if config is None:
+        config = load_config()
+    
+    accessible = get_accessible_config(config)
+    non_accessible = get_non_accessible_config(config)
+    
+    # Combine (for backward compatibility, return in old structure format)
+    combined = {
+        "job_portals": {},
+        "regions": {}
+    }
+    
+    # Combine job portals
+    combined["job_portals"].update(accessible.get("job_portals", {}))
+    combined["job_portals"].update(non_accessible.get("job_portals", {}))
+    
+    # Combine regions
+    for category in ["accessible", "non_accessible"]:
+        source = accessible if category == "accessible" else non_accessible
+        if "regions" in source:
+            for region_key, region_data in source["regions"].items():
+                if region_key not in combined["regions"]:
+                    combined["regions"][region_key] = {}
+                    # Copy metadata
+                    for meta_key in ["ranking_source", "coverage"]:
+                        if meta_key in region_data:
+                            combined["regions"][region_key][meta_key] = region_data[meta_key]
+                
+                # Merge universities, institutes, tanks
+                for item_type in ["universities", "research_institutes", "think_tanks"]:
+                    if item_type in region_data:
+                        if item_type not in combined["regions"][region_key]:
+                            combined["regions"][region_key][item_type] = []
+                        combined["regions"][region_key][item_type].extend(region_data[item_type])
+                
+                # Handle other_countries structure
+                if region_key == "other_countries" and "countries" in region_data:
+                    if "countries" not in combined["regions"][region_key]:
+                        combined["regions"][region_key]["countries"] = {}
+                    for country_key, country_data in region_data["countries"].items():
+                        if country_key not in combined["regions"][region_key]["countries"]:
+                            combined["regions"][region_key]["countries"][country_key] = {}
+                        for item_type in ["universities", "research_institutes", "think_tanks"]:
+                            if item_type in country_data:
+                                if item_type not in combined["regions"][region_key]["countries"][country_key]:
+                                    combined["regions"][region_key]["countries"][country_key][item_type] = []
+                                combined["regions"][region_key]["countries"][country_key][item_type].extend(country_data[item_type])
+    
+    return combined
+
+
+def count_urls(config: Optional[Dict] = None) -> Tuple[int, int]:
     """
     Count total URLs and accessible URLs in configuration.
+    
+    Args:
+        config: Optional config dict. If None, loads from file.
     
     Returns:
         Tuple of (total_urls, accessible_urls)
     """
-    total = 0
-    accessible = 0
+    if config is None:
+        config = load_config()
     
-    # Count job portals
-    if "job_portals" in config:
-        for portal_data in config["job_portals"].values():
-            if "url" in portal_data:
-                total += 1
-                if portal_data.get("url_status") == "accessible":
-                    accessible += 1
-    
-    # Count regions
-    if "regions" in config:
-        regions = config["regions"]
-        
-        # Count function for region
-        def count_region(region_data: Dict):
-            nonlocal total, accessible
-            
+    def count_in_section(section: Dict) -> int:
+        count = 0
+        # Job portals
+        count += len(section.get("job_portals", {}))
+        # Regions
+        for region_data in section.get("regions", {}).values():
             # Universities
-            if "universities" in region_data:
-                for uni in region_data["universities"]:
-                    for dept in uni.get("departments", []):
-                        if "url" in dept:
-                            total += 1
-                            if dept.get("url_status") == "accessible":
-                                accessible += 1
-            
-            # Research institutes
-            if "research_institutes" in region_data:
-                for inst in region_data["research_institutes"]:
-                    if "url" in inst:
-                        total += 1
-                        if inst.get("url_status") == "accessible":
-                            accessible += 1
-            
-            # Think tanks
-            if "think_tanks" in region_data:
-                for tank in region_data["think_tanks"]:
-                    if "url" in tank:
-                        total += 1
-                        if tank.get("url_status") == "accessible":
-                            accessible += 1
-        
-        # Count each region
-        if "mainland_china" in regions:
-            count_region(regions["mainland_china"])
-        if "united_states" in regions:
-            count_region(regions["united_states"])
-        if "other_countries" in regions and "countries" in regions["other_countries"]:
-            for country_data in regions["other_countries"]["countries"].values():
-                count_region(country_data)
+            for uni in region_data.get("universities", []):
+                count += len(uni.get("departments", []))
+            # Institutes and tanks
+            count += len(region_data.get("research_institutes", []))
+            count += len(region_data.get("think_tanks", []))
+            # Other countries
+            if "countries" in region_data:
+                for country_data in region_data["countries"].values():
+                    for uni in country_data.get("universities", []):
+                        count += len(uni.get("departments", []))
+                    count += len(country_data.get("research_institutes", []))
+                    count += len(country_data.get("think_tanks", []))
+        return count
+    
+    accessible = count_in_section(get_accessible_config(config))
+    non_accessible = count_in_section(get_non_accessible_config(config))
+    total = accessible + non_accessible
     
     return total, accessible
-
