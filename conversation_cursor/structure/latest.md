@@ -21,7 +21,7 @@ job-seeking-webpage/
 │   └── config/
 │       ├── scraping_sources.json   # Scraping sources (176 accessible URLs)
 │       ├── scraping_rules.json     # Scraping patterns
-│       └── processing_rules.json  # Processing rules (to be created)
+│       └── processing_rules.json   # Processing rules (job types, specializations, regions)
 │
 ├── scripts/
 │   ├── scraper/                    # Phase 1 - COMPLETE
@@ -38,7 +38,7 @@ job-seeking-webpage/
 │   │   ├── enricher.py             # Data enrichment (to be created)
 │   │   ├── deduplicator.py         # Deduplication (to be created)
 │   │   ├── validator.py            # Data validation (to be created)
-│   │   ├── schema.py               # Schema definition (to be created)
+│   │   ├── schema.py               # Schema definition (✅ created)
 │   │   ├── diagnostics.py          # Diagnostic tracking (to be created)
 │   │   └── utils/                  # ID generator, location parser, text cleaner
 │   ├── generator/                  # Phase 3 - PENDING
@@ -47,7 +47,7 @@ job-seeking-webpage/
 ├── tests/                          # Tests organized by phase
 │   ├── setup-project/              # Phase 0 tests
 │   ├── load-data-collection/       # Phase 1 tests
-│   ├── transform-data-processing/  # Phase 2 tests (to be created)
+│   ├── transform-data-processing/  # Phase 2 tests (✅ structure created)
 │   └── export-output-generation/   # Phase 3 tests (to be created)
 │
 ├── templates/                      # HTML templates (Phase 3)
@@ -65,7 +65,7 @@ job-seeking-webpage/
 ### Configuration
 - **`data/config/scraping_sources.json`**: 176 accessible URLs across job portals, universities, research institutes
 - **`data/config/scraping_rules.json`**: Scraping patterns (deadlines, keywords, date formats)
-- **`data/config/processing_rules.json`**: Processing rules (to be created)
+- **`data/config/processing_rules.json`**: Processing rules (job type keywords, specialization keywords, region mapping, materials parsing)
 
 ### Scraper Framework (Phase 1 - Complete)
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)
@@ -83,7 +83,7 @@ job-seeking-webpage/
 - **`scripts/processor/deduplicator.py`**: Identifies and merges duplicate listings
 - **`scripts/processor/validator.py`**: Validates data against schema
 - **`scripts/processor/diagnostics.py`**: Diagnostic tracking and root cause analysis
-- **`scripts/processor/schema.py`**: Data schema definition
+- **`scripts/processor/schema.py`**: Data schema definition (29 fields, validation functions) ✅
 - **`scripts/processor/utils/`**: ID generator, location parser, text cleaner
 
 ## Workflow

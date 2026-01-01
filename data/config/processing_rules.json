@@ -1,0 +1,263 @@
+{
+  "job_type_keywords": {
+    "tenure-track": [
+      "tenure track",
+      "tenure-track",
+      "assistant professor",
+      "associate professor",
+      "tenure-track assistant professor",
+      "tenure track position"
+    ],
+    "visiting": [
+      "visiting",
+      "temporary",
+      "visiting professor",
+      "visiting assistant professor",
+      "visiting lecturer"
+    ],
+    "postdoc": [
+      "postdoc",
+      "post-doctoral",
+      "postdoctoral",
+      "post doc",
+      "post-doc",
+      "postdoctoral fellow",
+      "postdoctoral researcher"
+    ],
+    "lecturer": [
+      "lecturer",
+      "instructor",
+      "teaching faculty",
+      "non-tenure track"
+    ],
+    "other": []
+  },
+  "specialization_keywords": {
+    "macroeconomics": [
+      "macro",
+      "macroeconomics",
+      "monetary",
+      "monetary economics",
+      "fiscal",
+      "fiscal policy",
+      "business cycle",
+      "growth",
+      "economic growth"
+    ],
+    "microeconomics": [
+      "micro",
+      "microeconomics",
+      "game theory",
+      "auction",
+      "industrial organization",
+      "io",
+      "market design"
+    ],
+    "labor": [
+      "labor",
+      "labour",
+      "employment",
+      "wage",
+      "wages",
+      "labor economics",
+      "human resources",
+      "hrm"
+    ],
+    "development": [
+      "development",
+      "development economics",
+      "international development",
+      "economic development"
+    ],
+    "international": [
+      "international",
+      "international economics",
+      "trade",
+      "international trade",
+      "open economy"
+    ],
+    "finance": [
+      "finance",
+      "financial",
+      "asset pricing",
+      "corporate finance",
+      "banking"
+    ],
+    "econometrics": [
+      "econometrics",
+      "econometric",
+      "statistics",
+      "applied econometrics",
+      "time series",
+      "panel data"
+    ],
+    "behavioral": [
+      "behavioral",
+      "behavioural",
+      "behavioral economics",
+      "experimental",
+      "experimental economics"
+    ],
+    "public": [
+      "public economics",
+      "public policy",
+      "public finance",
+      "tax",
+      "taxation"
+    ]
+  },
+  "region_mapping": {
+    "united_states": [
+      "United States",
+      "USA",
+      "US",
+      "U.S.",
+      "U.S.A.",
+      "America"
+    ],
+    "mainland_china": [
+      "China",
+      "PRC",
+      "People's Republic of China",
+      "Mainland China",
+      "中华人民共和国"
+    ],
+    "united_kingdom": [
+      "United Kingdom",
+      "UK",
+      "U.K.",
+      "Britain",
+      "Great Britain",
+      "England",
+      "Scotland",
+      "Wales",
+      "Northern Ireland"
+    ],
+    "canada": [
+      "Canada",
+      "CAN"
+    ],
+    "australia": [
+      "Australia",
+      "AUS"
+    ],
+    "other_countries": []
+  },
+  "materials_keywords": {
+    "cv": [
+      "cv",
+      "curriculum vitae",
+      "resume",
+      "résumé"
+    ],
+    "cover_letter": [
+      "cover letter",
+      "application letter",
+      "letter of application"
+    ],
+    "research_statement": [
+      "research statement",
+      "statement of research",
+      "research agenda",
+      "research plan"
+    ],
+    "teaching_statement": [
+      "teaching statement",
+      "statement of teaching",
+      "teaching philosophy",
+      "teaching philosophy statement"
+    ],
+    "teaching_portfolio": [
+      "teaching portfolio",
+      "teaching materials",
+      "sample syllabi",
+      "syllabus"
+    ],
+    "research_papers": [
+      "research papers",
+      "publications",
+      "writing sample",
+      "writing samples",
+      "working papers",
+      "job market paper",
+      "job market papers"
+    ],
+    "letters_of_recommendation": [
+      "letters of recommendation",
+      "letter of recommendation",
+      "references",
+      "reference letters",
+      "recommendation letters"
+    ],
+    "transcripts": [
+      "transcript",
+      "transcripts",
+      "academic transcript"
+    ],
+    "diversity_statement": [
+      "diversity statement",
+      "diversity and inclusion statement",
+      "equity statement"
+    ]
+  },
+  "location_parsing": {
+    "country_patterns": {
+      "united_states": {
+        "patterns": [
+          "^[A-Z][a-z]+,\\s*[A-Z]{2}$",
+          "^[A-Z][a-z]+,\\s*[A-Z][a-z]+$"
+        ],
+        "state_abbreviations": {
+          "AL": "Alabama",
+          "AK": "Alaska",
+          "AZ": "Arizona",
+          "AR": "Arkansas",
+          "CA": "California",
+          "CO": "Colorado",
+          "CT": "Connecticut",
+          "DE": "Delaware",
+          "FL": "Florida",
+          "GA": "Georgia"
+        }
+      },
+      "mainland_china": {
+        "patterns": [
+          ".*省.*",
+          ".*市.*",
+          ".*自治区.*"
+        ],
+        "province_keywords": [
+          "省",
+          "市",
+          "自治区"
+        ]
+      }
+    },
+    "city_state_separators": [
+      ",",
+      "，",
+      "-",
+      "–"
+    ]
+  },
+  "department_category_mapping": {
+    "Economics": [
+      "economics",
+      "economic",
+      "econ",
+      "economy"
+    ],
+    "Management": [
+      "management",
+      "business administration",
+      "business school",
+      "management science"
+    ],
+    "Marketing": [
+      "marketing",
+      "marketing science"
+    ],
+    "Other": []
+  }
+}
+
