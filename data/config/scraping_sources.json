@@ -1105,7 +1105,7 @@
               "url": "https://rsc.hbu.edu.cn/",
               "scraping_method": "html_parser",
               "notes": "HBU RSC portal - filter by Economics",
-              "url_status": "accessible"
+              "url_status": "timeout"
             }
           ],
           "location": {
