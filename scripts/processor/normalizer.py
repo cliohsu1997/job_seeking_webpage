@@ -6,14 +6,15 @@ to ensure consistency across all job listings.
 """
 
 import re
+import json
 import logging
-from typing import Dict, Any, Optional, Tuple
+from typing import Dict, Any, Optional, Tuple, List
 from datetime import datetime
 from urllib.parse import urljoin, urlparse
+from pathlib import Path
 
 # Import Phase 1 date parser
 import sys
-from pathlib import Path
 
 # Add scraper/parsers to path for date parser import
 _scraper_parsers_path = Path(__file__).parent.parent.parent / "scraper" / "parsers"
@@ -28,9 +29,14 @@ except ImportError:
 
 # Import processor utilities
 from .utils.text_cleaner import clean_text_field, clean_text
+from .utils.location_parser import parse_location, normalize_location
 from .diagnostics import DiagnosticTracker
 
 logger = logging.getLogger(__name__)
+
+# Path to processing rules config
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+CONFIG_FILE = PROJECT_ROOT / "data/config/processing_rules.json"
 
 
 class DataNormalizer:
@@ -46,6 +52,16 @@ class DataNormalizer:
             diagnostics: Optional DiagnosticTracker instance for tracking normalization issues
         """
         self.diagnostics = diagnostics
+        self._load_processing_rules()
+    
+    def _load_processing_rules(self) -> None:
+        """Load processing rules from configuration file."""
+        try:
+            with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
+                self.processing_rules = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            logger.warning(f"Failed to load processing rules from {CONFIG_FILE}: {e}")
+            self.processing_rules = {}
     
     def normalize_date(self, date_str: Optional[str], field_name: str = "date") -> Tuple[Optional[str], Optional[str]]:
         """
@@ -217,22 +233,270 @@ class DataNormalizer:
                 "source_url"
             )
         
-        # Normalize contact_email (basic validation, full validation in Phase 2B)
+        # Normalize contact_email
         if "contact_email" in normalized and normalized["contact_email"]:
-            email = str(normalized["contact_email"]).strip().lower()
-            # Basic email format check
-            if "@" in email and "." in email.split("@")[1]:
-                normalized["contact_email"] = email
-            else:
-                logger.warning(f"Invalid email format: '{normalized['contact_email']}'")
-                if self.diagnostics:
-                    self.diagnostics.track_normalization_issue(
-                        source="normalizer",
-                        field="contact_email",
-                        original_value=normalized["contact_email"],
-                        error="Invalid email format"
-                    )
-                normalized["contact_email"] = None
+            normalized["contact_email"] = self.normalize_contact_email(normalized["contact_email"])
+        
+        # Normalize contact_person
+        if "contact_person" in normalized and normalized["contact_person"]:
+            normalized["contact_person"] = self.normalize_contact_person(normalized["contact_person"])
+        
+        # Normalize location
+        if "location" in normalized:
+            normalized["location"] = self.normalize_location_field(normalized["location"])
+        
+        # Normalize job_type
+        if "job_type" in normalized and normalized["job_type"]:
+            normalized["job_type"] = self.normalize_job_type(normalized["job_type"], normalized.get("title", ""))
+        
+        # Normalize department_category
+        if "department" in normalized and normalized["department"]:
+            normalized["department_category"] = self.normalize_department_category(normalized["department"])
+        
+        # Normalize materials_required (always call to parse from description/requirements)
+        normalized["materials_required"] = self.normalize_materials_required(
+            normalized.get("description", ""),
+            normalized.get("requirements", ""),
+            normalized.get("materials_required")
+        )
         
         return normalized
+    
+    def normalize_location_field(self, location: Any) -> Dict[str, Optional[str]]:
+        """
+        Normalize location field using location parser.
+        
+        Args:
+            location: Location data (string or dict)
+        
+        Returns:
+            Normalized location dictionary
+        """
+        try:
+            if isinstance(location, str):
+                # Parse location string
+                parsed = parse_location(location)
+            elif isinstance(location, dict):
+                # Normalize existing location dict
+                parsed = normalize_location(location)
+            else:
+                parsed = {
+                    "city": None,
+                    "state": None,
+                    "province": None,
+                    "country": "Unknown",
+                    "region": "other_countries"
+                }
+            
+            return parsed
+        except Exception as e:
+            if self.diagnostics:
+                self.diagnostics.track_normalization_issue(
+                    source="normalizer",
+                    field="location",
+                    original_value=str(location),
+                    error=f"Location normalization error: {str(e)}"
+                )
+            logger.warning(f"Error normalizing location '{location}': {e}")
+            return {
+                "city": None,
+                "state": None,
+                "province": None,
+                "country": "Unknown",
+                "region": "other_countries"
+            }
+    
+    def normalize_job_type(self, job_type: str, title: str = "") -> str:
+        """
+        Normalize job type using processing rules.
+        
+        Args:
+            job_type: Job type string to normalize
+            title: Job title (for additional context)
+        
+        Returns:
+            Normalized job type (tenure-track, visiting, postdoc, lecturer, other)
+        """
+        if not job_type:
+            return "other"
+        
+        job_type_lower = job_type.lower().strip()
+        title_lower = title.lower() if title else ""
+        combined_text = f"{job_type_lower} {title_lower}".strip()
+        
+        # Get job type keywords from processing rules
+        job_type_keywords = self.processing_rules.get("job_type_keywords", {})
+        
+        # Check each job type category
+        for normalized_type, keywords in job_type_keywords.items():
+            for keyword in keywords:
+                if keyword.lower() in combined_text:
+                    return normalized_type
+        
+        # If no match found, return original (will be handled by enricher)
+        return job_type_lower
+    
+    def normalize_department_category(self, department: str) -> str:
+        """
+        Map department name to category (Economics, Management, Marketing, Other).
+        
+        Args:
+            department: Department name
+        
+        Returns:
+            Department category string
+        """
+        if not department:
+            return "Other"
+        
+        department_lower = department.lower()
+        
+        # Get department category mapping from processing rules
+        category_mapping = self.processing_rules.get("department_category_mapping", {})
+        
+        # Check each category
+        for category, keywords in category_mapping.items():
+            for keyword in keywords:
+                if keyword.lower() in department_lower:
+                    return category
+        
+        # Default to Other if no match
+        return "Other"
+    
+    def normalize_contact_email(self, email: str) -> Optional[str]:
+        """
+        Normalize contact email format.
+        
+        Args:
+            email: Email string to normalize
+        
+        Returns:
+            Normalized email or None if invalid
+        """
+        if not email:
+            return None
+        
+        # Clean and normalize email
+        email = str(email).strip().lower()
+        
+        # Remove common prefixes like "mailto:" or "Email:"
+        email = re.sub(r'^(mailto:|email:)\s*', '', email, flags=re.IGNORECASE)
+        
+        # Basic email format validation
+        email_pattern = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+        if email_pattern.match(email):
+            return email
+        else:
+            if self.diagnostics:
+                self.diagnostics.track_normalization_issue(
+                    source="normalizer",
+                    field="contact_email",
+                    original_value=email,
+                    error="Invalid email format"
+                )
+            logger.warning(f"Invalid email format: '{email}'")
+            return None
+    
+    def normalize_contact_person(self, contact_person: str) -> Optional[str]:
+        """
+        Normalize contact person name.
+        
+        Args:
+            contact_person: Contact person string to normalize
+        
+        Returns:
+            Normalized contact person name
+        """
+        if not contact_person:
+            return None
+        
+        # Clean text
+        normalized = clean_text_field(contact_person)
+        
+        # Remove common prefixes like "Contact:", "Dr.", "Prof."
+        normalized = re.sub(r'^(contact:|dr\.|prof\.|professor)\s+', '', normalized, flags=re.IGNORECASE)
+        
+        # Capitalize properly (Title Case)
+        normalized = normalized.title()
+        
+        return normalized if normalized else None
+    
+    def normalize_materials_required(self, description: str = "", requirements: str = "", 
+                                   existing_materials: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """
+        Parse and normalize materials required from description/requirements text.
+        
+        Args:
+            description: Job description text
+            requirements: Requirements text
+            existing_materials: Existing materials_required dict (if any)
+        
+        Returns:
+            Normalized materials_required dictionary
+        """
+        materials = existing_materials.copy() if existing_materials else {}
+        
+        # Combine description and requirements for parsing
+        combined_text = f"{description} {requirements}".lower()
+        
+        # Get materials keywords from processing rules
+        materials_keywords = self.processing_rules.get("materials_keywords", {})
+        
+        # Check for each material type
+        for material_type, keywords in materials_keywords.items():
+            if material_type not in materials:
+                # Check if any keyword appears in text
+                for keyword in keywords:
+                    if keyword.lower() in combined_text:
+                        # For letters of recommendation, try to extract number
+                        if material_type == "letters_of_recommendation":
+                            # Look for number patterns like "3 letters", "three letters"
+                            number_patterns = [
+                                r'(\d+)\s*(?:letters?|references?)',
+                                r'(?:letters?|references?)\s*(?:of\s*)?(?:recommendation\s*)?[:\-]?\s*(\d+)',
+                                r'(\d+)\s*(?:letters?|references?)\s*(?:of\s*)?(?:recommendation)?'
+                            ]
+                            for pattern in number_patterns:
+                                match = re.search(pattern, combined_text, re.IGNORECASE)
+                                if match:
+                                    try:
+                                        materials[material_type] = int(match.group(1))
+                                        break
+                                    except (ValueError, IndexError):
+                                        pass
+                            # If no number found, set to True
+                            if material_type not in materials:
+                                materials[material_type] = True
+                        # For research_papers, try to extract description
+                        elif material_type == "research_papers":
+                            # Look for patterns like "Job Market Paper + 2 additional papers"
+                            paper_patterns = [
+                                r'job\s*market\s*paper(?:\s*\+\s*(\d+))?\s*(?:additional\s*)?(?:papers?|publications?)?',
+                                r'(\d+)\s*(?:papers?|publications?|writing\s*samples?)',
+                                r'writing\s*sample(?:s)?'
+                            ]
+                            found_description = None
+                            for pattern in paper_patterns:
+                                match = re.search(pattern, combined_text, re.IGNORECASE)
+                                if match:
+                                    # Extract the full match as description
+                                    found_description = match.group(0)
+                                    break
+                            if found_description:
+                                materials[material_type] = found_description
+                            else:
+                                materials[material_type] = True
+                        else:
+                            # For boolean materials, set to True
+                            materials[material_type] = True
+                        break
+        
+        # Ensure "other" field is a list
+        if "other" in materials and not isinstance(materials["other"], list):
+            if materials["other"]:
+                materials["other"] = [str(materials["other"])]
+            else:
+                materials["other"] = []
+        
+        return materials
 
