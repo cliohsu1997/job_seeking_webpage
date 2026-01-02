@@ -319,7 +319,7 @@ class DataValidator:
         # Check job_type consistency
         if "job_type" in job_listing and "title" in job_listing:
             job_type = job_listing["job_type"]
-            title = job_listing.get("title", "").lower()
+            title = (job_listing.get("title") or "").lower()
             
             # Check if title matches job_type
             if job_type == "tenure-track" and "visiting" in title:

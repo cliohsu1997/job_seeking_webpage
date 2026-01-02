@@ -259,8 +259,11 @@ class TestPipelineEndToEnd:
         assert "validation_summary" in summary
         validation = summary["validation_summary"]
         assert validation["total"] > 0
-        # Should have some warnings or errors
-        assert validation["total_critical_errors"] + validation["total_warnings"] >= 0
+        # Should have some warnings or errors (may be 0 if all data is valid)
+        assert "critical_errors" in validation
+        assert "warnings" in validation
+        assert validation["critical_errors"] >= 0
+        assert validation["warnings"] >= 0
     
     def test_pipeline_error_handling(self):
         """Test that pipeline handles errors gracefully."""

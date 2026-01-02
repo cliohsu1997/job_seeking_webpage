@@ -131,12 +131,12 @@ class Deduplicator:
             
             # Find duplicates
             duplicates = [i]
-            title1 = listing.get("title", "").strip()
+            title1 = (listing.get("title") or "").strip()
             
             for j in range(i + 1, len(sorted_listings)):
                 if j in processed:
                     continue
-                title2 = sorted_listings[j].get("title", "").strip()
+                title2 = (sorted_listings[j].get("title") or "").strip()
                 if fuzz.ratio(title1, title2) >= self.title_similarity_threshold:
                     duplicates.append(j)
             
@@ -319,9 +319,9 @@ class Deduplicator:
     
     def _create_listing_key(self, listing: Dict[str, Any]) -> Optional[str]:
         """Create a unique key for a listing."""
-        institution = listing.get("institution", "").strip().lower()
-        title = listing.get("title", "").strip().lower()
-        deadline = listing.get("deadline", "")
+        institution = (listing.get("institution") or "").strip().lower()
+        title = (listing.get("title") or "").strip().lower()
+        deadline = listing.get("deadline") or ""
         
         if not institution or not title or not deadline:
             return None
@@ -335,9 +335,9 @@ class Deduplicator:
         previous_listings: List[Dict[str, Any]]
     ) -> Optional[Dict[str, Any]]:
         """Find a similar listing using fuzzy matching."""
-        current_institution = listing.get("institution", "").strip().lower()
-        current_title = listing.get("title", "").strip().lower()
-        current_deadline = listing.get("deadline", "")
+        current_institution = (listing.get("institution") or "").strip().lower()
+        current_title = (listing.get("title") or "").strip().lower()
+        current_deadline = listing.get("deadline") or ""
         
         if not current_institution or not current_title:
             return None
@@ -349,8 +349,8 @@ class Deduplicator:
             if prev_listing.get("deadline") != current_deadline:
                 continue
             
-            prev_institution = prev_listing.get("institution", "").strip().lower()
-            prev_title = prev_listing.get("title", "").strip().lower()
+            prev_institution = (prev_listing.get("institution") or "").strip().lower()
+            prev_title = (prev_listing.get("title") or "").strip().lower()
             
             inst_sim = fuzz.ratio(current_institution, prev_institution)
             title_sim = fuzz.ratio(current_title, prev_title)
