@@ -61,7 +61,11 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - [x] Complete normalizer (`normalizer.py`) - location, job type, department category, contact info, materials parsing
   - [x] Data enricher (`enricher.py`) - ID generation, region detection, job type classification, specialization extraction, materials enhancement, metadata addition
   - [x] Comprehensive test suites (28 normalizer tests, 24 enricher tests, all passing)
-- [ ] Phase 2C: Deduplication
+- [x] Phase 2C: Deduplication
+  - [x] Deduplicator (`deduplicator.py`) - fuzzy matching, merge logic, source aggregation, conflict resolution
+  - [x] New listing detection (compare with archive)
+  - [x] Active listing detection (based on deadline comparison)
+  - [x] Comprehensive test suite created (simplified, all tests passing)
 - [ ] Phase 2D: Validation & quality
 - [ ] Phase 2E: Integration & testing
 - **To-Do List**: `2026-01-01_transform-data-processing.md`
@@ -75,4 +79,4 @@ The project follows a **Load → Transform → Export** workflow structure for a
 
 ## Current Focus
 
-**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed. Phase 2B (Complete Normalization & Enrichment) completed with optimizations: normalizer and enricher fully implemented with 52 comprehensive tests (28 normalizer + 24 enricher), all passing. Code optimized with cached regex patterns, cached processing rules, and improved efficiency. Ready for Phase 2C (Deduplication).
+**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed. Phase 2B (Complete Normalization & Enrichment) completed. Phase 2C (Deduplication) completed: deduplicator implemented with fuzzy matching using rapidfuzz, merge logic with source aggregation and conflict resolution, new/active listing detection with archive comparison. Simplified codebase with comprehensive test suite. Ready for Phase 2D (Validation & Quality).

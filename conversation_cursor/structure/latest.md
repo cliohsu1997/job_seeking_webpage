@@ -34,9 +34,9 @@ job-seeking-webpage/
 │   ├── processor/                  # Phase 2 - IN PROGRESS
 │   │   ├── pipeline.py            # Main pipeline (✅ Phase 2A)
 │   │   ├── parser_manager.py       # Route to parsers (✅ Phase 2A)
-│   │   ├── normalizer.py           # Data normalization (✅ Phase 2A - basic)
-│   │   ├── enricher.py             # Data enrichment (to be created)
-│   │   ├── deduplicator.py         # Deduplication (to be created)
+│   │   ├── normalizer.py           # Data normalization (✅ Phase 2B)
+│   │   ├── enricher.py             # Data enrichment (✅ Phase 2B)
+│   │   ├── deduplicator.py         # Deduplication (✅ Phase 2C)
 │   │   ├── validator.py            # Data validation (to be created)
 │   │   ├── schema.py               # Schema definition (✅ created)
 │   │   ├── diagnostics.py          # Diagnostic tracking (✅ Phase 2A)
@@ -52,7 +52,8 @@ job-seeking-webpage/
 │   │   ├── utils/                  # Utility tests (✅ location parser, 41 tests)
 │   │   ├── normalizer/             # Normalizer tests (✅ 28 tests, all passing)
 │   │   ├── enricher/               # Enricher tests (✅ 24 tests, all passing)
-│   │   └── integration/            # Integration tests (✅ Phase 2A components)
+│   │   ├── deduplicator/           # Deduplicator tests (✅ Phase 2C)
+│   │   └── integration/           # Integration tests (✅ Phase 2A components)
 │   └── export-output-generation/   # Phase 3 tests (to be created)
 │
 ├── templates/                      # HTML templates (Phase 3)
@@ -85,7 +86,7 @@ job-seeking-webpage/
 - **`scripts/processor/parser_manager.py`**: Routes raw data to parsers
 - **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text, job types, departments, contact info, materials ✅ Phase 2B
 - **`scripts/processor/enricher.py`**: Enriches data (IDs, classifications, metadata, specializations) ✅ Phase 2B
-- **`scripts/processor/deduplicator.py`**: Identifies and merges duplicate listings
+- **`scripts/processor/deduplicator.py`**: Identifies and merges duplicate listings (fuzzy matching, merge logic, new/active detection) ✅ Phase 2C
 - **`scripts/processor/validator.py`**: Validates data against schema (to be created)
 - **`scripts/processor/diagnostics.py`**: Diagnostic tracking and root cause analysis ✅ Phase 2A
 - **`scripts/processor/schema.py`**: Data schema definition (29 fields, validation functions) ✅

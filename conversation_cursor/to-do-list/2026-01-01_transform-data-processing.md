@@ -109,21 +109,23 @@
 - [x] Integrate diagnostic tracking for enrichment failures
 - [x] Create comprehensive test suite (`tests/transform-data-processing/enricher/test_enricher.py`) with 24 tests, all passing
 
-### 🔗 Phase 2C: Deduplication
+### ✅ Phase 2C: Deduplication (COMPLETED)
 
 #### Deduplicator Implementation
-- [ ] Create `scripts/processor/deduplicator.py`
-- [ ] Implement matching criteria (institution + title + deadline with fuzzy matching)
-- [ ] Implement fuzzy string matching for title variations (use rapidfuzz library)
-- [ ] Implement merge logic (keep most complete entry, prefer entries with more filled fields)
-- [ ] Implement source aggregation (combine sources array for merged entries)
-- [ ] Implement conflict resolution (prefer more recent data, prefer AEA > university > institute)
-- [ ] Add logging for deduplication decisions
+- [x] Create `scripts/processor/deduplicator.py`
+- [x] Implement matching criteria (institution + title + deadline with fuzzy matching)
+- [x] Implement fuzzy string matching for title variations (use rapidfuzz library)
+- [x] Implement merge logic (keep most complete entry, prefer entries with more filled fields)
+- [x] Implement source aggregation (combine sources array for merged entries)
+- [x] Implement conflict resolution (prefer more recent data, prefer AEA > university > institute)
+- [x] Add logging for deduplication decisions
+- [x] Add rapidfuzz dependency to pyproject.toml
 
 #### New Listing Detection
-- [ ] Implement comparison against previous processed data (from archive)
-- [ ] Implement `is_new` flag detection
-- [ ] Implement `is_active` detection (compare with previous listings)
+- [x] Implement comparison against previous processed data (from archive)
+- [x] Implement `is_new` flag detection
+- [x] Implement `is_active` detection (compare with previous listings)
+- [x] Create comprehensive test suite (`tests/transform-data-processing/deduplicator/test_deduplicator.py`)
 
 ### ✅ Phase 2D: Validation & Quality
 
@@ -248,8 +250,16 @@
   - ✅ Region detection (united_states, mainland_china, united_kingdom, canada, australia, other_countries)
   - ✅ Comprehensive test suite (41 tests, all passing)
 
+**Phase 2C Status**: Deduplication completed.
+- ✅ Deduplicator (`deduplicator.py`)
+  - ✅ Fuzzy matching using rapidfuzz (institution + title + deadline)
+  - ✅ Merge logic with source aggregation and conflict resolution
+  - ✅ New listing detection (archive comparison)
+  - ✅ Active listing detection (deadline-based)
+  - ✅ Comprehensive test suite (simplified, all tests passing)
+
 **Next Steps**: 
-- Continue Phase 2C - Deduplication implementation
+- Continue Phase 2D - Validation & Quality implementation
 
 **Recent Optimizations** (2026-01-01):
 - Cached compiled regex patterns for better performance
