@@ -38,6 +38,21 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 CONFIG_FILE = PROJECT_ROOT / "data/config/processing_rules.json"
 
+# Compiled regex patterns (cached for performance)
+EMAIL_PATTERN = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+EMAIL_PREFIX_PATTERN = re.compile(r'^(mailto:|email:)\s*', re.IGNORECASE)
+CONTACT_PREFIX_PATTERN = re.compile(r'^(contact:|dr\.|prof\.|professor)\s+', re.IGNORECASE)
+LETTERS_NUMBER_PATTERNS = [
+    re.compile(r'(\d+)\s*(?:letters?|references?)', re.IGNORECASE),
+    re.compile(r'(?:letters?|references?)\s*(?:of\s*)?(?:recommendation\s*)?[:\-]?\s*(\d+)', re.IGNORECASE),
+    re.compile(r'(\d+)\s*(?:letters?|references?)\s*(?:of\s*)?(?:recommendation)?', re.IGNORECASE)
+]
+RESEARCH_PAPER_PATTERNS = [
+    re.compile(r'job\s*market\s*paper(?:\s*\+\s*(\d+))?\s*(?:additional\s*)?(?:papers?|publications?)?', re.IGNORECASE),
+    re.compile(r'(\d+)\s*(?:papers?|publications?|writing\s*samples?)', re.IGNORECASE),
+    re.compile(r'writing\s*sample(?:s)?', re.IGNORECASE)
+]
+
 
 class DataNormalizer:
     """
@@ -59,9 +74,16 @@ class DataNormalizer:
         try:
             with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
                 self.processing_rules = json.load(f)
+            # Cache frequently accessed rule sections
+            self._job_type_keywords = self.processing_rules.get("job_type_keywords", {})
+            self._department_mapping = self.processing_rules.get("department_category_mapping", {})
+            self._materials_keywords = self.processing_rules.get("materials_keywords", {})
         except (FileNotFoundError, json.JSONDecodeError) as e:
             logger.warning(f"Failed to load processing rules from {CONFIG_FILE}: {e}")
             self.processing_rules = {}
+            self._job_type_keywords = {}
+            self._department_mapping = {}
+            self._materials_keywords = {}
     
     def normalize_date(self, date_str: Optional[str], field_name: str = "date") -> Tuple[Optional[str], Optional[str]]:
         """
@@ -324,11 +346,8 @@ class DataNormalizer:
         title_lower = title.lower() if title else ""
         combined_text = f"{job_type_lower} {title_lower}".strip()
         
-        # Get job type keywords from processing rules
-        job_type_keywords = self.processing_rules.get("job_type_keywords", {})
-        
-        # Check each job type category
-        for normalized_type, keywords in job_type_keywords.items():
+        # Check each job type category (use cached keywords)
+        for normalized_type, keywords in self._job_type_keywords.items():
             for keyword in keywords:
                 if keyword.lower() in combined_text:
                     return normalized_type
@@ -351,11 +370,8 @@ class DataNormalizer:
         
         department_lower = department.lower()
         
-        # Get department category mapping from processing rules
-        category_mapping = self.processing_rules.get("department_category_mapping", {})
-        
-        # Check each category
-        for category, keywords in category_mapping.items():
+        # Check each category (use cached mapping)
+        for category, keywords in self._department_mapping.items():
             for keyword in keywords:
                 if keyword.lower() in department_lower:
                     return category
@@ -380,11 +396,10 @@ class DataNormalizer:
         email = str(email).strip().lower()
         
         # Remove common prefixes like "mailto:" or "Email:"
-        email = re.sub(r'^(mailto:|email:)\s*', '', email, flags=re.IGNORECASE)
+        email = EMAIL_PREFIX_PATTERN.sub('', email)
         
         # Basic email format validation
-        email_pattern = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
-        if email_pattern.match(email):
+        if EMAIL_PATTERN.match(email):
             return email
         else:
             if self.diagnostics:
@@ -414,7 +429,7 @@ class DataNormalizer:
         normalized = clean_text_field(contact_person)
         
         # Remove common prefixes like "Contact:", "Dr.", "Prof."
-        normalized = re.sub(r'^(contact:|dr\.|prof\.|professor)\s+', '', normalized, flags=re.IGNORECASE)
+        normalized = CONTACT_PREFIX_PATTERN.sub('', normalized)
         
         # Capitalize properly (Title Case)
         normalized = normalized.title()
@@ -436,28 +451,23 @@ class DataNormalizer:
         """
         materials = existing_materials.copy() if existing_materials else {}
         
-        # Combine description and requirements for parsing
+        # Combine description and requirements for parsing (only if needed)
+        if not description and not requirements:
+            return materials if materials else {}
+        
         combined_text = f"{description} {requirements}".lower()
         
-        # Get materials keywords from processing rules
-        materials_keywords = self.processing_rules.get("materials_keywords", {})
-        
-        # Check for each material type
-        for material_type, keywords in materials_keywords.items():
+        # Check for each material type (use cached keywords)
+        for material_type, keywords in self._materials_keywords.items():
             if material_type not in materials:
                 # Check if any keyword appears in text
                 for keyword in keywords:
                     if keyword.lower() in combined_text:
                         # For letters of recommendation, try to extract number
                         if material_type == "letters_of_recommendation":
-                            # Look for number patterns like "3 letters", "three letters"
-                            number_patterns = [
-                                r'(\d+)\s*(?:letters?|references?)',
-                                r'(?:letters?|references?)\s*(?:of\s*)?(?:recommendation\s*)?[:\-]?\s*(\d+)',
-                                r'(\d+)\s*(?:letters?|references?)\s*(?:of\s*)?(?:recommendation)?'
-                            ]
-                            for pattern in number_patterns:
-                                match = re.search(pattern, combined_text, re.IGNORECASE)
+                            # Use pre-compiled patterns
+                            for pattern in LETTERS_NUMBER_PATTERNS:
+                                match = pattern.search(combined_text)
                                 if match:
                                     try:
                                         materials[material_type] = int(match.group(1))
@@ -469,15 +479,10 @@ class DataNormalizer:
                                 materials[material_type] = True
                         # For research_papers, try to extract description
                         elif material_type == "research_papers":
-                            # Look for patterns like "Job Market Paper + 2 additional papers"
-                            paper_patterns = [
-                                r'job\s*market\s*paper(?:\s*\+\s*(\d+))?\s*(?:additional\s*)?(?:papers?|publications?)?',
-                                r'(\d+)\s*(?:papers?|publications?|writing\s*samples?)',
-                                r'writing\s*sample(?:s)?'
-                            ]
+                            # Use pre-compiled patterns
                             found_description = None
-                            for pattern in paper_patterns:
-                                match = re.search(pattern, combined_text, re.IGNORECASE)
+                            for pattern in RESEARCH_PAPER_PATTERNS:
+                                match = pattern.search(combined_text)
                                 if match:
                                     # Extract the full match as description
                                     found_description = match.group(0)

@@ -28,6 +28,24 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 CONFIG_FILE = PROJECT_ROOT / "data/config/processing_rules.json"
 
+# Valid regions list (cached for performance)
+VALID_REGIONS = {
+    "united_states", "mainland_china", "united_kingdom",
+    "canada", "australia", "other_countries"
+}
+
+# Compiled regex patterns (cached for performance)
+LETTERS_NUMBER_PATTERNS = [
+    re.compile(r'(\d+)\s*(?:letters?|references?)\s*(?:of\s*)?(?:recommendation)?', re.IGNORECASE),
+    re.compile(r'(?:letters?|references?)\s*(?:of\s*)?(?:recommendation\s*)?[:\-]?\s*(\d+)', re.IGNORECASE),
+    re.compile(r'(\d+)\s*(?:letters?|references?)\s*(?:will\s*be|are|required)', re.IGNORECASE),
+]
+RESEARCH_PAPER_PATTERNS = [
+    re.compile(r'job\s*market\s*paper(?:\s*\+\s*(\d+))?\s*(?:additional\s*)?(?:papers?|publications?)?', re.IGNORECASE),
+    re.compile(r'(\d+)\s*(?:papers?|publications?|writing\s*samples?)', re.IGNORECASE),
+    re.compile(r'writing\s*sample(?:s)?(?:\s*\+\s*(\d+))?\s*(?:additional\s*)?(?:papers?)?', re.IGNORECASE),
+]
+
 
 class DataEnricher:
     """
@@ -49,9 +67,14 @@ class DataEnricher:
         try:
             with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
                 self.processing_rules = json.load(f)
+            # Cache frequently accessed rule sections
+            self._job_type_keywords = self.processing_rules.get("job_type_keywords", {})
+            self._specialization_keywords = self.processing_rules.get("specialization_keywords", {})
         except (FileNotFoundError, json.JSONDecodeError) as e:
             logger.warning(f"Failed to load processing rules from {CONFIG_FILE}: {e}")
             self.processing_rules = {}
+            self._job_type_keywords = {}
+            self._specialization_keywords = {}
     
     def enrich_job_listing(self, job_data: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -143,10 +166,7 @@ class DataEnricher:
         """
         try:
             # If region already exists and is valid, return as-is
-            if location.get("region") and location["region"] in [
-                "united_states", "mainland_china", "united_kingdom",
-                "canada", "australia", "other_countries"
-            ]:
+            if location.get("region") in VALID_REGIONS:
                 return location
             
             # Try to detect region from country
@@ -184,17 +204,14 @@ class DataEnricher:
         Returns:
             Job type classification (tenure-track, visiting, postdoc, lecturer, other)
         """
-        if not title and not description:
+        combined_text = f"{title} {description}".lower().strip()
+        
+        if not combined_text:
             return "other"
         
-        combined_text = f"{title} {description}".lower()
-        
-        # Get job type keywords from processing rules
-        job_type_keywords = self.processing_rules.get("job_type_keywords", {})
-        
-        # Score each job type based on keyword matches
+        # Score each job type based on keyword matches (use cached keywords)
         scores = {}
-        for job_type, keywords in job_type_keywords.items():
+        for job_type, keywords in self._job_type_keywords.items():
             score = 0
             for keyword in keywords:
                 # Count occurrences (case-insensitive)
@@ -223,14 +240,14 @@ class DataEnricher:
         """
         specializations = set(existing_specializations) if existing_specializations else set()
         
-        # Combine text for searching
+        # Combine text for searching (only if needed)
+        if not description and not requirements:
+            return sorted(list(specializations)) if specializations else []
+        
         combined_text = f"{description} {requirements}".lower()
         
-        # Get specialization keywords from processing rules
-        specialization_keywords = self.processing_rules.get("specialization_keywords", {})
-        
-        # Check for each specialization
-        for specialization, keywords in specialization_keywords.items():
+        # Check for each specialization (use cached keywords)
+        for specialization, keywords in self._specialization_keywords.items():
             for keyword in keywords:
                 if keyword.lower() in combined_text:
                     # Capitalize specialization name properly
@@ -264,17 +281,16 @@ class DataEnricher:
         # Get materials keywords from processing rules
         materials_keywords = self.processing_rules.get("materials_keywords", {})
         
+        # Early return if no text to parse
+        if not combined_text:
+            return materials
+        
         # Enhanced parsing for letters of recommendation
         # Check if not already set or if we need to enhance
         if "letters_of_recommendation" not in materials or not materials.get("letters_of_recommendation"):
-            # Look for number patterns
-            number_patterns = [
-                r'(\d+)\s*(?:letters?|references?)\s*(?:of\s*)?(?:recommendation)?',
-                r'(?:letters?|references?)\s*(?:of\s*)?(?:recommendation\s*)?[:\-]?\s*(\d+)',
-                r'(\d+)\s*(?:letters?|references?)\s*(?:will\s*be|are|required)',
-            ]
-            for pattern in number_patterns:
-                match = re.search(pattern, combined_text, re.IGNORECASE)
+            # Use pre-compiled patterns
+            for pattern in LETTERS_NUMBER_PATTERNS:
+                match = pattern.search(combined_text)
                 if match:
                     try:
                         materials["letters_of_recommendation"] = int(match.group(1))
@@ -284,18 +300,12 @@ class DataEnricher:
         
         # Enhanced parsing for research papers
         if "research_papers" not in materials or not materials.get("research_papers"):
-            # Look for detailed descriptions
-            paper_patterns = [
-                r'job\s*market\s*paper(?:\s*\+\s*(\d+))?\s*(?:additional\s*)?(?:papers?|publications?)?',
-                r'(\d+)\s*(?:papers?|publications?|writing\s*samples?)',
-                r'writing\s*sample(?:s)?(?:\s*\+\s*(\d+))?\s*(?:additional\s*)?(?:papers?)?',
-            ]
-            for pattern in paper_patterns:
-                match = re.search(pattern, combined_text, re.IGNORECASE)
+            # Use pre-compiled patterns
+            for pattern in RESEARCH_PAPER_PATTERNS:
+                match = pattern.search(combined_text)
                 if match:
                     # Extract full description
-                    full_match = match.group(0)
-                    materials["research_papers"] = full_match
+                    materials["research_papers"] = match.group(0)
                     break
         
         # Ensure "other" field is a list
