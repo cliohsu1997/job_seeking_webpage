@@ -66,7 +66,11 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - [x] New listing detection (compare with archive)
   - [x] Active listing detection (based on deadline comparison)
   - [x] Comprehensive test suite created (simplified, all tests passing)
-- [ ] Phase 2D: Validation & quality
+- [x] Phase 2D: Validation & Quality
+  - [x] Data validator (`validator.py`) - schema validation, date/URL validation, completeness checks, quality checks
+  - [x] Validation report generation (batch validation with statistics)
+  - [x] Diagnostic report generation (root cause analysis, category reports, JSON/text output)
+  - [x] Comprehensive test suites (40 tests: 26 validator tests, 14 diagnostics tests, all passing)
 - [ ] Phase 2E: Integration & testing
 - **To-Do List**: `2026-01-01_transform-data-processing.md`
 - **Proposal**: `conversation_cursor/dates/2026-01-01/proceed-to-phase-2-proposal.md`
@@ -79,4 +83,4 @@ The project follows a **Load → Transform → Export** workflow structure for a
 
 ## Current Focus
 
-**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed. Phase 2B (Complete Normalization & Enrichment) completed. Phase 2C (Deduplication) completed: deduplicator implemented with fuzzy matching using rapidfuzz, merge logic with source aggregation and conflict resolution, new/active listing detection with archive comparison. Simplified codebase with comprehensive test suite. Ready for Phase 2D (Validation & Quality).
+**Phase 2: TRANSFORM - Data Processing** - Phase 2A (Core Pipeline Foundation) completed. Phase 2B (Complete Normalization & Enrichment) completed. Phase 2C (Deduplication) completed. Phase 2D (Validation & Quality) completed: validator implemented with schema validation, date/URL validation, completeness/quality/consistency checks, batch validation with reports; diagnostics extended with root cause analysis, category statistics, report generation (JSON/text output), file saving with latest symlinks. Comprehensive test suites (40 tests passing). Ready for Phase 2E (Integration & Testing).

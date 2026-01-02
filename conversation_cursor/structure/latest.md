@@ -37,9 +37,9 @@ job-seeking-webpage/
 │   │   ├── normalizer.py           # Data normalization (✅ Phase 2B)
 │   │   ├── enricher.py             # Data enrichment (✅ Phase 2B)
 │   │   ├── deduplicator.py         # Deduplication (✅ Phase 2C)
-│   │   ├── validator.py            # Data validation (to be created)
+│   │   ├── validator.py            # Data validation (✅ Phase 2D)
 │   │   ├── schema.py               # Schema definition (✅ created)
-│   │   ├── diagnostics.py          # Diagnostic tracking (✅ Phase 2A)
+│   │   ├── diagnostics.py          # Diagnostic tracking & reports (✅ Phase 2A, 2D)
 │   │   └── utils/                  # ID generator (✅), location parser (✅), text cleaner (✅)
 │   ├── generator/                  # Phase 3 - PENDING
 │   └── scheduler.py                # Phase 4 - PENDING
@@ -53,6 +53,7 @@ job-seeking-webpage/
 │   │   ├── normalizer/             # Normalizer tests (✅ 28 tests, all passing)
 │   │   ├── enricher/               # Enricher tests (✅ 24 tests, all passing)
 │   │   ├── deduplicator/           # Deduplicator tests (✅ Phase 2C)
+│   │   ├── validator/              # Validator tests (✅ Phase 2D, 26 tests)
 │   │   └── integration/           # Integration tests (✅ Phase 2A components)
 │   └── export-output-generation/   # Phase 3 tests (to be created)
 │
@@ -87,8 +88,8 @@ job-seeking-webpage/
 - **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text, job types, departments, contact info, materials ✅ Phase 2B
 - **`scripts/processor/enricher.py`**: Enriches data (IDs, classifications, metadata, specializations) ✅ Phase 2B
 - **`scripts/processor/deduplicator.py`**: Identifies and merges duplicate listings (fuzzy matching, merge logic, new/active detection) ✅ Phase 2C
-- **`scripts/processor/validator.py`**: Validates data against schema (to be created)
-- **`scripts/processor/diagnostics.py`**: Diagnostic tracking and root cause analysis ✅ Phase 2A
+- **`scripts/processor/validator.py`**: Validates data against schema (schema validation, date/URL validation, completeness/quality/consistency checks, batch validation) ✅ Phase 2D
+- **`scripts/processor/diagnostics.py`**: Diagnostic tracking and root cause analysis ✅ Phase 2A, report generation (root cause analysis, category statistics, JSON/text output, file saving) ✅ Phase 2D
 - **`scripts/processor/schema.py`**: Data schema definition (29 fields, validation functions) ✅
 - **`scripts/processor/utils/`**: ID generator ✅, location parser ✅, text cleaner ✅
 - **`scripts/processor/pipeline.py`**: Main processing pipeline orchestrator ✅ Phase 2A
