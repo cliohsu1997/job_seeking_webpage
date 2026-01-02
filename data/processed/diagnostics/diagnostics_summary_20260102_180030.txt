@@ -1,0 +1,31 @@
+======================================================================
+DIAGNOSTIC REPORT SUMMARY
+======================================================================
+Start Time: 2026-01-02T18:00:01.265095
+End Time: 2026-01-02T18:00:30.766051
+Duration: 29.50 seconds
+
+Total Issues: 3774
+
+Issues by Category:
+----------------------------------------------------------------------
+  validation_issues             :  3405 ( 90.2%)
+  normalization_issues          :   362 (  9.6%)
+  parsing_issues                :     7 (  0.2%)
+
+Most Common Errors:
+----------------------------------------------------------------------
+  Missing required field                                      : 2876
+  Invalid URL format (missing scheme or netloc)               : 362
+  Field 'source_url'                                          : 283
+  Merged 2 duplicates                                         : 115
+  Field 'deadline'                                            : 92
+
+Issues by Source (Top 10):
+----------------------------------------------------------------------
+  university_website                      : 3127
+  normalizer                              : 362
+  research_institute                      : 278
+  university                              : 7
+
+======================================================================

@@ -70,15 +70,15 @@ job-seeking-webpage/
 ## Key Files & Modules
 
 ### Configuration
-- **`data/config/scraping_sources.json`**: 176 accessible URLs across job portals, universities, research institutes
+- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, Chronicle Vitae, EconJobMarket, EJMR, AEA Scramble), universities, research institutes
 - **`data/config/scraping_rules.json`**: Scraping patterns (deadlines, keywords, date formats)
 - **`data/config/processing_rules.json`**: Processing rules (job type keywords, specialization keywords, region mapping, materials parsing)
 
 ### Scraper Framework (Phase 1 - Complete)
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)
 - **`scripts/scraper/aea_scraper.py`**: AEA JOE scraper (RSS/HTML fallback)
-- **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based)
-- **`scripts/scraper/institute_scraper.py`**: Research institute scraper
+- **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based, **link-following enabled** - automatically follows links to detail pages to extract full job information)
+- **`scripts/scraper/institute_scraper.py`**: Research institute scraper (**link-following enabled** - automatically follows links to detail pages)
 - **`scripts/scraper/parsers/`**: HTML, RSS, text extractor, date parser
 - **`scripts/scraper/utils/`**: Rate limiter, retry handler, user agent, config loader
 

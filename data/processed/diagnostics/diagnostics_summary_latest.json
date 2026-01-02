@@ -1,0 +1,121 @@
+{
+  "summary": {
+    "start_time": "2026-01-02T18:00:01.265095",
+    "end_time": "2026-01-02T18:00:30.737498",
+    "duration_seconds": 29.472403,
+    "statistics": {
+      "parsing_issues": 7,
+      "normalization_issues": 362,
+      "validation_issues": 3405
+    },
+    "total_issues": 3774,
+    "categories": [
+      "parsing_issues",
+      "normalization_issues",
+      "validation_issues"
+    ]
+  },
+  "statistics_by_category": {
+    "parsing_issues": {
+      "total": 7,
+      "sources_affected": 1,
+      "error_types": {
+        "READ_ERROR": 7
+      },
+      "unique_sources": [
+        "university"
+      ]
+    },
+    "normalization_issues": {
+      "total": 362,
+      "sources_affected": 1,
+      "error_types": {
+        "unknown": 362
+      },
+      "unique_sources": [
+        "normalizer"
+      ]
+    },
+    "validation_issues": {
+      "total": 3405,
+      "sources_affected": 2,
+      "error_types": {
+        "DUPLICATE_MERGE": 123,
+        "SCHEMA": 3282
+      },
+      "unique_sources": [
+        "research_institute",
+        "university_website"
+      ]
+    }
+  },
+  "root_cause_analysis": {
+    "by_source": {
+      "university": {
+        "parsing_issues": 7
+      },
+      "normalizer": {
+        "normalization_issues": 362
+      },
+      "university_website": {
+        "validation_issues": 3127
+      },
+      "research_institute": {
+        "validation_issues": 278
+      }
+    },
+    "by_error_type": {
+      "READ_ERROR": 7,
+      "DUPLICATE_MERGE": 123,
+      "SCHEMA": 3282
+    },
+    "most_common_errors": [
+      [
+        "Missing required field",
+        2876
+      ],
+      [
+        "Invalid URL format (missing scheme or netloc)",
+        362
+      ],
+      [
+        "Field 'source_url'",
+        283
+      ],
+      [
+        "Merged 2 duplicates",
+        115
+      ],
+      [
+        "Field 'deadline'",
+        92
+      ],
+      [
+        "Field 'source'",
+        30
+      ],
+      [
+        "Could not read file content",
+        7
+      ],
+      [
+        "Merged 14 duplicates",
+        2
+      ],
+      [
+        "Merged 4 duplicates",
+        2
+      ],
+      [
+        "Merged 5 duplicates",
+        1
+      ]
+    ],
+    "source_failure_rates": {
+      "university": 0.18547959724430313,
+      "normalizer": 9.591944886062533,
+      "university_website": 82.85638579756227,
+      "research_institute": 7.366189719130896
+    }
+  }
+}

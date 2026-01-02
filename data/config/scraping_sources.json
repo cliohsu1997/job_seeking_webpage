@@ -11,6 +11,65 @@
           "Economics"
         ],
         "notes": "Primary source for economics job listings"
+      },
+      "higheredjobs": {
+        "name": "HigherEdJobs",
+        "url": "https://www.higheredjobs.com/search/default.cfm?JobCat=47",
+        "scraping_method": "html_parser",
+        "region": "global",
+        "job_nature": "portal",
+        "departments": [
+          "Economics",
+          "Business",
+          "Management"
+        ],
+        "notes": "Major academic job board - filter by Economics category (ID: 47)"
+      },
+      "chronicle_vitae": {
+        "name": "Chronicle Vitae",
+        "url": "https://chroniclevitae.com/job_search?job_search%5Bquery%5D=economics",
+        "scraping_method": "html_parser",
+        "region": "global",
+        "job_nature": "portal",
+        "departments": [
+          "Economics",
+          "Business",
+          "Management"
+        ],
+        "notes": "Academic job board by Chronicle of Higher Education - search for economics positions"
+      },
+      "econjobmarket": {
+        "name": "EconJobMarket",
+        "url": "https://econjobmarket.org/",
+        "scraping_method": "html_parser",
+        "region": "global",
+        "job_nature": "portal",
+        "departments": [
+          "Economics"
+        ],
+        "notes": "Economics-specific academic job market platform"
+      },
+      "ejmr": {
+        "name": "Economics Job Market Rumors (EJMR)",
+        "url": "https://www.econjobrumors.com/",
+        "scraping_method": "html_parser",
+        "region": "global",
+        "job_nature": "forum",
+        "departments": [
+          "Economics"
+        ],
+        "notes": "Discussion forum for economics job market - contains job rumors and discussions (note: unstructured forum format, may require special parsing)"
+      },
+      "aea_scramble": {
+        "name": "AEA Job Market Scramble",
+        "url": "https://www.aeaweb.org/joe/scramble/",
+        "scraping_method": "html_parser",
+        "region": "global",
+        "job_nature": "portal",
+        "departments": [
+          "Economics"
+        ],
+        "notes": "AEA platform for late spring job market - connects employers with unfilled positions and job seekers"
       }
     },
     "regions": {

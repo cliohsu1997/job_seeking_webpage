@@ -42,38 +42,47 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
 
 ### 📝 Improve Data Extraction (2,876 missing field instances - 76.2% of issues)
 
+#### Link-Following Implementation ✅ COMPLETED
+- [x] Add listing page detection logic (detects pages with multiple job links)
+- [x] Implement link-following capability in university scraper
+- [x] Implement link-following capability in institute scraper
+- [x] Add configuration options (follow_links, max_links_to_follow)
+- [x] Optimize URL validation and error handling
+- [x] Test with real data ✅ - Results: 86.4% listings with full descriptions, 59.1% with application links
+- [x] Create test file in proper test folder location
+
 #### Location Extraction
-- [ ] Enhance university scrapers to extract location information
+- [x] Enhance scrapers to extract location information from detail pages
 - [ ] Add fallback: extract location from university name/metadata if not in listing
 - [ ] Use university location database or config file as fallback
 - [ ] Improve location parser to handle more edge cases
 - [ ] Test location extraction with real data
 
 #### Deadline Extraction
-- [ ] Improve deadline extraction from various page formats
+- [x] Improve deadline extraction from detail pages
 - [ ] Add pattern matching for common deadline formats
 - [ ] Handle "rolling" or "open until filled" deadlines
-- [ ] Extract deadline from description text if not in structured format
+- [x] Extract deadline from description text if not in structured format
 - [ ] Test deadline extraction improvements
 
 #### Description & Requirements Extraction
-- [ ] Enhance scrapers to extract full job descriptions
-- [ ] Add logic to follow links to individual job postings when available
-- [ ] Improve text extraction from various HTML structures
+- [x] Enhance scrapers to extract full job descriptions from detail pages
+- [x] Add logic to follow links to individual job postings when available
+- [x] Improve text extraction from various HTML structures
 - [ ] Handle multi-page job descriptions
-- [ ] Extract requirements from description text if not in separate field
-- [ ] Test description/requirements extraction
+- [x] Extract requirements from description text if not in separate field
+- [ ] Test description/requirements extraction with real data
 
 #### Application Link Extraction
-- [ ] Improve application link extraction from various page formats
-- [ ] Handle cases where application is via email (extract contact_email)
+- [x] Improve application link extraction with prominent link detection
+- [x] Handle cases where application is via email (extract contact_email)
 - [ ] Follow redirects to get final application URL
 - [ ] Validate application links are accessible
-- [ ] Test application link extraction
+- [ ] Test application link extraction with real data
 
 #### Source URL Tracking
-- [ ] Ensure all listings have `source_url` field populated
-- [ ] Store original scraped URL even if application_link is different
+- [x] Ensure all listings have `source_url` field populated (detail page URL)
+- [x] Store original scraped URL even if application_link is different
 - [ ] Track URL resolution chain for debugging
 
 ### 🛠️ Implement Tiered Validation

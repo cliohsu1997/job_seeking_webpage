@@ -20,7 +20,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **To-Do List**: `2025-12-31_project-setup.md`
 
 ### ✅ Phase 1: LOAD - Data Collection (COMPLETED)
-**Status**: Core scraper framework implemented
+**Status**: Core scraper framework implemented with link-following capability
 
 **Key Accomplishments**:
 - [x] Scraping strategy proposal created
@@ -31,6 +31,8 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] AEA JOE scraper with RSS/HTML fallback
 - [x] Generic university scraper with pattern-based extraction
 - [x] Research institute scraper
+- [x] **Link-following capability** - Automatically detects listing pages and follows links to extract full job details from detail pages
+- [x] **Enhanced data extraction** - Extracts complete descriptions, application links, contact info, requirements from detail pages
 - [x] Comprehensive test suite organized by category (67 tests passed)
 
 **Coverage**: Mainland China (100), United States (~60), Other Countries (UK, Canada, Australia, etc.), Research institutes (6+)
@@ -102,8 +104,16 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - Invalid URL formats - relative URLs need resolution (362 instances - 9.6%)
 - File read errors (7 instances - 0.2%)
 
+**Recent Accomplishments**:
+- [x] **Link-following implementation** - University and institute scrapers now automatically detect listing pages and follow links to extract full job details
+- [x] **Enhanced detail page extraction** - Extracts complete descriptions, titles, deadlines, application links, contact emails, location, and requirements
+- [x] **Optimized URL handling** - Better relative URL resolution, validation, and error handling
+- [x] **Improved application link detection** - Prioritizes prominent application buttons/links
+- [x] **Tested with real data** - Link-following tested successfully: 86.4% listings now have full descriptions (vs 0% before), 59.1% have application links, 36.4% have contact emails
+- [x] **Diagnostic report cleanup** - Reorganized diagnostic reports with clean summary and links to detailed reports
+
 **Objectives**:
-1. Improve scraper extraction to capture more complete data from webpages
+1. ✅ Improve scraper extraction to capture more complete data from webpages (link-following implemented)
 2. Resolve relative URLs to absolute URLs during normalization
 3. Implement tiered validation (critical vs. optional fields)
 4. Handle missing data gracefully with defaults and fallbacks
