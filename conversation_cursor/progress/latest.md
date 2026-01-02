@@ -83,11 +83,32 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **Proposal**: `conversation_cursor/dates/2026-01-01/proceed-to-phase-2-proposal.md`
 
 ### ⏸️ Phase 3: EXPORT - Output Generation (PENDING)
-- Waiting for Phase 2
+- Waiting for Phase 2F (Data Quality Improvements)
 
 ### ⏸️ Phase 4: DEPLOY - Deployment & Automation (PENDING)
 - Waiting for Phase 3
 
 ## Current Focus
 
-**Phase 2: TRANSFORM - Data Processing** - ✅ **COMPLETED**. All phases (2A-2E) completed: Core Pipeline Foundation, Complete Normalization & Enrichment, Deduplication, Validation & Quality, and Integration & Testing. Complete pipeline implemented with full workflow (parse → normalize → enrich → deduplicate → validate → generate diagnostics), JSON/CSV output, archive functionality with automatic retention (keeps latest 3 snapshots), comprehensive error handling, and end-to-end integration tests. All components tested and working. Ready for Phase 3 (EXPORT - Output Generation).
+**Phase 2: TRANSFORM - Data Processing** - ✅ **COMPLETED** (Phases 2A-2E). All core pipeline components implemented and tested. Complete workflow: parse → normalize → enrich → deduplicate → validate → generate diagnostics. JSON/CSV output, archive functionality, comprehensive error handling, and end-to-end integration tests all working.
+
+**Phase 2F: IMPROVE DATA QUALITY** - 🚀 **IN PROGRESS**. Addressing issues identified in diagnostic analysis from real data run. Main focus: URL resolution (362 relative URLs), improved data extraction (2,876 missing fields), tiered validation, and graceful handling of missing data. See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and `conversation_cursor/to-do-list/2026-01-02_improve-data-quality.md` for task breakdown.
+
+### 🔧 Phase 2F: IMPROVE DATA QUALITY (IN PROGRESS)
+**Status**: Addressing issues identified in diagnostic analysis
+
+**Context**: After running the pipeline with real data, diagnostic analysis revealed that 0/500 listings passed validation due to:
+- Missing required fields from source webpages (2,876 instances - 76.2% of issues)
+- Invalid URL formats - relative URLs need resolution (362 instances - 9.6%)
+- File read errors (7 instances - 0.2%)
+
+**Objectives**:
+1. Improve scraper extraction to capture more complete data from webpages
+2. Resolve relative URLs to absolute URLs during normalization
+3. Implement tiered validation (critical vs. optional fields)
+4. Handle missing data gracefully with defaults and fallbacks
+5. Fix file reading issues and improve error handling
+
+**Reference**: See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and recommendations.
+
+- **To-Do List**: `2026-01-02_improve-data-quality.md`

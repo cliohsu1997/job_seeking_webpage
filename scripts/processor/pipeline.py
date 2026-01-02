@@ -9,6 +9,7 @@ import json
 import csv
 import logging
 import shutil
+import sys
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from datetime import datetime
@@ -530,8 +531,6 @@ class ProcessingPipeline:
 
 def main():
     """Main entry point for running the processing pipeline."""
-    import sys
-    
     # Configure logging
     logging.basicConfig(
         level=logging.INFO,
