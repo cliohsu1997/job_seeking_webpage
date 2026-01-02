@@ -56,8 +56,11 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - [x] Basic pipeline orchestrator (`pipeline.py`)
   - [x] Component tests created and passing
   - [x] Test structure organized into subfolders (parser/, utils/, integration/)
-- [ ] Phase 2B: Complete normalization & enrichment
+- [x] Phase 2B: Complete normalization & enrichment
   - [x] Location parser utility (`utils/location_parser.py`) - comprehensive parsing for US, China, and other countries with region detection
+  - [x] Complete normalizer (`normalizer.py`) - location, job type, department category, contact info, materials parsing
+  - [x] Data enricher (`enricher.py`) - ID generation, region detection, job type classification, specialization extraction, materials enhancement, metadata addition
+  - [x] Comprehensive test suites (28 normalizer tests, 24 enricher tests, all passing)
 - [ ] Phase 2C: Deduplication
 - [ ] Phase 2D: Validation & quality
 - [ ] Phase 2E: Integration & testing

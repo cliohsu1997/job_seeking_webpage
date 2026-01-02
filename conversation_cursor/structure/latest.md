@@ -50,6 +50,8 @@ job-seeking-webpage/
 │   ├── transform-data-processing/  # Phase 2 tests
 │   │   ├── parser/                 # Parser manager tests (✅ Phase 1 integration)
 │   │   ├── utils/                  # Utility tests (✅ location parser, 41 tests)
+│   │   ├── normalizer/             # Normalizer tests (✅ 28 tests, all passing)
+│   │   ├── enricher/               # Enricher tests (✅ 24 tests, all passing)
 │   │   └── integration/            # Integration tests (✅ Phase 2A components)
 │   └── export-output-generation/   # Phase 3 tests (to be created)
 │
@@ -81,8 +83,8 @@ job-seeking-webpage/
 ### Processor Framework (Phase 2 - In Progress)
 - **`scripts/processor/pipeline.py`**: Main processing pipeline orchestrator
 - **`scripts/processor/parser_manager.py`**: Routes raw data to parsers
-- **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text
-- **`scripts/processor/enricher.py`**: Enriches data (IDs, classifications, metadata)
+- **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text, job types, departments, contact info, materials ✅ Phase 2B
+- **`scripts/processor/enricher.py`**: Enriches data (IDs, classifications, metadata, specializations) ✅ Phase 2B
 - **`scripts/processor/deduplicator.py`**: Identifies and merges duplicate listings
 - **`scripts/processor/validator.py`**: Validates data against schema (to be created)
 - **`scripts/processor/diagnostics.py`**: Diagnostic tracking and root cause analysis ✅ Phase 2A
