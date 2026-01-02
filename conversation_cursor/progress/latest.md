@@ -110,7 +110,8 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] **Optimized URL handling** - Better relative URL resolution, validation, and error handling
 - [x] **Improved application link detection** - Prioritizes prominent application buttons/links
 - [x] **Tested with real data** - Link-following tested successfully: 86.4% listings now have full descriptions (vs 0% before), 59.1% have application links, 36.4% have contact emails
-- [x] **Diagnostic report cleanup** - Reorganized diagnostic reports with clean summary and links to detailed reports
+- [x] **Diagnostic report cleanup** - Created README.md with clean summary and links to detailed reports
+- [x] **Added academic job portals** - Added HigherEdJobs, Chronicle Vitae, EconJobMarket, EJMR (Economics Job Market Rumors), and AEA Job Market Scramble to scraping sources
 
 **Objectives**:
 1. ✅ Improve scraper extraction to capture more complete data from webpages (link-following implemented)
