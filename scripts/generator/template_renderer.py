@@ -187,6 +187,8 @@ class TemplateRenderer:
             return Markup('[]')
         try:
             json_str = json.dumps(obj, ensure_ascii=True)
+            # Escape double quotes for HTML attribute safety
+            json_str = json_str.replace('"', '&quot;')
             return Markup(json_str)
         except (TypeError, ValueError) as e:
             logger.warning(f"Failed to serialize object to JSON: {e}")
