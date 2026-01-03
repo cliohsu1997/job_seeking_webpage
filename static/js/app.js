@@ -108,6 +108,15 @@ function extractJobData(card) {
     const jobId = card.getAttribute('data-job-id');
     const region = card.getAttribute('data-region');
     const institutionType = card.getAttribute('data-institution-type');
+    const specializationsAttr = card.getAttribute('data-specializations');
+    
+    let specializations = [];
+    try {
+        specializations = specializationsAttr ? JSON.parse(specializationsAttr) : [];
+    } catch (e) {
+        console.warn('Failed to parse specializations for job', jobId, e);
+        specializations = [];
+    }
     
     // Extract all data attributes and text content
     const jobData = {
@@ -115,6 +124,7 @@ function extractJobData(card) {
         element: card,
         region: region,
         institution_type: institutionType,
+        specializations: specializations,
         title: card.querySelector('.job-title')?.textContent.trim() || '',
         institution: card.querySelector('.job-institution span')?.textContent || '',
         department: card.querySelector('.job-department span')?.textContent || '',
@@ -125,7 +135,7 @@ function extractJobData(card) {
         isNew: card.querySelector('.badge-new') !== null
     };
     
-    console.log('Extracted job:', jobData.title, 'Region:', jobData.region, 'Tags:', jobData.tags);
+    console.log('Extracted job:', jobData.title, 'Region:', jobData.region, 'Specializations:', jobData.specializations);
     return jobData;
 }
 

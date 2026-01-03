@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-01-03T19:02:42.502179",
+    "generated_at": "2026-01-03T23:39:31.734371",
     "total_listings": 211,
     "version": "1.0"
   },
@@ -910,7 +910,7 @@
         "region": "other_countries"
       },
       "source": "aea",
-      "source_url": "https://www.aeaweb.org/joe/listing.php?JOE_ID=2025-02_111476826&q=eNplj0GKwzAMRe-idQZCoJscoFCYOwjV1qTuKHKQnA6h9O51IS6F2UnvS19fd_hOXpJOfsw2w3iHpEihpBvDqKtIB7-8_WWL6EwWLo0616Gsrb2ytDK5r3UZhn44fPUDdJAtTUlJTv-UkFcttqHx9GHmdOOIP1lcIps3GEhjilQYPRjNZ3kHNA6sBbPK1pDsT2ENzobnKtTHKivrKzVSvS3LAuOh72Chafd6PJ6MN19R",
+      "source_url": "https://www.aeaweb.org/joe/listing.php?JOE_ID=2025-02_111476827&q=eNplj0GKwzAMRe-idQZCoJscoFCYOwjV1qTuKHKQnA6h9O51IS6F2UnvS19fd_hOXpJOfsw2w3iHpEihpBvDqKtIB7-8_WWL6EwWLo0616Gsrb2ytDK5r3UZhn44fPUDdJAtTUlJTv-UkFcttqHx9GHmdOOIP1lcIps3GEhjilQYPRjNZ3kHNA6sBbPK1pDsT2ENzobnKtTHKivrKzVSvS3LAuOh72Chafd6PJ6MN19R",
       "description": "Section: US: Full-Time Academic (Permanent, Tenure Track or Tenured) Location: Auburn, Alabama, UNITED STATES JEL Classifications: E -- Macroeconomics and Monetary Economics F -- International Economics Application Requirements: External Application URL and Instructions Below Application deadline: 02/28/2026 Application Instructions: Applicants should submit a cover letter, curriculum vitae, one or two working papers, evidence of teaching effectiveness, and contact information for three references through the web link provided. http://www.auburn.edu/academic/provost/facultyjobs ... Apply for This Job (link)",
       "deadline": "2026-02-28",
       "application_link": "https://www.auemployment.com/postings/56533",
@@ -926,9 +926,9 @@
       },
       "requirements": null,
       "specializations": [
-        "Macroeconomics",
         "Microeconomics",
-        "International"
+        "International",
+        "Macroeconomics"
       ],
       "start_date": null,
       "salary_range": null,
@@ -2447,7 +2447,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": "https://jobs.omni.fsu.edu/psc/sprdhr_er/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?FOCUS=Applicant&Page=HRS_APP_SCHJOB&Action=U&SiteId=1",
+      "source_url": "https://isu.wd1.myworkdayjobs.com/IowaStateJobs",
       "institution": "State University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -3195,7 +3195,7 @@
     {
       "title": "Apply",
       "source": "university_website",
-      "source_url": "https://academicjobsonline.org/ajo/jobs/31350/apply",
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29560/apply",
       "institution": "University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -3510,7 +3510,7 @@
     {
       "title": "Job Listings for External Applicants",
       "source": "university_website",
-      "source_url": "https://careers.northwestern.edu",
+      "source_url": "https://myhr.northwestern.edu/",
       "institution": "University",
       "department": "Managementhtml",
       "scraped_date": "2026-01-03",
@@ -5250,8 +5250,8 @@
       "deadline_display": null,
       "requirements": null,
       "specializations": [
-        "Labor",
-        "Microeconomics"
+        "Microeconomics",
+        "Labor"
       ],
       "start_date": null,
       "salary_range": null,
@@ -7597,7 +7597,7 @@
     {
       "title": "For Academic Personnel & Faculty",
       "source": "university_website",
-      "source_url": "https://ap.washington.edu/about-us/",
+      "source_url": "https://ap.washington.edu/",
       "institution": "Of Washington",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -8004,7 +8004,7 @@
       "last_updated": null,
       "campus": null,
       "id": "1ff7210c73517a33c3aa56ea81c13932",
-      "department_category": "other",
+      "department_category": "Other",
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
@@ -8038,7 +8038,7 @@
       "last_updated": null,
       "campus": null,
       "id": "92845968539fa1aa6aebcad3103d9df7",
-      "department_category": "other",
+      "department_category": "Other",
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [

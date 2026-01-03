@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "archived_at": "2026-01-03T18:58:54.843128",
+    "archived_at": "2026-01-03T23:39:31.744486",
     "total_listings": 211,
     "version": "1.0"
   },
@@ -149,8 +149,8 @@
       "title": "Program Associate, Economics",
       "institution": "Alfred P. Sloan Foundation",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "New York",
         "state": null,
@@ -386,8 +386,8 @@
       "title": "Associate",
       "institution": "Analysis Group",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -436,8 +436,8 @@
       "title": "Associate - Montreal/Toronto",
       "institution": "Analysis Group",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -485,8 +485,8 @@
       "title": "Research Economist",
       "institution": "Andersen Institute for Finance and Economics",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -532,8 +532,8 @@
       "title": "Postdoctoral Research Associate",
       "institution": "Annenberg Institute at Brown University",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Providence",
         "state": null,
@@ -625,8 +625,8 @@
       "title": "Economist/Core Data Scientist",
       "institution": "Apple Inc.",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "CHINA",
         "state": null,
@@ -853,8 +853,8 @@
       "title": "Assistant Professor of Finance",
       "institution": "Assumption University",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Worcester",
         "state": null,
@@ -927,8 +927,8 @@
       "requirements": null,
       "specializations": [
         "Microeconomics",
-        "Macroeconomics",
-        "International"
+        "International",
+        "Macroeconomics"
       ],
       "start_date": null,
       "salary_range": null,
@@ -1051,8 +1051,8 @@
       "title": "Economist / Researcher",
       "institution": "Banco de la República",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Bogota",
         "state": null,
@@ -1247,8 +1247,8 @@
       "title": "Fellowship to Tenure-Track Positions for Research Economists",
       "institution": "Bank of Italy",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "ROME",
         "state": null,
@@ -1348,8 +1348,8 @@
       "title": "Economist",
       "institution": "Bank of Korea",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "SEOUL",
         "state": null,
@@ -1533,8 +1533,8 @@
       "title": "Economist",
       "institution": "Bates White Economic Consulting",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Washington",
         "state": "DC",
@@ -1722,8 +1722,8 @@
       "title": "Research Associates Program - Several Research Associate Positions",
       "institution": "Berlin School of Economics",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -2447,7 +2447,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": "https://jobs.omni.fsu.edu/psc/sprdhr_er/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?FOCUS=Applicant&Page=HRS_APP_SCHJOB&Action=U&SiteId=1",
+      "source_url": "https://isu.wd1.myworkdayjobs.com/IowaStateJobs",
       "institution": "State University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -2517,7 +2517,7 @@
     {
       "title": "Faculty",
       "source": "university_website",
-      "source_url": "https://isu.wd1.myworkdayjobs.com/IowaStateJobs?jobFamilyGroup=ad349100dff401ea127be90a060a22e3",
+      "source_url": "https://faculty.fsu.edu/",
       "institution": "State University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -3195,7 +3195,7 @@
     {
       "title": "Apply",
       "source": "university_website",
-      "source_url": "https://academicjobsonline.org/ajo/jobs/30057/apply",
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29560/apply",
       "institution": "University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -3510,7 +3510,7 @@
     {
       "title": "Job Listings for External Applicants",
       "source": "university_website",
-      "source_url": "https://careers.northwestern.edu",
+      "source_url": "https://myhr.northwestern.edu/",
       "institution": "University",
       "department": "Managementhtml",
       "scraped_date": "2026-01-03",
@@ -7597,7 +7597,7 @@
     {
       "title": "For Academic Personnel & Faculty",
       "source": "university_website",
-      "source_url": "https://ap.washington.edu/about-us/",
+      "source_url": "https://ap.washington.edu/",
       "institution": "Of Washington",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -8004,7 +8004,7 @@
       "last_updated": null,
       "campus": null,
       "id": "1ff7210c73517a33c3aa56ea81c13932",
-      "department_category": "other",
+      "department_category": "Other",
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
@@ -8038,7 +8038,7 @@
       "last_updated": null,
       "campus": null,
       "id": "92845968539fa1aa6aebcad3103d9df7",
-      "department_category": "other",
+      "department_category": "Other",
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [

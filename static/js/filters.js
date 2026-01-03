@@ -6,6 +6,7 @@ let activeFilters = {
     region: '',
     jobTypes: [],
     institutionTypes: [],
+    specializations: [],
     deadline: '',
     status: 'all'
 };
@@ -56,6 +57,19 @@ function setupFilterListeners() {
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
             console.log('Institution type filter changed:', activeFilters.institutionTypes);
+            applyFilters();
+        });
+    });
+    
+    // Specialization checkboxes
+    const specializationCheckboxes = document.querySelectorAll('input[name="specialization"]');
+    console.log('Found specialization checkboxes:', specializationCheckboxes.length);
+    specializationCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            activeFilters.specializations = Array.from(specializationCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+            console.log('Specialization filter changed:', activeFilters.specializations);
             applyFilters();
         });
     });
@@ -127,6 +141,21 @@ function applyFilters() {
             return match;
         });
         console.log('After institution type filter:', filtered.length, 'jobs');
+    }
+    
+    // Apply specialization filter
+    if (activeFilters.specializations.length > 0) {
+        filtered = filtered.filter(job => {
+            // Job must have at least one of the selected specializations
+            if (!job.specializations || job.specializations.length === 0) {
+                return false;
+            }
+            const match = activeFilters.specializations.some(selectedSpec => 
+                job.specializations.includes(selectedSpec)
+            );
+            return match;
+        });
+        console.log('After specialization filter:', filtered.length, 'jobs');
     }
     
     // Apply deadline filter
@@ -306,6 +335,7 @@ function clearAllFilters() {
         region: '',
         jobTypes: [],
         institutionTypes: [],
+        specializations: [],
         deadline: '',
         status: 'all'
     };

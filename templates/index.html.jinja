@@ -119,6 +119,19 @@
                             </div>
                         </div>
 
+                        <!-- Specialization Filter -->
+                        <div class="filter-group">
+                            <label class="filter-label">Specialization</label>
+                            <div class="filter-checkboxes">
+                                {% for spec, count in stats.by_specialization.items()|sort %}
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="filter-checkbox" name="specialization" value="{{ spec }}">
+                                    <span>{{ spec }} ({{ count }})</span>
+                                </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+
                         <!-- Deadline Filter -->
                         <div class="filter-group">
                             <label class="filter-label">Deadline</label>
@@ -168,7 +181,8 @@
                         <article class="job-card" 
                                  data-job-id="{{ listing.id }}"
                                  data-region="{{ listing.location.region if listing.location and listing.location.region else 'unknown' }}"
-                                 data-institution-type="{{ listing.institution_type if listing.institution_type else 'unknown' }}">
+                                 data-institution-type="{{ listing.institution_type if listing.institution_type else 'unknown' }}"
+                                 data-specializations="{{ listing.specializations|tojson|safe if listing.specializations else '[]' }}">
                             <div class="job-card-header">
                                 <div class="job-title-row">
                                     <h3 class="job-title">

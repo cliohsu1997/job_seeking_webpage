@@ -208,6 +208,7 @@ class TemplateRenderer:
         by_region = {}
         by_job_type = {}
         by_institution_type = {}
+        by_specialization = {}
         new_listings = 0
         active_listings = 0
         
@@ -224,6 +225,12 @@ class TemplateRenderer:
             inst_type = listing.get('institution_type', 'Unknown')
             by_institution_type[inst_type] = by_institution_type.get(inst_type, 0) + 1
             
+            # Specializations (can have multiple per job)
+            specializations = listing.get('specializations', [])
+            if specializations:
+                for spec in specializations:
+                    by_specialization[spec] = by_specialization.get(spec, 0) + 1
+            
             # New/Active flags
             if listing.get('is_new'):
                 new_listings += 1
@@ -239,7 +246,8 @@ class TemplateRenderer:
                 'active': active_listings,
                 'by_region': by_region,
                 'by_job_type': by_job_type,
-                'by_institution_type': by_institution_type
+                'by_institution_type': by_institution_type,
+                'by_specialization': by_specialization
             },
             'metadata': metadata or {},
             'generated_at': datetime.now().isoformat(),

@@ -256,6 +256,7 @@ class DataEnricher:
                                 existing_specializations: List[str]) -> List[str]:
         """
         Extract specializations from description and requirements using keyword matching.
+        Enhanced to check both description/requirements AND job title.
         
         Args:
             description: Job description text
@@ -267,20 +268,22 @@ class DataEnricher:
         """
         specializations = set(existing_specializations) if existing_specializations else set()
         
-        # Combine text for searching (only if needed)
-        if not description and not requirements:
-            return sorted(list(specializations)) if specializations else []
-        
+        # Combine text for searching
         combined_text = f"{description} {requirements}".lower()
+        
+        # If no text, return existing specializations
+        if not combined_text.strip():
+            return sorted(list(specializations)) if specializations else []
         
         # Check for each specialization (use cached keywords)
         for specialization, keywords in self._specialization_keywords.items():
+            # Check all keywords for this specialization
             for keyword in keywords:
                 if keyword.lower() in combined_text:
                     # Capitalize specialization name properly
                     specialization_name = specialization.replace("_", " ").title()
                     specializations.add(specialization_name)
-                    break
+                    break  # Found match for this specialization, no need to check more keywords
         
         # Convert to sorted list
         return sorted(list(specializations)) if specializations else []
@@ -397,32 +400,32 @@ class DataEnricher:
             description: Job description
         
         Returns:
-            Department category (economics, business, interdisciplinary, other)
+            Department category (Economics, Management, Marketing, Other)
         """
         combined_text = f"{department} {title} {description}".lower()
         
-        # Keywords for different department categories
-        economics_keywords = ["economics", "econometrics", "economic"]
-        business_keywords = ["business", "management", "finance", "accounting", "marketing"]
-        interdisciplinary_keywords = ["policy", "development", "environmental", "health", "social", "public"]
+        # Keywords for different department categories (aligned with schema)
+        economics_keywords = ["economics", "econometrics", "economic", "econ"]
+        management_keywords = ["business", "management", "administration", "business school"]
+        marketing_keywords = ["marketing", "marketing science"]
         
-        # Check economics first (most common in AEA JOE)
+        # Check marketing first (most specific)
+        if any(kw in combined_text for kw in marketing_keywords):
+            return "Marketing"
+        
+        # Check management
+        if any(kw in combined_text for kw in management_keywords):
+            return "Management"
+        
+        # Check economics (most common)
         if any(kw in combined_text for kw in economics_keywords):
-            return "economics"
+            return "Economics"
         
-        # Check business
-        if any(kw in combined_text for kw in business_keywords):
-            return "business"
-        
-        # Check interdisciplinary
-        if any(kw in combined_text for kw in interdisciplinary_keywords):
-            return "interdisciplinary"
-        
-        # Default to economics if we have department (most AEA JOE listings)
+        # Default to Economics if we have department (most AEA JOE listings)
         if department:
-            return "economics"
+            return "Economics"
         
-        return "other"
+        return "Other"
     
     def _add_metadata(self, job_data: Dict[str, Any]) -> Dict[str, Any]:
         """
