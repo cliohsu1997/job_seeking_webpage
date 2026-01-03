@@ -73,13 +73,16 @@ body {
 /* Sidebar */
 .sidebar {
     position: sticky;
-    top: 120px;
+    top: 20px;
     background: var(--bg-card);
     padding: var(--space-6);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
     height: fit-content;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .sidebar-section { margin-bottom: var(--space-6); }
 .sidebar-title { font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-3); }
