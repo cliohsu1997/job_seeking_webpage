@@ -149,8 +149,14 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - Created helper script `scripts/scraper/check_config/find_url_replacements.py` to systematically find replacement URLs
   - **Issue breakdown**: Job portals (1), US universities (30+), Chinese universities (40+), International universities (10+)
   - **Issue types**: 403 Forbidden, 404 Not Found, Connection errors (DNS failures), No job content verified, HTTP 202 errors, Timeouts
-  - **Next steps**: Search for replacement URLs; when finding PDFs/files on pages, check if business school oriented and download to `data/raw/documents/` if yes
   - See verification output and `data/config/scraping_sources.json` (non_accessible section) for detailed list
+- [x] **Initial URL fixes completed** - Fixed URLs in non_accessible section only (IMPORTANT: Do NOT modify accessible URLs):
+  - Removed Chronicle Vitae from non_accessible section (403 Forbidden)
+  - Fixed 40+ Chinese universities: Changed `rsc.*.edu.cn` to `hr.*.edu.cn` (HR portals) in non_accessible section
+  - Fixed Tsinghua University: Updated to official job openings portal
+  - Fixed several international universities (UK, Australia, France, Singapore) in non_accessible section
+  - **Remaining**: US universities (30+), remaining international universities, and research institutes to be fixed later
+  - **Rule**: Only update URLs in `non_accessible` section - accessible URLs are working fine and should remain unchanged
 
 **Reference**: See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and recommendations.
 

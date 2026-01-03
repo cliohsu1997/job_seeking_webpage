@@ -229,12 +229,21 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
 
 ### 🔗 Fix Inaccessible URLs (81 URLs with issues)
 
-**Status**: ⏸️ IN PROGRESS - Verification completed, replacement URLs need to be found and tested
+**Status**: ⏸️ IN PROGRESS - Initial fixes completed for Chinese and international universities, remaining URLs to be fixed later
+
+**IMPORTANT RULE**: Only update URLs in the `non_accessible` section. Do NOT modify URLs in the `accessible` section - those are working fine and should remain unchanged.
 
 **Context**: URL verification run identified 81 URLs that are inaccessible, return errors, or don't contain job content:
 - **47 URLs moved from accessible to non_accessible** during verification
 - **34 URLs in non_accessible** still have issues (connection errors, 404, 403, etc.)
 - **Total: 81 URLs requiring fixes**
+
+**Initial Fixes Completed (2026-01-03)**:
+- [x] **Removed Chronicle Vitae** - Deleted from non_accessible section (403 Forbidden)
+- [x] **Fixed Chinese universities** - Updated 40+ Chinese universities in non_accessible section from `rsc.*.edu.cn` to `hr.*.edu.cn` (HR portals)
+- [x] **Fixed Tsinghua University** - Updated to use official job openings portal: `https://www.tsinghua.edu.cn/en/Faculty___Staff/Job_Openings.htm`
+- [x] **Fixed international universities** - Updated several URLs for UK, Australia, France, Singapore universities in non_accessible section
+- [ ] **Remaining URLs** - US universities (30+), remaining international universities, and research institutes to be fixed later
 
 **Issue Breakdown by Category**:
 1. **Job Portals (1 URL)**:
@@ -268,16 +277,16 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
 - **Problematic URLs list**: `data/config/scraping_sources.json` (non_accessible section)
 - **URL verification documentation**: `data/config/URL_VERIFICATION.md`
 
-**Tasks**:
-- [ ] **Search for replacement URLs** - Use web search and common URL patterns to find working alternatives
-- [ ] **Test replacement URLs** - Verify new URLs are accessible and contain job listings
+**Tasks** (To be completed later):
+- [ ] **Search for replacement URLs** - Use web search and common URL patterns to find working alternatives for remaining problematic URLs
+- [ ] **Test replacement URLs** - Verify new URLs are accessible and contain job listings (use `--no-check-accessible` flag to only check non_accessible URLs)
 - [ ] **Download business school PDFs** - **IMPORTANT**: When searching/testing URLs or visiting pages:
   - Identify any PDF files or downloadable documents on the page
   - Check if they are business school oriented (job postings, faculty positions, business/economics departments, etc.)
   - If yes, download to `data/raw/` directory (create subdirectory if needed, e.g., `data/raw/business_school_pdfs/`)
   - Save with descriptive filename (e.g., `university_name_department_job_posting.pdf`) to `data/raw/documents/`
-- [ ] **Update scraping_sources.json** - Replace problematic URLs with working alternatives
-- [ ] **Re-run verification** - Verify all new URLs work correctly
+- [ ] **Update scraping_sources.json** - Replace remaining problematic URLs with working alternatives (ONLY in non_accessible section)
+- [ ] **Re-run verification** - Verify all new URLs work correctly (use `--no-check-accessible` to only check non_accessible URLs)
 - [ ] **Document changes** - Update URL_VERIFICATION.md with findings and patterns
 
 **Tools Created**:

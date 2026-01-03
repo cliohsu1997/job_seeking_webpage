@@ -76,7 +76,7 @@ job-seeking-webpage/
 ## Key Files & Modules
 
 ### Configuration
-- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, EconJobMarket, EJMR, AEA Scramble), universities, research institutes. **Rule**: Only URLs containing relevant job information should be in accessible section. **Status**: 81 URLs currently have issues (47 moved to non_accessible, 34 in non_accessible with issues) - see verification results.
+- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, EconJobMarket, EJMR, AEA Scramble), universities, research institutes. **Rule**: Only URLs containing relevant job information should be in accessible section. **Status**: 81 URLs currently have issues (47 moved to non_accessible, 34 in non_accessible with issues) - see verification results. **IMPORTANT**: Only update URLs in `non_accessible` section - accessible URLs are working fine and should remain unchanged. Initial fixes completed for Chinese and international universities in non_accessible section; remaining URLs (US universities, etc.) to be fixed later.
 - **`data/config/scraping_rules.json`**: Scraping patterns (deadlines, keywords, date formats)
 - **`data/config/processing_rules.json`**: Processing rules (job type keywords, specialization keywords, region mapping, materials parsing)
 - **`scripts/scraper/check_config/verify_urls.py`**: URL verification script that checks accessible and non_accessible URLs, verifies job content (keywords, links, PDFs), and moves invalid URLs to non_accessible section

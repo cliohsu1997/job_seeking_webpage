@@ -172,7 +172,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.xmu.edu.cn/",
+                "url": "https://hr.xmu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "XMU RSC portal - filter by Economics"
               }
@@ -223,7 +223,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nankai.edu.cn/",
+                "url": "https://hr.nankai.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "Nankai RSC portal - filter by Economics"
               }
@@ -240,7 +240,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.scu.edu.cn/",
+                "url": "https://hr.scu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SCU RSC portal - filter by Economics"
               }
@@ -257,7 +257,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hit.edu.cn/",
+                "url": "https://hr.hit.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HIT RSC portal - filter by Economics"
               }
@@ -274,7 +274,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.swufe.edu.cn/",
+                "url": "https://hr.swufe.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SWUFE RSC portal - filter by Economics"
               }
@@ -291,7 +291,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.dufe.edu.cn/",
+                "url": "https://hr.dufe.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "DUFE RSC portal - filter by Economics"
               }
@@ -342,7 +342,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cueb.edu.cn/",
+                "url": "https://hr.cueb.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CUEB RSC portal - filter by Economics"
               }
@@ -359,7 +359,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.jxufe.edu.cn/",
+                "url": "https://hr.jxufe.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "JUFE RSC portal - filter by Economics"
               }
@@ -376,7 +376,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.sxu.edu.cn/",
+                "url": "https://hr.sxu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SXU RSC portal - filter by Economics"
               }
@@ -393,7 +393,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.gxu.edu.cn/",
+                "url": "https://hr.gxu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "GXU RSC portal - filter by Economics"
               }
@@ -410,7 +410,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.imu.edu.cn/",
+                "url": "https://hr.imu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "IMU RSC portal - filter by Economics"
               }
@@ -427,7 +427,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.bfsu.edu.cn/",
+                "url": "https://hr.bfsu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "BFSU RSC portal - filter by Economics"
               }
@@ -444,7 +444,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.buct.edu.cn/",
+                "url": "https://hr.buct.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "BUCT RSC portal - filter by Economics"
               }
@@ -461,7 +461,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cupl.edu.cn/",
+                "url": "https://hr.cupl.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CUPL RSC portal - filter by Economics"
               }
@@ -478,7 +478,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.csu.edu.cn/",
+                "url": "https://hr.csu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CSU RSC portal - filter by Economics"
               }
@@ -495,7 +495,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cqu.edu.cn/",
+                "url": "https://hr.cqu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CQU RSC portal - filter by Economics"
               }
@@ -512,7 +512,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.fjnu.edu.cn/",
+                "url": "https://hr.fjnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "FJNU RSC portal - filter by Economics"
               }
@@ -529,7 +529,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.fzu.edu.cn/",
+                "url": "https://hr.fzu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "FZU RSC portal - filter by Economics"
               }
@@ -546,7 +546,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.henu.edu.cn/",
+                "url": "https://hr.henu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HENU RSC portal - filter by Economics"
               }
@@ -563,7 +563,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hunnu.edu.cn/",
+                "url": "https://hr.hunnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HUNNU RSC portal - filter by Economics"
               }
@@ -580,7 +580,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hnu.edu.cn/",
+                "url": "https://hr.hnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HNU RSC portal - filter by Economics"
               }
@@ -597,7 +597,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.ujs.edu.cn/",
+                "url": "https://hr.ujs.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "UJS RSC portal - filter by Economics"
               }
@@ -614,7 +614,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nbu.edu.cn/",
+                "url": "https://hr.nbu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NBU RSC portal - filter by Economics"
               }
@@ -631,7 +631,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nefu.edu.cn/",
+                "url": "https://hr.nefu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NEFU RSC portal - filter by Economics"
               }
@@ -648,7 +648,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nwafu.edu.cn/",
+                "url": "https://hr.nwafu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NWAFU RSC portal - filter by Economics"
               }
@@ -665,7 +665,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nwnu.edu.cn/",
+                "url": "https://hr.nwnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NWNU RSC portal - filter by Economics"
               }
@@ -682,7 +682,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nwu.edu.cn/",
+                "url": "https://hr.nwu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NWU RSC portal - filter by Economics"
               }
@@ -699,7 +699,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.qfnu.edu.cn/",
+                "url": "https://hr.qfnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "QFNU RSC portal - filter by Economics"
               }
@@ -716,7 +716,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.sicau.edu.cn/",
+                "url": "https://hr.sicau.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SICAU RSC portal - filter by Economics"
               }
@@ -733,7 +733,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.suda.edu.cn/",
+                "url": "https://hr.suda.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SUDA RSC portal - filter by Economics"
               }
@@ -750,7 +750,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.seu.edu.cn/",
+                "url": "https://hr.seu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SEU RSC portal - filter by Economics"
               }
@@ -767,7 +767,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.tjnu.edu.cn/",
+                "url": "https://hr.tjnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "TJNU RSC portal - filter by Economics"
               }
@@ -784,7 +784,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.tjufe.edu.cn/",
+                "url": "https://hr.tjufe.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "TUFE RSC portal - filter by Economics"
               }
@@ -801,7 +801,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.wzu.edu.cn/",
+                "url": "https://hr.wzu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "WZU RSC portal - filter by Economics"
               }
@@ -818,7 +818,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.ysu.edu.cn/",
+                "url": "https://hr.ysu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "YSU RSC portal - filter by Economics"
               }
@@ -835,7 +835,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.ynnu.edu.cn/",
+                "url": "https://hr.ynnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "YNNU RSC portal - filter by Economics"
               }
@@ -852,7 +852,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.zjnu.edu.cn/",
+                "url": "https://hr.zjnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "ZJNU RSC portal - filter by Economics"
               }
@@ -869,7 +869,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.dlmu.edu.cn/",
+                "url": "https://hr.dlmu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "DLMU RSC portal - filter by Economics"
               }
@@ -886,7 +886,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hrbeu.edu.cn/",
+                "url": "https://hr.hrbeu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HEU RSC portal - filter by Economics"
               }
@@ -903,7 +903,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hbu.edu.cn/",
+                "url": "https://hr.hbu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HBU RSC portal - filter by Economics"
               }
@@ -920,13 +920,13 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.sicnu.edu.cn/",
+                "url": "https://hr.sicnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SICNU RSC portal - filter by Economics"
               },
               {
                 "name": "Economics",
-                "url": "https://rsc.sicnu.edu.cn/",
+                "url": "https://hr.sicnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SICNU RSC portal - filter by Economics"
               }
@@ -943,13 +943,13 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.swjtu.edu.cn/",
+                "url": "https://hr.swjtu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SWJTU RSC portal - filter by Economics"
               },
               {
                 "name": "Economics",
-                "url": "https://rsc.swjtu.edu.cn/",
+                "url": "https://hr.swjtu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SWJTU RSC portal - filter by Economics"
               }
@@ -2383,19 +2383,6 @@
   },
   "non_accessible": {
     "job_portals": {
-      "chronicle_vitae": {
-        "name": "Chronicle Vitae",
-        "url": "https://chroniclevitae.com/job_search?job_search%5Bquery%5D=economics",
-        "scraping_method": "html_parser",
-        "region": "global",
-        "job_nature": "portal",
-        "departments": [
-          "Economics",
-          "Business",
-          "Management"
-        ],
-        "notes": "Academic job board by Chronicle of Higher Education - search for economics positions"
-      }
     },
     "regions": {
       "mainland_china": {
@@ -2407,15 +2394,15 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://www.tsinghua.edu.cn/en/hr/",
+                "url": "https://www.tsinghua.edu.cn/en/Faculty___Staff/Job_Openings.htm",
                 "scraping_method": "html_parser",
-                "notes": "Tsinghua HR portal - filter by Economics"
+                "notes": "Tsinghua job openings portal - filter by Economics"
               },
               {
                 "name": "Management",
-                "url": "https://www.tsinghua.edu.cn/en/hr/",
+                "url": "https://www.tsinghua.edu.cn/en/Faculty___Staff/Job_Openings.htm",
                 "scraping_method": "html_parser",
-                "notes": "Tsinghua HR portal - filter by Management"
+                "notes": "Tsinghua job openings portal - filter by Management"
               }
             ],
             "location": {
@@ -2430,9 +2417,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nju.edu.cn/",
+                "url": "https://hr.nju.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "NJU RSC portal - filter by Economics"
+                "notes": "NJU HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2447,9 +2434,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://www.rsc.sdu.edu.cn/",
+                "url": "https://www.hr.sdu.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "SDU RSC portal - filter by Economics"
+                "notes": "SDU HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2464,9 +2451,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.jlu.edu.cn/",
+                "url": "https://hr.jlu.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "JLU RSC portal - filter by Economics"
+                "notes": "JLU HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2481,9 +2468,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.xjtu.edu.cn/",
+                "url": "https://hr.xjtu.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "XJTU RSC portal - filter by Economics"
+                "notes": "XJTU HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2498,9 +2485,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cufe.edu.cn/",
+                "url": "https://hr.cufe.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "CUFE RSC portal - filter by Economics"
+                "notes": "CUFE HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2515,9 +2502,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.shufe.edu.cn/",
+                "url": "https://hr.shufe.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "SUFE RSC portal - filter by Economics"
+                "notes": "SUFE HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2532,9 +2519,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.zuel.edu.cn/",
+                "url": "https://hr.zuel.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "ZUEL RSC portal - filter by Economics"
+                "notes": "ZUEL HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2549,9 +2536,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.dlut.edu.cn/",
+                "url": "https://hr.dlut.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "DUT RSC portal - filter by Economics"
+                "notes": "DUT HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2566,9 +2553,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.scnu.edu.cn/",
+                "url": "https://hr.scnu.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "SCNU RSC portal - filter by Economics"
+                "notes": "SCNU HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2583,9 +2570,9 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.bit.edu.cn/",
+                "url": "https://hr.bit.edu.cn/",
                 "scraping_method": "html_parser",
-                "notes": "BIT RSC portal - filter by Economics"
+                "notes": "BIT HR portal - filter by Economics"
               }
             ],
             "location": {
@@ -2617,7 +2604,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.lzu.edu.cn/",
+                "url": "https://hr.lzu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "LZU RSC portal - filter by Economics"
               }
@@ -2634,7 +2621,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.ynu.edu.cn/",
+                "url": "https://hr.ynu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "YNU RSC portal - filter by Economics"
               }
@@ -2651,7 +2638,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.xju.edu.cn/",
+                "url": "https://hr.xju.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "XJU RSC portal - filter by Economics"
               }
@@ -2668,7 +2655,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.bjtu.edu.cn/",
+                "url": "https://hr.bjtu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "BJTU RSC portal - filter by Economics"
               }
@@ -2685,7 +2672,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cumt.edu.cn/",
+                "url": "https://hr.cumt.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CUMT RSC portal - filter by Economics"
               }
@@ -2702,7 +2689,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cup.edu.cn/",
+                "url": "https://hr.cup.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CUP RSC portal - filter by Economics"
               }
@@ -2719,7 +2706,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cug.edu.cn/",
+                "url": "https://hr.cug.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CUG RSC portal - filter by Economics"
               }
@@ -2736,7 +2723,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.ecust.edu.cn/",
+                "url": "https://hr.ecust.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "ECUST RSC portal - filter by Economics"
               }
@@ -2753,7 +2740,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.gxnu.edu.cn/",
+                "url": "https://hr.gxnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "GXNU RSC portal - filter by Economics"
               }
@@ -2770,7 +2757,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.gzu.edu.cn/",
+                "url": "https://hr.gzu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "GZU RSC portal - filter by Economics"
               }
@@ -2787,7 +2774,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hainanu.edu.cn/",
+                "url": "https://hr.hainanu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HNU RSC portal - filter by Economics"
               }
@@ -2804,13 +2791,13 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hrbeu.edu.cn/",
+                "url": "https://hr.hrbeu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HEU RSC portal - filter by Economics"
               },
               {
                 "name": "Economics",
-                "url": "https://rsc.hrbeu.edu.cn/",
+                "url": "https://hr.hrbeu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HEU RSC portal - filter by Economics"
               }
@@ -2827,7 +2814,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hebut.edu.cn/",
+                "url": "https://hr.hebut.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HEBUT RSC portal - filter by Economics"
               }
@@ -2844,7 +2831,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.hhu.edu.cn/",
+                "url": "https://hr.hhu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HHU RSC portal - filter by Economics"
               }
@@ -2861,7 +2848,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.jsnu.edu.cn/",
+                "url": "https://hr.jsnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "JSNU RSC portal - filter by Economics"
               }
@@ -2878,7 +2865,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.jlnu.edu.cn/",
+                "url": "https://hr.jlnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "JLNU RSC portal - filter by Economics"
               }
@@ -2895,7 +2882,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.jnu.edu.cn/",
+                "url": "https://hr.jnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "JNU RSC portal - filter by Economics"
               }
@@ -2912,7 +2899,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.lnnu.edu.cn/",
+                "url": "https://hr.lnnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "LNNU RSC portal - filter by Economics"
               }
@@ -2929,7 +2916,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.njau.edu.cn/",
+                "url": "https://hr.njau.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NJAU RSC portal - filter by Economics"
               }
@@ -2946,7 +2933,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.njnu.edu.cn/",
+                "url": "https://hr.njnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NJNU RSC portal - filter by Economics"
               }
@@ -2963,7 +2950,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.nuaa.edu.cn/",
+                "url": "https://hr.nuaa.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NUAA RSC portal - filter by Economics"
               }
@@ -2980,7 +2967,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.njust.edu.cn/",
+                "url": "https://hr.njust.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NJUST RSC portal - filter by Economics"
               }
@@ -2997,7 +2984,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.ncepu.edu.cn/",
+                "url": "https://hr.ncepu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "NCEPU RSC portal - filter by Economics"
               }
@@ -3014,7 +3001,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.qdu.edu.cn/",
+                "url": "https://hr.qdu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "QDU RSC portal - filter by Economics"
               }
@@ -3031,7 +3018,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.sdnu.edu.cn/",
+                "url": "https://hr.sdnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SDNU RSC portal - filter by Economics"
               }
@@ -3048,7 +3035,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.shisu.edu.cn/",
+                "url": "https://hr.shisu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SISU RSC portal - filter by Economics"
               }
@@ -3065,7 +3052,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.shnu.edu.cn/",
+                "url": "https://hr.shnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SHNU RSC portal - filter by Economics"
               }
@@ -3082,7 +3069,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.shu.edu.cn/",
+                "url": "https://hr.shu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SHU RSC portal - filter by Economics"
               }
@@ -3099,7 +3086,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.szu.edu.cn/",
+                "url": "https://hr.szu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SZU RSC portal - filter by Economics"
               }
@@ -3116,7 +3103,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.scut.edu.cn/",
+                "url": "https://hr.scut.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SCUT RSC portal - filter by Economics"
               }
@@ -3133,7 +3120,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.swjtu.edu.cn/",
+                "url": "https://hr.swjtu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SWJTU RSC portal - filter by Economics"
               }
@@ -3150,7 +3137,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.xidian.edu.cn/",
+                "url": "https://hr.xidian.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "XDU RSC portal - filter by Economics"
               }
@@ -3167,7 +3154,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.zjut.edu.cn/",
+                "url": "https://hr.zjut.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "ZJUT RSC portal - filter by Economics"
               }
@@ -3184,7 +3171,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.zzu.edu.cn/",
+                "url": "https://hr.zzu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "ZZU RSC portal - filter by Economics"
               }
@@ -3224,7 +3211,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.sysu.edu.cn/",
+                "url": "https://hr.sysu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SYSU RSC portal - filter by Economics"
               }
@@ -3275,7 +3262,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.swufe.edu.cn/",
+                "url": "https://hr.swufe.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SWUFE RSC portal - filter by Economics"
               }
@@ -3292,7 +3279,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.gxu.edu.cn/",
+                "url": "https://hr.gxu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "GXU RSC portal - filter by Economics"
               }
@@ -3309,7 +3296,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.cupl.edu.cn/",
+                "url": "https://hr.cupl.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "CUPL RSC portal - filter by Economics"
               }
@@ -3326,7 +3313,7 @@
             "departments": [
               {
                 "name": "Economics",
-                "url": "https://rsc.fzu.edu.cn/",
+                "url": "https://hr.fzu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "FZU RSC portal - filter by Economics"
               }
@@ -3844,7 +3831,7 @@
                 "departments": [
                   {
                     "name": "Economics",
-                    "url": "https://www.ed.ac.uk/human-resources/working-here/jobs",
+                    "url": "https://www.ed.ac.uk/people/jobs",
                     "scraping_method": "html_parser",
                     "notes": "Edinburgh jobs portal - filter by Economics"
                   }
@@ -3968,7 +3955,7 @@
                 "departments": [
                   {
                     "name": "Economics",
-                    "url": "https://www.uts.edu.au/about/careers",
+                    "url": "https://www.uts.edu.au/about/careers-at-uts",
                     "scraping_method": "html_parser",
                     "notes": "UTS careers portal - filter by Economics"
                   }
@@ -4004,7 +3991,7 @@
                 "departments": [
                   {
                     "name": "Economics",
-                    "url": "https://www.griffith.edu.au/about-griffith/employment",
+                    "url": "https://www.griffith.edu.au/about-griffith/employment/jobs",
                     "scraping_method": "html_parser",
                     "notes": "Griffith employment portal - filter by Economics"
                   }
@@ -4040,7 +4027,7 @@
                 "departments": [
                   {
                     "name": "Economics",
-                    "url": "https://www.uow.edu.au/about/employment/",
+                    "url": "https://www.uow.edu.au/about/employment/jobs/",
                     "scraping_method": "html_parser",
                     "notes": "UOW employment portal - filter by Economics"
                   }
@@ -4268,9 +4255,9 @@
                 "departments": [
                   {
                     "name": "Economics",
-                    "url": "https://www.parisschoolofeconomics.eu/en/",
+                    "url": "https://www.parisschoolofeconomics.eu/en/jobs/",
                     "scraping_method": "html_parser",
-                    "notes": "PSE main portal - check for job postings"
+                    "notes": "PSE jobs portal - filter by Economics"
                   }
                 ],
                 "location": {
@@ -4327,7 +4314,7 @@
                 "departments": [
                   {
                     "name": "Economics",
-                    "url": "https://www.ntu.edu.sg/careers",
+                    "url": "https://www.ntu.edu.sg/careers/current-openings",
                     "scraping_method": "html_parser",
                     "notes": "NTU careers - filter by Economics"
                   }
