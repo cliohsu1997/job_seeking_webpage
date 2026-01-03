@@ -117,3 +117,4 @@ if __name__ == "__main__":
         logger.error(f"Fatal error during scraping: {e}", exc_info=True)
         sys.exit(1)
 
+

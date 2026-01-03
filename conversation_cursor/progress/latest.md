@@ -84,8 +84,8 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **To-Do List**: `2026-01-01_transform-data-processing.md`
 - **Proposal**: `conversation_cursor/dates/2026-01-01/proceed-to-phase-2-proposal.md`
 
-### ✅ Phase 3: EXPORT - Output Generation (COMPLETED - MVP)
-**Status**: Static website generator implemented and tested successfully
+### ✅ Phase 3: EXPORT - Output Generation (COMPLETED - MVP + Bug Fixes)
+**Status**: Static website generator implemented, tested, and bug-fixed for production
 
 - [x] Phase 3 proposal created with detailed design and implementation plan
 - [x] Static site approach selected (HTML + CSS + JavaScript with Jinja2 templates)
@@ -95,16 +95,22 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] JavaScript functionality (`app.js`, `filters.js`, `search.js` - 689 lines total)
 - [x] Site generation logic (build script with CLI, handles 211 listings)
 - [x] Testing with current jobs.json (✓ Build successful, index.html generated)
+- [x] **Bug Fixes (2026-01-03 late session)**:
+  - [x] Fixed filter initialization - setupFilterListeners now called properly
+  - [x] Fixed sorting visual display - implemented DOM appendChild reordering
+  - [x] Fixed institution_type filter - added data attributes and event listeners
+  - [x] Fixed render logic - hides all jobs before showing filtered results
+  - [x] Added formatted institution type labels (Job Portal, Research Institute, University)
 - [ ] MVP deployment to GitHub Pages (next step)
 
 **Implemented Features**:
-- Filter sidebar (region, job type, institution type, deadline range)
+- Filter sidebar (region, job type, institution type, deadline range) - **all working**
 - Full-text search with debouncing (searches title, institution, department, location, description, tags)
 - Responsive design with 3 breakpoints (desktop 1024px+, tablet 768px+, mobile <768px)
 - Job listing cards with expandable details and hover effects
 - Pagination (20 listings per page with ellipsis navigation)
 - Statistics display (total, new, active listings by region/type)
-- Sort functionality (deadline, posted date, institution name)
+- Sort functionality (deadline, posted date, institution name) - **visually working with DOM reordering**
 - Mobile sidebar overlay with toggle button
 
 **Technology Stack**:

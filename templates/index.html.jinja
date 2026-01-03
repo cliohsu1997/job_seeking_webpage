@@ -46,15 +46,9 @@
                     Last updated: {{ metadata.last_updated|format_date("%B %d, %Y at %I:%M %p") if metadata.last_updated else generated_at|format_date("%B %d, %Y at %I:%M %p") }}
                 </p>
             </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <div class="content-grid">
-                <!-- Sidebar Filters -->
-                <aside class="sidebar" id="filters-sidebar">
+            
+            <!-- Filters in Header -->
+            <aside class="sidebar header-filters" id="filters-sidebar">
                     <div class="sidebar-header">
                         <h2>Filters</h2>
                         <button class="btn-clear-filters" id="clear-filters">Clear All</button>
@@ -119,7 +113,7 @@
                                 {% for inst_type, count in stats.by_institution_type.items()|sort %}
                                 <label class="checkbox-label">
                                     <input type="checkbox" class="filter-checkbox" name="institution_type" value="{{ inst_type }}">
-                                    <span>{{ inst_type }} ({{ count }})</span>
+                                    <span>{{ inst_type.replace('_', ' ').title() }} ({{ count }})</span>
                                 </label>
                                 {% endfor %}
                             </div>
@@ -138,7 +132,13 @@
                         </div>
                     </div>
                 </aside>
+        </div>
+    </header>
 
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
                 <!-- Job Listings -->
                 <section class="listings-section">
                     <!-- Results Bar -->
@@ -165,7 +165,10 @@
                     <!-- Job Cards Container -->
                     <div class="job-cards" id="job-cards-container">
                         {% for listing in listings %}
-                        <article class="job-card" data-job-id="{{ listing.id }}">
+                        <article class="job-card" 
+                                 data-job-id="{{ listing.id }}"
+                                 data-region="{{ listing.location.region if listing.location and listing.location.region else 'unknown' }}"
+                                 data-institution-type="{{ listing.institution_type if listing.institution_type else 'unknown' }}">
                             <div class="job-card-header">
                                 <div class="job-title-row">
                                     <h3 class="job-title">

@@ -153,6 +153,8 @@ Generate a user-friendly static website to display the 211 processed job listing
 - [x] Implement sort by deadline (earliest first with intelligent date comparison)
 - [x] Implement sort by posted date (newest first)
 - [x] Implement sort by institution name (A-Z)
+- [x] Fixed sorting visual display using DOM appendChild reordering
+- [x] Fixed to reorder all filtered jobs before pagination
 
 **4.5: Pagination Logic** (`static/js/app.js`)
 - [x] Implement page navigation (prev/next buttons)
@@ -170,13 +172,28 @@ Generate a user-friendly static website to display the 211 processed job listing
 - [x] Deadline urgency calculation via Jinja2 filter (format_deadline)
 - [x] Deadline comparison logic in JavaScript (compareDeadlines)
 
+**4.8: Bug Fixes & Improvements** (2026-01-03 late session)
+- [x] Fixed setupFilterListeners not being called - added to initializeFilters()
+- [x] Fixed sortJobs not exported - added window.sortJobs and window.currentSort
+- [x] Fixed CSS flexbox not applied to .job-cards - added flexbox styling
+- [x] Fixed institution_type filter disabled - added data-institution-type attribute to template
+- [x] Fixed institution_type not extracted - added to extractJobData() in app.js
+- [x] Fixed institution_type event listeners commented out - uncommented in filters.js
+- [x] Fixed sort not reordering visually - changed from CSS order property to appendChild()
+- [x] Fixed appendChild only reordering 20 visible jobs - now reorders all 211 filtered jobs
+- [x] Fixed render not hiding non-filtered jobs - now hides all jobs first, then shows filtered
+- [x] Added formatted institution type labels (Job Portal, Research Institute, University)
+- [x] Added comprehensive debug logging for troubleshooting
+
 **Acceptance Criteria**:
-- ✅ All filters work correctly (4 filter types)
+- ✅ All filters work correctly (4 filter types including institution_type)
 - ✅ Search returns relevant results (6 fields searched)
-- ✅ Sorting updates the display (3 sort methods)
+- ✅ Sorting updates the display visually (3 sort methods with DOM reordering)
 - ✅ Pagination works smoothly (20/page with ellipsis)
 - ✅ User interactions are responsive
 - ✅ No JavaScript errors in console (build tested)
+- ✅ Institution type filtering functional (job_portal, research_institute, university)
+- ✅ All jobs properly hidden/shown based on filters
 
 **Performance Considerations**:
 - ✅ Debounce search input (300ms)

@@ -25,7 +25,11 @@ const AppState = {
     getCurrentPageJobs() {
         const start = (this.currentPage - 1) * this.itemsPerPage;
         const end = start + this.itemsPerPage;
-        return this.filteredJobs.slice(start, end);
+        const result = this.filteredJobs.slice(start, end);
+        console.log('getCurrentPageJobs - currentPage:', this.currentPage, 'start:', start, 'end:', end, 'returning:', result.length, 'jobs');
+        console.log('First job returned:', result[0]?.title);
+        console.log('Full filteredJobs array first 3:', this.filteredJobs.slice(0, 3).map(j => j.title));
+        return result;
     },
     
     // Get total pages
@@ -75,9 +79,6 @@ function initializeApp() {
         initializeSearch(AppState);
     }
     
-    // Initialize scroll behavior for sidebar
-    initializeSidebarScroll();
-    
     console.log('App initialized with', AppState.allJobs.length, 'jobs');
 }
 
@@ -105,11 +106,15 @@ async function loadJobsData() {
  */
 function extractJobData(card) {
     const jobId = card.getAttribute('data-job-id');
+    const region = card.getAttribute('data-region');
+    const institutionType = card.getAttribute('data-institution-type');
     
     // Extract all data attributes and text content
-    return {
+    const jobData = {
         id: jobId,
         element: card,
+        region: region,
+        institution_type: institutionType,
         title: card.querySelector('.job-title')?.textContent.trim() || '',
         institution: card.querySelector('.job-institution span')?.textContent || '',
         department: card.querySelector('.job-department span')?.textContent || '',
@@ -119,6 +124,9 @@ function extractJobData(card) {
         tags: Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.trim()),
         isNew: card.querySelector('.badge-new') !== null
     };
+    
+    console.log('Extracted job:', jobData.title, 'Region:', jobData.region, 'Tags:', jobData.tags);
+    return jobData;
 }
 
 /**
@@ -176,23 +184,46 @@ function toggleJobDetails(btn) {
  * Render jobs to the page
  */
 function renderJobs() {
+    console.log('=== renderJobs CALLED ===');
     const jobs = AppState.getCurrentPageJobs();
     
     // Update results count
     updateResultsCount();
     
-    // Hide all job cards first
-    const allCards = document.querySelectorAll('.job-card');
-    allCards.forEach(card => card.style.display = 'none');
+    // Get the container
+    const container = document.getElementById('job-cards-container');
+    if (!container) return;
     
-    // Show jobs for current page
+    console.log('Rendering page with', jobs.length, 'jobs');
+    console.log('Reordering DOM - first 3 jobs in filteredJobs:', AppState.filteredJobs.slice(0, 3).map(j => j.title));
+    
+    // FIRST: Hide ALL jobs (including non-filtered ones)
+    AppState.allJobs.forEach(job => {
+        if (job.element) {
+            job.element.style.display = 'none';
+        }
+    });
+    
+    // SECOND: Re-append ALL filtered jobs in sorted order
+    // This ensures the DOM order matches the sorted order
+    AppState.filteredJobs.forEach((job, idx) => {
+        if (job.element) {
+            container.appendChild(job.element);
+            if (idx < 3) {
+                console.log(`Reordered position ${idx}: ${job.title}, institution: ${job.institution}`);
+            }
+        }
+    });
+    
+    // THIRD: Show only the current page jobs
     if (jobs.length === 0) {
         showNoResults();
     } else {
         hideNoResults();
-        jobs.forEach(job => {
+        jobs.forEach((job, index) => {
             if (job.element) {
                 job.element.style.display = 'block';
+                console.log(`Job ${index}:`, job.title);
             }
         });
     }
@@ -326,40 +357,6 @@ function showError(message) {
             </div>
         `;
     }
-}
-
-/**
- * Initialize sidebar scroll behavior - hide on scroll up
- */
-function initializeSidebarScroll() {
-    let lastScrollTop = 0;
-    let scrollTimeout;
-    const sidebar = document.querySelector('.sidebar');
-    
-    if (!sidebar) return;
-    
-    window.addEventListener('scroll', () => {
-        // Clear existing timeout
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-        }
-        
-        // Debounce scroll event
-        scrollTimeout = setTimeout(() => {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Scrolling up
-            if (currentScroll < lastScrollTop && currentScroll > 100) {
-                sidebar.classList.add('hidden-on-scroll');
-            } 
-            // Scrolling down or at top
-            else {
-                sidebar.classList.remove('hidden-on-scroll');
-            }
-            
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        }, 50);
-    }, { passive: true });
 }
 
 // Export functions for other modules

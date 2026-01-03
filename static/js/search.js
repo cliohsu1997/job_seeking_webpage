@@ -2,7 +2,6 @@
  * Search functionality for job listings
  */
 
-let appState;
 let searchInput;
 let searchTimeout;
 const SEARCH_DELAY = 300; // ms
@@ -13,8 +12,6 @@ let currentSearchQuery = '';
  * Initialize search
  */
 function initializeSearch(state) {
-    appState = state;
-    
     searchInput = document.getElementById('search-input');
     
     if (searchInput) {
@@ -58,7 +55,7 @@ function performSearch(query) {
     const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 0);
     
     // Start with filtered jobs (from filters)
-    let results = [...appState.filteredJobs];
+    let results = [...window.AppState.filteredJobs];
     
     // Search across multiple fields
     results = results.filter(job => {
@@ -76,8 +73,16 @@ function performSearch(query) {
     });
     
     // Update state
-    appState.filteredJobs = results;
-    window.renderJobs();
+    window.AppState.filteredJobs = results;
+    window.AppState.currentPage = 1; // Reset to first page
+    
+    // Reapply current sort to search results if a sort is active
+    if (window.currentSort && window.currentSort !== 'deadline') {
+        console.log('Reapplying sort to search results:', window.currentSort);
+        window.sortJobs(window.currentSort);
+    } else {
+        window.renderJobs();
+    }
     
     console.log(`Search "${query}" found ${results.length} jobs`);
 }
