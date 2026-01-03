@@ -84,9 +84,11 @@ job-seeking-webpage/
     ├── dates/                      # Dated proposals
     ├── progress/latest.md         # High-level pipeline status
     ├── structure/latest.md         # This file - project structure
-    ├── to-do-list/                 # Detailed task lists
-    └── github/                     # Deployment assets
-        └── gh-pages.yml           # GitHub Pages workflow spec (copy to .github/workflows to activate)
+    └── to-do-list/                 # Detailed task lists
+
+.github/                            # GitHub configuration
+└── workflows/
+    └── gh-pages.yml               # GitHub Pages workflow (deploys /static)
 ```
 
 ## Key Files & Modules

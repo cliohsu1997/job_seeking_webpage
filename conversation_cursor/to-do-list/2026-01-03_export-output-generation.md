@@ -328,7 +328,7 @@ poetry run python -m scripts.generator.build_site
 - [ ] Verify deployment (check GitHub Pages URL)
 
 **Artifacts**:
-- GitHub Pages workflow spec: `conversation_cursor/github/gh-pages.yml` (copy to `.github/workflows/gh-pages.yml` to activate)
+- GitHub Pages workflow: `.github/workflows/gh-pages.yml` (deploys /static on push to main)
 - [ ] Test live site
 
 **7.3: Documentation**
