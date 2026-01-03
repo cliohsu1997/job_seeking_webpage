@@ -186,31 +186,63 @@ class DataNormalizer:
         if not url_str.startswith(('http://', 'https://')):
             resolved = False
             
-            # Try primary base_url first
-            if base_url:
-                try:
-                    url_str = urljoin(base_url, url_str)
-                    resolved = True
-                except Exception as e:
-                    logger.debug(f"Failed to resolve URL with base_url '{base_url}': {e}")
-            
-            # Try fallback base URLs if primary didn't work
-            if not resolved and fallback_base_urls:
-                for fallback_base in fallback_base_urls:
-                    if not fallback_base:
-                        continue
+            # Skip if it's just a path starting with / (needs base URL)
+            if url_str.startswith('/'):
+                # Try primary base_url first
+                if base_url:
                     try:
-                        test_url = urljoin(fallback_base, url_str)
+                        url_str = urljoin(base_url, url_str)
                         # Validate the result
-                        parsed_test = urlparse(test_url)
+                        parsed_test = urlparse(url_str)
                         if parsed_test.scheme and parsed_test.netloc:
-                            url_str = test_url
                             resolved = True
-                            break
-                    except Exception:
-                        continue
+                    except Exception as e:
+                        logger.debug(f"Failed to resolve URL with base_url '{base_url}': {e}")
+                
+                # Try fallback base URLs if primary didn't work
+                if not resolved and fallback_base_urls:
+                    for fallback_base in fallback_base_urls:
+                        if not fallback_base:
+                            continue
+                        try:
+                            test_url = urljoin(fallback_base, url_str)
+                            # Validate the result
+                            parsed_test = urlparse(test_url)
+                            if parsed_test.scheme and parsed_test.netloc:
+                                url_str = test_url
+                                resolved = True
+                                break
+                        except Exception:
+                            continue
+            else:
+                # Relative path without leading / - try to resolve with base_url
+                if base_url:
+                    try:
+                        url_str = urljoin(base_url, url_str)
+                        # Validate the result
+                        parsed_test = urlparse(url_str)
+                        if parsed_test.scheme and parsed_test.netloc:
+                            resolved = True
+                    except Exception as e:
+                        logger.debug(f"Failed to resolve relative URL with base_url '{base_url}': {e}")
+                
+                # Try fallback base URLs if primary didn't work
+                if not resolved and fallback_base_urls:
+                    for fallback_base in fallback_base_urls:
+                        if not fallback_base:
+                            continue
+                        try:
+                            test_url = urljoin(fallback_base, url_str)
+                            # Validate the result
+                            parsed_test = urlparse(test_url)
+                            if parsed_test.scheme and parsed_test.netloc:
+                                url_str = test_url
+                                resolved = True
+                                break
+                        except Exception:
+                            continue
             
-            # If still not resolved, log the issue
+            # If still not resolved, log the issue but don't fail - return None
             if not resolved:
                 if self.diagnostics:
                     self.diagnostics.track_normalization_issue(
@@ -220,6 +252,7 @@ class DataNormalizer:
                         error="Could not resolve relative URL (no valid base URL available)"
                     )
                 logger.warning(f"Could not resolve relative URL '{url}' for field '{field_name}' (no base URL)")
+                return None
         
         # Basic URL validation
         parsed = urlparse(url_str)
@@ -311,10 +344,16 @@ class DataNormalizer:
                 normalized[field] = self.normalize_text(normalized[field], field)
         
         # Normalize source_url first (before application_link, as it can be used as base)
-        # For source_url, try to use the original source_url parameter or extract from other fields
-        if "source_url" in normalized:
-            # If source_url is already absolute, we can use it as-is after validation
-            # If relative, try to resolve using any available absolute URLs
+        # CRITICAL: source_url must always be set - if empty, use base_url
+        if "source_url" not in normalized or not normalized.get("source_url"):
+            # If source_url is missing or empty, use primary_base_url
+            if primary_base_url:
+                normalized["source_url"] = primary_base_url
+            else:
+                normalized["source_url"] = ""
+        
+        # Normalize source_url (resolve relative URLs, validate format)
+        if normalized.get("source_url"):
             normalized["source_url"] = self.normalize_url(
                 normalized["source_url"],
                 primary_base_url,
@@ -328,6 +367,7 @@ class DataNormalizer:
                     new_base = f"{parsed.scheme}://{parsed.netloc}"
                     if new_base not in base_urls:
                         primary_base_url = new_base
+                        base_urls.insert(0, new_base)
         
         # Normalize application_link using source_url as base if available
         if "application_link" in normalized:

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "archived_at": "2026-01-03T11:55:11.960178",
+    "archived_at": "2026-01-03T16:35:06.969599",
     "total_listings": 500,
     "version": "1.0"
   },
@@ -288,7 +288,7 @@
     {
       "title": "Professional",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=7f8b53c8-bb8b-47e0-7508-52af99b545a8&rmuh=7A9BD97D9CC502617432641C5D2C7365958F343D",
       "description": "Professional View all professional jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -325,7 +325,7 @@
     {
       "title": "View all professional jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=7f8b53c8-bb8b-47e0-7508-52af99b545a8",
       "description": "View all professional jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -362,7 +362,7 @@
     {
       "title": "Casual/Sessional",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=D9F7EC7E-4A79-C248-39C1-D24908FB75EF&rmuh=D1EC7A0C567ED36531CD696764B552F27095E52B",
       "description": "Casual/Sessional View all casual/sessional jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -399,7 +399,7 @@
     {
       "title": "View all casual/sessional jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=1ad2dcdd-b614-6387-c683-52af99b625ee",
       "description": "View all casual/sessional jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -436,7 +436,7 @@
     {
       "title": "All Vacancies",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=22fc4f47-e994-46a3-b8c9-9bc901269f43&rmuh=CAE7F0EC16201FD80C1D7048B0612600F69163A9",
       "description": "All Vacancies View all available jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -471,7 +471,7 @@
     {
       "title": "View all available jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=22fc4f47-e994-46a3-b8c9-9bc901269f43",
       "description": "View all available jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -506,7 +506,7 @@
     {
       "title": "Academic",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=73e3bb51-1aa7-db29-2ea3-52af99b4f747&rmuh=BB7E71B318238A7BE7848924FC72466358335A52",
       "description": "Academic View all academic jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -541,7 +541,7 @@
     {
       "title": "View all academic jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=73e3bb51-1aa7-db29-2ea3-52af99b4f747",
       "description": "View all academic jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -576,7 +576,7 @@
     {
       "title": "Internal Only",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://qut.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=BCBFE463-0E8F-B662-8323-52C6E183A0C7&rmuh=36D08C5F48888938477941B43C580A346A5FA748",
       "description": "Internal Only View all internal jobs",
       "deadline": null,
       "institution": "Queensland University Of Technology",
@@ -1101,7 +1101,7 @@
     {
       "title": "Academic and Research",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://workingatunisa.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=22fc4f47-e994-46a3-b8c9-9bc901269f43&rmuh=647829B2289FD4D21D3BFD54B271F216DDC81378",
       "description": "Academic and Research Academic and Research Positions",
       "deadline": null,
       "institution": "University Of South Australia",
@@ -1175,7 +1175,7 @@
     {
       "title": "Professional",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://workingatunisa.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=6197ee04-5be0-8ea1-d1b8-88a13d6e592b&rmuh=90E33E16F5CA2613594540D7931212A0191D33D7",
       "description": "Professional Professional",
       "deadline": null,
       "institution": "University Of South Australia",
@@ -1212,7 +1212,7 @@
     {
       "title": "Identified Aboriginal Employment Opportunities",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://workingatunisa.nga.net.au/cp/index.cfm?event=jobs.listJobs&jobListid=746DCB16-19A3-182B-F861-D1D33AC74806&rmuh=1C54D7155D2B822C85282E16692B6E31D502A3C7",
       "description": "Identified Aboriginal Employment Opportunities",
       "deadline": null,
       "institution": "University Of South Australia",
@@ -1844,7 +1844,7 @@
     {
       "title": "Faculty careers",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.hr.ubc.ca/careers/faculty-careers",
       "institution": "University Of British Columbia",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -1879,7 +1879,7 @@
     {
       "title": "Collective Agreements and terms & conditions of employment",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.hr.ubc.ca/working-ubc/collective-agreements-and-terms-conditions-employment",
       "institution": "University Of British Columbia",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -1914,7 +1914,7 @@
     {
       "title": "Faculty resources",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.hr.ubc.ca/working-ubc/faculty-resources",
       "institution": "University Of British Columbia",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -1949,7 +1949,7 @@
     {
       "title": "Coaching for staff and faculty",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.hr.ubc.ca/career-development/coaching-staff-and-faculty",
       "institution": "University Of British Columbia",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -1984,7 +1984,7 @@
     {
       "title": "Contact Faculty Relations and Academic Leadership Program (ALDP)",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.hr.ubc.ca/contact/contact-faculty-relations-and-academic-leadership-program-aldp",
       "institution": "University Of British Columbia",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -2159,7 +2159,7 @@
     {
       "title": "Job alerts",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.hr.ubc.ca/careers/job-alerts",
       "institution": "University Of British Columbia",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -2229,7 +2229,7 @@
     {
       "title": "Staff and faculty housing",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.hr.ubc.ca/working-ubc/housing-immigration-and-relocation-services/housing-programs",
       "institution": "University Of British Columbia",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -2334,7 +2334,7 @@
     {
       "title": "Faculty Opportunities",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.utoronto.ca/go/Faculty-Opportunities/2607417/",
       "institution": "University Of Toronto",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -2369,7 +2369,7 @@
     {
       "title": "CUPE 3902 (Unit 3) Emergency Posting Opportunities",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.utoronto.ca/go/CUPE-3902-%28Unit-3%29-Emergency-Posting-Opportunities/2607217/",
       "institution": "University Of Toronto",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -2474,7 +2474,7 @@
     {
       "title": "Faculty",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://hr.henu.edu.cn/English/Faculty/Academician_.htm",
       "institution": "Henan University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -2509,7 +2509,7 @@
     {
       "title": "Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://hr.henu.edu.cn/English/Jobs.htm",
       "institution": "Henan University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -2614,7 +2614,7 @@
     {
       "title": "Faculty Position",
       "source": "university_website",
-      "source_url": "http://employment.hust.edu.cn/ZP/product/recruit/website/RecruitPostNew.jsp?FM_SYS_ID=hzkjdx",
+      "source_url": "http://employment.hust.edu.cn/",
       "institution": "Huazhong University Of Science And Technology",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3139,7 +3139,7 @@
     {
       "title": "Browse Jobs",
       "source": "university_website",
-      "source_url": "https://careers.nus.edu.sg/Acadpositions/go/Academic-Positions-All/733144/",
+      "source_url": "https://careers.nus.edu.sg/NUS/go/Research-&-Other-Teaching-Positions-All/733244/",
       "institution": "National University Of Singapore Nus",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3174,7 +3174,7 @@
     {
       "title": "Faculty Position",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.ethz.ch/site/index",
       "institution": "Eth Zurich",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3244,7 +3244,7 @@
     {
       "title": "Flexibility",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ethz.ch/staffnet/en/employment-and-work/employment/working-remotely.html",
       "institution": "Eth Zurich",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3279,7 +3279,7 @@
     {
       "title": "Entry",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ethz.ch/staffnet/en/employment-and-work/employment/entry.html",
       "institution": "Eth Zurich",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3314,7 +3314,7 @@
     {
       "title": "International",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ethz.ch/staffnet/en/employment-and-work/international.html",
       "institution": "Eth Zurich",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3349,7 +3349,7 @@
     {
       "title": "Consulting and coaching",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ethz.ch/staffnet/en/employment-and-work/consulting-and-coaching.html",
       "institution": "Eth Zurich",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3384,7 +3384,7 @@
     {
       "title": "Respect",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ethz.ch/staffnet/en/employment-and-work/working-environment/living-respect.html",
       "institution": "Eth Zurich",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -3419,7 +3419,7 @@
     {
       "title": "Diversity",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ethz.ch/staffnet/en/employment-and-work/working-environment/diversity.html",
       "institution": "Eth Zurich",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4026,7 +4026,7 @@
     {
       "title": "Internal candidates",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.jobs.ox.ac.uk/internal-job-board-for-university-vacancies",
       "description": "Internal candidates Internal candidates",
       "deadline": null,
       "institution": "University Of Oxford",
@@ -4096,7 +4096,7 @@
     {
       "title": "BE PART OF OXFORD",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.jobs.ox.ac.uk/why-join-oxford",
       "description": "BE PART OF OXFORD WHY JOIN OXFORD BENEFITS EQUALITY AND DIVERSITY OUR HISTORY",
       "deadline": null,
       "institution": "University Of Oxford",
@@ -4166,7 +4166,7 @@
     {
       "title": "EQUALITY AND DIVERSITY",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.jobs.ox.ac.uk/equality-diversity",
       "description": "EQUALITY AND DIVERSITY",
       "deadline": null,
       "institution": "University Of Oxford",
@@ -4306,7 +4306,7 @@
     {
       "title": "TEMPORARY STAFFING SERVICE",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.jobs.ox.ac.uk/temporary-staffing-service",
       "description": "TEMPORARY STAFFING SERVICE",
       "deadline": null,
       "institution": "University Of Oxford",
@@ -4341,7 +4341,7 @@
     {
       "title": "LIFE IN OXFORD",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.jobs.ox.ac.uk/lifeinoxford",
       "description": "LIFE IN OXFORD",
       "deadline": null,
       "institution": "University Of Oxford",
@@ -4516,7 +4516,7 @@
     {
       "title": "View Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4656,7 +4656,7 @@
     {
       "title": "JUNIORRESEARCHFELLOW1",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30624",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4691,7 +4691,7 @@
     {
       "title": "Apply",
       "source": "university_website",
-      "source_url": "https://academicjobsonline.org/ajo/jobs/31343/apply",
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29918/apply",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4726,7 +4726,7 @@
     {
       "title": "NUCLTHPD",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/31350",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4761,7 +4761,7 @@
     {
       "title": "PDTNPA",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30623",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4796,7 +4796,7 @@
     {
       "title": "POSTDOC3",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/31343",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4831,7 +4831,7 @@
     {
       "title": "AMSS",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29918",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4866,7 +4866,7 @@
     {
       "title": "APO",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30057",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4901,7 +4901,7 @@
     {
       "title": "BBT",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/27460",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -4936,7 +4936,7 @@
     {
       "title": "CDS",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30063",
       "institution": "Boston University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5126,11 +5126,11 @@
       "deadline_display": null,
       "requirements": null,
       "specializations": [
-        "Finance",
-        "Labor",
-        "Development",
         "International",
-        "Microeconomics"
+        "Development",
+        "Microeconomics",
+        "Labor",
+        "Finance"
       ],
       "start_date": null,
       "salary_range": null,
@@ -5225,7 +5225,7 @@
     {
       "title": "View Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5365,7 +5365,7 @@
     {
       "title": "JUNIORRESEARCHFELLOW1",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30624",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5400,7 +5400,7 @@
     {
       "title": "Apply",
       "source": "university_website",
-      "source_url": "https://academicjobsonline.org/ajo/jobs/31343/apply",
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29918/apply",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5435,7 +5435,7 @@
     {
       "title": "NUCLTHPD",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/31350",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5470,7 +5470,7 @@
     {
       "title": "PDTNPA",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30623",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5505,7 +5505,7 @@
     {
       "title": "POSTDOC3",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/31343",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5540,7 +5540,7 @@
     {
       "title": "AMSS",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29918",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5575,7 +5575,7 @@
     {
       "title": "APO",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30057",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5610,7 +5610,7 @@
     {
       "title": "BBT",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/27460",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5645,7 +5645,7 @@
     {
       "title": "CDS",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30063",
       "institution": "Cornell University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5715,7 +5715,7 @@
     {
       "title": "View Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5855,7 +5855,7 @@
     {
       "title": "JUNIORRESEARCHFELLOW1",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30624",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5890,7 +5890,7 @@
     {
       "title": "Apply",
       "source": "university_website",
-      "source_url": "https://academicjobsonline.org/ajo/jobs/31343/apply",
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29918/apply",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5925,7 +5925,7 @@
     {
       "title": "NUCLTHPD",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/31350",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5960,7 +5960,7 @@
     {
       "title": "PDTNPA",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30623",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -5995,7 +5995,7 @@
     {
       "title": "POSTDOC3",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/31343",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6030,7 +6030,7 @@
     {
       "title": "AMSS",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/29918",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6065,7 +6065,7 @@
     {
       "title": "APO",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30057",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6100,7 +6100,7 @@
     {
       "title": "BBT",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/27460",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6135,7 +6135,7 @@
     {
       "title": "CDS",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicjobsonline.org/ajo/jobs/30063",
       "institution": "Duke University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6240,7 +6240,7 @@
     {
       "title": "Benefits for Faculty and Staff",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.fsu.edu/sections/benefits-faculty-and-staff",
       "institution": "Florida State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6275,7 +6275,7 @@
     {
       "title": "Employment Services",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.fsu.edu/sections/employment-services",
       "institution": "Florida State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6310,7 +6310,7 @@
     {
       "title": "Faculty Relations",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.fsu.edu/sections/faculty-relations",
       "institution": "Florida State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6380,7 +6380,7 @@
     {
       "title": "Faculty Careers",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.fsu.edu/working-fsu/prospective-employees/faculty-careers",
       "institution": "Florida State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6415,7 +6415,7 @@
     {
       "title": "Student Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.fsu.edu/working-fsu/prospective-employees/student-jobs",
       "institution": "Florida State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6450,7 +6450,7 @@
     {
       "title": "Read More",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.fsu.edu/sections/equity-diversity-inclusion/equal-employment-opportunity-eeo",
       "institution": "Florida State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6522,7 +6522,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://academicpositions.harvard.edu/postings/search",
       "institution": "Harvard University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6697,7 +6697,7 @@
     {
       "title": "Jobs at IU",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.iu.edu/index.html",
       "institution": "Indiana University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -6907,7 +6907,7 @@
     {
       "title": "Employment Opportunities",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.jobs.iastate.edu/",
       "institution": "Iowa State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7012,7 +7012,7 @@
     {
       "title": "Position Types",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.jobs.iastate.edu/position-types",
       "institution": "Iowa State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7572,7 +7572,7 @@
     {
       "title": "Paths to Employment",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.northwestern.edu/paths/index.html",
       "institution": "Northwestern University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7642,7 +7642,7 @@
     {
       "title": "Staff Positions",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.northwestern.edu/paths/staff-positions.html",
       "institution": "Northwestern University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7677,7 +7677,7 @@
     {
       "title": "Temporary Staff Positions",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.northwestern.edu/paths/temporary-positions.html",
       "institution": "Northwestern University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7712,7 +7712,7 @@
     {
       "title": "View Caregiving Resources as Faculty, Staff, Graduate Student or Postdoc",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.northwestern.edu/benefits/caregiving/view-benefits-by-audience.html",
       "institution": "Northwestern University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7747,7 +7747,7 @@
     {
       "title": "Employment Verification",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.northwestern.edu/essentials/personal-information/employment-verification.html",
       "institution": "Northwestern University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7782,7 +7782,7 @@
     {
       "title": "Fraudulent Unemployment Insurance Claims",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.northwestern.edu/essentials/fraudulent-unemployment-insurance-claims/index.html",
       "institution": "Northwestern University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7817,7 +7817,7 @@
     {
       "title": "Job Listings for External Applicants",
       "source": "university_website",
-      "source_url": "https://careers.northwestern.edu",
+      "source_url": "https://myhr.northwestern.edu/",
       "institution": "Northwestern University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7852,7 +7852,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.oregonstate.edu/postings/search",
       "institution": "Oregon State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7887,7 +7887,7 @@
     {
       "title": "Job Alerts",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.oregonstate.edu/interest_cards",
       "institution": "Oregon State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -7957,7 +7957,7 @@
     {
       "title": "Academic Faculty and Professional Faculty",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.oregonstate.edu/postings/search?utf8=&query=&query_v0_posted_at_date=&query_position_type_id=3&query_organizational_tier_3_id=any&1970=&1971=&225=&commit=Search",
       "institution": "Oregon State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -8027,7 +8027,7 @@
     {
       "title": "Student Employment Opportunities!",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.oregonstate.edu/postings/search?utf8=&query=&query_v0_posted_at_date=&query_position_type_id=5&query_organizational_tier_3_id=any&1970=&1971=&225=&commit=Search",
       "institution": "Oregon State University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -8202,7 +8202,7 @@
     {
       "title": "Faculty Position",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.purdue.edu/go/West-Lafayette-Faculty/7721600/",
       "institution": "Purdue University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -8237,7 +8237,7 @@
     {
       "title": "View All Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.purdue.edu/viewalljobs/",
       "institution": "Purdue University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -8272,7 +8272,7 @@
     {
       "title": "Jobs@Rice",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.rice.edu/",
       "institution": "Rice University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -8377,7 +8377,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.rutgers.edu/postings/search",
       "institution": "Rutgers University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -8412,7 +8412,7 @@
     {
       "title": "Job Alerts",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.rutgers.edu/interest_cards",
       "institution": "Rutgers University",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -8659,7 +8659,7 @@
     {
       "title": "Getting Started We believe that you can love your job",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careersearch.stanford.edu/jobs/search",
       "description": "Getting Started We believe that you can love your job Join Stanford in shaping a better tomorrow for your community, humanity and the planet we call home. 4.2 Review Ratings 81% Recommend to a Friend View All Jobs",
       "deadline": null,
       "institution": "Stanford University",
@@ -9639,7 +9639,7 @@
     {
       "title": "Job Opportunities",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.uchicago.edu/careers",
       "institution": "University Of Chicago",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -10829,7 +10829,7 @@
     {
       "title": "Jobs@UIowa",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.uiowa.edu/",
       "institution": "University Of Iowa",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -10899,7 +10899,7 @@
     {
       "title": "Faculty",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://jobs.uiowa.edu/content/faculty/",
       "institution": "University Of Iowa",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -10969,7 +10969,7 @@
     {
       "title": "Jobs Select to follow link",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/jobs",
       "description": "Jobs Select to follow link Faculty, Lecturers, and Academic Staff Staff Students Application Status",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11006,7 +11006,7 @@
     {
       "title": "Application Status",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/application-status",
       "description": "Application Status",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11043,7 +11043,7 @@
     {
       "title": "Frequently Asked Questions",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/frequently-asked-questions",
       "description": "Frequently Asked Questions",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11080,7 +11080,7 @@
     {
       "title": "Home",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/",
       "description": "Home",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11115,7 +11115,7 @@
     {
       "title": "Faculty, Lecturers, and Academic Staff",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/jobs/faculty",
       "description": "Faculty, Lecturers, and Academic Staff",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11150,7 +11150,7 @@
     {
       "title": "Staff",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/jobs/staff",
       "description": "Staff",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11185,7 +11185,7 @@
     {
       "title": "Students",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/jobs/students",
       "description": "Students",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11220,7 +11220,7 @@
     {
       "title": "How to Apply",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/how-apply",
       "description": "How to Apply",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11290,7 +11290,7 @@
     {
       "title": "Culture at KU",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/culture-ku",
       "description": "Culture at KU",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11325,7 +11325,7 @@
     {
       "title": "Why KU?",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/why-ku",
       "description": "Why KU?",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11360,7 +11360,7 @@
     {
       "title": "Contact Us",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://employment.ku.edu/contact-us",
       "description": "Contact Us",
       "deadline": null,
       "institution": "University Of Kansas",
@@ -11395,7 +11395,7 @@
     {
       "title": "Employment Compliance",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ejobs.umd.edu/employee-resources/employment-compliance",
       "institution": "University Of Maryland",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -11500,7 +11500,7 @@
     {
       "title": "Student Portal",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ejobs.umd.edu/work-at-umd/student-employment",
       "institution": "University Of Maryland",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -11570,7 +11570,7 @@
     {
       "title": "Employment Law",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ejobs.umd.edu/employees/employment-compliance/employment-and-labor-posters",
       "institution": "University Of Maryland",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -11605,7 +11605,7 @@
     {
       "title": "Job Type Definitions",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ejobs.umd.edu/employees/classification-and-compensation/job-type-definitions",
       "institution": "University Of Maryland",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -11640,7 +11640,7 @@
     {
       "title": "Labor Law Posters",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://ejobs.umd.edu/employee-resources/employment-compliance/employment-and-labor-posters",
       "institution": "University Of Maryland",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -11675,7 +11675,7 @@
     {
       "title": "Temporary Employment",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/temporary-employment",
       "description": "Temporary Employment",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -11712,7 +11712,7 @@
     {
       "title": "Career Development",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/career-development",
       "description": "Career Development",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -11861,7 +11861,7 @@
     {
       "title": "Labor Law Notices",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/sites/default/files/2025-01/labor-law-notices-202501.pdf",
       "description": "Labor Law Notices",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -11970,7 +11970,7 @@
     {
       "title": "rss",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/search/feed/advanced",
       "description": "rss",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12040,7 +12040,7 @@
     {
       "title": "Login",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/login",
       "description": "Login",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12075,7 +12075,7 @@
     {
       "title": "Help and FAQ",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/help-and-faq",
       "description": "Help and FAQ",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12110,7 +12110,7 @@
     {
       "title": "Home",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/",
       "description": "Home",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12145,7 +12145,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/search-jobs",
       "description": "Search Jobs",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12180,7 +12180,7 @@
     {
       "title": "Benefits",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/benefits",
       "description": "Benefits",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12215,7 +12215,7 @@
     {
       "title": "Choose Michigan",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/choose-michigan",
       "description": "Choose Michigan",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12320,7 +12320,7 @@
     {
       "title": "Accessibility",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/accessibility",
       "description": "Accessibility",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12355,7 +12355,7 @@
     {
       "title": "Security and Safety Annual Report",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.umich.edu/security-and-safety-annual-report",
       "description": "Security and Safety Annual Report",
       "deadline": null,
       "institution": "University Of Michigan",
@@ -12425,7 +12425,7 @@
     {
       "title": "Find a Job",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/jobs",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12460,7 +12460,7 @@
     {
       "title": "Job Families and Salary Ranges",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/HR-Community/Compensation-and-Classification/Job-Classification-System/Job-Families-and-Salary",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12495,7 +12495,7 @@
     {
       "title": "Job Reclassification",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/HR-Community/Compensation-and-Classification/Job-Classification-System/Job-Reclassification",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12530,7 +12530,7 @@
     {
       "title": "Employment Authorization",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/Employees/Current-Employees/Pay-and-Taxes/Employment-Authorization",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12565,7 +12565,7 @@
     {
       "title": "Employment-Related Scams and Phishing",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/Employees/Current-Employees/Work-Life-Support/Employment-Related-Scams-and-Phishing",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12600,7 +12600,7 @@
     {
       "title": "U Perks",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/Employees/Current-Employees/U-Perks-Faculty-and-Staff",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12635,7 +12635,7 @@
     {
       "title": "U of M Employment Benefits",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/Benefits/U-M-Employment-Benefits",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12670,7 +12670,7 @@
     {
       "title": "Requirements for Pay and Benefit Information in Job Postings",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/Supervisors/Recruiting-and-Hiring/Hiring-Process/Recent-Legal-Requirements/Requirements-Pay-and",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12705,7 +12705,7 @@
     {
       "title": "Agreements with Faculty Emeriti",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/Supervisors/Recruiting-and-Hiring/Agreements-Faculty-Emeriti",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12740,7 +12740,7 @@
     {
       "title": "Job Classification System",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/node/12086",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12775,7 +12775,7 @@
     {
       "title": "Faculty and P&A Pay Practices",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/HR-Community/Compensation-and-Classification/Pay-Practices-Policy-and-Guidelines/Faculty-and-PA-Pay",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12810,7 +12810,7 @@
     {
       "title": "I-9 Process for Foreign National Faculty, Staff, and Student Workers",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/HR-Community/I-9-Employee-Eligibility-Verification/I-9-Process-Foreign-National-Faculty-Staff-and",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12845,7 +12845,7 @@
     {
       "title": "Apply for a Job",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://humanresources.umn.edu/jobs/Find-Job/Search-UMN-Jobs",
       "institution": "University Of Minnesota",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12915,7 +12915,7 @@
     {
       "title": "Job Openings",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://hrs.missouri.edu/job-openings",
       "institution": "University Of Missouri",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -12950,7 +12950,7 @@
     {
       "title": "Eligibility for Union Positions",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://hrs.missouri.edu/eligibility-union-positions",
       "institution": "University Of Missouri",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -13895,7 +13895,7 @@
     {
       "title": "Faculty",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.join.pitt.edu/faculty-appointments",
       "institution": "University Of Pittsburgh",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -14070,7 +14070,7 @@
     {
       "title": "More than Just a Job",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://www.join.pitt.edu/why-work-pitt/more-just-job",
       "institution": "University Of Pittsburgh",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -14811,7 +14811,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://uscjobs.sc.edu/postings/search",
       "institution": "University Of South Carolina",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -14846,7 +14846,7 @@
     {
       "title": "Job Alerts",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://uscjobs.sc.edu/interest_cards",
       "institution": "University Of South Carolina",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -14916,7 +14916,7 @@
     {
       "title": "Faculty Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://uscjobs.sc.edu/postings/search?utf8=✓&query=&query_v0_posted_at_date=&query_position_type_id%5B%5D=4&query_position_type_id%5B%5D=7&3055%5B%5D=20&225=&commit=Search",
       "institution": "University Of South Carolina",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -14951,7 +14951,7 @@
     {
       "title": "Staff Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://uscjobs.sc.edu/postings/search?utf8=✓&query=&query_v0_posted_at_date=&query_position_type_id%5B%5D=2&query_position_type_id%5B%5D=4&3055%5B%5D=1&3055%5B%5D=7&3055%5B%5D=11&3055%5B%5D=5&3055%5B%5D=4&3055%5B%5D=8&3055%5B%5D=3&3055%5B%5D=2&3055%5B%5D=10&3055%5B%5D=13&3055%5B%5D=18&3055%5B%5D=6&3055%5B%5D=19&3055%5B%5D=9&3055%5B%5D=12&3055%5B%5D=16&3055%5B%5D=17&225=&commit=Search",
       "institution": "University Of South Carolina",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -14986,7 +14986,7 @@
     {
       "title": "Adjunct Faculty and Temporary Staff Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://uscjobs.sc.edu/postings/search?utf8=✓&query=&query_v0_posted_at_date=&query_organizational_tier_3_id%5B%5D=any&query_position_type_id%5B%5D=9&225=&commit=Search",
       "institution": "University Of South Carolina",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15021,7 +15021,7 @@
     {
       "title": "Student Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://uscjobs.sc.edu/postings/search?utf8=✓&query=&query_v0_posted_at_date=&query_organizational_tier_3_id%5B%5D=any&query_position_type_id%5B%5D=8&225=&commit=Search",
       "institution": "University Of South Carolina",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15196,7 +15196,7 @@
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://utah.peopleadmin.com/postings/search",
       "institution": "University Of Utah",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15231,7 +15231,7 @@
     {
       "title": "Job Alerts",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://utah.peopleadmin.com/interest_cards",
       "institution": "University Of Utah",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15266,7 +15266,7 @@
     {
       "title": "Benefited Staff Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://utah.peopleadmin.com/postings/search?utf8=%E2%9C%93&query=&query_v0_posted_at_date=&595%5B%5D=1&504=&764=&565=&commit=Search",
       "institution": "University Of Utah",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15301,7 +15301,7 @@
     {
       "title": "Part-Time Staff Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://utah.peopleadmin.com/postings/search?utf8=%E2%9C%93&query=&query_v0_posted_at_date=&595%5B%5D=3&504=&764=&565=&commit=Search",
       "institution": "University Of Utah",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15336,7 +15336,7 @@
     {
       "title": "Faculty Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://utah.peopleadmin.com/postings/search?utf8=%E2%9C%93&query=&query_v0_posted_at_date=&595%5B%5D=2&504=&764=&565=&commit=Search",
       "institution": "University Of Utah",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15371,7 +15371,7 @@
     {
       "title": "Recently Posted Jobs",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://utah.peopleadmin.com/postings/search?utf8=%E2%9C%93&query=&query_v0_posted_at_date=week&commit=Search",
       "institution": "University Of Utah",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15406,7 +15406,7 @@
     {
       "title": "Employment",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://utah.peopleadmin.com/postings/search",
       "institution": "University Of Utah",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15861,7 +15861,7 @@
     {
       "title": "Send me jobs like these",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/listing/",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15896,7 +15896,7 @@
     {
       "title": "Academic Advisor",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535164/academic-advisor",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15931,7 +15931,7 @@
     {
       "title": "Undergraduate Academic Advisor",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535151/undergraduate-academic-advisor",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -15966,7 +15966,7 @@
     {
       "title": "Recruiting Coordinator / Wrestling",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535143/recruiting-coordinator-wrestling",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16001,7 +16001,7 @@
     {
       "title": "Digital Marketing & Communications Manager",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535156/digital-marketing-communications-manager",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16036,7 +16036,7 @@
     {
       "title": "System Administrator",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535101/system-administrator",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16071,7 +16071,7 @@
     {
       "title": "Academic Operations Assistant Phase 1",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535142/academic-operations-assistant-phase-1",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16106,7 +16106,7 @@
     {
       "title": "Accounting Associate I",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535160/accounting-associate-i",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16141,7 +16141,7 @@
     {
       "title": "2nd Shift Custodial Services Worker",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/534005/2nd-shift-custodial-services-worker",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16176,7 +16176,7 @@
     {
       "title": "Custodial Services Worker",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/534462/custodial-services-worker",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16211,7 +16211,7 @@
     {
       "title": "Administrative Assistant",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535041/administrative-assistant",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16246,7 +16246,7 @@
     {
       "title": "Program Manager, V-TOP Region 2 Institution-Led Partnership",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535138/program-manager-vtop-region-2-institutionled-partnership",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16281,7 +16281,7 @@
     {
       "title": "Welder/Plumber/Steamfitter/HVAC",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535083/welderplumbersteamfitterhvac",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16316,7 +16316,7 @@
     {
       "title": "Door Maintenance Technician",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535105/door-maintenance-technician",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16351,7 +16351,7 @@
     {
       "title": "International Tax Assistant",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535130/international-tax-assistant",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16386,7 +16386,7 @@
     {
       "title": "Assistant Professor of Practice, French Horn",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535107/assistant-professor-of-practice-french-horn",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16421,7 +16421,7 @@
     {
       "title": "Part-Time Instructor, Double Reeds (Oboe and Bassoon)",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535132/parttime-instructor-double-reeds-oboe-and-bassoon",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16456,7 +16456,7 @@
     {
       "title": "Field Scout - Shenandoah County",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/535109/field-scout-shenandoah-county",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16491,7 +16491,7 @@
     {
       "title": "Technology Support Analyst",
       "source": "university_website",
-      "source_url": null,
+      "source_url": "https://careers.pageuppeople.com/968/cw/en-us/job/534946/technology-support-analyst",
       "institution": "Virginia Tech",
       "department": "Economics",
       "scraped_date": "2026-01-03",
@@ -16525,7 +16525,7 @@
     },
     {
       "title": "About us",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "About us Overview Mission and Vision Organization Initiatives and Projects Awards History",
       "deadline": null,
@@ -16553,14 +16553,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Publications",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Publications Overview Discussion Papers World of Labor Policy Papers Standpunkte Research Reports Research in Labor Economics Books",
       "deadline": null,
@@ -16590,14 +16590,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Team",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Team Overview Research Team Service Unit Associated Members Guest Researchers Alumni",
       "deadline": null,
@@ -16623,14 +16623,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Network",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Network Overview Research Fellows Research Affiliates Network Advisory Panel",
       "deadline": null,
@@ -16656,14 +16656,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Events",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Events Overview Events Calendar Research Seminars Conferences and Workshops IZA Summer School",
       "deadline": null,
@@ -16689,14 +16689,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Jobs at CEPR",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "institution": "Centre For Economic Policy Research Cepr",
       "institution_type": "research_institute",
@@ -16722,14 +16722,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Job Openings",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": "https://careers-brookings.icims.com/jobs/search?ss=1&hashed=-435682078",
       "institution": "Brookings Institution",
       "institution_type": "research_institute",
@@ -16755,14 +16755,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Careers Home",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "CLOSE Careers Home About Us What We Do • What We Stand For History The Benefits Health • Financial Wellness • Family Care • Other Why Work Here Our Culture • Our People Our Impact • Stay Connected Look Inside Chicago • Detroit Sustainability Effort Areas of Work Business Areas • Internships Search Jobs CHICAGOFED.ORG",
       "deadline": null,
@@ -16790,14 +16790,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Federal Reserve System Careers",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": "https://rb.wd5.myworkdayjobs.com/FRS?hiringCompany=7186c32a743f01e4caeeb8caaf01430c",
       "description": "ALERT: Recently there have been fake job postings pretending to represent the Federal Reserve Bank of Chicago. There is only one website where you can upload your application for a job at the Chicago Fed: Federal Reserve System Careers",
       "deadline": null,
@@ -16825,14 +16825,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "About Us Learn More",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Work with purpose. Our impact is powerful. Fueled by strong collaboration, fresh approaches and unique perspectives, our team makes a difference. Make a difference with us. About Us Learn More Why Work Here Learn More Areas of Work Learn More Look Inside Learn More Benefits Learn More",
       "deadline": null,
@@ -16861,14 +16861,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Technology Use top-of-the-line technologies to support our country. Learn More",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "AREAS OF WORK The Chicago Fed offers diverse opportunities across a wide range of areas. Contribute your distinct experiences and talents to our shared purpose. Technology Use top-of-the-line technologies to support our country. Learn More Research & Outreach Find the answers to vitally important questions. Learn More Bank Supervision Work to keep our nation's banks safe. Learn More Professional Services There is purpose in everything we do. Learn More Financial Products & Services We keep the C",
       "deadline": null,
@@ -16897,14 +16897,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Research Position",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": "https://www.linkedin.com/company/federal-reserve-bank-of-chicago/",
       "description": "CHICAGOFED.ORG",
       "deadline": null,
@@ -16930,14 +16930,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "CHICAGOFED.ORG",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "CHICAGOFED.ORG",
       "deadline": null,
@@ -16963,14 +16963,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "ADVANCE YOUR CAREER",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "ADVANCE YOUR CAREER with Purpose HEAR GARVESTER'S STORY HEAR GUSTAVO'S STORY HEAR MAY'S STORY HEAR RICKY'S STORY HEAR KATHY'S STORY HEAR CECIL'S STORY HEAR CHANTELLE'S STORY",
       "deadline": null,
@@ -16996,14 +16996,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Why Work Here Learn More",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Why Work Here Learn More",
       "deadline": null,
@@ -17029,14 +17029,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Areas of Work Learn More",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Areas of Work Learn More",
       "deadline": null,
@@ -17062,14 +17062,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Look Inside Learn More",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Look Inside Learn More",
       "deadline": null,
@@ -17095,14 +17095,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Benefits Learn More",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "description": "Benefits Learn More",
       "deadline": null,
@@ -17128,15 +17128,15 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Labor Market for Recent College Graduates",
-      "source": "research_institute",
-      "source_url": null,
+      "source": "institute_website",
+      "source_url": "https://www.newyorkfed.org/research/college-labor-market#--:explore:unemployment",
       "institution": "Federal Reserve Bank Of New York",
       "institution_type": "research_institute",
       "scraped_date": "2026-01-03",
@@ -17161,15 +17161,15 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Regional Employment Trends",
-      "source": "research_institute",
-      "source_url": null,
+      "source": "institute_website",
+      "source_url": "https://www.newyorkfed.org/research/regional_economy/regional-employment#/interactive",
       "institution": "Federal Reserve Bank Of New York",
       "institution_type": "research_institute",
       "scraped_date": "2026-01-03",
@@ -17194,15 +17194,15 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Early Benchmarked Employment Data",
-      "source": "research_institute",
-      "source_url": null,
+      "source": "institute_website",
+      "source_url": "https://www.newyorkfed.org/research/regional_economy/early-benchmarked-employment",
       "institution": "Federal Reserve Bank Of New York",
       "institution_type": "research_institute",
       "scraped_date": "2026-01-03",
@@ -17227,15 +17227,15 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "\"The New York Fed is a leader in central banking. And working here I see why. The work I do on a day-to-day basis is consequential, dynamic, and unmatched by anything I've experienced before.\"",
-      "source": "research_institute",
-      "source_url": null,
+      "source": "institute_website",
+      "source_url": "https://www.newyorkfed.org/careers/current_openings.html",
       "institution": "Federal Reserve Bank Of New York",
       "institution_type": "research_institute",
       "scraped_date": "2026-01-03",
@@ -17260,15 +17260,15 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "\"The Bank provides tons of opportunities to learn and grow in ways that support my unique career. This helps me excel in my job now and prepares me for the job I want next.\"",
-      "source": "research_institute",
-      "source_url": null,
+      "source": "institute_website",
+      "source_url": "https://www.newyorkfed.org/careers/careerdev.html",
       "institution": "Federal Reserve Bank Of New York",
       "institution_type": "research_institute",
       "scraped_date": "2026-01-03",
@@ -17293,14 +17293,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Career Opportunities",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": "https://rb.wd5.myworkdayjobs.com/FRS?hiringCompany=7186c32a743f01bc55a5d2caaf01ac0c",
       "institution": "Federal Reserve Bank Of San Francisco",
       "institution_type": "research_institute",
@@ -17326,14 +17326,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Unemployment and Immigration",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "institution": "National Bureau Of Economic Research Nber",
       "institution_type": "research_institute",
@@ -17359,14 +17359,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "RA Positions - at NBER",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "institution": "National Bureau Of Economic Research Nber",
       "institution_type": "research_institute",
@@ -17392,14 +17392,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "RA Positions - not at the NBER",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "institution": "National Bureau Of Economic Research Nber",
       "institution_type": "research_institute",
@@ -17425,14 +17425,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Staff Positions at NBER",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": null,
       "institution": "National Bureau Of Economic Research Nber",
       "institution_type": "research_institute",
@@ -17458,14 +17458,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "Research Assistant Positions at NBER page",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": "https://www.nber.org/node/217004/",
       "institution": "National Bureau Of Economic Research Nber",
       "institution_type": "research_institute",
@@ -17491,14 +17491,14 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false
     },
     {
       "title": "opportunities and other related positions",
-      "source": "research_institute",
+      "source": "institute_website",
       "source_url": "https://www.nber.org/node/120216",
       "institution": "National Bureau Of Economic Research Nber",
       "institution_type": "research_institute",
@@ -17524,7 +17524,7 @@
       "job_type": "other",
       "processed_date": "2026-01-03",
       "sources": [
-        "research_institute"
+        "institute_website"
       ],
       "is_active": true,
       "is_new": false

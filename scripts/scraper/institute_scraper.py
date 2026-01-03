@@ -118,10 +118,14 @@ class InstituteScraper(BaseScraper):
         if not title and not url:
             return None
         
+        # Ensure source_url is always set - use self.url if url is empty
+        if not url and self.url:
+            url = self.url
+        
         return {
             "title": title or "Research Position",
             "source": self.source_name,
-            "source_url": url,
+            "source_url": url or "",  # Always set, even if empty
             "description": description[:500] if description else "",
             "deadline": deadline,
             "institution": self.institute_name,

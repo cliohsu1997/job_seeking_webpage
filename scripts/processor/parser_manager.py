@@ -192,7 +192,18 @@ class ParserManager:
                     # Check universities
                     if "universities" in region_data:
                         for uni in region_data["universities"]:
-                            if uni.get("name", "").lower() == university_name.lower():
+                            uni_name = uni.get("name", "").lower()
+                            # Try exact match first
+                            if uni_name == university_name.lower():
+                                # Check departments
+                                for dept in uni.get("departments", []):
+                                    if dept.get("name", "").lower() == department.lower():
+                                        return dept.get("url")
+                                # Fallback to first department URL
+                                if uni.get("departments"):
+                                    return uni["departments"][0].get("url")
+                            # Try partial match (university name contains or is contained in config name)
+                            elif university_name.lower() in uni_name or uni_name in university_name.lower():
                                 # Check departments
                                 for dept in uni.get("departments", []):
                                     if dept.get("name", "").lower() == department.lower():
@@ -208,7 +219,16 @@ class ParserManager:
                             if country_key.lower() == country.lower():
                                 if "universities" in country_data:
                                     for uni in country_data["universities"]:
-                                        if uni.get("name", "").lower() == university_name.lower():
+                                        uni_name = uni.get("name", "").lower()
+                                        # Try exact match first
+                                        if uni_name == university_name.lower():
+                                            for dept in uni.get("departments", []):
+                                                if dept.get("name", "").lower() == department.lower():
+                                                    return dept.get("url")
+                                            if uni.get("departments"):
+                                                return uni["departments"][0].get("url")
+                                        # Try partial match
+                                        elif university_name.lower() in uni_name or uni_name in university_name.lower():
                                             for dept in uni.get("departments", []):
                                                 if dept.get("name", "").lower() == department.lower():
                                                     return dept.get("url")
@@ -236,7 +256,12 @@ class ParserManager:
                     # Check research_institutes
                     if "research_institutes" in region_data:
                         for inst in region_data["research_institutes"]:
-                            if inst.get("name", "").lower() == institute_name.lower():
+                            inst_name = inst.get("name", "").lower()
+                            # Try exact match first
+                            if inst_name == institute_name.lower():
+                                return inst.get("url")
+                            # Try partial match
+                            elif institute_name.lower() in inst_name or inst_name in institute_name.lower():
                                 return inst.get("url")
                     
                     # Check other_countries structure
@@ -245,7 +270,12 @@ class ParserManager:
                             if country_key.lower() == country.lower():
                                 if "research_institutes" in country_data:
                                     for inst in country_data["research_institutes"]:
-                                        if inst.get("name", "").lower() == institute_name.lower():
+                                        inst_name = inst.get("name", "").lower()
+                                        # Try exact match first
+                                        if inst_name == institute_name.lower():
+                                            return inst.get("url")
+                                        # Try partial match
+                                        elif institute_name.lower() in inst_name or inst_name in institute_name.lower():
                                             return inst.get("url")
         
         except Exception as e:
@@ -610,24 +640,45 @@ class ParserManager:
                     current_source = listing.get("source", "")
                     listing["source"] = source_name_mapping.get(current_source, current_source)
                 
-                # Ensure source_url field is set
-                if "source_url" not in listing:
-                    listing["source_url"] = ""
-                elif not listing["source_url"]:
-                    # If source_url is empty, try to use base_url from config
+                # Ensure source_url field is ALWAYS set
+                # Priority: 1) existing source_url from listing, 2) base_url from config, 3) empty string
+                current_source_url = listing.get("source_url", "")
+                if not current_source_url:
+                    # If source_url is missing or empty, use base_url from config
                     if base_url:
                         listing["source_url"] = base_url
+                    else:
+                        listing["source_url"] = ""
                 
                 # Store base URL for URL resolution in normalizer
-                # Try to extract from existing source_url first, then use config base_url
+                # Priority: 1) extract from absolute source_url, 2) use base_url from config
+                base_url_for_resolution = None
+                
+                # First, try to extract from current source_url if it's absolute
                 if listing.get("source_url"):
                     extracted_base = self._extract_base_url_from_url(listing["source_url"])
                     if extracted_base:
-                        listing["_base_url"] = extracted_base
-                    elif base_url:
-                        listing["_base_url"] = self._extract_base_url_from_url(base_url)
+                        base_url_for_resolution = extracted_base
+                
+                # If source_url is relative and we have base_url from config, use it
+                if not base_url_for_resolution:
+                    if base_url:
+                        # Extract base from config base_url
+                        base_url_for_resolution = self._extract_base_url_from_url(base_url)
+                        # If source_url is relative, we can still use base_url to resolve it
+                        if base_url_for_resolution and not listing.get("source_url", "").startswith(('http://', 'https://')):
+                            # Keep the relative URL but set base_url for resolution
+                            pass
+                
+                # Always set _base_url if we have one (for normalizer to use)
+                # This is critical for resolving relative URLs
+                if base_url_for_resolution:
+                    listing["_base_url"] = base_url_for_resolution
                 elif base_url:
-                    listing["_base_url"] = self._extract_base_url_from_url(base_url)
+                    # Even if we couldn't extract base, try to use base_url directly
+                    base_url_for_resolution = self._extract_base_url_from_url(base_url)
+                    if base_url_for_resolution:
+                        listing["_base_url"] = base_url_for_resolution
             
             logger.debug(f"Extracted {len(listings)} listings from {filename}")
             return listings

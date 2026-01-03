@@ -1,8 +1,8 @@
 {
   "summary": {
-    "start_time": "2026-01-03T15:36:28.743681",
-    "end_time": "2026-01-03T15:37:02.340856",
-    "duration_seconds": 33.597175,
+    "start_time": "2026-01-03T16:35:05.123885",
+    "end_time": "2026-01-03T16:35:06.939655",
+    "duration_seconds": 1.81577,
     "statistics": {
       "parsing_issues": 7,
       "normalization_issues": 113,
@@ -79,7 +79,7 @@
         115
       ],
       [
-        "Invalid URL format (missing scheme or netloc)",
+        "Could not resolve relative URL (no valid base URL ",
         113
       ],
       [

@@ -1,9 +1,9 @@
 ======================================================================
 DIAGNOSTIC REPORT SUMMARY
 ======================================================================
-Start Time: 2026-01-03T15:36:28.743681
-End Time: 2026-01-03T15:37:02.348532
-Duration: 33.60 seconds
+Start Time: 2026-01-03T16:35:05.123885
+End Time: 2026-01-03T16:35:06.946337
+Duration: 1.82 seconds
 
 Total Issues: 913
 
@@ -17,7 +17,7 @@ Most Common Errors:
 ----------------------------------------------------------------------
   Missing required field                                      : 560
   Merged 2 duplicates                                         : 115
-  Invalid URL format (missing scheme or netloc)               : 113
+  Could not resolve relative URL (no valid base URL           : 113
   Field 'source_url'                                          : 110
   Could not read file content                                 : 7
 

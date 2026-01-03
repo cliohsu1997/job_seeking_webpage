@@ -139,10 +139,14 @@ class UniversityScraper(BaseScraper):
         if not title and not url:
             return None
         
+        # Ensure source_url is always set - use self.url if url is empty
+        if not url and self.url:
+            url = self.url
+        
         return {
             "title": title or "Faculty Position",
             "source": self.source_name,
-            "source_url": url,
+            "source_url": url or "",  # Always set, even if empty
             "description": description[:500] if description else "",
             "deadline": deadline,
             "institution": self.university_name,
@@ -416,11 +420,11 @@ class UniversityScraper(BaseScraper):
         
         # Extract requirements/qualifications
         requirements = None
-        req_keywords = ["requirements", "qualifications", "required", "must have"]
+        req_keywords = ["requirements", "qualifications", "required", "must have", "qualification", "prerequisites"]
         for keyword in req_keywords:
             # Look for sections with these keywords
-            for elem in soup.find_all(["div", "section", "p"], string=re.compile(keyword, re.I)):
-                parent = elem.find_parent(["div", "section"])
+            for elem in soup.find_all(["div", "section", "p", "h2", "h3"], string=re.compile(keyword, re.I)):
+                parent = elem.find_parent(["div", "section", "article"])
                 if parent:
                     requirements = extract_text(parent)
                     if requirements and len(requirements) > 20:
@@ -428,6 +432,26 @@ class UniversityScraper(BaseScraper):
                         break
             if requirements:
                 break
+        
+        # If no requirements found, try extracting from description
+        if not requirements and description:
+            # Look for requirements section in description
+            req_section_pattern = re.compile(r"(?:requirements?|qualifications?|required|must have)[:\s]+(.*?)(?:\n\n|\n[A-Z][a-z]+:|$)", re.IGNORECASE | re.DOTALL)
+            match = req_section_pattern.search(description)
+            if match:
+                requirements = match.group(1).strip()
+                if len(requirements) > 20:
+                    listing["requirements"] = requirements
+        
+        # Extract materials required if mentioned
+        materials_keywords = ["cv", "resume", "cover letter", "reference", "publication", "transcript", "statement"]
+        materials = []
+        text_lower = text_content.lower()
+        for keyword in materials_keywords:
+            if keyword in text_lower:
+                materials.append(keyword)
+        if materials:
+            listing["materials_required"] = ", ".join(materials)
         
         return listing
 

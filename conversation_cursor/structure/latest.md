@@ -86,15 +86,15 @@ job-seeking-webpage/
 ### Scraper Framework (Phase 1 - Complete)
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)
 - **`scripts/scraper/aea_scraper.py`**: AEA JOE scraper (RSS/HTML fallback)
-- **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based, **link-following enabled** - automatically follows links to detail pages to extract full job information)
-- **`scripts/scraper/institute_scraper.py`**: Research institute scraper (**link-following enabled** - automatically follows links to detail pages)
+- **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based, **link-following enabled** - automatically follows links to detail pages to extract full job information). **Phase 2F**: Enhanced requirements and materials extraction, always sets source_url ✅
+- **`scripts/scraper/institute_scraper.py`**: Research institute scraper (**link-following enabled** - automatically follows links to detail pages). **Phase 2F**: Always sets source_url ✅
 - **`scripts/scraper/parsers/`**: HTML, RSS, text extractor, date parser
 - **`scripts/scraper/utils/`**: Rate limiter, retry handler, user agent, config loader
 
 ### Processor Framework (Phase 2 - ✅ Complete)
 - **`scripts/processor/pipeline.py`**: Main processing pipeline orchestrator (full workflow: parse → normalize → enrich → deduplicate → validate → diagnostics, JSON/CSV output, archive with retention)
-- **`scripts/processor/parser_manager.py`**: Routes raw data to parsers ✅ Phase 2A. **Phase 2F**: Base URL lookup from config, ensures source fields always set, enhanced file reading with chardet ✅
-- **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text, job types, departments, contact info, materials ✅ Phase 2B. **Phase 2F**: Enhanced URL resolution with base URLs from parser manager (highest priority), relative URL resolution ✅
+- **`scripts/processor/parser_manager.py`**: Routes raw data to parsers ✅ Phase 2A. **Phase 2F**: Base URL lookup from config (with partial name matching), ensures source fields always set, enhanced file reading with chardet ✅
+- **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text, job types, departments, contact info, materials ✅ Phase 2B. **Phase 2F**: Enhanced URL resolution with base URLs from parser manager (highest priority), relative URL resolution with fallbacks, better handling of relative URLs with/without leading `/` ✅
 - **`scripts/processor/enricher.py`**: Enriches data (IDs, classifications, metadata, specializations) ✅ Phase 2B. **Phase 2F**: Sets default values for optional fields ✅
 - **`scripts/processor/deduplicator.py`**: Identifies and merges duplicate listings (fuzzy matching, merge logic, new/active detection) ✅ Phase 2C
 - **`scripts/processor/validator.py`**: Validates data against schema (schema validation, date/URL validation, completeness/quality/consistency checks, batch validation) ✅ Phase 2D. **Phase 2F**: Tiered validation - optional fields treated as warnings instead of critical errors ✅
