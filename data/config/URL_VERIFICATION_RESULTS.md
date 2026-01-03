@@ -122,7 +122,7 @@ After running URL verification on all configured URLs:
 3. **Download business school PDFs** - **IMPORTANT**: When searching/testing URLs:
    - Identify any PDF files or downloadable documents on pages
    - Check if they are business school oriented (job postings, faculty positions, business/economics departments)
-   - If yes, download to `data/raw/` directory (e.g., `data/raw/business_school_pdfs/`)
+   - If yes, download to `data/raw/documents/` directory
    - Save with descriptive filenames
 4. **Update scraping_sources.json** - Replace problematic URLs with working alternatives
 5. **Re-run verification** - Verify all new URLs work correctly
