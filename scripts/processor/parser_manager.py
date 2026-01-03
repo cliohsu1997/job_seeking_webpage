@@ -7,9 +7,11 @@ and routes files to appropriate extraction methods (reusing Phase 1 parsers).
 
 import logging
 import re
+import json
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Iterator
 from datetime import datetime
+from urllib.parse import urlparse
 
 from .diagnostics import DiagnosticTracker
 
@@ -40,6 +42,9 @@ except ImportError:
 
 logger = logging.getLogger(__name__)
 
+# Path to scraping sources config
+CONFIG_FILE = project_root / "data/config/scraping_sources.json"
+
 
 class ParserManager:
     """
@@ -63,6 +68,7 @@ class ParserManager:
             "universities": "university",
             "institutes": "institute"
         }
+        self._config_cache = None  # Cache for scraping sources config
     
     def scan_raw_files(self) -> List[Dict[str, Any]]:
         """
@@ -130,6 +136,143 @@ class ParserManager:
             logger.warning(f"File {file_path} is not within raw_data_dir {self.raw_data_dir}")
             return None
     
+    def _load_config(self) -> Dict[str, Any]:
+        """Load scraping sources config (with caching)."""
+        if self._config_cache is None:
+            try:
+                with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+                    self._config_cache = json.load(f)
+            except (FileNotFoundError, json.JSONDecodeError) as e:
+                logger.warning(f"Failed to load scraping sources config: {e}")
+                self._config_cache = {"accessible": {"job_portals": {}, "regions": {}}}
+        return self._config_cache
+    
+    def _lookup_base_url(self, filename: str, source_type: str, metadata: Dict[str, Any]) -> Optional[str]:
+        """
+        Look up base URL from scraping sources config based on filename and metadata.
+        
+        Args:
+            filename: Name of the file
+            source_type: Source type ("aea", "university", "institute")
+            metadata: Extracted metadata from filename
+        
+        Returns:
+            Base URL string or None if not found
+        """
+        config = self._load_config()
+        accessible = config.get("accessible", {})
+        
+        try:
+            if source_type == "aea":
+                # Look up AEA JOE URL
+                job_portals = accessible.get("job_portals", {})
+                if "aea" in job_portals:
+                    return job_portals["aea"].get("url")
+            
+            elif source_type == "university":
+                # Look up university URL from config
+                university_name = metadata.get("university_name", "")
+                department = metadata.get("department", "")
+                country = metadata.get("country", "")
+                
+                # Map country code to region
+                region_map = {
+                    "us": "united_states",
+                    "cn": "mainland_china",
+                    "uk": "other_countries",
+                    "ca": "other_countries",
+                    "au": "other_countries"
+                }
+                region = region_map.get(country.lower(), "other_countries")
+                
+                regions = accessible.get("regions", {})
+                if region in regions:
+                    region_data = regions[region]
+                    
+                    # Check universities
+                    if "universities" in region_data:
+                        for uni in region_data["universities"]:
+                            if uni.get("name", "").lower() == university_name.lower():
+                                # Check departments
+                                for dept in uni.get("departments", []):
+                                    if dept.get("name", "").lower() == department.lower():
+                                        return dept.get("url")
+                                # Fallback to first department URL
+                                if uni.get("departments"):
+                                    return uni["departments"][0].get("url")
+                    
+                    # Check other_countries structure
+                    if region == "other_countries" and "countries" in region_data:
+                        # Try to find by country code
+                        for country_key, country_data in region_data["countries"].items():
+                            if country_key.lower() == country.lower():
+                                if "universities" in country_data:
+                                    for uni in country_data["universities"]:
+                                        if uni.get("name", "").lower() == university_name.lower():
+                                            for dept in uni.get("departments", []):
+                                                if dept.get("name", "").lower() == department.lower():
+                                                    return dept.get("url")
+                                            if uni.get("departments"):
+                                                return uni["departments"][0].get("url")
+            
+            elif source_type == "institute":
+                # Look up institute URL from config
+                institute_name = metadata.get("institute_name", "")
+                country = metadata.get("country", "")
+                
+                region_map = {
+                    "us": "united_states",
+                    "cn": "mainland_china",
+                    "uk": "other_countries",
+                    "ca": "other_countries",
+                    "au": "other_countries"
+                }
+                region = region_map.get(country.lower(), "other_countries")
+                
+                regions = accessible.get("regions", {})
+                if region in regions:
+                    region_data = regions[region]
+                    
+                    # Check research_institutes
+                    if "research_institutes" in region_data:
+                        for inst in region_data["research_institutes"]:
+                            if inst.get("name", "").lower() == institute_name.lower():
+                                return inst.get("url")
+                    
+                    # Check other_countries structure
+                    if region == "other_countries" and "countries" in region_data:
+                        for country_key, country_data in region_data["countries"].items():
+                            if country_key.lower() == country.lower():
+                                if "research_institutes" in country_data:
+                                    for inst in country_data["research_institutes"]:
+                                        if inst.get("name", "").lower() == institute_name.lower():
+                                            return inst.get("url")
+        
+        except Exception as e:
+            logger.debug(f"Error looking up base URL for {filename}: {e}")
+        
+        return None
+    
+    def _extract_base_url_from_url(self, url: str) -> Optional[str]:
+        """
+        Extract base URL (scheme + netloc) from a full URL.
+        
+        Args:
+            url: Full URL
+        
+        Returns:
+            Base URL string or None if invalid
+        """
+        if not url:
+            return None
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme and parsed.netloc:
+                return f"{parsed.scheme}://{parsed.netloc}"
+        except Exception:
+            pass
+        return None
+    
     def _parse_filename(self, filename: str, source_type: str) -> Dict[str, Any]:
         """
         Parse filename to extract metadata (university name, department, institute name).
@@ -182,7 +325,29 @@ class ParserManager:
             File content as string or None if failed
         """
         # Try multiple encodings in order of likelihood
-        encodings = ["utf-8", "latin-1", "cp1252", "iso-8859-1", "gb2312", "gbk", "utf-16"]
+        encodings = ["utf-8", "latin-1", "cp1252", "iso-8859-1", "gb2312", "gbk", "utf-16", "utf-16-le", "utf-16-be"]
+        
+        # First, try to detect encoding using chardet if available
+        try:
+            import chardet
+            with open(file_path, "rb") as f:
+                raw_data = f.read()
+                if raw_data:
+                    detected = chardet.detect(raw_data)
+                    if detected and detected.get("encoding"):
+                        detected_encoding = detected["encoding"].lower()
+                        # Add detected encoding to the front of the list
+                        if detected_encoding not in encodings:
+                            encodings.insert(0, detected_encoding)
+                        else:
+                            # Move to front
+                            encodings.remove(detected_encoding)
+                            encodings.insert(0, detected_encoding)
+        except ImportError:
+            # chardet not available, continue with default encodings
+            pass
+        except Exception as e:
+            logger.debug(f"Encoding detection failed for {file_path}: {e}")
         
         for encoding in encodings:
             try:
@@ -417,6 +582,9 @@ class ParserManager:
                     )
                 return []
             
+            # Look up base URL from config for URL resolution
+            base_url = self._lookup_base_url(filename, source_type, metadata)
+            
             # Add source file information to each listing and ensure required fields
             for listing in listings:
                 listing["source_file"] = str(file_path.relative_to(self.raw_data_dir))
@@ -442,9 +610,24 @@ class ParserManager:
                     current_source = listing.get("source", "")
                     listing["source"] = source_name_mapping.get(current_source, current_source)
                 
-                # Ensure source_url field is set (even if empty string)
+                # Ensure source_url field is set
                 if "source_url" not in listing:
                     listing["source_url"] = ""
+                elif not listing["source_url"]:
+                    # If source_url is empty, try to use base_url from config
+                    if base_url:
+                        listing["source_url"] = base_url
+                
+                # Store base URL for URL resolution in normalizer
+                # Try to extract from existing source_url first, then use config base_url
+                if listing.get("source_url"):
+                    extracted_base = self._extract_base_url_from_url(listing["source_url"])
+                    if extracted_base:
+                        listing["_base_url"] = extracted_base
+                    elif base_url:
+                        listing["_base_url"] = self._extract_base_url_from_url(base_url)
+                elif base_url:
+                    listing["_base_url"] = self._extract_base_url_from_url(base_url)
             
             logger.debug(f"Extracted {len(listings)} listings from {filename}")
             return listings

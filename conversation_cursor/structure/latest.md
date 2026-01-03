@@ -93,8 +93,8 @@ job-seeking-webpage/
 
 ### Processor Framework (Phase 2 - ✅ Complete)
 - **`scripts/processor/pipeline.py`**: Main processing pipeline orchestrator (full workflow: parse → normalize → enrich → deduplicate → validate → diagnostics, JSON/CSV output, archive with retention)
-- **`scripts/processor/parser_manager.py`**: Routes raw data to parsers
-- **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text, job types, departments, contact info, materials ✅ Phase 2B. **Phase 2F**: Enhanced URL resolution with fallback base URLs, relative URL resolution ✅
+- **`scripts/processor/parser_manager.py`**: Routes raw data to parsers ✅ Phase 2A. **Phase 2F**: Base URL lookup from config, ensures source fields always set, enhanced file reading with chardet ✅
+- **`scripts/processor/normalizer.py`**: Normalizes dates, locations, formats, text, job types, departments, contact info, materials ✅ Phase 2B. **Phase 2F**: Enhanced URL resolution with base URLs from parser manager (highest priority), relative URL resolution ✅
 - **`scripts/processor/enricher.py`**: Enriches data (IDs, classifications, metadata, specializations) ✅ Phase 2B. **Phase 2F**: Sets default values for optional fields ✅
 - **`scripts/processor/deduplicator.py`**: Identifies and merges duplicate listings (fuzzy matching, merge logic, new/active detection) ✅ Phase 2C
 - **`scripts/processor/validator.py`**: Validates data against schema (schema validation, date/URL validation, completeness/quality/consistency checks, batch validation) ✅ Phase 2D. **Phase 2F**: Tiered validation - optional fields treated as warnings instead of critical errors ✅

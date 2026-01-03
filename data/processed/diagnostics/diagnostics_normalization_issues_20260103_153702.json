@@ -1,0 +1,916 @@
+{
+  "category": "normalization_issues",
+  "total": 113,
+  "unique_sources": [
+    "normalizer"
+  ],
+  "error_type_counts": {
+    "unknown": 113
+  },
+  "issues": [
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/life-at-swinburne/careers-employment",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.202229"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/life-at-swinburne/careers-employment/improve-your-employability",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.202639"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/life-at-swinburne/careers-employment/career-services",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.202865"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/life-at-swinburne/careers-employment/professional-purpose",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.203081"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers-at-swinburne/applying-for-a-job-at-swinburne",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.203298"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers-at-swinburne/aboriginal-torres-strait-islander-employment",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.203593"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.203859"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/node/83",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.204535"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/overview",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.204742"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/collective-agreements-lous-moas",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.205051"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/queens-university-faculty-association-qufa/professional-support-program",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.205248"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/research-fund",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.205359"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/professional-expenses",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.205451"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/renewal-tenurecontinuing-appointment-promotion-rtp",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.205806"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/templates",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.206205"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/harassment-students",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.206415"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa-conflict-resolution-service",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.206813"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/qufa/years-experience-guidelines",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207007"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/queens-university-faculty-association-qufa/salary-statistics",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207376"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/queens-university-faculty-association-qufa/salary-statistics/2025-26-faculty-salary-statistics",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207497"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/queens-university-faculty-association-qufa/salary-statistics/2024-25-faculty-salary-statistics",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207594"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/queens-university-faculty-association-qufa/salary-statistics/2023-24-faculty-salary-statistics",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207689"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/queens-university-faculty-association-qufa/salary-statistics/2022-23-faculty-salary-statistics",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207798"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/queens-university-faculty-association-qufa/salary-statistics/2021-22-faculty-salary-statistics",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207897"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/facultyrelations/psac-901-1-Overview",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.207991"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/NUS/go/View-All-Jobs/546644/",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.209687"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/Acadpositions/go/Academic-Positions-All/733144/",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.209843"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/NUS/go/Research-&-Other-Teaching-Positions-All/733244/",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.209997"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/NUS/go/Executive-and-Administrative-Positions-All/546044/",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.210122"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "tes.html",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.212134"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.214479"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.214671"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/faqs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.214796"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/benefits/life-events/employment-status",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.214903"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/eeo",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215006"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/benefits/life-events/job-loss",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215145"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/employee-leaves/faculty",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215337"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/managers/jobs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215470"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/managers/descriptions",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215607"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/node/11608",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215743"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215871"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.215995"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/faqs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.216119"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/benefits/life-events/employment-status",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.216296"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/eeo",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.216808"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/benefits/life-events/job-loss",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.217153"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/employee-leaves/faculty",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.217298"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/managers/jobs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.217437"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/managers/descriptions",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.217540"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/node/11608",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.217862"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.219580"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/interest_cards",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.219749"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?utf8=%E2%9C%93&query=&query_v0_posted_at_date=&435=&1951%5B%5D=1&commit=Search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.219905"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?utf8=%E2%9C%93&query=&query_v0_posted_at_date=&435=&1951%5B%5D=2&commit=Search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220033"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?utf8=%E2%9C%93&query=&query_v0_posted_at_date=&435=&1951%5B%5D=3&commit=Search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220157"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?utf8=✓&query=&query_v0_posted_at_date=&435=&1951[]=4&commit=Search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220256"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220479"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220598"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220712"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220804"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.220900"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.221013"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.221149"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.221303"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/analyst",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.221459"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/537863/custodial-worker-i",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222092"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538291/hazardous-mat-specialist-i",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222232"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538294/academic-program-spec-i",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222379"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538298/patron-services-coordinator",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222474"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538300/administrative-support-assistant-ii-neurology-neurocritical-care",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222573"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538301/human-resources-manager",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222662"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538302/residencyfellowship-program-coordinator-i-neurology",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222744"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538303/ast-radiation-safety-officer",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.222873"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538305/administrative-assistant-ii-neurology",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223004"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538306/administrative-support-ast-ii-neurology-vascular-neurology",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223109"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538307/director-honors-program",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223208"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/535561/dental-assistant-i",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223302"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/536720/hpwt-maintenance-generalist-ii",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223387"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/536893/hpwt-custodial-worker-iii",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223493"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/536895/administrative-support-ast-ii",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223614"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/537222/ops-dental-hygienist",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223733"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/537742/project-manager-iii-office-of-research",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223841"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/537924/development-assistant-alumni-affairs-college-of-medicine",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.223932"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/en-us/job/538099/accountant-ii",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.224022"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.226420"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.226797"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?utf8=✓&query=&query_v0_posted_at_date=&1826%5B%5D=1&1826%5B%5D=2&commit=Search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.226925"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?;query=&query_v0_posted_at_date=&1826=3&1827=&query_position_type_id=&526=&query_organizational_tier_2_id=any&query_organizational_tier_3_id=any&commit=Search",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.227070"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?;query=&query_v0_posted_at_date=&1826=4&1827=&query_position_type_id=&526=&query_organizational_tier_2_id=any&query_organizational_tier_3_id=any&commit=Search\n\n",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.227204"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/postings/search?;query=&query_v0_posted_at_date=&1826=5&1827=&query_position_type_id=&526=&query_organizational_tier_2_id=any&query_organizational_tier_3_id=any&commit=Search\n\n",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.227307"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/job/los-angeles/student-programs-manager/1209/87875687104",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.228061"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search-jobs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.228229"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/job/los-angeles/student-programs-manager/1209/87875687104",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.228571"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search-jobs",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.228742"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/about-us",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.230087"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/team",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.230292"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/network",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.230427"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/content/publications",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.230553"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/events",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.230681"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/about/jobs-at-cepr",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.230795"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.230930"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231059"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers/testimonials/testimonial_05",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231190"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers/aboutus",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231290"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers/whyworkhere",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231502"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers/areasofwork",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231648"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers/lookinside",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231743"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers/thebenefits",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231827"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/careers/areasofwork/?sec_tech",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.231937"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/themes/immigration/immigrationsummary.shtml?page=1&perPage=50",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.232188"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/career-resources/research-assistant-positions-nber",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.232298"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/career-resources/research-assistant-positions-not-nber",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.232612"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/career-resources/staff-positions-nber",
+      "normalized_value": null,
+      "error": "Invalid URL format (missing scheme or netloc)",
+      "timestamp": "2026-01-03T15:37:02.232746"
+    }
+  ]
+}

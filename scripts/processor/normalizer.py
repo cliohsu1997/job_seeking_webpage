@@ -253,16 +253,25 @@ class DataNormalizer:
         normalized = job_data.copy()
         
         # Extract base URLs from the listing for resolving relative URLs
-        # Try to get an absolute source_url first, then try application_link as fallback
+        # Priority: 1) _base_url from parser manager, 2) absolute source_url, 3) application_link, 4) source_url parameter
         base_urls = []
+        
+        # First, check for _base_url stored by parser manager (from config lookup)
+        if normalized.get("_base_url"):
+            base_urls.append(normalized["_base_url"])
+        
+        # Then try to extract from absolute source_url
         if normalized.get("source_url"):
             source_url_val = str(normalized["source_url"]).strip()
             if source_url_val.startswith(('http://', 'https://')):
                 # Extract base URL from absolute source_url (scheme + netloc)
                 parsed = urlparse(source_url_val)
                 if parsed.scheme and parsed.netloc:
-                    base_urls.append(f"{parsed.scheme}://{parsed.netloc}")
+                    base_url = f"{parsed.scheme}://{parsed.netloc}"
+                    if base_url not in base_urls:
+                        base_urls.append(base_url)
         
+        # Try application_link as fallback
         if normalized.get("application_link"):
             app_link = str(normalized["application_link"]).strip()
             if app_link.startswith(('http://', 'https://')):
@@ -275,6 +284,9 @@ class DataNormalizer:
         # Use the first base_url as primary, rest as fallbacks
         primary_base_url = base_urls[0] if base_urls else source_url
         fallback_base_urls = base_urls[1:] if len(base_urls) > 1 else None
+        
+        # Remove _base_url from normalized output (it's internal metadata)
+        normalized.pop("_base_url", None)
         
         # Normalize date fields
         if "deadline" in normalized and normalized["deadline"]:

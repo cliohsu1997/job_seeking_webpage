@@ -125,9 +125,15 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **Validation pass rate**: Still 0/500 valid listings (remaining issues are critical fields like source_url)
 
 **Remaining Issues**:
-1. ⏸️ **Relative URL resolution** - 339 relative URLs still can't be resolved (need base URL from scrapers/parsers)
-2. ⏸️ **Missing critical fields** - 560 missing required field errors (mostly source_url - 283 instances, source - 30 instances)
-3. ⏸️ **File read errors** - 7 files still can't be read (encoding issues)
+1. ✅ **Relative URL resolution** - FIXED: Parser manager now looks up base URLs from config and stores them in listings for normalizer to use
+2. ✅ **Missing critical fields** - FIXED: Parser manager now ensures source_url and source fields are always set
+3. ✅ **File read errors** - FIXED: Enhanced encoding detection with chardet support and expanded encoding list
+
+**Latest Fixes (2026-01-03)**:
+- [x] **Base URL lookup from config** - Parser manager now looks up base URLs from scraping_sources.json based on filename/metadata and stores them in listings
+- [x] **Enhanced URL resolution** - Normalizer now uses base URLs from parser manager (highest priority) to resolve relative URLs
+- [x] **Guaranteed source fields** - Parser manager ensures source and source_url are always populated (uses base URL from config if source_url missing)
+- [x] **Improved file reading** - Added chardet encoding detection and expanded encoding attempts (utf-16-le, utf-16-be)
 
 **Recent Updates (2026-01-03)**:
 - [x] **Enhanced URL verification script** - Updated `scripts/scraper/check_config/verify_urls.py` to:
