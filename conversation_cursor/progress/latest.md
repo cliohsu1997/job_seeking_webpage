@@ -129,6 +129,14 @@ The project follows a **Load → Transform → Export** workflow structure for a
 2. ⏸️ **Missing critical fields** - 560 missing required field errors (mostly source_url - 283 instances, source - 30 instances)
 3. ⏸️ **File read errors** - 7 files still can't be read (encoding issues)
 
+**Recent Updates (2026-01-03)**:
+- [x] **Enhanced URL verification script** - Updated `scripts/scraper/check_config/verify_urls.py` to:
+  - Verify URLs in accessible section (not just non_accessible)
+  - Verify job content (check for job listings, links, PDFs)
+  - Move invalid URLs from accessible to non_accessible (instead of deleting)
+  - Added rule: Only URLs containing relevant job information should be in accessible section
+  - Enhanced content verification with scoring system (keywords, job links, PDFs)
+
 **Reference**: See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and recommendations.
 
 - **To-Do List**: `2026-01-02_improve-data-quality.md`

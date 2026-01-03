@@ -214,5 +214,9 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
 4. Handle missing data gracefully with defaults and fallbacks
 5. Fix file reading issues (7 instances)
 
+**Recent Accomplishments (2026-01-03)**:
+- [x] **Enhanced URL verification script** - Updated verification to check accessible URLs, verify job content, and move invalid URLs to non_accessible
+- [x] **Added verification rule** - Only URLs containing relevant job information should be in accessible section (documented in `data/config/README.md`)
+
 **Expected Outcome**: Significant increase in validation pass rate, with most listings having complete or near-complete data.
 

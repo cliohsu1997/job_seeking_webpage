@@ -70,9 +70,10 @@ job-seeking-webpage/
 ## Key Files & Modules
 
 ### Configuration
-- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, Chronicle Vitae, EconJobMarket, EJMR, AEA Scramble), universities, research institutes
+- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, Chronicle Vitae, EconJobMarket, EJMR, AEA Scramble), universities, research institutes. **Rule**: Only URLs containing relevant job information should be in accessible section.
 - **`data/config/scraping_rules.json`**: Scraping patterns (deadlines, keywords, date formats)
 - **`data/config/processing_rules.json`**: Processing rules (job type keywords, specialization keywords, region mapping, materials parsing)
+- **`scripts/scraper/check_config/verify_urls.py`**: URL verification script that checks accessible and non_accessible URLs, verifies job content (keywords, links, PDFs), and moves invalid URLs to non_accessible section
 
 ### Scraper Framework (Phase 1 - Complete)
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)
