@@ -128,6 +128,7 @@ poetry run python -m scripts.generator.build_site
 
 ### ⏸️ Phase 4: DEPLOY - Deployment & Automation (PENDING)
 - Waiting for Phase 3
+- GitHub Pages workflow spec ready at `conversation_cursor/github/gh-pages.yml` (copy to `.github/workflows/gh-pages.yml` to activate)
 
 ## Current Focus
 
