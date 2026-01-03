@@ -25,11 +25,7 @@ const AppState = {
     getCurrentPageJobs() {
         const start = (this.currentPage - 1) * this.itemsPerPage;
         const end = start + this.itemsPerPage;
-        const result = this.filteredJobs.slice(start, end);
-        console.log('getCurrentPageJobs - currentPage:', this.currentPage, 'start:', start, 'end:', end, 'returning:', result.length, 'jobs');
-        console.log('First job returned:', result[0]?.title);
-        console.log('Full filteredJobs array first 3:', this.filteredJobs.slice(0, 3).map(j => j.title));
-        return result;
+        return this.filteredJobs.slice(start, end);
     },
     
     // Get total pages
@@ -78,8 +74,6 @@ function initializeApp() {
     if (typeof initializeSearch === 'function') {
         initializeSearch(AppState);
     }
-    
-    console.log('App initialized with', AppState.allJobs.length, 'jobs');
 }
 
 /**
@@ -114,7 +108,6 @@ function extractJobData(card) {
     try {
         specializations = specializationsAttr ? JSON.parse(specializationsAttr) : [];
     } catch (e) {
-        console.warn('Failed to parse specializations for job', jobId, e);
         specializations = [];
     }
     
@@ -135,7 +128,6 @@ function extractJobData(card) {
         isNew: card.querySelector('.badge-new') !== null
     };
     
-    console.log('Extracted job:', jobData.title, 'Region:', jobData.region, 'Specializations:', jobData.specializations);
     return jobData;
 }
 
@@ -194,7 +186,6 @@ function toggleJobDetails(btn) {
  * Render jobs to the page
  */
 function renderJobs() {
-    console.log('=== renderJobs CALLED ===');
     const jobs = AppState.getCurrentPageJobs();
     
     // Update results count
@@ -203,9 +194,6 @@ function renderJobs() {
     // Get the container
     const container = document.getElementById('job-cards-container');
     if (!container) return;
-    
-    console.log('Rendering page with', jobs.length, 'jobs');
-    console.log('Reordering DOM - first 3 jobs in filteredJobs:', AppState.filteredJobs.slice(0, 3).map(j => j.title));
     
     // FIRST: Hide ALL jobs (including non-filtered ones)
     AppState.allJobs.forEach(job => {
@@ -219,9 +207,6 @@ function renderJobs() {
     AppState.filteredJobs.forEach((job, idx) => {
         if (job.element) {
             container.appendChild(job.element);
-            if (idx < 3) {
-                console.log(`Reordered position ${idx}: ${job.title}, institution: ${job.institution}`);
-            }
         }
     });
     
@@ -233,7 +218,6 @@ function renderJobs() {
         jobs.forEach((job, index) => {
             if (job.element) {
                 job.element.style.display = 'block';
-                console.log(`Job ${index}:`, job.title);
             }
         });
     }

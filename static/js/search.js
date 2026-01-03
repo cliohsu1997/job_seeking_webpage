@@ -16,7 +16,6 @@ function initializeSearch(state) {
     
     if (searchInput) {
         setupSearchListener();
-        console.log('Search initialized');
     }
 }
 
@@ -78,13 +77,11 @@ function performSearch(query) {
     
     // Reapply current sort to search results if a sort is active
     if (window.currentSort && window.currentSort !== 'deadline') {
-        console.log('Reapplying sort to search results:', window.currentSort);
         window.sortJobs(window.currentSort);
     } else {
         window.renderJobs();
     }
-    
-    console.log(`Search "${query}" found ${results.length} jobs`);
+}
 }
 
 /**

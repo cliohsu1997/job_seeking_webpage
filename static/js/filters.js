@@ -16,9 +16,7 @@ let currentSort = 'deadline'; // Track current sort preference
  * Initialize filters
  */
 function initializeFilters(state) {
-    // Use global AppState from window
     setupFilterListeners();
-    console.log('Filters initialized');
 }
 
 /**
@@ -30,46 +28,39 @@ function setupFilterListeners() {
     if (regionSelect) {
         regionSelect.addEventListener('change', (e) => {
             activeFilters.region = e.target.value;
-            console.log('Region filter changed:', activeFilters.region);
             applyFilters();
         });
     }
     
     // Job type checkboxes
     const jobTypeCheckboxes = document.querySelectorAll('input[name="job_type"]');
-    console.log('Found job type checkboxes:', jobTypeCheckboxes.length);
     jobTypeCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             activeFilters.jobTypes = Array.from(jobTypeCheckboxes)
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
-            console.log('Job type filter changed:', activeFilters.jobTypes);
             applyFilters();
         });
     });
     
     // Institution type checkboxes
     const instTypeCheckboxes = document.querySelectorAll('input[name="institution_type"]');
-    console.log('Found institution type checkboxes:', instTypeCheckboxes.length);
     instTypeCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             activeFilters.institutionTypes = Array.from(instTypeCheckboxes)
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
-            console.log('Institution type filter changed:', activeFilters.institutionTypes);
             applyFilters();
         });
     });
     
     // Specialization checkboxes
     const specializationCheckboxes = document.querySelectorAll('input[name="specialization"]');
-    console.log('Found specialization checkboxes:', specializationCheckboxes.length);
     specializationCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             activeFilters.specializations = Array.from(specializationCheckboxes)
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
-            console.log('Specialization filter changed:', activeFilters.specializations);
             applyFilters();
         });
     });
@@ -79,7 +70,6 @@ function setupFilterListeners() {
     if (deadlineSelect) {
         deadlineSelect.addEventListener('change', (e) => {
             activeFilters.deadline = e.target.value;
-            console.log('Deadline filter changed:', activeFilters.deadline);
             applyFilters();
         });
     }
@@ -89,7 +79,6 @@ function setupFilterListeners() {
     if (sortSelect) {
         sortSelect.addEventListener('change', (e) => {
             currentSort = e.target.value;
-            console.log('Sort changed:', currentSort);
             sortJobs(currentSort);
         });
     }
@@ -105,22 +94,13 @@ function setupFilterListeners() {
  * Apply all active filters
  */
 function applyFilters() {
-    console.log('Applying filters:', activeFilters);
     let filtered = [...window.AppState.allJobs];
-    console.log('Starting with', filtered.length, 'jobs');
     
     // Apply region filter
     if (activeFilters.region) {
-        console.log('Filtering by region:', activeFilters.region);
-        // Show first few regions for debugging
-        filtered.slice(0, 3).forEach(job => {
-            console.log('Sample region:', job.region);
-        });
-        
         filtered = filtered.filter(job => 
             job.region && job.region.toLowerCase() === activeFilters.region.toLowerCase()
         );
-        console.log('After region filter:', filtered.length, 'jobs');
     }
     
     // Apply job type filter
@@ -131,7 +111,6 @@ function applyFilters() {
             );
             return match;
         });
-        console.log('After job type filter:', filtered.length, 'jobs');
     }
     
     // Apply institution type filter
@@ -140,7 +119,6 @@ function applyFilters() {
             const match = activeFilters.institutionTypes.includes(job.institution_type);
             return match;
         });
-        console.log('After institution type filter:', filtered.length, 'jobs');
     }
     
     // Apply specialization filter
@@ -155,15 +133,11 @@ function applyFilters() {
             );
             return match;
         });
-        console.log('After specialization filter:', filtered.length, 'jobs');
     }
     
     // Apply deadline filter
     if (activeFilters.deadline) {
-        console.log('Filtering by deadline:', activeFilters.deadline);
-        const before = filtered.length;
         filtered = filtered.filter(job => matchesDeadlineFilter(job, activeFilters.deadline));
-        console.log('After deadline filter:', filtered.length, 'jobs (was', before, ')');
     }
     
     // Update state and render
@@ -171,7 +145,6 @@ function applyFilters() {
     
     // Reapply current sort to the filtered results
     if (currentSort && currentSort !== 'deadline') {
-        console.log('Reapplying sort:', currentSort);
         sortJobs(currentSort);
     } else {
         // Call search filter if search is active
@@ -181,8 +154,6 @@ function applyFilters() {
             window.renderJobs();
         }
     }
-    
-    console.log('Filters applied:', filtered.length, 'jobs match');
 }
 
 /**
@@ -235,12 +206,10 @@ function matchesDeadlineFilter(job, filter) {
  * Sort jobs
  */
 function sortJobs(sortBy) {
-    console.log('Sorting by:', sortBy, 'Current filtered jobs:', window.AppState.filteredJobs.length);
     let sorted = [...window.AppState.filteredJobs];
     
     switch (sortBy) {
         case 'deadline':
-            console.log('Sorting by deadline');
             sorted.sort((a, b) => {
                 const result = compareDeadlines(a.deadline, b.deadline);
                 return result;
@@ -248,7 +217,6 @@ function sortJobs(sortBy) {
             break;
             
         case 'posted':
-            console.log('Sorting by posted date (new first)');
             sorted.sort((a, b) => {
                 if (a.isNew && !b.isNew) return -1;
                 if (!a.isNew && b.isNew) return 1;
@@ -257,24 +225,17 @@ function sortJobs(sortBy) {
             break;
             
         case 'institution':
-            console.log('Sorting by institution name');
-            // Debug: log first few institutions before sort
-            console.log('Before sort - first 5 institutions:', sorted.slice(0, 5).map(j => j.institution || '(empty)'));
             sorted.sort((a, b) => {
                 const instA = (a.institution || '').toLowerCase();
                 const instB = (b.institution || '').toLowerCase();
                 return instA.localeCompare(instB);
             });
-            // Debug: log first few institutions after sort
-            console.log('After sort - first 5 institutions:', sorted.slice(0, 5).map(j => j.institution || '(empty)'));
             break;
     }
     
     window.AppState.filteredJobs = sorted;
     window.AppState.currentPage = 1; // Reset to first page
     window.renderJobs();
-    
-    console.log('Jobs sorted by:', sortBy, 'First 3 titles:', sorted.slice(0, 3).map(j => j.title));
 }
 
 /**
@@ -283,8 +244,6 @@ function sortJobs(sortBy) {
 function compareDeadlines(a, b) {
     const aText = a.toLowerCase();
     const bText = b.toLowerCase();
-    
-    console.log('Comparing deadlines:', aText, 'vs', bText);
     
     // Expired go last
     if (aText.includes('expired') && !bText.includes('expired')) return 1;
@@ -300,7 +259,6 @@ function compareDeadlines(a, b) {
     const aDays = extractDays(aText);
     const bDays = extractDays(bText);
     
-    console.log('Extracted days:', aDays, 'vs', bDays, 'result:', aDays - bDays);
     return aDays - bDays;
 }
 
@@ -357,8 +315,6 @@ function clearAllFilters() {
     
     // Apply filters (will show all)
     applyFilters();
-    
-    console.log('All filters cleared');
 }
 
 // Export functions
