@@ -50,7 +50,7 @@ job-seeking-webpage/
 │   ├── generator/                  # Phase 3 - ✅ COMPLETE (MVP)
 │   │   ├── __init__.py            # Generator module init (exports)
 │   │   ├── build_site.py          # Static site builder (178 lines, CLI support)
-│   │   └── template_renderer.py   # Jinja2 renderer with custom filters (313 lines)
+│   │   └── template_renderer.py   # Jinja2 renderer with custom filters (313 lines + json_dumps)
 │   └── scheduler.py                # Phase 4 - PENDING
 │
 ├── tests/                          # Tests organized by phase
@@ -66,18 +66,18 @@ job-seeking-webpage/
 │   │   └── integration/           # Integration tests (✅ Phase 2A components)
 │   └── export-output-generation/   # Phase 3 tests (to be created)
 │
-├── templates/                      # HTML templates (Phase 3 - ✅ COMPLETE)
-│   └── index.html.jinja           # Main page Jinja2 template (398 lines, all UI components)
-├── static/                         # CSS, JS, images (Phase 3 - ✅ COMPLETE)
+├── templates/                      # HTML templates (Phase 3 - ✅ COMPLETE + specialization filter)
+│   └── index.html.jinja           # Main page Jinja2 template (348 lines, all UI components + specialization filter)
+├── static/                         # CSS, JS, images (Phase 3 - ✅ COMPLETE + specialization filter)
 │   ├── index.html                 # Generated static page (✓ 25,448 insertions)
 │   ├── css/
 │   │   └── styles.css             # Responsive styles (mobile-first, 3 breakpoints)
 │   ├── js/
-│   │   ├── app.js                # Main app logic (279 lines, pagination, state)
-│   │   ├── filters.js            # Filtering functionality (280 lines, 4 filter types)
+│   │   ├── app.js                # Main app logic (279+ lines, specialization extraction)
+│   │   ├── filters.js            # Filtering functionality (280+ lines, 5 filter types including specialization)
 │   │   └── search.js             # Search functionality (130 lines, debounced)
 │   ├── data/
-│   │   └── jobs.json             # Client-side data copy (211 listings)
+│   │   └── jobs.json             # Client-side data copy (211 listings with specializations)
 │   └── images/                   # Icons, logos
 │
 └── conversation_cursor/            # Project management

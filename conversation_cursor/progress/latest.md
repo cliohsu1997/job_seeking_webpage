@@ -84,13 +84,13 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **To-Do List**: `2026-01-01_transform-data-processing.md`
 - **Proposal**: `conversation_cursor/dates/2026-01-01/proceed-to-phase-2-proposal.md`
 
-### ✅ Phase 3: EXPORT - Output Generation (COMPLETED - MVP + Bug Fixes)
-**Status**: Static website generator implemented, tested, and bug-fixed for production
+### ✅ Phase 3: EXPORT - Output Generation (COMPLETED - MVP + Feature Enhancements)
+**Status**: Static website generator with specialization filter, tested and deployed
 
 - [x] Phase 3 proposal created with detailed design and implementation plan
 - [x] Static site approach selected (HTML + CSS + JavaScript with Jinja2 templates)
 - [x] Generator script structure creation (`scripts/generator/` with 3 modules)
-- [x] HTML template design with Jinja2 (`templates/index.html.jinja` - 398 lines)
+- [x] HTML template design with Jinja2 (`templates/index.html.jinja` - 348 lines)
 - [x] CSS styling implementation (`static/css/styles.css` - responsive mobile-first)
 - [x] JavaScript functionality (`app.js`, `filters.js`, `search.js` - 689 lines total)
 - [x] Site generation logic (build script with CLI, handles 211 listings)
@@ -98,6 +98,21 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] **Bug Fixes (2026-01-03 late session)**:
   - [x] Fixed filter initialization - setupFilterListeners now called properly
   - [x] Fixed sorting visual display - implemented DOM appendChild reordering
+  - [x] Fixed specializations JSON serialization - added custom json_dumps filter
+  - [x] Fixed data-specializations attribute parsing - proper JSON escaping
+- [x] **Feature Enhancement (2026-01-03)**:
+  - [x] Added subject/specialization filtering to Phase 2 (enricher.py)
+  - [x] Fixed department_category capitalization (Economics/Management/Marketing/Other)
+  - [x] Enhanced specialization extraction logic for better coverage
+  - [x] Re-ran Phase 2 pipeline with improved extraction
+  - [x] Added specialization statistics to template_renderer (by_specialization)
+  - [x] Added specialization filter UI to template (8 specializations: Microeconomics, Finance, Labor, Development, Macroeconomics, Econometrics, International, Public)
+  - [x] Updated app.js to extract specializations from data attributes
+  - [x] Extended filters.js to implement specialization filtering logic
+  - [x] Rebuilt static site with working specialization filter
+  - [x] Deployed to GitHub Pages with all features working
+
+**Live Site**: https://cliohsu1997.github.io/job_seeking_webpage/ (211 listings with all filters functional)
   - [x] Fixed institution_type filter - added data attributes and event listeners
   - [x] Fixed render logic - hides all jobs before showing filtered results
   - [x] Added formatted institution type labels (Job Portal, Research Institute, University)

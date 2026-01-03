@@ -464,37 +464,88 @@ poetry run python -m scripts.generator.build_site
 
 ## Progress Tracking
 
-**Overall Progress**: 0/7 tasks completed (0%)
+**Overall Progress**: 7/7 tasks completed + enhancements (100% ✅)
 
 | Task | Status | Estimated | Actual |
 |------|--------|-----------|--------|
-| Task 1: Generator Structure | ⏸️ Pending | 30 min | - |
-| Task 2: HTML Template | ⏸️ Pending | 2-3 hrs | - |
-| Task 3: CSS Styling | ⏸️ Pending | 2-3 hrs | - |
-| Task 4: JavaScript | ⏸️ Pending | 3-4 hrs | - |
-| Task 5: Site Generation | ⏸️ Pending | 1-2 hrs | - |
-| Task 6: Testing | ⏸️ Pending | 2-3 hrs | - |
-| Task 7: Deployment | ⏸️ Pending | 1-2 hrs | - |
+| Task 1: Generator Structure | ✅ Complete | 30 min | 20 min |
+| Task 2: HTML Template | ✅ Complete | 2-3 hrs | 1.5 hrs |
+| Task 3: CSS Styling | ✅ Complete | 2-3 hrs | 1 hr |
+| Task 4: JavaScript | ✅ Complete | 3-4 hrs | 2 hrs |
+| Task 5: Site Generation | ✅ Complete | 1-2 hrs | 30 min |
+| Task 6: Testing | ✅ Complete | 2-3 hrs | 1 hr |
+| Task 7: Deployment | ✅ Complete | 1-2 hrs | 15 min |
+| **BONUS**: Subject/Specialization Filter | ✅ Complete | N/A | 1.5 hrs |
 
-**Total Estimated Time**: 12-18 hours
+**Total Time**: ~9 hours (MVP + enhancements)
+
+---
+
+## Specialization Filter Enhancement (2026-01-03)
+
+### Task 8: Add Subject/Specialization Filtering
+**Status**: ✅ Complete  
+**Completed**: 2026-01-03
+
+**Implementation**:
+- [x] Analyzed existing data fields (department_category, specializations)
+- [x] Fixed department_category capitalization bug in enricher.py
+- [x] Enhanced specialization extraction logic in enricher.py
+- [x] Re-ran Phase 2 pipeline with improvements
+- [x] Added by_specialization statistics to template_renderer.py
+- [x] Added specialization filter UI to template (8 specializations)
+- [x] Updated app.js to extract specializations from data attributes
+- [x] Extended filters.js with specialization filtering logic
+- [x] Added json_dumps custom filter to template_renderer.py (fixed JSON serialization)
+- [x] Updated template to use json_dumps for proper JSON escaping
+- [x] Rebuilt static site with working specialization filter
+- [x] Deployed to GitHub Pages with all features
+
+**Specializations Available**:
+- Microeconomics (62 jobs)
+- International (27 jobs)
+- Finance (18 jobs)
+- Labor (15 jobs)
+- Development (14 jobs)
+- Macroeconomics (12 jobs)
+- Econometrics (5 jobs)
+- Public (2 jobs)
+
+**Bugs Fixed**:
+- JSON parsing errors for specializations
+- data-specializations attribute escaping issues
+- Filter returning 0 results (now fixed with proper JSON)
+
+**Acceptance Criteria**:
+- ✅ Specialization filter appears in UI
+- ✅ JSON serialization works without parse errors
+- ✅ Filter returns correct results
+- ✅ Multiple specialization selections work (OR logic)
+- ✅ Clear filters button resets specializations
+- ✅ Deployed and working on live site
 
 ---
 
 ## Next Steps
 
-1. ✅ Create proposal (DONE)
-2. ✅ Update progress, structure, to-do list (DONE)
-3. **Start Task 1**: Create generator script structure
-4. Move to Task 2: Design HTML template
+1. ✅ Phase 3 MVP completed (all 7 tasks)
+2. ✅ Specialization filter enhancement completed
+3. 📋 Phase 4: Automation & Monitoring (future)
+   - Auto-run pipeline on schedule
+   - Health checks
+   - Email notifications
+   - Analytics
 
 ---
 
 ## Notes
 
 - Using **static site approach** (confirmed by user)
-- Target: MVP deployment to GitHub Pages
-- Current data: 211 unique job listings
-- Expected growth: ~1000 listings over time
+- **MVP deployed** to GitHub Pages
+- **Current data**: 211 unique job listings with full filtering
+- **Specializations**: 8 types with 66/211 coverage (31.3%)
+- **Filters**: Region, Job Type, Institution Type, Specialization, Deadline (5 total)
+- **Architecture**: Modular JavaScript (app.js, filters.js, search.js)
 
 ---
 
@@ -505,3 +556,6 @@ poetry run python -m scripts.generator.build_site
 - **Structure**: `conversation_cursor/structure/latest.md`
 - **Data Schema**: `scripts/processor/schema.py`
 - **Sample Data**: `data/processed/jobs.json`
+- **Live Site**: https://cliohsu1997.github.io/job_seeking_webpage/
+
+```
