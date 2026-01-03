@@ -115,12 +115,14 @@ python -m module_name
 
 ### Diagnostic Reports
 - **Keep Only Latest**: The `data/processed/diagnostics/` directory should only contain the latest diagnostic reports
-- After generating new diagnostic reports, delete old timestamped files (format: `diagnostics_*_YYYYMMDD_HHMMSS.*`)
-- Always keep:
-  - `diagnostics_*_latest.json` and `diagnostics_*_latest.txt` (symlinks/pointers to latest)
+- **After generating new diagnostic reports**: Delete old timestamped files (format: `diagnostics_*_YYYYMMDD_HHMMSS.*`)
+- **Always keep**:
+  - `diagnostics_*_latest.json` and `diagnostics_*_latest.txt` (pointers to latest)
   - `README.md` (documentation)
   - Only the most recent timestamped files (if any)
-- Old diagnostic reports are automatically replaced when the pipeline runs - no need to archive them
+- **Old diagnostic reports**: Automatically cleaned up - delete old timestamped files when new reports are generated
+- **No archiving needed**: Old diagnostic reports are replaced when the pipeline runs - no need to archive them
+- **Purpose**: This ensures the directory doesn't accumulate old diagnostic reports over time, keeping only the most recent analysis
 
 ### End of Conversation/Task
 - Reorganize structure/progress/to-do files to show:

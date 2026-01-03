@@ -61,5 +61,14 @@ Reports are automatically generated when running the processing pipeline:
 poetry run python scripts/processor/pipeline.py
 ```
 
-Reports are saved with timestamps to maintain a history of pipeline runs.
+## File Management
+
+**Important**: Only the latest diagnostic reports are kept in this directory.
+
+- **Latest reports**: Files with `_latest` suffix (e.g., `diagnostics_summary_latest.txt`) always point to the most recent run
+- **Timestamped reports**: Only the most recent timestamped files are kept (format: `diagnostics_*_YYYYMMDD_HHMMSS.*`)
+- **Old reports**: Automatically cleaned up - old timestamped files are deleted when new reports are generated
+- **This ensures**: The directory doesn't accumulate old diagnostic reports over time
+
+See `read_it.md` for the complete diagnostic report management policy.
 
