@@ -36,74 +36,169 @@
     "macroeconomics": [
       "macro",
       "macroeconomics",
+      "macroeconomic",
       "monetary",
       "monetary economics",
+      "monetary policy",
       "fiscal",
       "fiscal policy",
       "business cycle",
       "growth",
-      "economic growth"
+      "economic growth",
+      "aggregate",
+      "inflation",
+      "central bank",
+      "recession"
     ],
     "microeconomics": [
       "micro",
       "microeconomics",
+      "microeconomic",
       "game theory",
       "auction",
       "industrial organization",
       "io",
-      "market design"
+      "market design",
+      "mechanism design",
+      "competition",
+      "oligopoly",
+      "monopoly",
+      "pricing strategy"
     ],
     "labor": [
       "labor",
       "labour",
       "employment",
+      "unemployment",
       "wage",
       "wages",
       "labor economics",
+      "labour economics",
       "human resources",
-      "hrm"
+      "hrm",
+      "human capital",
+      "workforce",
+      "job market",
+      "skill",
+      "education economics",
+      "personnel"
     ],
     "development": [
       "development",
       "development economics",
       "international development",
-      "economic development"
+      "economic development",
+      "developing countries",
+      "emerging markets",
+      "poverty",
+      "inequality",
+      "growth and development"
     ],
     "international": [
       "international",
       "international economics",
       "trade",
       "international trade",
-      "open economy"
+      "open economy",
+      "global",
+      "globalization",
+      "exchange rate",
+      "balance of payments",
+      "comparative advantage",
+      "tariff",
+      "export",
+      "import"
     ],
     "finance": [
       "finance",
       "financial",
+      "financial economics",
       "asset pricing",
       "corporate finance",
-      "banking"
+      "banking",
+      "investment",
+      "portfolio",
+      "capital markets",
+      "stock market",
+      "bond",
+      "derivative",
+      "risk management",
+      "financial institution"
     ],
     "econometrics": [
       "econometrics",
       "econometric",
       "statistics",
+      "statistical",
       "applied econometrics",
       "time series",
-      "panel data"
+      "panel data",
+      "regression",
+      "causal inference",
+      "instrumental variable",
+      "difference-in-differences",
+      "fixed effects",
+      "random effects",
+      "estimation",
+      "identification",
+      "quantitative methods"
     ],
     "behavioral": [
       "behavioral",
       "behavioural",
       "behavioral economics",
+      "behavioural economics",
       "experimental",
-      "experimental economics"
+      "experimental economics",
+      "decision making",
+      "bounded rationality",
+      "prospect theory",
+      "nudge"
     ],
     "public": [
       "public economics",
       "public policy",
       "public finance",
       "tax",
-      "taxation"
+      "taxation",
+      "government",
+      "regulation",
+      "welfare",
+      "social security",
+      "healthcare economics",
+      "education policy"
+    ],
+    "environmental": [
+      "environmental",
+      "environmental economics",
+      "climate",
+      "climate change",
+      "energy",
+      "energy economics",
+      "resource economics",
+      "natural resources",
+      "sustainability",
+      "pollution",
+      "carbon"
+    ],
+    "health": [
+      "health",
+      "health economics",
+      "healthcare",
+      "medical",
+      "hospital",
+      "pharmaceutical",
+      "insurance"
+    ],
+    "urban": [
+      "urban",
+      "urban economics",
+      "regional",
+      "real estate",
+      "housing",
+      "city",
+      "spatial",
+      "transportation"
     ]
   },
   "region_mapping": {

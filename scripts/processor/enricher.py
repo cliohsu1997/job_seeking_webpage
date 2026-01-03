@@ -130,11 +130,13 @@ class DataEnricher:
                 enriched.get("description", "")
             )
         
-        # Extract specializations
+        # Extract specializations (now includes title and department)
         enriched["specializations"] = self._extract_specializations(
             enriched.get("description", ""),
             enriched.get("requirements", ""),
-            enriched.get("specializations", [])
+            enriched.get("specializations", []),
+            enriched.get("title", ""),
+            enriched.get("department", "")
         )
         
         # Enhance materials_required parsing
@@ -253,27 +255,31 @@ class DataEnricher:
             return "other"
     
     def _extract_specializations(self, description: str, requirements: str, 
-                                existing_specializations: List[str]) -> List[str]:
+                                existing_specializations: List[str],
+                                title: str = "", department: str = "") -> List[str]:
         """
-        Extract specializations from description and requirements using keyword matching.
-        Enhanced to check both description/requirements AND job title.
+        Extract specializations from multiple fields using keyword matching.
+        Enhanced to check title, department, description, and requirements.
+        If no specialization is found, assigns "General".
         
         Args:
             description: Job description text
             requirements: Requirements text
             existing_specializations: Existing specializations list (if any)
+            title: Job title
+            department: Department name
         
         Returns:
-            List of specialization strings
+            List of specialization strings (at least ["General"] if none found)
         """
         specializations = set(existing_specializations) if existing_specializations else set()
         
-        # Combine text for searching
-        combined_text = f"{description} {requirements}".lower()
+        # Combine ALL relevant text for searching (title and department often have key info)
+        combined_text = f"{title} {department} {description} {requirements}".lower()
         
-        # If no text, return existing specializations
+        # If no text at all, return existing or ["General"]
         if not combined_text.strip():
-            return sorted(list(specializations)) if specializations else []
+            return sorted(list(specializations)) if specializations else ["General"]
         
         # Check for each specialization (use cached keywords)
         for specialization, keywords in self._specialization_keywords.items():
@@ -285,8 +291,12 @@ class DataEnricher:
                     specializations.add(specialization_name)
                     break  # Found match for this specialization, no need to check more keywords
         
+        # If no specializations found, assign "General"
+        if not specializations:
+            return ["General"]
+        
         # Convert to sorted list
-        return sorted(list(specializations)) if specializations else []
+        return sorted(list(specializations))
     
     def _enhance_materials_parsing(self, description: str, requirements: str,
                                   existing_materials: Dict[str, Any]) -> Dict[str, Any]:

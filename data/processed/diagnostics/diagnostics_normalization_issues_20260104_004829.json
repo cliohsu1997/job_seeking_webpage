@@ -1,0 +1,340 @@
+{
+  "category": "normalization_issues",
+  "total": 41,
+  "unique_sources": [
+    "normalizer"
+  ],
+  "error_type_counts": {
+    "unknown": 41
+  },
+  "issues": [
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/search",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.606103"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/search",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.606573"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.608289"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.608712"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/faculty",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.609087"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/staff",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.609487"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/jobs/students",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.610172"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/application-status",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.610903"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/how-apply",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.611186"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/frequently-asked-questions",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.611871"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/culture-ku",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.612554"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/why-ku",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.612952"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/contact-us",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.613321"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search/feed/advanced",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.613835"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/login",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.614264"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/help-and-faq",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.614381"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.614475"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search-jobs",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.614666"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/benefits",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.615241"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/choose-michigan",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.615713"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/temporary-employment",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.616160"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/career-development",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.616440"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/accessibility",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.617098"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/security-and-safety-annual-report",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.617545"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/sites/default/files/2025-01/labor-law-notices-202501.pdf",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.617730"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search/feed/advanced",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.618095"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/login",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.618554"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/help-and-faq",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.619147"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.619774"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search-jobs",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.619953"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/benefits",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.620094"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/choose-michigan",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.620824"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/temporary-employment",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.621596"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/career-development",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.622161"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/accessibility",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.622913"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/security-and-safety-annual-report",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.623308"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/sites/default/files/2025-01/labor-law-notices-202501.pdf",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.624026"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/job/los-angeles/assistant-or-associate-professor-of-clinical-otolaryngology-head-and-neck-surgery-chla/1209/60632242896",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.626052"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search-jobs",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.626568"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/job/los-angeles/assistant-or-associate-professor-of-clinical-otolaryngology-head-and-neck-surgery-chla/1209/60632242896",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.627910"
+    },
+    {
+      "source": "normalizer",
+      "field": "source_url",
+      "original_value": "/search-jobs",
+      "normalized_value": null,
+      "error": "Could not resolve relative URL (no valid base URL available)",
+      "timestamp": "2026-01-04T00:48:29.628346"
+    }
+  ]
+}
