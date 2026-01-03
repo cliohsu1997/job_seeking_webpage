@@ -2,6 +2,8 @@
 
 A daily-updated webpage that aggregates economics department faculty recruiting information from AEA JOE and university websites.
 
+<!-- Last deployment: 2026-01-04 00:15 -->
+
 ## What This Project Does
 
 1. **Scrapes** job listings from 176+ sources (AEA, universities, research institutes)
