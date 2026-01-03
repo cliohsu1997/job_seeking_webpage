@@ -88,6 +88,12 @@ class DataEnricher:
         """
         enriched = job_data.copy()
         
+        # Ensure optional fields have default values (from schema.py)
+        from .schema import OPTIONAL_FIELDS_DEFAULTS
+        for field, default_value in OPTIONAL_FIELDS_DEFAULTS.items():
+            if field not in enriched:
+                enriched[field] = default_value
+        
         # Generate unique ID if not present
         if "id" not in enriched or not enriched["id"]:
             enriched["id"] = self._generate_id(enriched)

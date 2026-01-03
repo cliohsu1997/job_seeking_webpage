@@ -68,13 +68,13 @@ class DataValidator:
         
         # Critical fields that must be present and valid for a listing to be useful (set for O(1) lookup)
         self.critical_fields = {
-            "id", "title", "institution", "deadline", "application_link",
-            "location", "source", "source_url"
+            "id", "title", "institution", "location", "source", "source_url"
         }
         
         # Fields that should ideally be present but aren't critical (set for O(1) lookup)
         self.important_fields = {
-            "description", "requirements", "job_type", "department"
+            "description", "requirements", "job_type", "department", 
+            "deadline", "application_link", "specializations"
         }
     
     def validate_job_listing(
@@ -165,15 +165,24 @@ class DataValidator:
         """Validate date fields."""
         for field in DATE_FIELDS:
             if field not in job_listing:
+                # Missing date field - only critical if it's a critical field
+                if field in self.critical_fields:
+                    critical_errors.append(f"Missing required date field: '{field}'")
                 continue
             
             value = job_listing[field]
             if value is None:
+                # None value - only critical if it's a critical field
+                if field in self.critical_fields:
+                    critical_errors.append(f"Missing required date field: '{field}'")
+                elif field in self.important_fields:
+                    warnings.append(f"Missing important date field: '{field}'")
                 continue
             
             # Validate format
             if not validate_date_format(value):
                 error_msg = f"Invalid date format for '{field}': '{value}' (expected YYYY-MM-DD)"
+                # Date format errors are critical for critical fields, warnings for important fields
                 if field in self.critical_fields:
                     critical_errors.append(error_msg)
                     if self.diagnostics:
@@ -219,25 +228,37 @@ class DataValidator:
         """Validate URL fields."""
         for field in URL_FIELDS:
             if field not in job_listing:
+                # Missing URL field - only critical if it's a critical field
+                if field in self.critical_fields:
+                    critical_errors.append(f"Missing required URL field: '{field}'")
+                elif field in self.important_fields:
+                    warnings.append(f"Missing important URL field: '{field}'")
                 continue
             
             value = job_listing[field]
             if value is None:
+                # None value - only critical if it's a critical field
                 if field in self.critical_fields:
                     critical_errors.append(f"Missing required URL field: '{field}'")
+                elif field in self.important_fields:
+                    warnings.append(f"Missing important URL field: '{field}'")
                 continue
             
             # Validate URL format
             if not validate_url(value):
                 error_msg = f"Invalid URL format for '{field}': '{value}'"
-                critical_errors.append(error_msg)
-                if self.diagnostics:
-                    self.diagnostics.track_validation_issue(
-                        source=source,
-                        field=field,
-                        error=error_msg,
-                        validation_type="URL_FORMAT"
-                    )
+                # URL format errors are critical for critical fields, warnings for important fields
+                if field in self.critical_fields:
+                    critical_errors.append(error_msg)
+                    if self.diagnostics:
+                        self.diagnostics.track_validation_issue(
+                            source=source,
+                            field=field,
+                            error=error_msg,
+                            validation_type="URL_FORMAT"
+                        )
+                else:
+                    warnings.append(error_msg)
             
             # Check for suspicious URLs
             if value and ("example.com" in value.lower() or "test.com" in value.lower()):

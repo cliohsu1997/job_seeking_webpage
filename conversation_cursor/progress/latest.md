@@ -97,7 +97,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
 **Phase 2F: IMPROVE DATA QUALITY** - 🚀 **IN PROGRESS**. Addressing issues identified in diagnostic analysis from real data run. Main focus: URL resolution (362 relative URLs), improved data extraction (2,876 missing fields), tiered validation, and graceful handling of missing data. See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and `conversation_cursor/to-do-list/2026-01-02_improve-data-quality.md` for task breakdown.
 
 ### 🔧 Phase 2F: IMPROVE DATA QUALITY (IN PROGRESS)
-**Status**: Addressing issues identified in diagnostic analysis
+**Status**: Significant improvements made - 64% reduction in total issues
 
 **Context**: After running the pipeline with real data, diagnostic analysis revealed that 0/500 listings passed validation due to:
 - Missing required fields from source webpages (2,876 instances - 76.2% of issues)
@@ -112,13 +112,22 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] **Tested with real data** - Link-following tested successfully: 86.4% listings now have full descriptions (vs 0% before), 59.1% have application links, 36.4% have contact emails
 - [x] **Diagnostic report cleanup** - Created README.md with clean summary and links to detailed reports
 - [x] **Added academic job portals** - Added HigherEdJobs, Chronicle Vitae, EconJobMarket, EJMR (Economics Job Market Rumors), and AEA Job Market Scramble to scraping sources
+- [x] **Tiered validation implemented** - Moved non-critical fields (deadline, description, requirements, specializations, application_link, materials_required) from required to optional
+- [x] **Enhanced URL resolution** - Improved normalizer to resolve relative URLs using base URLs from source_url and application_link, with fallback support
+- [x] **Default value handling** - Enricher now sets default values for optional fields
+- [x] **Validation improvements** - Validator now treats optional fields as warnings instead of critical errors
 
-**Objectives**:
-1. ✅ Improve scraper extraction to capture more complete data from webpages (link-following implemented)
-2. Resolve relative URLs to absolute URLs during normalization
-3. Implement tiered validation (critical vs. optional fields)
-4. Handle missing data gracefully with defaults and fallbacks
-5. Fix file reading issues and improve error handling
+**Results** (After latest improvements, 2026-01-03):
+- **Total issues**: Reduced from 3,774 to 1,342 (64% reduction) ✅
+- **Missing required field errors**: Reduced from 2,876 to 560 (80% reduction) ✅
+- **Invalid URL format issues**: Reduced from 362 to 339 (7% reduction) - Many relative URLs still can't be resolved without base URL from source
+- **Critical errors**: Reduced from 3,405 to 996 (71% reduction) ✅
+- **Validation pass rate**: Still 0/500 valid listings (remaining issues are critical fields like source_url)
+
+**Remaining Issues**:
+1. ⏸️ **Relative URL resolution** - 339 relative URLs still can't be resolved (need base URL from scrapers/parsers)
+2. ⏸️ **Missing critical fields** - 560 missing required field errors (mostly source_url - 283 instances, source - 30 instances)
+3. ⏸️ **File read errors** - 7 files still can't be read (encoding issues)
 
 **Reference**: See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and recommendations.
 

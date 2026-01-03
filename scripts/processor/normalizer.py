@@ -157,7 +157,7 @@ class DataNormalizer:
             return clean_text(str(text)) if text else None
     
     def normalize_url(self, url: Optional[str], base_url: Optional[str] = None, 
-                     field_name: str = "url") -> Optional[str]:
+                     field_name: str = "url", fallback_base_urls: Optional[List[str]] = None) -> Optional[str]:
         """
         Normalize URL format and resolve relative URLs.
         
@@ -165,6 +165,7 @@ class DataNormalizer:
             url: URL to normalize
             base_url: Optional base URL for resolving relative URLs
             field_name: Name of the field (for error logging)
+            fallback_base_urls: Optional list of fallback base URLs to try if base_url doesn't work
         
         Returns:
             Normalized URL string or None if invalid/empty
@@ -177,19 +178,48 @@ class DataNormalizer:
         # Remove whitespace
         url_str = re.sub(r'\s+', '', url_str)
         
-        # If relative URL and base_url provided, resolve it
-        if base_url and not url_str.startswith(('http://', 'https://')):
-            try:
-                url_str = urljoin(base_url, url_str)
-            except Exception as e:
+        # Skip non-URL protocols (mailto, javascript, tel, etc.)
+        if url_str.startswith(('mailto:', 'javascript:', 'tel:', '#')):
+            return None
+        
+        # If relative URL, try to resolve it
+        if not url_str.startswith(('http://', 'https://')):
+            resolved = False
+            
+            # Try primary base_url first
+            if base_url:
+                try:
+                    url_str = urljoin(base_url, url_str)
+                    resolved = True
+                except Exception as e:
+                    logger.debug(f"Failed to resolve URL with base_url '{base_url}': {e}")
+            
+            # Try fallback base URLs if primary didn't work
+            if not resolved and fallback_base_urls:
+                for fallback_base in fallback_base_urls:
+                    if not fallback_base:
+                        continue
+                    try:
+                        test_url = urljoin(fallback_base, url_str)
+                        # Validate the result
+                        parsed_test = urlparse(test_url)
+                        if parsed_test.scheme and parsed_test.netloc:
+                            url_str = test_url
+                            resolved = True
+                            break
+                    except Exception:
+                        continue
+            
+            # If still not resolved, log the issue
+            if not resolved:
                 if self.diagnostics:
                     self.diagnostics.track_normalization_issue(
                         source="normalizer",
                         field=field_name,
                         original_value=url,
-                        error=f"URL resolution error: {str(e)}"
+                        error="Could not resolve relative URL (no valid base URL available)"
                     )
-                logger.warning(f"Error resolving relative URL '{url}' with base '{base_url}': {e}")
+                logger.warning(f"Could not resolve relative URL '{url}' for field '{field_name}' (no base URL)")
         
         # Basic URL validation
         parsed = urlparse(url_str)
@@ -215,19 +245,47 @@ class DataNormalizer:
         
         Args:
             job_data: Dictionary containing job listing data
-            source_url: Optional source URL for resolving relative URLs
+            source_url: Optional source URL for resolving relative URLs (deprecated - extracted from job_data)
         
         Returns:
             Dictionary with normalized fields
         """
         normalized = job_data.copy()
         
+        # Extract base URLs from the listing for resolving relative URLs
+        # Try to get an absolute source_url first, then try application_link as fallback
+        base_urls = []
+        if normalized.get("source_url"):
+            source_url_val = str(normalized["source_url"]).strip()
+            if source_url_val.startswith(('http://', 'https://')):
+                # Extract base URL from absolute source_url (scheme + netloc)
+                parsed = urlparse(source_url_val)
+                if parsed.scheme and parsed.netloc:
+                    base_urls.append(f"{parsed.scheme}://{parsed.netloc}")
+        
+        if normalized.get("application_link"):
+            app_link = str(normalized["application_link"]).strip()
+            if app_link.startswith(('http://', 'https://')):
+                parsed = urlparse(app_link)
+                if parsed.scheme and parsed.netloc:
+                    app_base = f"{parsed.scheme}://{parsed.netloc}"
+                    if app_base not in base_urls:
+                        base_urls.append(app_base)
+        
+        # Use the first base_url as primary, rest as fallbacks
+        primary_base_url = base_urls[0] if base_urls else source_url
+        fallback_base_urls = base_urls[1:] if len(base_urls) > 1 else None
+        
         # Normalize date fields
-        if "deadline" in normalized:
+        if "deadline" in normalized and normalized["deadline"]:
             deadline_norm, deadline_display = self.normalize_date(normalized["deadline"], "deadline")
             if deadline_norm:
                 normalized["deadline"] = deadline_norm
                 normalized["deadline_display"] = deadline_display
+            else:
+                # Clear invalid deadline
+                normalized.pop("deadline", None)
+                normalized.pop("deadline_display", None)
         
         if "start_date" in normalized and normalized["start_date"]:
             start_norm, _ = self.normalize_date(normalized["start_date"], "start_date")
@@ -240,19 +298,34 @@ class DataNormalizer:
             if field in normalized:
                 normalized[field] = self.normalize_text(normalized[field], field)
         
-        # Normalize URL fields
-        if "application_link" in normalized:
-            normalized["application_link"] = self.normalize_url(
-                normalized["application_link"], 
-                source_url, 
-                "application_link"
-            )
-        
+        # Normalize source_url first (before application_link, as it can be used as base)
+        # For source_url, try to use the original source_url parameter or extract from other fields
         if "source_url" in normalized:
+            # If source_url is already absolute, we can use it as-is after validation
+            # If relative, try to resolve using any available absolute URLs
             normalized["source_url"] = self.normalize_url(
                 normalized["source_url"],
-                None,
-                "source_url"
+                primary_base_url,
+                "source_url",
+                fallback_base_urls=fallback_base_urls
+            )
+            # Update base_urls after source_url normalization (might now be absolute)
+            if normalized.get("source_url") and normalized["source_url"].startswith(('http://', 'https://')):
+                parsed = urlparse(normalized["source_url"])
+                if parsed.scheme and parsed.netloc:
+                    new_base = f"{parsed.scheme}://{parsed.netloc}"
+                    if new_base not in base_urls:
+                        primary_base_url = new_base
+        
+        # Normalize application_link using source_url as base if available
+        if "application_link" in normalized:
+            # Use normalized source_url as base if available
+            base_for_app = normalized.get("source_url") or primary_base_url
+            normalized["application_link"] = self.normalize_url(
+                normalized["application_link"], 
+                base_for_app,
+                "application_link",
+                fallback_base_urls=fallback_base_urls
             )
         
         # Normalize contact_email

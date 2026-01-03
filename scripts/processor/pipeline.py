@@ -261,7 +261,9 @@ class ProcessingPipeline:
         normalized_listings = []
         for listing in raw_listings:
             try:
-                normalized = self.normalizer.normalize_job_listing(listing)
+                # Extract source_url from listing for URL resolution
+                source_url = listing.get("source_url")
+                normalized = self.normalizer.normalize_job_listing(listing, source_url=source_url)
                 normalized_listings.append(normalized)
             except Exception as e:
                 logger.warning(f"Error normalizing listing: {e}")

@@ -113,6 +113,15 @@ python -m module_name
   - `git log --oneline` - Compact one-line log
   - `git --no-pager <command>` - Disable pager for specific command
 
+### Diagnostic Reports
+- **Keep Only Latest**: The `data/processed/diagnostics/` directory should only contain the latest diagnostic reports
+- After generating new diagnostic reports, delete old timestamped files (format: `diagnostics_*_YYYYMMDD_HHMMSS.*`)
+- Always keep:
+  - `diagnostics_*_latest.json` and `diagnostics_*_latest.txt` (symlinks/pointers to latest)
+  - `README.md` (documentation)
+  - Only the most recent timestamped files (if any)
+- Old diagnostic reports are automatically replaced when the pipeline runs - no need to archive them
+
 ### End of Conversation/Task
 - Reorganize structure/progress/to-do files to show:
   - What's accomplished

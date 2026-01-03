@@ -1,14 +1,14 @@
 {
   "summary": {
-    "start_time": "2026-01-02T18:00:01.265095",
-    "end_time": "2026-01-02T18:00:30.737498",
-    "duration_seconds": 29.472403,
+    "start_time": "2026-01-03T11:54:44.031289",
+    "end_time": "2026-01-03T11:55:11.925299",
+    "duration_seconds": 27.89401,
     "statistics": {
       "parsing_issues": 7,
-      "normalization_issues": 362,
-      "validation_issues": 3405
+      "normalization_issues": 339,
+      "validation_issues": 996
     },
-    "total_issues": 3774,
+    "total_issues": 1342,
     "categories": [
       "parsing_issues",
       "normalization_issues",
@@ -27,21 +27,21 @@
       ]
     },
     "normalization_issues": {
-      "total": 362,
+      "total": 339,
       "sources_affected": 1,
       "error_types": {
-        "unknown": 362
+        "unknown": 339
       },
       "unique_sources": [
         "normalizer"
       ]
     },
     "validation_issues": {
-      "total": 3405,
+      "total": 996,
       "sources_affected": 2,
       "error_types": {
         "DUPLICATE_MERGE": 123,
-        "SCHEMA": 3282
+        "SCHEMA": 873
       },
       "unique_sources": [
         "research_institute",
@@ -55,28 +55,28 @@
         "parsing_issues": 7
       },
       "normalizer": {
-        "normalization_issues": 362
+        "normalization_issues": 339
       },
       "university_website": {
-        "validation_issues": 3127
+        "validation_issues": 852
       },
       "research_institute": {
-        "validation_issues": 278
+        "validation_issues": 144
       }
     },
     "by_error_type": {
       "READ_ERROR": 7,
       "DUPLICATE_MERGE": 123,
-      "SCHEMA": 3282
+      "SCHEMA": 873
     },
     "most_common_errors": [
       [
         "Missing required field",
-        2876
+        560
       ],
       [
         "Invalid URL format (missing scheme or netloc)",
-        362
+        339
       ],
       [
         "Field 'source_url'",
@@ -85,10 +85,6 @@
       [
         "Merged 2 duplicates",
         115
-      ],
-      [
-        "Field 'deadline'",
-        92
       ],
       [
         "Field 'source'",
@@ -109,13 +105,17 @@
       [
         "Merged 5 duplicates",
         1
+      ],
+      [
+        "Merged 9 duplicates",
+        1
       ]
     ],
     "source_failure_rates": {
-      "university": 0.18547959724430313,
-      "normalizer": 9.591944886062533,
-      "university_website": 82.85638579756227,
-      "research_institute": 7.366189719130896
+      "university": 0.5216095380029807,
+      "normalizer": 25.26080476900149,
+      "university_website": 63.48733233979136,
+      "research_institute": 10.730253353204173
     }
   }
 }

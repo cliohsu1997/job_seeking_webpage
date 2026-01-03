@@ -124,30 +124,32 @@ SCHEMA = {
         "allowed_values": ["tenure-track", "visiting", "postdoc", "lecturer", "other"],
         "description": "Job type classification"
     },
+    
+    # Job Details (Optional - often missing from source pages)
     "deadline": {
         "type": str,
-        "required": True,
+        "required": False,
         "format": "date",  # YYYY-MM-DD format
         "description": "Application deadline in ISO date format (YYYY-MM-DD)"
     },
     "deadline_display": {
         "type": str,
-        "required": True,
+        "required": False,
         "description": "Human-readable deadline format"
     },
     "description": {
         "type": str,
-        "required": True,
+        "required": False,
         "description": "Full job description text"
     },
     "requirements": {
         "type": str,
-        "required": True,
+        "required": False,
         "description": "Qualifications and requirements"
     },
     "specializations": {
         "type": list,
-        "required": True,
+        "required": False,
         "item_type": str,
         "description": "Array of research fields/areas"
     },
@@ -165,16 +167,16 @@ SCHEMA = {
         "description": "Salary range if disclosed"
     },
     
-    # Application Information (Required)
+    # Application Information (Optional - often missing from source pages)
     "application_link": {
         "type": str,
-        "required": True,
+        "required": False,
         "format": "url",
         "description": "Direct URL to apply"
     },
     "materials_required": {
         "type": dict,
-        "required": True,
+        "required": False,
         "description": "Object with required materials details",
         "schema": {
             "cv": {"type": bool, "required": False},
@@ -265,20 +267,32 @@ SCHEMA = {
 }
 
 
-# Required fields list
+# Required fields list (only truly critical fields)
 REQUIRED_FIELDS = [
     "id", "title", "institution", "institution_type", "department", "department_category",
-    "location", "job_type", "deadline", "deadline_display", "description", "requirements",
-    "specializations", "application_link", "materials_required", "source", "source_url",
+    "location", "job_type", "source", "source_url",
     "sources", "scraped_date", "processed_date", "is_active", "is_new"
+]
+
+# Fields that are often missing but useful (now optional)
+OPTIONAL_BUT_IMPORTANT_FIELDS = [
+    "deadline", "deadline_display", "description", "requirements",
+    "specializations", "application_link", "materials_required"
 ]
 
 
 # Optional fields with default values
 OPTIONAL_FIELDS_DEFAULTS = {
+    "deadline": None,
+    "deadline_display": None,
+    "description": None,
+    "requirements": None,
+    "specializations": [],
     "start_date": None,
     "salary_range": None,
+    "application_link": None,
     "application_portal": None,
+    "materials_required": {},
     "contact_email": None,
     "contact_person": None,
     "last_updated": None,
