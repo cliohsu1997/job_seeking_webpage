@@ -182,7 +182,7 @@
                                  data-job-id="{{ listing.id }}"
                                  data-region="{{ listing.location.region if listing.location and listing.location.region else 'unknown' }}"
                                  data-institution-type="{{ listing.institution_type if listing.institution_type else 'unknown' }}"
-                                 data-specializations="{{ listing.specializations|tojson|safe if listing.specializations else '[]' }}">
+                                 data-specializations="{{ listing.specializations|json_dumps }}">
                             <div class="job-card-header">
                                 <div class="job-title-row">
                                     <h3 class="job-title">

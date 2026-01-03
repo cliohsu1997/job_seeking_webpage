@@ -2,6 +2,7 @@
 Template renderer for generating static HTML from Jinja2 templates.
 """
 
+import json
 import logging
 from pathlib import Path
 from datetime import datetime
@@ -44,6 +45,7 @@ class TemplateRenderer:
         self.env.filters['relative_date'] = self._relative_date
         self.env.filters['truncate_text'] = self._truncate_text
         self.env.filters['format_deadline'] = self._format_deadline
+        self.env.filters['json_dumps'] = self._json_dumps
     
     @staticmethod
     def _format_date(date_str: str, format_str: str = "%B %d, %Y") -> str:
@@ -168,6 +170,25 @@ class TemplateRenderer:
             }
         except (ValueError, AttributeError):
             return {"text": date_str, "urgency": "none", "class": ""}
+    
+    @staticmethod
+    def _json_dumps(obj: Any) -> str:
+        """
+        Convert Python object to JSON string for HTML attributes.
+        
+        Args:
+            obj: Python object to serialize
+            
+        Returns:
+            JSON string safe for HTML attributes
+        """
+        if obj is None or not obj:
+            return '[]'
+        try:
+            return json.dumps(obj, ensure_ascii=True)
+        except (TypeError, ValueError) as e:
+            logger.warning(f"Failed to serialize object to JSON: {e}")
+            return '[]'
     
     def render_template(self, template_name: str, context: Dict[str, Any]) -> str:
         """
