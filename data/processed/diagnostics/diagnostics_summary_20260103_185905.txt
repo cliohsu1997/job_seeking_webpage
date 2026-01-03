@@ -1,16 +1,16 @@
 ======================================================================
 DIAGNOSTIC REPORT SUMMARY
 ======================================================================
-Start Time: 2026-01-03T19:02:41.666466
-End Time: 2026-01-03T19:02:42.498779
-Duration: 0.83 seconds
+Start Time: 2026-01-03T18:59:04.980943
+End Time: 2026-01-03T18:59:05.793973
+Duration: 0.81 seconds
 
-Total Issues: 279
+Total Issues: 291
 
 Issues by Category:
 ----------------------------------------------------------------------
-  validation_issues             :   238 ( 85.3%)
-  normalization_issues          :    41 ( 14.7%)
+  validation_issues             :   250 ( 85.9%)
+  normalization_issues          :    41 ( 14.1%)
 
 Most Common Errors:
 ----------------------------------------------------------------------
@@ -18,13 +18,13 @@ Most Common Errors:
   Could not resolve relative URL (no valid base URL           : 41
   Merged 2 duplicates                                         : 35
   Field 'source_url'                                          : 31
-  Merged 4 duplicates                                         : 4
+  Field 'department'                                          : 12
 
 Issues by Source (Top 10):
 ----------------------------------------------------------------------
   university_website                      : 231
   normalizer                              : 41
+  aea                                     : 13
   institute_website                       : 6
-  aea                                     : 1
 
 ======================================================================

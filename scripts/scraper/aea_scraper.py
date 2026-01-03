@@ -190,7 +190,7 @@ class AEAScraper(BaseScraper):
             "title": title,
             "institution": institution,
             "institution_type": "job_portal",  # AEA JOE is a job portal, not a university or institute
-            "department": department,
+            "department": department or "Not specified",  # Ensure non-empty string
             "department_category": "Economics",  # AEA JOE is specifically for economics
             "location": location_dict,
             "source": self.source_name,

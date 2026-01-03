@@ -1,13 +1,13 @@
 {
   "summary": {
-    "start_time": "2026-01-03T19:02:41.666466",
-    "end_time": "2026-01-03T19:02:42.494453",
-    "duration_seconds": 0.827987,
+    "start_time": "2026-01-03T18:59:04.980943",
+    "end_time": "2026-01-03T18:59:05.789375",
+    "duration_seconds": 0.808432,
     "statistics": {
       "normalization_issues": 41,
-      "validation_issues": 238
+      "validation_issues": 250
     },
-    "total_issues": 279,
+    "total_issues": 291,
     "categories": [
       "normalization_issues",
       "validation_issues"
@@ -25,11 +25,11 @@
       ]
     },
     "validation_issues": {
-      "total": 238,
+      "total": 250,
       "sources_affected": 3,
       "error_types": {
         "DUPLICATE_MERGE": 41,
-        "SCHEMA": 197
+        "SCHEMA": 209
       },
       "unique_sources": [
         "aea",
@@ -44,7 +44,7 @@
         "normalization_issues": 41
       },
       "aea": {
-        "validation_issues": 1
+        "validation_issues": 13
       },
       "university_website": {
         "validation_issues": 231
@@ -55,7 +55,7 @@
     },
     "by_error_type": {
       "DUPLICATE_MERGE": 41,
-      "SCHEMA": 197
+      "SCHEMA": 209
     },
     "most_common_errors": [
       [
@@ -75,6 +75,10 @@
         31
       ],
       [
+        "Field 'department'",
+        12
+      ],
+      [
         "Merged 4 duplicates",
         4
       ],
@@ -92,10 +96,10 @@
       ]
     ],
     "source_failure_rates": {
-      "normalizer": 14.695340501792115,
-      "aea": 0.35842293906810035,
-      "university_website": 82.79569892473118,
-      "institute_website": 2.1505376344086025
+      "normalizer": 14.0893470790378,
+      "aea": 4.4673539518900345,
+      "university_website": 79.38144329896907,
+      "institute_website": 2.0618556701030926
     }
   }
 }

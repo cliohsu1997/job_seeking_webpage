@@ -1,13 +1,13 @@
 {
   "summary": {
-    "start_time": "2026-01-03T19:02:41.666466",
-    "end_time": "2026-01-03T19:02:42.492108",
-    "duration_seconds": 0.825642,
+    "start_time": "2026-01-03T18:59:04.980943",
+    "end_time": "2026-01-03T18:59:05.785474",
+    "duration_seconds": 0.804531,
     "statistics": {
       "normalization_issues": 41,
-      "validation_issues": 238
+      "validation_issues": 250
     },
-    "total_issues": 279,
+    "total_issues": 291,
     "categories": [
       "normalization_issues",
       "validation_issues"
@@ -25,11 +25,11 @@
       ]
     },
     "validation_issues": {
-      "total": 238,
+      "total": 250,
       "sources_affected": 3,
       "error_types": {
         "DUPLICATE_MERGE": 41,
-        "SCHEMA": 197
+        "SCHEMA": 209
       },
       "unique_sources": [
         "aea",
@@ -46,7 +46,7 @@
         "original_value": "/jobs/search",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.451267"
+        "timestamp": "2026-01-03T18:59:05.743840"
       },
       {
         "source": "normalizer",
@@ -54,7 +54,7 @@
         "original_value": "/jobs/search",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.451423"
+        "timestamp": "2026-01-03T18:59:05.744030"
       },
       {
         "source": "normalizer",
@@ -62,7 +62,7 @@
         "original_value": "/",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.451973"
+        "timestamp": "2026-01-03T18:59:05.744624"
       },
       {
         "source": "normalizer",
@@ -70,7 +70,7 @@
         "original_value": "/jobs",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452041"
+        "timestamp": "2026-01-03T18:59:05.744694"
       },
       {
         "source": "normalizer",
@@ -78,7 +78,7 @@
         "original_value": "/jobs/faculty",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452099"
+        "timestamp": "2026-01-03T18:59:05.744753"
       },
       {
         "source": "normalizer",
@@ -86,7 +86,7 @@
         "original_value": "/jobs/staff",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452154"
+        "timestamp": "2026-01-03T18:59:05.744808"
       },
       {
         "source": "normalizer",
@@ -94,7 +94,7 @@
         "original_value": "/jobs/students",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452202"
+        "timestamp": "2026-01-03T18:59:05.744859"
       },
       {
         "source": "normalizer",
@@ -102,7 +102,7 @@
         "original_value": "/application-status",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452249"
+        "timestamp": "2026-01-03T18:59:05.744912"
       },
       {
         "source": "normalizer",
@@ -110,7 +110,7 @@
         "original_value": "/how-apply",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452294"
+        "timestamp": "2026-01-03T18:59:05.744964"
       },
       {
         "source": "normalizer",
@@ -118,7 +118,7 @@
         "original_value": "/frequently-asked-questions",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452344"
+        "timestamp": "2026-01-03T18:59:05.745018"
       },
       {
         "source": "normalizer",
@@ -126,7 +126,7 @@
         "original_value": "/culture-ku",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452416"
+        "timestamp": "2026-01-03T18:59:05.745095"
       },
       {
         "source": "normalizer",
@@ -134,7 +134,7 @@
         "original_value": "/why-ku",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452464"
+        "timestamp": "2026-01-03T18:59:05.745148"
       },
       {
         "source": "normalizer",
@@ -142,7 +142,7 @@
         "original_value": "/contact-us",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452513"
+        "timestamp": "2026-01-03T18:59:05.745199"
       },
       {
         "source": "normalizer",
@@ -150,7 +150,7 @@
         "original_value": "/search/feed/advanced",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452634"
+        "timestamp": "2026-01-03T18:59:05.745360"
       },
       {
         "source": "normalizer",
@@ -158,7 +158,7 @@
         "original_value": "/login",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452707"
+        "timestamp": "2026-01-03T18:59:05.745484"
       },
       {
         "source": "normalizer",
@@ -166,7 +166,7 @@
         "original_value": "/help-and-faq",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452754"
+        "timestamp": "2026-01-03T18:59:05.745544"
       },
       {
         "source": "normalizer",
@@ -174,7 +174,7 @@
         "original_value": "/",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452800"
+        "timestamp": "2026-01-03T18:59:05.745599"
       },
       {
         "source": "normalizer",
@@ -182,7 +182,7 @@
         "original_value": "/search-jobs",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452844"
+        "timestamp": "2026-01-03T18:59:05.745654"
       },
       {
         "source": "normalizer",
@@ -190,7 +190,7 @@
         "original_value": "/benefits",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452892"
+        "timestamp": "2026-01-03T18:59:05.745705"
       },
       {
         "source": "normalizer",
@@ -198,7 +198,7 @@
         "original_value": "/choose-michigan",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452937"
+        "timestamp": "2026-01-03T18:59:05.745762"
       },
       {
         "source": "normalizer",
@@ -206,7 +206,7 @@
         "original_value": "/temporary-employment",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.452980"
+        "timestamp": "2026-01-03T18:59:05.745812"
       },
       {
         "source": "normalizer",
@@ -214,7 +214,7 @@
         "original_value": "/career-development",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453024"
+        "timestamp": "2026-01-03T18:59:05.745859"
       },
       {
         "source": "normalizer",
@@ -222,7 +222,7 @@
         "original_value": "/accessibility",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453280"
+        "timestamp": "2026-01-03T18:59:05.746057"
       },
       {
         "source": "normalizer",
@@ -230,7 +230,7 @@
         "original_value": "/security-and-safety-annual-report",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453345"
+        "timestamp": "2026-01-03T18:59:05.746108"
       },
       {
         "source": "normalizer",
@@ -238,7 +238,7 @@
         "original_value": "/sites/default/files/2025-01/labor-law-notices-202501.pdf",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453402"
+        "timestamp": "2026-01-03T18:59:05.746159"
       },
       {
         "source": "normalizer",
@@ -246,7 +246,7 @@
         "original_value": "/search/feed/advanced",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453592"
+        "timestamp": "2026-01-03T18:59:05.746253"
       },
       {
         "source": "normalizer",
@@ -254,7 +254,7 @@
         "original_value": "/login",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453682"
+        "timestamp": "2026-01-03T18:59:05.746324"
       },
       {
         "source": "normalizer",
@@ -262,7 +262,7 @@
         "original_value": "/help-and-faq",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453734"
+        "timestamp": "2026-01-03T18:59:05.746376"
       },
       {
         "source": "normalizer",
@@ -270,7 +270,7 @@
         "original_value": "/",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453794"
+        "timestamp": "2026-01-03T18:59:05.746420"
       },
       {
         "source": "normalizer",
@@ -278,7 +278,7 @@
         "original_value": "/search-jobs",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453846"
+        "timestamp": "2026-01-03T18:59:05.746466"
       },
       {
         "source": "normalizer",
@@ -286,7 +286,7 @@
         "original_value": "/benefits",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453893"
+        "timestamp": "2026-01-03T18:59:05.746516"
       },
       {
         "source": "normalizer",
@@ -294,7 +294,7 @@
         "original_value": "/choose-michigan",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453938"
+        "timestamp": "2026-01-03T18:59:05.746557"
       },
       {
         "source": "normalizer",
@@ -302,7 +302,7 @@
         "original_value": "/temporary-employment",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.453995"
+        "timestamp": "2026-01-03T18:59:05.746598"
       },
       {
         "source": "normalizer",
@@ -310,7 +310,7 @@
         "original_value": "/career-development",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.454049"
+        "timestamp": "2026-01-03T18:59:05.746644"
       },
       {
         "source": "normalizer",
@@ -318,7 +318,7 @@
         "original_value": "/accessibility",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.454229"
+        "timestamp": "2026-01-03T18:59:05.746830"
       },
       {
         "source": "normalizer",
@@ -326,7 +326,7 @@
         "original_value": "/security-and-safety-annual-report",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.454336"
+        "timestamp": "2026-01-03T18:59:05.746885"
       },
       {
         "source": "normalizer",
@@ -334,7 +334,7 @@
         "original_value": "/sites/default/files/2025-01/labor-law-notices-202501.pdf",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.454432"
+        "timestamp": "2026-01-03T18:59:05.746936"
       },
       {
         "source": "normalizer",
@@ -342,7 +342,7 @@
         "original_value": "/job/los-angeles/assistant-or-associate-professor-of-clinical-otolaryngology-head-and-neck-surgery-chla/1209/60632242896",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.455270"
+        "timestamp": "2026-01-03T18:59:05.747722"
       },
       {
         "source": "normalizer",
@@ -350,7 +350,7 @@
         "original_value": "/search-jobs",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.455352"
+        "timestamp": "2026-01-03T18:59:05.747790"
       },
       {
         "source": "normalizer",
@@ -358,7 +358,7 @@
         "original_value": "/job/los-angeles/assistant-or-associate-professor-of-clinical-otolaryngology-head-and-neck-surgery-chla/1209/60632242896",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.455504"
+        "timestamp": "2026-01-03T18:59:05.747940"
       },
       {
         "source": "normalizer",
@@ -366,7 +366,7 @@
         "original_value": "/search-jobs",
         "normalized_value": null,
         "error": "Could not resolve relative URL (no valid base URL available)",
-        "timestamp": "2026-01-03T19:02:42.455568"
+        "timestamp": "2026-01-03T18:59:05.748002"
       }
     ],
     "validation_issues": [
@@ -375,1666 +375,1750 @@
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.466596"
+        "timestamp": "2026-01-03T18:59:05.759829"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.466691"
+        "timestamp": "2026-01-03T18:59:05.759924"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.466714"
+        "timestamp": "2026-01-03T18:59:05.759945"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467005"
+        "timestamp": "2026-01-03T18:59:05.760226"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467107"
+        "timestamp": "2026-01-03T18:59:05.760269"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 4 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467159"
+        "timestamp": "2026-01-03T18:59:05.760324"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 4 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467204"
+        "timestamp": "2026-01-03T18:59:05.760378"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 4 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467246"
+        "timestamp": "2026-01-03T18:59:05.760423"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 4 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467290"
+        "timestamp": "2026-01-03T18:59:05.760465"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 60 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467575"
+        "timestamp": "2026-01-03T18:59:05.760775"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467619"
+        "timestamp": "2026-01-03T18:59:05.760820"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467665"
+        "timestamp": "2026-01-03T18:59:05.760875"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467701"
+        "timestamp": "2026-01-03T18:59:05.760886"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467714"
+        "timestamp": "2026-01-03T18:59:05.760898"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467724"
+        "timestamp": "2026-01-03T18:59:05.760908"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467733"
+        "timestamp": "2026-01-03T18:59:05.760918"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467901"
+        "timestamp": "2026-01-03T18:59:05.761085"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467923"
+        "timestamp": "2026-01-03T18:59:05.761108"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467945"
+        "timestamp": "2026-01-03T18:59:05.761130"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467970"
+        "timestamp": "2026-01-03T18:59:05.761150"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.467990"
+        "timestamp": "2026-01-03T18:59:05.761170"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468009"
+        "timestamp": "2026-01-03T18:59:05.761189"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468027"
+        "timestamp": "2026-01-03T18:59:05.761207"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468044"
+        "timestamp": "2026-01-03T18:59:05.761225"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468067"
+        "timestamp": "2026-01-03T18:59:05.761246"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468085"
+        "timestamp": "2026-01-03T18:59:05.761263"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468100"
+        "timestamp": "2026-01-03T18:59:05.761278"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468114"
+        "timestamp": "2026-01-03T18:59:05.761293"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468128"
+        "timestamp": "2026-01-03T18:59:05.761307"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468141"
+        "timestamp": "2026-01-03T18:59:05.761320"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468153"
+        "timestamp": "2026-01-03T18:59:05.761332"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468164"
+        "timestamp": "2026-01-03T18:59:05.761344"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468176"
+        "timestamp": "2026-01-03T18:59:05.761355"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468187"
+        "timestamp": "2026-01-03T18:59:05.761366"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468198"
+        "timestamp": "2026-01-03T18:59:05.761376"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468207"
+        "timestamp": "2026-01-03T18:59:05.761385"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468381"
+        "timestamp": "2026-01-03T18:59:05.761531"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468397"
+        "timestamp": "2026-01-03T18:59:05.761543"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468409"
+        "timestamp": "2026-01-03T18:59:05.761553"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 2 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468424"
+        "timestamp": "2026-01-03T18:59:05.761563"
       },
       {
         "source": "university_website",
         "field": "deduplication",
         "error": "Merged 3 duplicates",
         "validation_type": "DUPLICATE_MERGE",
-        "timestamp": "2026-01-03T19:02:42.468485"
+        "timestamp": "2026-01-03T18:59:05.761610"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.763080"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.763606"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.763717"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.763818"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.763929"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.764133"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.764629"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.765049"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.765453"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.765649"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.766092"
+      },
+      {
+        "source": "aea",
+        "field": "department",
+        "error": "Field 'department': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.766495"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.474828"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.474834"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.474936"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475039"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475152"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475251"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475348"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475446"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475545"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475697"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475799"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.475906"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476004"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476102"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476201"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476298"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476396"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476533"
+        "timestamp": "2026-01-03T18:59:05.767859"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476536"
+        "timestamp": "2026-01-03T18:59:05.767862"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476640"
+        "timestamp": "2026-01-03T18:59:05.767957"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476733"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476735"
+        "timestamp": "2026-01-03T18:59:05.768066"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476824"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476826"
+        "timestamp": "2026-01-03T18:59:05.768167"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.476918"
+        "timestamp": "2026-01-03T18:59:05.768265"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477023"
+        "timestamp": "2026-01-03T18:59:05.768364"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477121"
+        "timestamp": "2026-01-03T18:59:05.768467"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477226"
+        "timestamp": "2026-01-03T18:59:05.769062"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477362"
+        "timestamp": "2026-01-03T18:59:05.769179"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477461"
+        "timestamp": "2026-01-03T18:59:05.769286"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477558"
+        "timestamp": "2026-01-03T18:59:05.769517"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477658"
+        "timestamp": "2026-01-03T18:59:05.769758"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477754"
+        "timestamp": "2026-01-03T18:59:05.769966"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477858"
+        "timestamp": "2026-01-03T18:59:05.770167"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.477962"
+        "timestamp": "2026-01-03T18:59:05.770364"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478059"
+        "timestamp": "2026-01-03T18:59:05.770555"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478159"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478264"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478365"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478461"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478557"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478659"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478758"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478854"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.478952"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479051"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479153"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479248"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479345"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479439"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479532"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479627"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479734"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479837"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.479936"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480037"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480135"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480234"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480331"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480431"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480528"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480625"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480721"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480816"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.480912"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481005"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481100"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481196"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481361"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481459"
+        "timestamp": "2026-01-03T18:59:05.770748"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481461"
+        "timestamp": "2026-01-03T18:59:05.770752"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481552"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481554"
+        "timestamp": "2026-01-03T18:59:05.770933"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481654"
+        "timestamp": "2026-01-03T18:59:05.771139"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481656"
+        "timestamp": "2026-01-03T18:59:05.771144"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481755"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481757"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481852"
+        "timestamp": "2026-01-03T18:59:05.771253"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481854"
+        "timestamp": "2026-01-03T18:59:05.771255"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481948"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.481950"
+        "timestamp": "2026-01-03T18:59:05.771362"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482041"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482042"
+        "timestamp": "2026-01-03T18:59:05.771469"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482132"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482134"
+        "timestamp": "2026-01-03T18:59:05.771571"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482226"
+        "timestamp": "2026-01-03T18:59:05.771671"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482322"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482324"
+        "timestamp": "2026-01-03T18:59:05.771774"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482414"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482416"
+        "timestamp": "2026-01-03T18:59:05.771874"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482504"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482506"
+        "timestamp": "2026-01-03T18:59:05.771972"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482596"
+        "timestamp": "2026-01-03T18:59:05.772068"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482693"
+        "timestamp": "2026-01-03T18:59:05.772173"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482791"
+        "timestamp": "2026-01-03T18:59:05.772270"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482887"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482889"
+        "timestamp": "2026-01-03T18:59:05.772366"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482978"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.482980"
+        "timestamp": "2026-01-03T18:59:05.772463"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483071"
+        "timestamp": "2026-01-03T18:59:05.772559"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483166"
+        "timestamp": "2026-01-03T18:59:05.772656"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483258"
+        "timestamp": "2026-01-03T18:59:05.772759"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483351"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483353"
+        "timestamp": "2026-01-03T18:59:05.772872"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483443"
+        "timestamp": "2026-01-03T18:59:05.772972"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483537"
+        "timestamp": "2026-01-03T18:59:05.773070"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483635"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483638"
+        "timestamp": "2026-01-03T18:59:05.773166"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483730"
+        "timestamp": "2026-01-03T18:59:05.773263"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483822"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483824"
+        "timestamp": "2026-01-03T18:59:05.773361"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483912"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.483914"
+        "timestamp": "2026-01-03T18:59:05.773458"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484002"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484004"
+        "timestamp": "2026-01-03T18:59:05.773554"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484092"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484094"
+        "timestamp": "2026-01-03T18:59:05.773653"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484182"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484184"
+        "timestamp": "2026-01-03T18:59:05.773751"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484272"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484274"
+        "timestamp": "2026-01-03T18:59:05.773847"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484366"
+        "timestamp": "2026-01-03T18:59:05.773942"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484460"
+        "timestamp": "2026-01-03T18:59:05.774039"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484550"
-      },
-      {
-        "source": "university_website",
-        "field": "source_url",
-        "error": "Field 'source_url': Expected str, got NoneType",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484552"
+        "timestamp": "2026-01-03T18:59:05.774135"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484641"
+        "timestamp": "2026-01-03T18:59:05.774232"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.774328"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.774425"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.774522"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.774619"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.774718"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.774821"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.774917"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775014"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775110"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775204"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775305"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775401"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775503"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775600"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775696"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.775793"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484643"
+        "timestamp": "2026-01-03T18:59:05.775795"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484735"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484831"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.484928"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485026"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485122"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485218"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485328"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485427"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485524"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485665"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485770"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485870"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.485967"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486062"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486168"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486264"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486399"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486496"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486592"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486688"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486793"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486890"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.486987"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.487083"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.487353"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.487464"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.487572"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.487676"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.487980"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488118"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488234"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488350"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488457"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488572"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488686"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488797"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.488906"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489010"
-      },
-      {
-        "source": "university_website",
-        "field": "location",
-        "error": "Missing required field: 'location'",
-        "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489110"
+        "timestamp": "2026-01-03T18:59:05.775887"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489113"
+        "timestamp": "2026-01-03T18:59:05.775889"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489206"
+        "timestamp": "2026-01-03T18:59:05.775980"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489208"
+        "timestamp": "2026-01-03T18:59:05.775982"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489308"
+        "timestamp": "2026-01-03T18:59:05.776076"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489310"
+        "timestamp": "2026-01-03T18:59:05.776078"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489408"
+        "timestamp": "2026-01-03T18:59:05.776165"
       },
       {
         "source": "university_website",
         "field": "source_url",
         "error": "Field 'source_url': Expected str, got NoneType",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489410"
+        "timestamp": "2026-01-03T18:59:05.776167"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489665"
+        "timestamp": "2026-01-03T18:59:05.776254"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.776256"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489790"
+        "timestamp": "2026-01-03T18:59:05.776343"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.776344"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.489903"
+        "timestamp": "2026-01-03T18:59:05.776433"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.776435"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490010"
+        "timestamp": "2026-01-03T18:59:05.776526"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490113"
+        "timestamp": "2026-01-03T18:59:05.776618"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.776619"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490213"
+        "timestamp": "2026-01-03T18:59:05.776708"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.776710"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490321"
+        "timestamp": "2026-01-03T18:59:05.776805"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.776807"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490420"
+        "timestamp": "2026-01-03T18:59:05.776899"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490521"
+        "timestamp": "2026-01-03T18:59:05.776997"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490626"
+        "timestamp": "2026-01-03T18:59:05.777093"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490730"
+        "timestamp": "2026-01-03T18:59:05.777190"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.777193"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490834"
+        "timestamp": "2026-01-03T18:59:05.777286"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.777288"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.490932"
+        "timestamp": "2026-01-03T18:59:05.777378"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491028"
+        "timestamp": "2026-01-03T18:59:05.777472"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491124"
+        "timestamp": "2026-01-03T18:59:05.777567"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491224"
+        "timestamp": "2026-01-03T18:59:05.777659"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.777661"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491336"
+        "timestamp": "2026-01-03T18:59:05.777752"
       },
       {
         "source": "university_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491435"
+        "timestamp": "2026-01-03T18:59:05.777848"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.777946"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.777947"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778039"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778132"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778134"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778223"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778225"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778314"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778316"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778406"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778408"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778496"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778498"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778593"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778596"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778689"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778789"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778880"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778882"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778971"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.778973"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779064"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779161"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779260"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779357"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779454"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779551"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779648"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779745"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779842"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.779943"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780040"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780137"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780232"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780339"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780438"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780535"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780632"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780727"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780822"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.780918"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781014"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781110"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781207"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781304"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781401"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781496"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781593"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781687"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781783"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781879"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.781974"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782076"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782174"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782270"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782365"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782463"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782559"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782655"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782749"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782751"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782841"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782843"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782932"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.782934"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783023"
+      },
+      {
+        "source": "university_website",
+        "field": "source_url",
+        "error": "Field 'source_url': Expected str, got NoneType",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783025"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783121"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783218"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783316"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783411"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783506"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783603"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783698"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783800"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783896"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.783992"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784087"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784184"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784281"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784377"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784474"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784572"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784668"
+      },
+      {
+        "source": "university_website",
+        "field": "location",
+        "error": "Missing required field: 'location'",
+        "validation_type": "SCHEMA",
+        "timestamp": "2026-01-03T18:59:05.784764"
       },
       {
         "source": "institute_website",
         "field": "department",
         "error": "Missing required field: 'department'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491536"
+        "timestamp": "2026-01-03T18:59:05.784865"
       },
       {
         "source": "institute_website",
         "field": "department_category",
         "error": "Field 'department_category': Value 'other' not in allowed values: ['Economics', 'Management', 'Marketing', 'Other']",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491539"
+        "timestamp": "2026-01-03T18:59:05.784867"
       },
       {
         "source": "institute_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491542"
+        "timestamp": "2026-01-03T18:59:05.784871"
       },
       {
         "source": "institute_website",
         "field": "department",
         "error": "Missing required field: 'department'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491642"
+        "timestamp": "2026-01-03T18:59:05.785018"
       },
       {
         "source": "institute_website",
         "field": "department_category",
         "error": "Field 'department_category': Value 'other' not in allowed values: ['Economics', 'Management', 'Marketing', 'Other']",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491644"
+        "timestamp": "2026-01-03T18:59:05.785021"
       },
       {
         "source": "institute_website",
         "field": "location",
         "error": "Missing required field: 'location'",
         "validation_type": "SCHEMA",
-        "timestamp": "2026-01-03T19:02:42.491648"
+        "timestamp": "2026-01-03T18:59:05.785024"
       }
     ]
   },
@@ -2044,7 +2128,7 @@
         "normalization_issues": 41
       },
       "aea": {
-        "validation_issues": 1
+        "validation_issues": 13
       },
       "university_website": {
         "validation_issues": 231
@@ -2055,7 +2139,7 @@
     },
     "by_error_type": {
       "DUPLICATE_MERGE": 41,
-      "SCHEMA": 197
+      "SCHEMA": 209
     },
     "most_common_errors": [
       [
@@ -2075,6 +2159,10 @@
         31
       ],
       [
+        "Field 'department'",
+        12
+      ],
+      [
         "Merged 4 duplicates",
         4
       ],
@@ -2092,10 +2180,10 @@
       ]
     ],
     "source_failure_rates": {
-      "normalizer": 14.695340501792115,
-      "aea": 0.35842293906810035,
-      "university_website": 82.79569892473118,
-      "institute_website": 2.1505376344086025
+      "normalizer": 14.0893470790378,
+      "aea": 4.4673539518900345,
+      "university_website": 79.38144329896907,
+      "institute_website": 2.0618556701030926
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "archived_at": "2026-01-03T18:56:31.657106",
+    "archived_at": "2026-01-03T19:02:42.511924",
     "total_listings": 211,
     "version": "1.0"
   },
@@ -149,8 +149,8 @@
       "title": "Program Associate, Economics",
       "institution": "Alfred P. Sloan Foundation",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "New York",
         "state": null,
@@ -386,8 +386,8 @@
       "title": "Associate",
       "institution": "Analysis Group",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -436,8 +436,8 @@
       "title": "Associate - Montreal/Toronto",
       "institution": "Analysis Group",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -485,8 +485,8 @@
       "title": "Research Economist",
       "institution": "Andersen Institute for Finance and Economics",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -532,8 +532,8 @@
       "title": "Postdoctoral Research Associate",
       "institution": "Annenberg Institute at Brown University",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Providence",
         "state": null,
@@ -625,8 +625,8 @@
       "title": "Economist/Core Data Scientist",
       "institution": "Apple Inc.",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "CHINA",
         "state": null,
@@ -853,8 +853,8 @@
       "title": "Assistant Professor of Finance",
       "institution": "Assumption University",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Worcester",
         "state": null,
@@ -926,9 +926,9 @@
       },
       "requirements": null,
       "specializations": [
-        "International",
         "Macroeconomics",
-        "Microeconomics"
+        "Microeconomics",
+        "International"
       ],
       "start_date": null,
       "salary_range": null,
@@ -1051,8 +1051,8 @@
       "title": "Economist / Researcher",
       "institution": "Banco de la República",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Bogota",
         "state": null,
@@ -1247,8 +1247,8 @@
       "title": "Fellowship to Tenure-Track Positions for Research Economists",
       "institution": "Bank of Italy",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "ROME",
         "state": null,
@@ -1348,8 +1348,8 @@
       "title": "Economist",
       "institution": "Bank of Korea",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "SEOUL",
         "state": null,
@@ -1533,8 +1533,8 @@
       "title": "Economist",
       "institution": "Bates White Economic Consulting",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": "Washington",
         "state": "DC",
@@ -1722,8 +1722,8 @@
       "title": "Research Associates Program - Several Research Associate Positions",
       "institution": "Berlin School of Economics",
       "institution_type": "job_portal",
-      "department": null,
-      "department_category": "Economics",
+      "department": "Not specified",
+      "department_category": "Other",
       "location": {
         "city": null,
         "state": null,
@@ -2372,7 +2372,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs",
@@ -2407,7 +2407,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Directory",
@@ -2442,12 +2442,12 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search Jobs",
       "source": "university_website",
-      "source_url": "https://isu.wd1.myworkdayjobs.com/IowaStateJobs",
+      "source_url": "https://jobs.omni.fsu.edu/psc/sprdhr_er/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?FOCUS=Applicant&Page=HRS_APP_SCHJOB&Action=U&SiteId=1",
       "institution": "State University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -2477,7 +2477,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Policies",
@@ -2512,12 +2512,12 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty",
       "source": "university_website",
-      "source_url": "https://isu.wd1.myworkdayjobs.com/IowaStateJobs?jobFamilyGroup=ad349100dff401ea127be90a060a22e3",
+      "source_url": "https://faculty.fsu.edu/",
       "institution": "State University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -2547,7 +2547,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty and Staff",
@@ -2582,7 +2582,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Postdoctoral",
@@ -2617,7 +2617,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Temporary",
@@ -2652,7 +2652,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "LinkedIn Iowa State Jobs",
@@ -2687,7 +2687,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Recruitment Instagram Page",
@@ -2722,7 +2722,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Classified Staff",
@@ -2757,7 +2757,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Temporary Staff and Academic Wage (short term academic or professional faculty)",
@@ -2792,7 +2792,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Who qualifies for an Internal Employment Opportunity?",
@@ -2827,7 +2827,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Why OSU?",
@@ -2862,7 +2862,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Research Assistant and Research Associate Job Exchange Opportunities",
@@ -2897,7 +2897,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Skip to jobs search results",
@@ -2938,7 +2938,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Chief Financial Officer",
@@ -2978,7 +2978,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "No",
@@ -3015,7 +3015,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Getting Started We believe that you can love your job",
@@ -3050,7 +3050,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "AcademicJobsOnline .org",
@@ -3085,7 +3085,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Contact Us",
@@ -3120,7 +3120,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Login",
@@ -3155,7 +3155,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Position",
@@ -3190,12 +3190,12 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Apply",
       "source": "university_website",
-      "source_url": "https://academicjobsonline.org/ajo/jobs/30057/apply",
+      "source_url": "https://academicjobsonline.org/ajo/jobs/31350/apply",
       "institution": "University",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -3225,7 +3225,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Work / Life / Benefits",
@@ -3260,7 +3260,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Office of the Senior Vice Provost for Faculty",
@@ -3295,7 +3295,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "equal employment opportunity policy",
@@ -3330,7 +3330,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View staff positions as a current employee",
@@ -3365,7 +3365,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View staff positions as an external candidate",
@@ -3400,7 +3400,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View all academic positions",
@@ -3435,7 +3435,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View all executive positions",
@@ -3470,7 +3470,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View all IU Foundation positions",
@@ -3505,7 +3505,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Job Listings for External Applicants",
@@ -3540,7 +3540,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "FACULTY CAREERS",
@@ -3575,7 +3575,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "URA-AFT Job Postings",
@@ -3610,7 +3610,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Rutgers University Foundation Job Postings",
@@ -3645,7 +3645,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Equal Employment Opportunity (EEO)",
@@ -3680,7 +3680,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Higher Education Recruitment Consortium",
@@ -3715,7 +3715,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Workplace and Employment Rights for Applicants and Employees",
@@ -3750,7 +3750,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Student Employment Opportunities",
@@ -3785,7 +3785,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Learn more about benefits at UB",
@@ -3820,7 +3820,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "UB Now: News and Views for UB Faculty and Staff",
@@ -3855,7 +3855,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Other Ways to Connect",
@@ -3890,7 +3890,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Resources for Faculty Supervisors",
@@ -3925,7 +3925,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Position",
@@ -3960,7 +3960,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Academic Job Opportunities",
@@ -3995,7 +3995,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "University of Chicago Medicine Job Opportunities",
@@ -4030,7 +4030,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Student Employment",
@@ -4065,7 +4065,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Mock interviews for UChicago job seekers",
@@ -4100,7 +4100,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search for staff opportunities",
@@ -4135,7 +4135,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs UNIVERSITY OF COLORADO BOULDER",
@@ -4170,7 +4170,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search jobs",
@@ -4205,7 +4205,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Living Here",
@@ -4240,7 +4240,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Benefits",
@@ -4275,7 +4275,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Perks",
@@ -4310,7 +4310,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs",
@@ -4345,7 +4345,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Join the CU Boulder Talent Community",
@@ -4380,7 +4380,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Create Job Alert",
@@ -4415,7 +4415,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "FAQ",
@@ -4450,7 +4450,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Login",
@@ -4485,7 +4485,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "2",
@@ -4520,7 +4520,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "3",
@@ -4555,7 +4555,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "4",
@@ -4590,7 +4590,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Staff",
@@ -4625,7 +4625,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs Select to follow link",
@@ -4662,7 +4662,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Application Status",
@@ -4699,7 +4699,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Frequently Asked Questions",
@@ -4736,7 +4736,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Home",
@@ -4771,7 +4771,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty, Lecturers, and Academic Staff",
@@ -4806,7 +4806,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Staff",
@@ -4841,7 +4841,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Students",
@@ -4876,7 +4876,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "How to Apply",
@@ -4911,7 +4911,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Benefits",
@@ -4946,7 +4946,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Culture at KU",
@@ -4981,7 +4981,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Why KU?",
@@ -5016,7 +5016,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Contact Us",
@@ -5051,7 +5051,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search Jobs",
@@ -5086,7 +5086,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Browse Jobs",
@@ -5121,7 +5121,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Equal Employment Opportunity Statement of Policy",
@@ -5156,7 +5156,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Temporary Employment",
@@ -5193,7 +5193,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Career Development",
@@ -5230,7 +5230,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Featured Jobs",
@@ -5268,7 +5268,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Top 25 Universities in the World Times Higher Education 2024",
@@ -5305,7 +5305,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Non-discrimination Statement",
@@ -5342,7 +5342,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Labor Law Notices",
@@ -5379,7 +5379,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Department of Labor Notices of Filing",
@@ -5416,7 +5416,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "twitter",
@@ -5451,7 +5451,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "rss",
@@ -5486,7 +5486,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "addthis",
@@ -5521,7 +5521,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Login",
@@ -5556,7 +5556,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Help and FAQ",
@@ -5591,7 +5591,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Home",
@@ -5626,7 +5626,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search Jobs",
@@ -5661,7 +5661,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Benefits",
@@ -5696,7 +5696,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Choose Michigan",
@@ -5731,7 +5731,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "#3 Best In-State Employer Forbes 2023",
@@ -5766,7 +5766,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "53 Thousand Employees Working at U-M 2023",
@@ -5801,7 +5801,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Accessibility",
@@ -5836,7 +5836,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Security and Safety Annual Report",
@@ -5871,7 +5871,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "MyU : For Students, Faculty, and Staff",
@@ -5906,7 +5906,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Income and Employment Verification",
@@ -5941,7 +5941,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Handshake",
@@ -5976,7 +5976,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "http://employment.unl.edu",
@@ -6011,7 +6011,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "jobs.nebraska.edu/UniversityNebraskaSystem/go/University-of-Nebraska-Lincoln/9754500/",
@@ -6046,7 +6046,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Review employment benefits",
@@ -6081,7 +6081,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View faculty positions",
@@ -6116,7 +6116,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View managerial / professional positions",
@@ -6151,7 +6151,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View office / service positions",
@@ -6186,7 +6186,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View other campus positions",
@@ -6221,7 +6221,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Employment Opportunities at other University of Nebraska campuses",
@@ -6256,7 +6256,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Employment",
@@ -6291,7 +6291,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search for a Job",
@@ -6326,7 +6326,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Need Help?",
@@ -6361,7 +6361,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Careers",
@@ -6396,7 +6396,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Student Jobs",
@@ -6431,7 +6431,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Find Positions",
@@ -6466,7 +6466,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Staff",
@@ -6501,7 +6501,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Postdoctoral Associates",
@@ -6536,7 +6536,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Temporary",
@@ -6571,7 +6571,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Staff and Temporary",
@@ -6606,7 +6606,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Students",
@@ -6641,7 +6641,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Positions Pursue Success",
@@ -6676,7 +6676,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Vibrantly Diverse",
@@ -6711,7 +6711,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Required Workplace Postings",
@@ -6746,7 +6746,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Job Catalog",
@@ -6781,7 +6781,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Veteran Job Seekers",
@@ -6816,7 +6816,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Temporary Positions",
@@ -6851,7 +6851,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Career Opportunities",
@@ -6886,7 +6886,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Employment Verification",
@@ -6921,7 +6921,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Job opportunities",
@@ -6956,7 +6956,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search all staff jobs Find positions available to those outside the University of Rochester.",
@@ -6991,7 +6991,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs for current employees If you are a current employee, please log into myURHR Workday to search for and apply to jobs using the Jobs Hub.",
@@ -7026,7 +7026,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Nursing, RT, APPs (NP and PA) careers",
@@ -7061,7 +7061,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty/Physicians",
@@ -7096,7 +7096,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Staff and Administration",
@@ -7131,7 +7131,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Culture Our culture thrives on the spirit of Meliora--meaning \"ever better\"--fostering a vibrant community where faculty and staff from around the world collaborate, innovate, and grow together.",
@@ -7166,7 +7166,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "The Highlands at Pittsford",
@@ -7201,7 +7201,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs for You",
@@ -7238,7 +7238,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Assistant or Associate Professor of Clinical Otolaryngology Head and Neck Surgery-CHLA",
@@ -7275,7 +7275,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Sign Up for Job Alerts",
@@ -7312,7 +7312,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "View All Jobs",
@@ -7347,7 +7347,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Employee Login to View Position Description",
@@ -7382,7 +7382,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Search Open Jobs",
@@ -7417,7 +7417,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Working at USC",
@@ -7452,7 +7452,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Position",
@@ -7487,7 +7487,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "University of Utah Health Jobs",
@@ -7522,7 +7522,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Senate",
@@ -7557,7 +7557,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Affairs Advisory Committee",
@@ -7592,12 +7592,12 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "For Academic Personnel & Faculty",
       "source": "university_website",
-      "source_url": "https://ap.washington.edu/",
+      "source_url": "https://ap.washington.edu/about-us/",
       "institution": "Of Washington",
       "department": "Economicshtml",
       "scraped_date": "2026-01-03",
@@ -7627,7 +7627,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "New Faculty @UW",
@@ -7662,7 +7662,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Development",
@@ -7697,7 +7697,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Inclusive Excellence",
@@ -7732,7 +7732,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Faculty Promotion & Tenure",
@@ -7767,7 +7767,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Academic Personnel & Faculty Affairs",
@@ -7802,7 +7802,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Academic Jobs",
@@ -7837,7 +7837,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs",
@@ -7872,7 +7872,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs /",
@@ -7907,7 +7907,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Subscribe to Job Alerts",
@@ -7942,7 +7942,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Jobs at Virginia Tech",
@@ -7977,7 +7977,7 @@
         "university_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Job Openings",
@@ -8011,7 +8011,7 @@
         "institute_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Career Opportunities",
@@ -8045,7 +8045,7 @@
         "institute_website"
       ],
       "is_active": true,
-      "is_new": true
+      "is_new": false
     }
   ]
 }
