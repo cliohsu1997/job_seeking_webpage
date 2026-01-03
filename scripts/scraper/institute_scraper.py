@@ -177,9 +177,16 @@ class InstituteScraper(BaseScraper):
     
     def _sanitize_filename(self, name: str) -> str:
         """Sanitize filename."""
-        name = re.sub(r'[^\w\s-]', '', name)
-        name = re.sub(r'[-\s]+', '_', name)
-        return name.lower()
+        # Split filename and extension
+        if '.' in name:
+            base, ext = name.rsplit('.', 1)
+            base = re.sub(r'[^\w\s-]', '', base)
+            base = re.sub(r'[-\s]+', '_', base)
+            return f"{base.lower()}.{ext}"
+        else:
+            name = re.sub(r'[^\w\s-]', '', name)
+            name = re.sub(r'[-\s]+', '_', name)
+            return name.lower()
     
     def _get_current_date(self) -> str:
         """Get current date in YYYY-MM-DD format."""
