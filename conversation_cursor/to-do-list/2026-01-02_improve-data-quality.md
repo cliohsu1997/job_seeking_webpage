@@ -248,6 +248,7 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
 - [x] **URL resolution fixes** - Fixed parser manager and normalizer to always set source_url and resolve relative URLs
 - [x] **Enhanced base URL lookup** - Added partial name matching for better config lookup
 - [x] **Improved extraction** - Enhanced requirements and materials detection
+- [x] **Created main scraping script** - Added `scripts/scraper/main.py` to scrape all accessible sources with one command
 
 ### 🔗 Fix Inaccessible URLs (81 URLs with issues)
 

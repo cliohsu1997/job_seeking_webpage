@@ -84,6 +84,7 @@ job-seeking-webpage/
 - **`data/config/URL_VERIFICATION.md`**: Documentation for URL verification process and common patterns
 
 ### Scraper Framework (Phase 1 - Complete)
+- **`scripts/scraper/main.py`**: Main script to scrape all accessible sources (universities, institutes, AEA) with one command ✅
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)
 - **`scripts/scraper/aea_scraper.py`**: AEA JOE scraper (RSS/HTML fallback). **Phase 2F**: Immediate URL resolution ✅
 - **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based, **link-following enabled** - automatically follows links to detail pages to extract full job information). **Phase 2F**: Enhanced requirements and materials extraction, always sets source_url, immediate URL resolution ✅
