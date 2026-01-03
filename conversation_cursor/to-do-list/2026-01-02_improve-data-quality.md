@@ -268,7 +268,7 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
   - Identify any PDF files or downloadable documents on the page
   - Check if they are business school oriented (job postings, faculty positions, business/economics departments, etc.)
   - If yes, download to `data/raw/` directory (create subdirectory if needed, e.g., `data/raw/business_school_pdfs/`)
-  - Save with descriptive filename (e.g., `university_name_department_job_posting.pdf`)
+  - Save with descriptive filename (e.g., `university_name_department_job_posting.pdf`) to `data/raw/documents/`
 - [ ] **Update scraping_sources.json** - Replace problematic URLs with working alternatives
 - [ ] **Re-run verification** - Verify all new URLs work correctly
 - [ ] **Document changes** - Update URL_VERIFICATION.md with findings and patterns

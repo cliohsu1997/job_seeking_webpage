@@ -143,7 +143,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - Created helper script `scripts/scraper/check_config/find_url_replacements.py` to systematically find replacement URLs
   - **Issue breakdown**: Job portals (1), US universities (30+), Chinese universities (40+), International universities (10+)
   - **Issue types**: 403 Forbidden, 404 Not Found, Connection errors (DNS failures), No job content verified, HTTP 202 errors, Timeouts
-  - **Next steps**: Search for replacement URLs; when finding PDFs/files on pages, check if business school oriented and download to `data/raw/` if yes
+  - **Next steps**: Search for replacement URLs; when finding PDFs/files on pages, check if business school oriented and download to `data/raw/documents/` if yes
   - See verification output and `data/config/scraping_sources.json` (non_accessible section) for detailed list
 
 **Reference**: See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and recommendations.

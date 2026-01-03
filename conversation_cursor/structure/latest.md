@@ -13,8 +13,7 @@ job-seeking-webpage/
 │   │   ├── aea/                    # AEA JOE scraped files
 │   │   ├── universities/           # University scraped files
 │   │   ├── institutes/             # Research institute scraped files
-│   │   ├── pdfs/                   # PDF files (job postings, business school documents)
-│   │   └── documents/              # Other document formats (Word, Excel, text files)
+│   │   └── documents/              # Downloaded documents (PDFs, Word, Excel, text files)
 │   ├── processed/                  # Processed data (Phase 2 output)
 │   │   ├── jobs.json               # Current listings
 │   │   ├── jobs.csv                # Current listings (CSV)
