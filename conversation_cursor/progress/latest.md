@@ -139,6 +139,15 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] **Scraper source_url guarantees** - Scrapers now always set source_url (use self.url as fallback if missing)
 - [x] **Enhanced extraction** - Improved requirements and materials detection in detail page extraction
 
+**Latest Fixes (2026-01-03 - Immediate URL Resolution in Scrapers)**:
+- [x] **HTMLParser.extract_links() enhancement** - Modified to accept base_url parameter and resolve relative URLs to absolute URLs immediately during extraction
+- [x] **University scraper updates** - Updated to pass base_url to extract_links(), ensuring all URLs are absolute from the start
+- [x] **Institute scraper updates** - Updated to pass base_url to extract_links(), ensuring all URLs are absolute from the start
+- [x] **AEA scraper updates** - Updated to pass BASE_URL to extract_links() for consistency
+- [x] **Improved navigation filtering** - Enhanced filtering logic to better exclude navigation/helper pages (like `/jobs`, `/careers`, `/benefits`) from job listings
+- [x] **URL validation in extract_links()** - Added validation to skip non-URL protocols (mailto, javascript, tel, anchor links) and invalid URLs
+- **Impact**: This fix ensures all URLs extracted from HTML are resolved to absolute URLs immediately, eliminating the need for later resolution. When re-scraped, this should eliminate the 113 remaining relative URL errors.
+
 **Recent Updates (2026-01-03)**:
 - [x] **Enhanced URL verification script** - Updated `scripts/scraper/check_config/verify_urls.py` to:
   - Verify URLs in accessible section (not just non_accessible)

@@ -4,6 +4,7 @@ Supports both class-based and pattern-based extraction.
 """
 
 from typing import Optional, Dict, List, Any
+from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 from .text_extractor import extract_text, clean_text, remove_script_and_style, extract_main_content
 from .date_parser import extract_deadline
@@ -66,20 +67,42 @@ class HTMLParser:
             elements = self.soup.find_all(class_=class_name)
         return [extract_text(element) for element in elements]
     
-    def extract_links(self, keywords: Optional[List[str]] = None) -> List[Dict[str, str]]:
+    def extract_links(self, keywords: Optional[List[str]] = None, base_url: Optional[str] = None) -> List[Dict[str, str]]:
         """
         Extract links from HTML, optionally filtering by keywords.
+        URLs are resolved to absolute URLs immediately if base_url is provided.
         
         Args:
             keywords: Optional list of keywords to filter links
+            base_url: Optional base URL for resolving relative URLs to absolute URLs
         
         Returns:
-            List of dicts with 'url' and 'text' keys
+            List of dicts with 'url' (absolute) and 'text' keys
         """
         links = []
         for link in self.soup.find_all("a", href=True):
             href = link.get("href", "")
             text = extract_text(link)
+            
+            # Skip non-URL protocols (mailto, javascript, tel, anchor links)
+            if href.startswith(('mailto:', 'javascript:', 'tel:', '#')):
+                continue
+            
+            # Resolve relative URLs to absolute URLs immediately
+            if base_url and not href.startswith(('http://', 'https://')):
+                try:
+                    href = urljoin(base_url, href)
+                    # Validate the resolved URL
+                    parsed = urlparse(href)
+                    if not parsed.scheme or not parsed.netloc:
+                        # Invalid URL after resolution, skip
+                        continue
+                except Exception:
+                    # URL resolution failed, skip
+                    continue
+            elif not href.startswith(('http://', 'https://')):
+                # No base_url provided and URL is relative, skip
+                continue
             
             if keywords:
                 link_lower = (text + " " + href).lower()

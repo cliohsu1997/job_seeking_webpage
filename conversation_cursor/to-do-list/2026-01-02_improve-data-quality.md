@@ -47,6 +47,10 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
 - [x] **FIXED**: Base URLs are stored in listings as `_base_url` for normalizer to use
 - [x] **FIXED**: Enhanced base URL lookup with partial name matching (exact match first, then partial)
 - [x] **FIXED**: Scrapers now always set source_url (use self.url as fallback if missing)
+- [x] **FIXED (2026-01-03)**: HTMLParser.extract_links() now accepts base_url parameter and resolves relative URLs to absolute URLs immediately
+- [x] **FIXED (2026-01-03)**: All scrapers (university, institute, AEA) updated to pass base_url to extract_links()
+- [x] **FIXED (2026-01-03)**: Improved navigation/helper page filtering to exclude non-job pages (like `/jobs`, `/careers`, `/benefits`)
+- [x] **FIXED (2026-01-03)**: Added URL validation in extract_links() to skip invalid protocols (mailto, javascript, tel, anchor links)
 
 ### 📝 Improve Data Extraction (2,876 missing field instances - 76.2% of issues)
 

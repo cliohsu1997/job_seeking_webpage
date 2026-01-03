@@ -85,9 +85,10 @@ job-seeking-webpage/
 
 ### Scraper Framework (Phase 1 - Complete)
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)
-- **`scripts/scraper/aea_scraper.py`**: AEA JOE scraper (RSS/HTML fallback)
-- **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based, **link-following enabled** - automatically follows links to detail pages to extract full job information). **Phase 2F**: Enhanced requirements and materials extraction, always sets source_url ✅
-- **`scripts/scraper/institute_scraper.py`**: Research institute scraper (**link-following enabled** - automatically follows links to detail pages). **Phase 2F**: Always sets source_url ✅
+- **`scripts/scraper/aea_scraper.py`**: AEA JOE scraper (RSS/HTML fallback). **Phase 2F**: Immediate URL resolution ✅
+- **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based, **link-following enabled** - automatically follows links to detail pages to extract full job information). **Phase 2F**: Enhanced requirements and materials extraction, always sets source_url, immediate URL resolution ✅
+- **`scripts/scraper/institute_scraper.py`**: Research institute scraper (**link-following enabled** - automatically follows links to detail pages). **Phase 2F**: Always sets source_url, immediate URL resolution ✅
+- **`scripts/scraper/parsers/html_parser.py`**: HTML parser with **immediate URL resolution** - extract_links() resolves relative URLs to absolute URLs immediately using base_url parameter ✅
 - **`scripts/scraper/parsers/`**: HTML, RSS, text extractor, date parser
 - **`scripts/scraper/utils/`**: Rate limiter, retry handler, user agent, config loader
 

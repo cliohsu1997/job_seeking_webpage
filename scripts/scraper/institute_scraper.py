@@ -64,7 +64,7 @@ class InstituteScraper(BaseScraper):
         
         # Look for job listings using similar strategy as university scraper
         job_keywords = ["job", "position", "faculty", "posting", "opening", "vacancy", "employment", "researcher"]
-        links = parser.extract_links(keywords=job_keywords)
+        links = parser.extract_links(keywords=job_keywords, base_url=self.url)
         
         # Look for structured containers
         job_containers = soup.find_all(
@@ -80,15 +80,18 @@ class InstituteScraper(BaseScraper):
         else:
             # Fallback: create listings from links
             for link in links[:20]:
-                listing = {
-                    "title": link.get("text", "") or "Research Position",
-                    "source": self.source_name,
-                    "source_url": urljoin(self.url, link.get("url", "")),
-                    "institution": self.institute_name,
-                    "institution_type": "research_institute",
-                    "scraped_date": self._get_current_date(),
-                }
-                listings.append(listing)
+                url = link.get("url", "")
+                # URLs are already absolute from extract_links(), but validate
+                if url and url.startswith(("http://", "https://")):
+                    listing = {
+                        "title": link.get("text", "") or "Research Position",
+                        "source": self.source_name,
+                        "source_url": url,
+                        "institution": self.institute_name,
+                        "institution_type": "research_institute",
+                        "scraped_date": self._get_current_date(),
+                    }
+                    listings.append(listing)
         
         # Deduplicate by URL
         seen_urls = set()
@@ -203,13 +206,21 @@ class InstituteScraper(BaseScraper):
         # Check HTML for multiple job-related links
         parser = HTMLParser(html)
         job_keywords = ["job", "position", "faculty", "posting", "opening", "vacancy", "researcher"]
-        links = parser.extract_links(keywords=job_keywords)
+        links = parser.extract_links(keywords=job_keywords, base_url=self.url)
         
-        # Filter out navigation/header links (common patterns)
+        # Filter out navigation/header/helper links (common patterns)
+        navigation_patterns = [
+            "/home", "/about", "/contact", "/careers", "/jobs",  # Generic navigation
+            "/benefits", "/diversity", "/policy", "/terms", "/privacy",  # Info pages
+            "/facultyrelations", "/working", "/supporting", "/applying",  # HR info pages
+            "/life-at-", "/careers-", "/career-",  # Career info pages
+        ]
         filtered_links = [
             link for link in links
-            if link.get("url") and 
-            not any(skip in link["url"].lower() for skip in ["#", "mailto:", "javascript:", "/home", "/about", "/contact"])
+            if link.get("url") and link["url"].startswith(("http://", "https://")) and
+            not any(pattern in link["url"].lower() for pattern in navigation_patterns) and
+            # Exclude very short paths that are likely navigation (like just "/" or "/jobs")
+            len(urlparse(link["url"]).path) > 3
         ]
         
         # If we have 3+ job-related links, likely a listing page
@@ -236,8 +247,9 @@ class InstituteScraper(BaseScraper):
                 detailed_listings.append(listing)  # Keep original
                 continue
             
-            # Resolve relative URLs
+            # URLs should already be absolute from extraction, but validate
             if not detail_url.startswith(("http://", "https://")):
+                # If somehow still relative, try to resolve (shouldn't happen with new code)
                 detail_url = urljoin(self.url, detail_url)
             
             # Validate URL
@@ -246,7 +258,7 @@ class InstituteScraper(BaseScraper):
                 detailed_listings.append(listing)  # Keep original
                 continue
             
-            # Skip invalid URL patterns
+            # Skip invalid URL patterns (should be filtered out already, but double-check)
             if any(skip in detail_url.lower() for skip in ["mailto:", "javascript:", "#", "tel:"]):
                 detailed_listings.append(listing)  # Keep original
                 continue

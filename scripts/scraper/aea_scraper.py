@@ -83,7 +83,7 @@ class AEAScraper(BaseScraper):
         
         # Method 1: Look for links that might be job listings
         # AEA JOE typically has links to individual job postings
-        links = parser.extract_links(keywords=["job", "position", "listing", "faculty"])
+        links = parser.extract_links(keywords=["job", "position", "listing", "faculty"], base_url=self.BASE_URL)
         
         # Extract job information from the page structure
         # This is a basic implementation - may need refinement based on actual HTML structure
