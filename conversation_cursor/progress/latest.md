@@ -136,6 +136,15 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - Move invalid URLs from accessible to non_accessible (instead of deleting)
   - Added rule: Only URLs containing relevant job information should be in accessible section
   - Enhanced content verification with scoring system (keywords, job links, PDFs)
+- [x] **URL verification run completed** - Ran verification script on all 255 URLs:
+  - **47 URLs moved from accessible to non_accessible** (job content not verified, errors, or forbidden)
+  - **2 URLs moved from non_accessible to accessible** (Sichuan Normal University, Southwest Jiaotong University)
+  - **81 URLs total with issues** requiring replacement or fixes
+  - Created helper script `scripts/scraper/check_config/find_url_replacements.py` to systematically find replacement URLs
+  - **Issue breakdown**: Job portals (1), US universities (30+), Chinese universities (40+), International universities (10+)
+  - **Issue types**: 403 Forbidden, 404 Not Found, Connection errors (DNS failures), No job content verified, HTTP 202 errors, Timeouts
+  - **Next steps**: Search for replacement URLs; when finding PDFs/files on pages, check if business school oriented and download to `data/raw/` if yes
+  - See verification output and `data/config/scraping_sources.json` (non_accessible section) for detailed list
 
 **Reference**: See `data/processed/DIAGNOSTIC_ANALYSIS.md` for detailed problem analysis and recommendations.
 

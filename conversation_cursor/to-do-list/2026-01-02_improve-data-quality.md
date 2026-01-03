@@ -217,6 +217,64 @@ The pipeline is working correctly; the issues stem from incomplete data extracti
 **Recent Accomplishments (2026-01-03)**:
 - [x] **Enhanced URL verification script** - Updated verification to check accessible URLs, verify job content, and move invalid URLs to non_accessible
 - [x] **Added verification rule** - Only URLs containing relevant job information should be in accessible section (documented in `data/config/README.md`)
+- [x] **URL verification completed** - Ran verification on all 255 URLs, identified 81 URLs with issues
+- [x] **Created URL replacement finder script** - `scripts/scraper/check_config/find_url_replacements.py` to systematically test common URL patterns
 
-**Expected Outcome**: Significant increase in validation pass rate, with most listings having complete or near-complete data.
+### 🔗 Fix Inaccessible URLs (81 URLs with issues)
+
+**Status**: ⏸️ IN PROGRESS - Verification completed, replacement URLs need to be found and tested
+
+**Context**: URL verification run identified 81 URLs that are inaccessible, return errors, or don't contain job content:
+- **47 URLs moved from accessible to non_accessible** during verification
+- **34 URLs in non_accessible** still have issues (connection errors, 404, 403, etc.)
+- **Total: 81 URLs requiring fixes**
+
+**Issue Breakdown by Category**:
+1. **Job Portals (1 URL)**:
+   - Chronicle Vitae: 403 Forbidden
+
+2. **US Universities (30+ URLs)**:
+   - Major universities: Princeton, UPenn, Columbia, NYU, UMich, UW-Madison, Penn State, OSU, UVA, Rice, etc.
+   - Issues: No job content verified, HTTP 202 errors, 404 errors, 403 forbidden
+   - See `data/config/scraping_sources.json` non_accessible section for complete list
+
+3. **Chinese Universities (40+ URLs)**:
+   - Many universities: Tsinghua, Nanjing, Shandong, Jilin, Xi'an Jiaotong, etc.
+   - Issues: Connection errors (DNS resolution failures), timeouts, SSL certificate errors
+   - Many `rsc.*.edu.cn` domains cannot be resolved
+
+4. **International Universities (10+ URLs)**:
+   - UK: Cambridge (403), Edinburgh (404)
+   - Australia: Sydney (500), Queensland (connection error), Monash (403), etc.
+   - Germany, France, Netherlands, Singapore: Various 404/403 errors
+
+**Issue Types**:
+- **403 Forbidden**: Chronicle Vitae, Cambridge, Monash, Deakin, etc. (10 URLs)
+- **404 Not Found**: Edinburgh, UTS, Griffith, Wollongong, Curtin, RMIT, etc. (15 URLs)
+- **Connection Errors**: Many Chinese universities (DNS resolution failures) (40+ URLs)
+- **No Job Content Verified**: Many US universities (URLs accessible but no job listings detected) (30+ URLs)
+- **HTTP 202/500 Errors**: UMass Amherst, MSU, UOregon, Sydney, etc. (7 URLs)
+- **Timeouts**: NBER, North China Electric Power University (2 URLs)
+
+**Reference URLs**:
+- **Verification results**: See output from `poetry run python scripts/scraper/check_config/verify_urls.py`
+- **Problematic URLs list**: `data/config/scraping_sources.json` (non_accessible section)
+- **URL verification documentation**: `data/config/URL_VERIFICATION.md`
+
+**Tasks**:
+- [ ] **Search for replacement URLs** - Use web search and common URL patterns to find working alternatives
+- [ ] **Test replacement URLs** - Verify new URLs are accessible and contain job listings
+- [ ] **Download business school PDFs** - **IMPORTANT**: When searching/testing URLs or visiting pages:
+  - Identify any PDF files or downloadable documents on the page
+  - Check if they are business school oriented (job postings, faculty positions, business/economics departments, etc.)
+  - If yes, download to `data/raw/` directory (create subdirectory if needed, e.g., `data/raw/business_school_pdfs/`)
+  - Save with descriptive filename (e.g., `university_name_department_job_posting.pdf`)
+- [ ] **Update scraping_sources.json** - Replace problematic URLs with working alternatives
+- [ ] **Re-run verification** - Verify all new URLs work correctly
+- [ ] **Document changes** - Update URL_VERIFICATION.md with findings and patterns
+
+**Tools Created**:
+- `scripts/scraper/check_config/find_url_replacements.py` - Helper script to test common URL patterns (jobs.*, careers.*, etc.)
+
+**Expected Outcome**: All 81 problematic URLs replaced with working alternatives, increasing accessible URL count and improving data collection coverage.
 

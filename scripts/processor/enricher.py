@@ -88,6 +88,12 @@ class DataEnricher:
         """
         enriched = job_data.copy()
         
+        # Ensure required fields are set (even if empty/default values)
+        if "source" not in enriched:
+            enriched["source"] = "job_portal"  # Default fallback
+        if "source_url" not in enriched:
+            enriched["source_url"] = ""  # Empty string is better than missing field
+        
         # Ensure optional fields have default values (from schema.py)
         from .schema import OPTIONAL_FIELDS_DEFAULTS
         for field, default_value in OPTIONAL_FIELDS_DEFAULTS.items():

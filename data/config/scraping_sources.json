@@ -25,19 +25,6 @@
         ],
         "notes": "Major academic job board - filter by Economics category (ID: 47)"
       },
-      "chronicle_vitae": {
-        "name": "Chronicle Vitae",
-        "url": "https://chroniclevitae.com/job_search?job_search%5Bquery%5D=economics",
-        "scraping_method": "html_parser",
-        "region": "global",
-        "job_nature": "portal",
-        "departments": [
-          "Economics",
-          "Business",
-          "Management"
-        ],
-        "notes": "Academic job board by Chronicle of Higher Education - search for economics positions"
-      },
       "econjobmarket": {
         "name": "EconJobMarket",
         "url": "https://econjobmarket.org/",
@@ -150,12 +137,6 @@
             "name": "Zhejiang University",
             "departments": [
               {
-                "name": "Economics",
-                "url": "https://hr.zju.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "ZJU HR portal - filter by Economics"
-              },
-              {
                 "name": "Management",
                 "url": "https://hr.zju.edu.cn/",
                 "scraping_method": "html_parser",
@@ -164,23 +145,6 @@
             ],
             "location": {
               "city": "Hangzhou",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program in China"
-          },
-          {
-            "name": "Sun Yat-sen University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.sysu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "SYSU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Guangzhou",
               "country": "China"
             },
             "scraping_method": "html_parser",
@@ -204,23 +168,6 @@
             "notes": "Top-ranked economics program in China"
           },
           {
-            "name": "Huazhong University of Science and Technology",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://hr.hust.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "HUST HR portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Wuhan",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program in China"
-          },
-          {
             "name": "Xiamen University",
             "departments": [
               {
@@ -232,23 +179,6 @@
             ],
             "location": {
               "city": "Xiamen",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program in China"
-          },
-          {
-            "name": "Renmin University of China",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://hr.ruc.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "RUC HR portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Beijing",
               "country": "China"
             },
             "scraping_method": "html_parser",
@@ -391,23 +321,6 @@
             "notes": "Economics program in China"
           },
           {
-            "name": "Northeast Normal University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.nenu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "NENU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Changchun",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
             "name": "East China Normal University",
             "departments": [
               {
@@ -544,23 +457,6 @@
             "notes": "Economics program in China"
           },
           {
-            "name": "China Agricultural University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.cau.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "CAU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Beijing",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
             "name": "China University of Political Science and Law",
             "departments": [
               {
@@ -646,23 +542,6 @@
             "notes": "Economics program in China"
           },
           {
-            "name": "Guangdong University of Foreign Studies",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.gdufs.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "GDUFS RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Guangzhou",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
             "name": "Henan University",
             "departments": [
               {
@@ -725,23 +604,6 @@
             ],
             "location": {
               "city": "Zhenjiang",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
-            "name": "Liaoning University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.lnu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "LNU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Shenyang",
               "country": "China"
             },
             "scraping_method": "html_parser",
@@ -1061,6 +923,12 @@
                 "url": "https://rsc.sicnu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "SICNU RSC portal - filter by Economics"
+              },
+              {
+                "name": "Economics",
+                "url": "https://rsc.sicnu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "SICNU RSC portal - filter by Economics"
               }
             ],
             "location": {
@@ -1073,6 +941,12 @@
           {
             "name": "Southwest Jiaotong University",
             "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.swjtu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "SWJTU RSC portal - filter by Economics"
+              },
               {
                 "name": "Economics",
                 "url": "https://rsc.swjtu.edu.cn/",
@@ -1190,24 +1064,6 @@
             "notes": "Top-ranked economics program"
           },
           {
-            "name": "Princeton University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://puwebp.princeton.edu/AcadHire/",
-                "scraping_method": "html_parser",
-                "notes": "Princeton Academic Hiring portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Princeton",
-              "state": "NJ",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program"
-          },
-          {
             "name": "Yale University",
             "departments": [
               {
@@ -1283,12 +1139,6 @@
             "name": "Columbia University",
             "departments": [
               {
-                "name": "Economics",
-                "url": "https://opportunities.columbia.edu/",
-                "scraping_method": "html_parser",
-                "notes": "Columbia opportunities portal - filter by Economics"
-              },
-              {
                 "name": "Management",
                 "url": "https://opportunities.columbia.edu/",
                 "scraping_method": "html_parser",
@@ -1307,12 +1157,6 @@
             "name": "New York University (NYU)",
             "departments": [
               {
-                "name": "Economics",
-                "url": "https://apply.interfolio.com/",
-                "scraping_method": "html_parser",
-                "notes": "NYU uses Interfolio - search for Economics positions"
-              },
-              {
                 "name": "Management",
                 "url": "https://apply.interfolio.com/",
                 "scraping_method": "html_parser",
@@ -1330,12 +1174,6 @@
           {
             "name": "Northwestern University",
             "departments": [
-              {
-                "name": "Economics",
-                "url": "https://www.northwestern.edu/hr/careers/",
-                "scraping_method": "html_parser",
-                "notes": "Northwestern careers - filter by Economics"
-              },
               {
                 "name": "Management",
                 "url": "https://www.northwestern.edu/hr/careers/",
@@ -1403,12 +1241,6 @@
             "name": "Duke University",
             "departments": [
               {
-                "name": "Economics",
-                "url": "https://academicjobsonline.org/ajo/jobs",
-                "scraping_method": "html_parser",
-                "notes": "Duke uses Academic Jobs Online - search for Economics"
-              },
-              {
                 "name": "Management",
                 "url": "https://academicjobsonline.org/ajo/jobs",
                 "scraping_method": "html_parser",
@@ -1460,24 +1292,6 @@
             "location": {
               "city": "Madison",
               "state": "WI",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program"
-          },
-          {
-            "name": "University of California, San Diego (UCSD)",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://apol-recruit.ucsd.edu/",
-                "scraping_method": "html_parser",
-                "notes": "UCSD Academic Personnel - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "San Diego",
-              "state": "CA",
               "country": "United States"
             },
             "scraping_method": "html_parser",
@@ -1574,24 +1388,6 @@
             "notes": "Top-ranked economics program"
           },
           {
-            "name": "University of Illinois at Urbana-Champaign",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://jobs.illinois.edu/",
-                "scraping_method": "html_parser",
-                "notes": "UIUC jobs portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Urbana",
-              "state": "IL",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program"
-          },
-          {
             "name": "University of Virginia",
             "departments": [
               {
@@ -1604,24 +1400,6 @@
             "location": {
               "city": "Charlottesville",
               "state": "VA",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program"
-          },
-          {
-            "name": "University of North Carolina at Chapel Hill",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://unc.peopleadmin.com/",
-                "scraping_method": "html_parser",
-                "notes": "UNC PeopleAdmin portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Chapel Hill",
-              "state": "NC",
               "country": "United States"
             },
             "scraping_method": "html_parser",
@@ -1658,24 +1436,6 @@
             "location": {
               "city": "Houston",
               "state": "TX",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program"
-          },
-          {
-            "name": "Washington University in St. Louis",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://jobs.wustl.edu/",
-                "scraping_method": "html_parser",
-                "notes": "WashU jobs portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "St. Louis",
-              "state": "MO",
               "country": "United States"
             },
             "scraping_method": "html_parser",
@@ -1724,24 +1484,6 @@
             "notes": "Top-ranked economics program"
           },
           {
-            "name": "Carnegie Mellon University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://www.cmu.edu/jobs/",
-                "scraping_method": "html_parser",
-                "notes": "CMU jobs portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Pittsburgh",
-              "state": "PA",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Top-ranked economics program"
-          },
-          {
             "name": "Arizona State University",
             "departments": [
               {
@@ -1753,24 +1495,6 @@
             ],
             "location": {
               "city": "Tempe",
-              "state": "AZ",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program"
-          },
-          {
-            "name": "University of Arizona",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://uacareers.com/",
-                "scraping_method": "html_parser",
-                "notes": "UA careers portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Tucson",
               "state": "AZ",
               "country": "United States"
             },
@@ -1879,24 +1603,6 @@
             ],
             "location": {
               "city": "Tallahassee",
-              "state": "FL",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program"
-          },
-          {
-            "name": "University of Florida",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://explore.jobs.ufl.edu/",
-                "scraping_method": "html_parser",
-                "notes": "UF jobs portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Gainesville",
               "state": "FL",
               "country": "United States"
             },
@@ -2174,24 +1880,6 @@
             "notes": "Economics program"
           },
           {
-            "name": "State University of New York (SUNY) - Stony Brook",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://www.stonybrook.edu/commcms/oea/",
-                "scraping_method": "html_parser",
-                "notes": "Stony Brook OEA portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Stony Brook",
-              "state": "NY",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program"
-          },
-          {
             "name": "State University of New York (SUNY) - Buffalo",
             "departments": [
               {
@@ -2210,24 +1898,6 @@
             "notes": "Economics program"
           },
           {
-            "name": "University of Oregon",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://careers.uoregon.edu/cw/en-us/listing/",
-                "scraping_method": "html_parser",
-                "notes": "UO careers portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Eugene",
-              "state": "OR",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program"
-          },
-          {
             "name": "Oregon State University",
             "departments": [
               {
@@ -2240,24 +1910,6 @@
             "location": {
               "city": "Corvallis",
               "state": "OR",
-              "country": "United States"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program"
-          },
-          {
-            "name": "Temple University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://temple.taleo.net/careersection/2/jobsearch.ftl",
-                "scraping_method": "html_parser",
-                "notes": "Temple Taleo portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Philadelphia",
-              "state": "PA",
               "country": "United States"
             },
             "scraping_method": "html_parser",
@@ -2374,20 +2026,6 @@
         ],
         "research_institutes": [
           {
-            "name": "National Bureau of Economic Research (NBER)",
-            "url": "https://www.nber.org/jobs",
-            "scraping_method": "html_parser",
-            "departments": [
-              "Economics"
-            ],
-            "location": {
-              "city": "Cambridge",
-              "state": "MA",
-              "country": "United States"
-            },
-            "notes": "Leading economics research organization"
-          },
-          {
             "name": "Federal Reserve Bank of New York",
             "url": "https://www.newyorkfed.org/careers",
             "scraping_method": "html_parser",
@@ -2411,20 +2049,6 @@
             "location": {
               "city": "San Francisco",
               "state": "CA",
-              "country": "United States"
-            },
-            "notes": "Federal Reserve Bank - research positions"
-          },
-          {
-            "name": "Federal Reserve Bank of Chicago",
-            "url": "https://www.chicagofed.org/careers",
-            "scraping_method": "html_parser",
-            "departments": [
-              "Economics"
-            ],
-            "location": {
-              "city": "Chicago",
-              "state": "IL",
               "country": "United States"
             },
             "notes": "Federal Reserve Bank - research positions"
@@ -2496,23 +2120,6 @@
                 "notes": "Top-ranked economics program in UK"
               },
               {
-                "name": "University College London (UCL)",
-                "departments": [
-                  {
-                    "name": "Economics",
-                    "url": "https://atsv7.wcn.co.uk/search_engine/jobs.cgi",
-                    "scraping_method": "html_parser",
-                    "notes": "UCL jobs portal - filter by Economics"
-                  }
-                ],
-                "location": {
-                  "city": "London",
-                  "country": "United Kingdom"
-                },
-                "scraping_method": "html_parser",
-                "notes": "Top-ranked economics program in UK"
-              },
-              {
                 "name": "University of Warwick",
                 "departments": [
                   {
@@ -2530,21 +2137,7 @@
                 "notes": "Top-ranked economics program in UK"
               }
             ],
-            "research_institutes": [
-              {
-                "name": "Centre for Economic Policy Research (CEPR)",
-                "url": "https://cepr.org/jobs",
-                "scraping_method": "html_parser",
-                "departments": [
-                  "Economics"
-                ],
-                "location": {
-                  "city": "London",
-                  "country": "United Kingdom"
-                },
-                "notes": "Leading European economics research network"
-              }
-            ]
+            "research_institutes": []
           },
           "canada": {
             "universities": [
@@ -2591,24 +2184,6 @@
                 "notes": "Top-ranked economics program in Canada"
               },
               {
-                "name": "McGill University",
-                "departments": [
-                  {
-                    "name": "Economics",
-                    "url": "https://www.mcgill.ca/hr/careers",
-                    "scraping_method": "html_parser",
-                    "notes": "McGill careers portal - filter by Economics"
-                  }
-                ],
-                "location": {
-                  "city": "Montreal",
-                  "province": "QC",
-                  "country": "Canada"
-                },
-                "scraping_method": "html_parser",
-                "notes": "Top-ranked economics program in Canada"
-              },
-              {
                 "name": "Queen's University",
                 "departments": [
                   {
@@ -2634,12 +2209,6 @@
                 "name": "University of Melbourne",
                 "departments": [
                   {
-                    "name": "Economics",
-                    "url": "https://jobs.unimelb.edu.au/",
-                    "scraping_method": "html_parser",
-                    "notes": "University of Melbourne jobs portal - filter by Economics"
-                  },
-                  {
                     "name": "Management",
                     "url": "https://jobs.unimelb.edu.au/",
                     "scraping_method": "html_parser",
@@ -2649,24 +2218,6 @@
                 "location": {
                   "city": "Melbourne",
                   "state": "VIC",
-                  "country": "Australia"
-                },
-                "scraping_method": "html_parser",
-                "notes": "Top-ranked economics program in Australia"
-              },
-              {
-                "name": "Australian National University",
-                "departments": [
-                  {
-                    "name": "Economics",
-                    "url": "https://jobs.anu.edu.au/cw/en/listing/",
-                    "scraping_method": "html_parser",
-                    "notes": "ANU jobs portal - filter by Economics"
-                  }
-                ],
-                "location": {
-                  "city": "Canberra",
-                  "state": "ACT",
                   "country": "Australia"
                 },
                 "scraping_method": "html_parser",
@@ -2709,24 +2260,6 @@
                 "notes": "Economics program in Australia"
               },
               {
-                "name": "University of Adelaide",
-                "departments": [
-                  {
-                    "name": "Economics",
-                    "url": "https://careers.adelaide.edu.au/",
-                    "scraping_method": "html_parser",
-                    "notes": "Adelaide careers portal - filter by Economics"
-                  }
-                ],
-                "location": {
-                  "city": "Adelaide",
-                  "state": "SA",
-                  "country": "Australia"
-                },
-                "scraping_method": "html_parser",
-                "notes": "Economics program in Australia"
-              },
-              {
                 "name": "Queensland University of Technology",
                 "departments": [
                   {
@@ -2739,24 +2272,6 @@
                 "location": {
                   "city": "Brisbane",
                   "state": "QLD",
-                  "country": "Australia"
-                },
-                "scraping_method": "html_parser",
-                "notes": "Economics program in Australia"
-              },
-              {
-                "name": "La Trobe University",
-                "departments": [
-                  {
-                    "name": "Economics",
-                    "url": "https://www.latrobe.edu.au/jobs",
-                    "scraping_method": "html_parser",
-                    "notes": "La Trobe jobs portal - filter by Economics"
-                  }
-                ],
-                "location": {
-                  "city": "Melbourne",
-                  "state": "VIC",
                   "country": "Australia"
                 },
                 "scraping_method": "html_parser",
@@ -2797,24 +2312,6 @@
                 },
                 "scraping_method": "html_parser",
                 "notes": "Economics program in Australia"
-              },
-              {
-                "name": "Swinburne University of Technology",
-                "departments": [
-                  {
-                    "name": "Economics",
-                    "url": "https://www.swinburne.edu.au/about/jobs/",
-                    "scraping_method": "html_parser",
-                    "notes": "Swinburne jobs portal - filter by Economics"
-                  }
-                ],
-                "location": {
-                  "city": "Melbourne",
-                  "state": "VIC",
-                  "country": "Australia"
-                },
-                "scraping_method": "html_parser",
-                "notes": "Economics program in Australia"
               }
             ]
           },
@@ -2836,25 +2333,7 @@
             ]
           },
           "netherlands": {
-            "universities": [
-              {
-                "name": "University of Amsterdam",
-                "departments": [
-                  {
-                    "name": "Economics",
-                    "url": "https://www.uva.nl/en/about-the-uva/working-at-the-uva/vacancies/vacancies.html",
-                    "scraping_method": "html_parser",
-                    "notes": "UvA vacancies - filter by Economics"
-                  }
-                ],
-                "location": {
-                  "city": "Amsterdam",
-                  "country": "Netherlands"
-                },
-                "scraping_method": "html_parser",
-                "notes": "Top-ranked economics program in Netherlands"
-              }
-            ]
+            "universities": []
           },
           "singapore": {
             "universities": [
@@ -2903,7 +2382,21 @@
     }
   },
   "non_accessible": {
-    "job_portals": {},
+    "job_portals": {
+      "chronicle_vitae": {
+        "name": "Chronicle Vitae",
+        "url": "https://chroniclevitae.com/job_search?job_search%5Bquery%5D=economics",
+        "scraping_method": "html_parser",
+        "region": "global",
+        "job_nature": "portal",
+        "departments": [
+          "Economics",
+          "Business",
+          "Management"
+        ],
+        "notes": "Academic job board by Chronicle of Higher Education - search for economics positions"
+      }
+    },
     "regions": {
       "mainland_china": {
         "ranking_source": "QS World University Rankings - Economics & Econometrics",
@@ -3314,6 +2807,12 @@
                 "url": "https://rsc.hrbeu.edu.cn/",
                 "scraping_method": "html_parser",
                 "notes": "HEU RSC portal - filter by Economics"
+              },
+              {
+                "name": "Economics",
+                "url": "https://rsc.hrbeu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "HEU RSC portal - filter by Economics"
               }
             ],
             "location": {
@@ -3613,23 +3112,6 @@
             "notes": "Economics program in China"
           },
           {
-            "name": "Sichuan Normal University",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.sicnu.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "SICNU RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Chengdu",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
             "name": "South China University of Technology",
             "departments": [
               {
@@ -3658,23 +3140,6 @@
             ],
             "location": {
               "city": "Chengdu",
-              "country": "China"
-            },
-            "scraping_method": "html_parser",
-            "notes": "Economics program in China"
-          },
-          {
-            "name": "Taiyuan University of Technology",
-            "departments": [
-              {
-                "name": "Economics",
-                "url": "https://rsc.tyut.edu.cn/",
-                "scraping_method": "html_parser",
-                "notes": "TYUT RSC portal - filter by Economics"
-              }
-            ],
-            "location": {
-              "city": "Taiyuan",
               "country": "China"
             },
             "scraping_method": "html_parser",
@@ -3726,6 +3191,148 @@
             ],
             "location": {
               "city": "Zhengzhou",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "Zhejiang University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://hr.zju.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "ZJU HR portal - filter by Economics"
+              },
+              {
+                "name": "Management",
+                "url": "https://hr.zju.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "ZJU HR portal - filter by Management"
+              }
+            ],
+            "location": {
+              "city": "Hangzhou",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program in China"
+          },
+          {
+            "name": "Sun Yat-sen University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.sysu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "SYSU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Guangzhou",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program in China"
+          },
+          {
+            "name": "Wuhan University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsb.whu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "WHU RSB portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Wuhan",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program in China"
+          },
+          {
+            "name": "Huazhong University of Science and Technology",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://hr.hust.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "HUST HR portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Wuhan",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program in China"
+          },
+          {
+            "name": "Southwest University of Finance and Economics",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.swufe.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "SWUFE RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Chengdu",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "Guangxi University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.gxu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "GXU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Nanning",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "China University of Political Science and Law",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.cupl.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "CUPL RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Beijing",
+              "country": "China"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program in China"
+          },
+          {
+            "name": "Fuzhou University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://rsc.fzu.edu.cn/",
+                "scraping_method": "html_parser",
+                "notes": "FZU RSC portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Fuzhou",
               "country": "China"
             },
             "scraping_method": "html_parser",
@@ -3796,6 +3403,354 @@
             },
             "scraping_method": "html_parser",
             "notes": "Economics program"
+          },
+          {
+            "name": "Princeton University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://puwebp.princeton.edu/AcadHire/",
+                "scraping_method": "html_parser",
+                "notes": "Princeton Academic Hiring portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Princeton",
+              "state": "NJ",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "University of Pennsylvania",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://wd1.myworkday.com/upenn/d/inst/1$9925/9925$315.htm",
+                "scraping_method": "html_parser",
+                "notes": "UPenn Workday portal - filter by Economics"
+              },
+              {
+                "name": "Management",
+                "url": "https://wd1.myworkday.com/upenn/d/inst/1$9925/9925$315.htm",
+                "scraping_method": "html_parser",
+                "notes": "UPenn Workday portal - filter by Wharton School"
+              }
+            ],
+            "location": {
+              "city": "Philadelphia",
+              "state": "PA",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "Columbia University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://opportunities.columbia.edu/",
+                "scraping_method": "html_parser",
+                "notes": "Columbia opportunities portal - filter by Economics"
+              },
+              {
+                "name": "Management",
+                "url": "https://opportunities.columbia.edu/",
+                "scraping_method": "html_parser",
+                "notes": "Columbia opportunities portal - filter by Business School"
+              }
+            ],
+            "location": {
+              "city": "New York",
+              "state": "NY",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "New York University (NYU)",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://apply.interfolio.com/",
+                "scraping_method": "html_parser",
+                "notes": "NYU uses Interfolio - search for Economics positions"
+              },
+              {
+                "name": "Management",
+                "url": "https://apply.interfolio.com/",
+                "scraping_method": "html_parser",
+                "notes": "NYU uses Interfolio - search for Stern School positions"
+              }
+            ],
+            "location": {
+              "city": "New York",
+              "state": "NY",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "University of Michigan",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://careers.umich.edu/",
+                "scraping_method": "html_parser",
+                "notes": "University of Michigan careers - filter by Economics"
+              },
+              {
+                "name": "Management",
+                "url": "https://careers.umich.edu/",
+                "scraping_method": "html_parser",
+                "notes": "University of Michigan careers - filter by Ross School"
+              }
+            ],
+            "location": {
+              "city": "Ann Arbor",
+              "state": "MI",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "University of Wisconsin-Madison",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://jobs.wisc.edu/",
+                "scraping_method": "html_parser",
+                "notes": "UW-Madison jobs portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Madison",
+              "state": "WI",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "Pennsylvania State University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://psu.wd1.myworkdayjobs.com/PSU_Academic",
+                "scraping_method": "html_parser",
+                "notes": "Penn State Workday portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "University Park",
+              "state": "PA",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "Ohio State University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://osujoblinks.com/",
+                "scraping_method": "html_parser",
+                "notes": "Ohio State job links - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Columbus",
+              "state": "OH",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "University of Virginia",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
+                "scraping_method": "html_parser",
+                "notes": "UVA Workday portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Charlottesville",
+              "state": "VA",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "Vanderbilt University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://ecsr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience",
+                "scraping_method": "html_parser",
+                "notes": "Vanderbilt Oracle Cloud - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Nashville",
+              "state": "TN",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "Rice University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://jobs.rice.edu/",
+                "scraping_method": "html_parser",
+                "notes": "Rice jobs portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Houston",
+              "state": "TX",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Top-ranked economics program"
+          },
+          {
+            "name": "University of Arizona",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://uacareers.com/",
+                "scraping_method": "html_parser",
+                "notes": "UA careers portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Tucson",
+              "state": "AZ",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program"
+          },
+          {
+            "name": "Louisiana State University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://lsu.wd1.myworkdayjobs.com/LSU",
+                "scraping_method": "html_parser",
+                "notes": "LSU Workday portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Baton Rouge",
+              "state": "LA",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program"
+          },
+          {
+            "name": "University of Massachusetts Amherst",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://careers.umass.edu/",
+                "scraping_method": "html_parser",
+                "notes": "UMass careers portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Amherst",
+              "state": "MA",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program"
+          },
+          {
+            "name": "Michigan State University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://careers.msu.edu/",
+                "scraping_method": "html_parser",
+                "notes": "MSU careers portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "East Lansing",
+              "state": "MI",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program"
+          },
+          {
+            "name": "University of Oregon",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://careers.uoregon.edu/cw/en-us/listing/",
+                "scraping_method": "html_parser",
+                "notes": "UO careers portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Eugene",
+              "state": "OR",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program"
+          },
+          {
+            "name": "Temple University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://temple.taleo.net/careersection/2/jobsearch.ftl",
+                "scraping_method": "html_parser",
+                "notes": "Temple Taleo portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Philadelphia",
+              "state": "PA",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program"
+          },
+          {
+            "name": "Washington State University",
+            "departments": [
+              {
+                "name": "Economics",
+                "url": "https://wsu.wd5.myworkdayjobs.com/WSU_Jobs",
+                "scraping_method": "html_parser",
+                "notes": "WSU Workday portal - filter by Economics"
+              }
+            ],
+            "location": {
+              "city": "Pullman",
+              "state": "WA",
+              "country": "United States"
+            },
+            "scraping_method": "html_parser",
+            "notes": "Economics program"
           }
         ],
         "research_institutes": [
@@ -3812,6 +3767,48 @@
               "country": "United States"
             },
             "notes": "Leading economics research institute"
+          },
+          {
+            "name": "National Bureau of Economic Research (NBER)",
+            "url": "https://www.nber.org/jobs",
+            "scraping_method": "html_parser",
+            "departments": [
+              "Economics"
+            ],
+            "location": {
+              "city": "Cambridge",
+              "state": "MA",
+              "country": "United States"
+            },
+            "notes": "Leading economics research organization"
+          },
+          {
+            "name": "Federal Reserve Bank of San Francisco",
+            "url": "https://www.frbsf.org/careers/",
+            "scraping_method": "html_parser",
+            "departments": [
+              "Economics"
+            ],
+            "location": {
+              "city": "San Francisco",
+              "state": "CA",
+              "country": "United States"
+            },
+            "notes": "Federal Reserve Bank - research positions"
+          },
+          {
+            "name": "Brookings Institution",
+            "url": "https://www.brookings.edu/careers/",
+            "scraping_method": "html_parser",
+            "departments": [
+              "Economics"
+            ],
+            "location": {
+              "city": "Washington",
+              "state": "DC",
+              "country": "United States"
+            },
+            "notes": "Leading think tank - economics research"
           }
         ]
       },
@@ -3858,6 +3855,55 @@
                 },
                 "scraping_method": "html_parser",
                 "notes": "Top-ranked economics program in UK"
+              },
+              {
+                "name": "University College London (UCL)",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://atsv7.wcn.co.uk/search_engine/jobs.cgi",
+                    "scraping_method": "html_parser",
+                    "notes": "UCL jobs portal - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "London",
+                  "country": "United Kingdom"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Top-ranked economics program in UK"
+              },
+              {
+                "name": "University of Warwick",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://atsv7.wcn.co.uk/search_engine/jobs.cgi",
+                    "scraping_method": "html_parser",
+                    "notes": "Warwick jobs portal - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "Coventry",
+                  "country": "United Kingdom"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Top-ranked economics program in UK"
+              }
+            ],
+            "research_institutes": [
+              {
+                "name": "Centre for Economic Policy Research (CEPR)",
+                "url": "https://cepr.org/jobs",
+                "scraping_method": "html_parser",
+                "departments": [
+                  "Economics"
+                ],
+                "location": {
+                  "city": "London",
+                  "country": "United Kingdom"
+                },
+                "notes": "Leading European economics research network"
               }
             ]
           },
@@ -4078,6 +4124,102 @@
                 },
                 "scraping_method": "html_parser",
                 "notes": "Economics program in Australia"
+              },
+              {
+                "name": "University of Melbourne",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://jobs.unimelb.edu.au/",
+                    "scraping_method": "html_parser",
+                    "notes": "University of Melbourne jobs portal - filter by Economics"
+                  },
+                  {
+                    "name": "Management",
+                    "url": "https://jobs.unimelb.edu.au/",
+                    "scraping_method": "html_parser",
+                    "notes": "University of Melbourne jobs portal - filter by Management"
+                  }
+                ],
+                "location": {
+                  "city": "Melbourne",
+                  "state": "VIC",
+                  "country": "Australia"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Top-ranked economics program in Australia"
+              },
+              {
+                "name": "Australian National University",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://jobs.anu.edu.au/cw/en/listing/",
+                    "scraping_method": "html_parser",
+                    "notes": "ANU jobs portal - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "Canberra",
+                  "state": "ACT",
+                  "country": "Australia"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Top-ranked economics program in Australia"
+              },
+              {
+                "name": "University of Western Australia",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://external.jobs.uwa.edu.au/",
+                    "scraping_method": "html_parser",
+                    "notes": "UWA external jobs portal - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "Perth",
+                  "state": "WA",
+                  "country": "Australia"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Economics program in Australia"
+              },
+              {
+                "name": "University of Adelaide",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://careers.adelaide.edu.au/",
+                    "scraping_method": "html_parser",
+                    "notes": "Adelaide careers portal - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "Adelaide",
+                  "state": "SA",
+                  "country": "Australia"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Economics program in Australia"
+              },
+              {
+                "name": "La Trobe University",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://www.latrobe.edu.au/jobs",
+                    "scraping_method": "html_parser",
+                    "notes": "La Trobe jobs portal - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "Melbourne",
+                  "state": "VIC",
+                  "country": "Australia"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Economics program in Australia"
               }
             ]
           },
@@ -4158,6 +4300,23 @@
                 },
                 "scraping_method": "html_parser",
                 "notes": "Top-ranked economics program in Netherlands"
+              },
+              {
+                "name": "University of Amsterdam",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://www.uva.nl/en/about-the-uva/working-at-the-uva/vacancies/vacancies.html",
+                    "scraping_method": "html_parser",
+                    "notes": "UvA vacancies - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "Amsterdam",
+                  "country": "Netherlands"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Top-ranked economics program in Netherlands"
               }
             ]
           },
@@ -4179,6 +4338,28 @@
                 },
                 "scraping_method": "html_parser",
                 "notes": "Top-ranked economics program in Singapore"
+              }
+            ]
+          },
+          "canada": {
+            "universities": [
+              {
+                "name": "McGill University",
+                "departments": [
+                  {
+                    "name": "Economics",
+                    "url": "https://www.mcgill.ca/hr/careers",
+                    "scraping_method": "html_parser",
+                    "notes": "McGill careers portal - filter by Economics"
+                  }
+                ],
+                "location": {
+                  "city": "Montreal",
+                  "province": "QC",
+                  "country": "Canada"
+                },
+                "scraping_method": "html_parser",
+                "notes": "Top-ranked economics program in Canada"
               }
             ]
           }

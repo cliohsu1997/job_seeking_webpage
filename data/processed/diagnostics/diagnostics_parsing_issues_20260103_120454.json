@@ -1,0 +1,61 @@
+{
+  "category": "parsing_issues",
+  "total": 7,
+  "unique_sources": [
+    "university"
+  ],
+  "error_type_counts": {
+    "READ_ERROR": 7
+  },
+  "issues": [
+    {
+      "source": "university",
+      "file_path": "data\\raw\\universities\\australia_australian_national_university_economics.html",
+      "error": "Could not read file content",
+      "error_type": "READ_ERROR",
+      "timestamp": "2026-01-03T12:04:53.097713"
+    },
+    {
+      "source": "university",
+      "file_path": "data\\raw\\universities\\australia_university_of_adelaide_economics.html",
+      "error": "Could not read file content",
+      "error_type": "READ_ERROR",
+      "timestamp": "2026-01-03T12:04:53.180798"
+    },
+    {
+      "source": "university",
+      "file_path": "data\\raw\\universities\\australia_university_of_melbourne_management.html",
+      "error": "Could not read file content",
+      "error_type": "READ_ERROR",
+      "timestamp": "2026-01-03T12:04:53.183591"
+    },
+    {
+      "source": "university",
+      "file_path": "data\\raw\\universities\\australia_university_of_western_australia_economics.html",
+      "error": "Could not read file content",
+      "error_type": "READ_ERROR",
+      "timestamp": "2026-01-03T12:04:53.205988"
+    },
+    {
+      "source": "university",
+      "file_path": "data\\raw\\universities\\us_michigan_state_university_economics.html",
+      "error": "Could not read file content",
+      "error_type": "READ_ERROR",
+      "timestamp": "2026-01-03T12:04:54.193497"
+    },
+    {
+      "source": "university",
+      "file_path": "data\\raw\\universities\\us_university_of_massachusetts_amherst_economics.html",
+      "error": "Could not read file content",
+      "error_type": "READ_ERROR",
+      "timestamp": "2026-01-03T12:04:54.429026"
+    },
+    {
+      "source": "university",
+      "file_path": "data\\raw\\universities\\us_university_of_oregon_economics.html",
+      "error": "Could not read file content",
+      "error_type": "READ_ERROR",
+      "timestamp": "2026-01-03T12:04:54.515297"
+    }
+  ]
+}

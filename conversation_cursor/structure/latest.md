@@ -12,16 +12,20 @@ job-seeking-webpage/
 │   ├── raw/                        # Raw scraped HTML/XML (Phase 1 output)
 │   │   ├── aea/                    # AEA JOE scraped files
 │   │   ├── universities/           # University scraped files
-│   │   └── institutes/             # Research institute scraped files
+│   │   ├── institutes/             # Research institute scraped files
+│   │   ├── pdfs/                   # PDF files (job postings, business school documents)
+│   │   └── documents/              # Other document formats (Word, Excel, text files)
 │   ├── processed/                  # Processed data (Phase 2 output)
 │   │   ├── jobs.json               # Current listings
 │   │   ├── jobs.csv                # Current listings (CSV)
 │   │   ├── archive/                # Historical snapshots
 │   │   └── diagnostics/            # Diagnostic reports
 │   └── config/
-│       ├── scraping_sources.json   # Scraping sources (176 accessible URLs)
+│       ├── scraping_sources.json   # Scraping sources (176 accessible URLs, 81 URLs with issues documented in non_accessible)
 │       ├── scraping_rules.json     # Scraping patterns
-│       └── processing_rules.json   # Processing rules (job types, specializations, regions)
+│       ├── processing_rules.json   # Processing rules (job types, specializations, regions)
+│       ├── URL_VERIFICATION.md     # URL verification process documentation
+│       └── URL_VERIFICATION_RESULTS.md  # Detailed verification results (81 problematic URLs documented)
 │
 ├── scripts/
 │   ├── scraper/                    # Phase 1 - COMPLETE
@@ -30,7 +34,10 @@ job-seeking-webpage/
 │   │   ├── university_scraper.py   # University scraper
 │   │   ├── institute_scraper.py    # Institute scraper
 │   │   ├── parsers/                # HTML, RSS, text, date parsers
-│   │   └── utils/                  # Rate limiter, retry handler, user agent
+│   │   ├── utils/                  # Rate limiter, retry handler, user agent
+│   │   └── check_config/           # Configuration verification tools
+│   │       ├── verify_urls.py      # URL verification script (checks accessible/non_accessible, verifies job content)
+│   │       └── find_url_replacements.py  # Helper script to find replacement URLs by testing common patterns
 │   ├── processor/                  # Phase 2 - ✅ COMPLETE
 │   │   ├── pipeline.py            # Main pipeline (✅ Phase 2E - full integration with archive retention)
 │   │   ├── parser_manager.py       # Route to parsers (✅ Phase 2A)
@@ -70,10 +77,12 @@ job-seeking-webpage/
 ## Key Files & Modules
 
 ### Configuration
-- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, Chronicle Vitae, EconJobMarket, EJMR, AEA Scramble), universities, research institutes. **Rule**: Only URLs containing relevant job information should be in accessible section.
+- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, EconJobMarket, EJMR, AEA Scramble), universities, research institutes. **Rule**: Only URLs containing relevant job information should be in accessible section. **Status**: 81 URLs currently have issues (47 moved to non_accessible, 34 in non_accessible with issues) - see verification results.
 - **`data/config/scraping_rules.json`**: Scraping patterns (deadlines, keywords, date formats)
 - **`data/config/processing_rules.json`**: Processing rules (job type keywords, specialization keywords, region mapping, materials parsing)
 - **`scripts/scraper/check_config/verify_urls.py`**: URL verification script that checks accessible and non_accessible URLs, verifies job content (keywords, links, PDFs), and moves invalid URLs to non_accessible section
+- **`scripts/scraper/check_config/find_url_replacements.py`**: Helper script to find replacement URLs by testing common URL patterns (jobs.*, careers.*, etc.) for problematic universities
+- **`data/config/URL_VERIFICATION.md`**: Documentation for URL verification process and common patterns
 
 ### Scraper Framework (Phase 1 - Complete)
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)

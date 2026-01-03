@@ -173,7 +173,7 @@ class ParserManager:
     
     def _read_file_content(self, file_path: Path) -> Optional[str]:
         """
-        Read file content from disk.
+        Read file content from disk with multiple encoding attempts.
         
         Args:
             file_path: Path to the file
@@ -181,12 +181,39 @@ class ParserManager:
         Returns:
             File content as string or None if failed
         """
+        # Try multiple encodings in order of likelihood
+        encodings = ["utf-8", "latin-1", "cp1252", "iso-8859-1", "gb2312", "gbk", "utf-16"]
+        
+        for encoding in encodings:
+            try:
+                with open(file_path, "r", encoding=encoding, errors="replace") as f:
+                    content = f.read()
+                    # Basic validation: check if we got meaningful content
+                    if len(content.strip()) > 0:
+                        return content
+            except (UnicodeDecodeError, LookupError):
+                # Try next encoding
+                continue
+            except Exception as e:
+                # Other errors (file not found, permission, etc.)
+                logger.error(f"Failed to read file {file_path} with encoding {encoding}: {e}")
+                # Try next encoding for encoding-related errors
+                if "encoding" in str(e).lower() or "decode" in str(e).lower():
+                    continue
+                # For other errors, return None
+                return None
+        
+        # If all encodings failed, try with errors="ignore" as last resort
         try:
             with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-                return f.read()
+                content = f.read()
+                if len(content.strip()) > 0:
+                    logger.warning(f"Read file {file_path} with utf-8 and errors='ignore' (some data may be lost)")
+                    return content
         except Exception as e:
-            logger.error(f"Failed to read file {file_path}: {e}")
-            return None
+            logger.error(f"Failed to read file {file_path} after all encoding attempts: {e}")
+        
+        return None
     
     def _is_xml_feed(self, content: str) -> bool:
         """
@@ -229,7 +256,7 @@ class ParserManager:
                     normalized = {
                         "title": listing.get("title", ""),
                         "source": "aea",
-                        "source_url": listing.get("url", ""),
+                        "source_url": listing.get("url", "") or "",  # Ensure it's always a string
                         "description": listing.get("description", ""),
                         "published_date": listing.get("published_date", ""),
                         "scraped_date": datetime.now().strftime("%Y-%m-%d"),
@@ -390,11 +417,34 @@ class ParserManager:
                     )
                 return []
             
-            # Add source file information to each listing
+            # Add source file information to each listing and ensure required fields
             for listing in listings:
                 listing["source_file"] = str(file_path.relative_to(self.raw_data_dir))
                 if "scraped_date" not in listing:
                     listing["scraped_date"] = datetime.now().strftime("%Y-%m-%d")
+                
+                # Ensure source field is set (map scrapers' source_name to schema values)
+                if "source" not in listing or not listing.get("source"):
+                    # Map source_type to schema-compatible source values
+                    source_mapping = {
+                        "aea": "aea",
+                        "university": "university_website",
+                        "institute": "institute_website"
+                    }
+                    listing["source"] = source_mapping.get(source_type, "job_portal")
+                else:
+                    # Fix source name mappings to match schema
+                    source_name_mapping = {
+                        "research_institute": "institute_website",
+                        "aea": "aea",
+                        "university_website": "university_website"
+                    }
+                    current_source = listing.get("source", "")
+                    listing["source"] = source_name_mapping.get(current_source, current_source)
+                
+                # Ensure source_url field is set (even if empty string)
+                if "source_url" not in listing:
+                    listing["source_url"] = ""
             
             logger.debug(f"Extracted {len(listings)} listings from {filename}")
             return listings
