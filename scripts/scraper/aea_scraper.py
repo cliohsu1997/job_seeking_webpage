@@ -77,79 +77,219 @@ class AEAScraper(BaseScraper):
         """
         parser = HTMLParser(html)
         listings = []
-        
-        # Try to find job listings - AEA JOE structure may vary
-        # Look for common patterns: links to job details, listing containers, etc.
-        
-        # Method 1: Look for links that might be job listings
-        # AEA JOE typically has links to individual job postings
-        links = parser.extract_links(keywords=["job", "position", "listing", "faculty"], base_url=self.BASE_URL)
-        
-        # Extract job information from the page structure
-        # This is a basic implementation - may need refinement based on actual HTML structure
         soup = parser.get_soup()
         
-        # Try to find job listing containers (this will need to be adjusted based on actual structure)
-        job_containers = soup.find_all(["div", "article", "li"], class_=re.compile("job|listing|position", re.I))
+        # AEA JOE structure: listings are grouped by institution
+        # <div class="listing-institution-group-item">
+        #   <h5 class="group-header-title">Institution Name</h5>
+        #   <h6 class="group-sub-header-title">Department/Position Group</h6>
+        #   <h6 class="listing-item-header-title">Job Title Link</h6>
+        #   <div class="listing-item-body">Job Details</div>
+        # </div>
         
-        if not job_containers:
-            # Fallback: look for any structured data that might contain jobs
-            # For now, extract all text and look for job-related content
-            full_text = parser.get_full_text()
-            
-            # This is a placeholder - actual implementation would need to parse the specific AEA JOE format
-            logger.warning("Could not find structured job listings. AEA JOE HTML structure may need specific parsing.")
-            
-            # Return empty list for now - this needs to be implemented based on actual AEA JOE structure
+        institution_groups = soup.find_all("div", class_="listing-institution-group-item")
+        
+        if not institution_groups:
+            logger.warning("Could not find institution groups in AEA JOE HTML")
             return []
         
-        # Process each job container
-        for container in job_containers:
-            listing = self._extract_listing_from_element(container, parser)
-            if listing:
-                listings.append(listing)
+        logger.info(f"Found {len(institution_groups)} institution groups")
+        
+        # Process each institution group
+        for group in institution_groups:
+            # Extract institution name from h5
+            institution_elem = group.find("h5", class_="group-header-title")
+            institution = extract_text(institution_elem).strip() if institution_elem else "American Economic Association"
+            
+            # Find all job listings (each has a header title with link)
+            # The first h6 with class="group-sub-header-title" is the department
+            department_elem = group.find("h6", class_="group-sub-header-title")
+            department = extract_text(department_elem).strip() if department_elem else ""
+            
+            # Find all job listings (h6 with class="listing-item-header-title")
+            job_headers = group.find_all("h6", class_="listing-item-header-title")
+            
+            for idx, header in enumerate(job_headers):
+                listing = self._extract_listing_from_header(
+                    header, 
+                    parser, 
+                    institution=institution,
+                    department=department
+                )
+                if listing:
+                    listings.append(listing)
         
         return listings
     
-    def _extract_listing_from_element(self, element, parser: HTMLParser) -> Dict[str, Any]:
+    def _extract_listing_from_header(
+        self, 
+        header_elem, 
+        parser: HTMLParser,
+        institution: str = "",
+        department: str = ""
+    ) -> Dict[str, Any]:
         """
-        Extract job listing from a container element.
+        Extract job listing from a header element.
         
         Args:
-            element: BeautifulSoup element containing job listing
+            header_elem: BeautifulSoup element containing job header
             parser: HTMLParser instance
+            institution: Institution name
+            department: Department name
         
         Returns:
             Job listing dictionary or None
         """
-        # Extract title
-        title_elem = element.find(["h1", "h2", "h3", "h4", "a"])
-        title = extract_text(title_elem) if title_elem else ""
+        # Extract title and link from header
+        link_elem = header_elem.find("a", href=True)
+        if not link_elem:
+            return None
         
-        # Extract link
-        link_elem = element.find("a", href=True)
-        url = ""
-        if link_elem:
-            href = link_elem.get("href", "")
-            url = urljoin(self.BASE_URL, href)
+        title = extract_text(link_elem)
+        href = link_elem.get("href", "")
+        url = urljoin(self.BASE_URL, href) if href else ""
         
-        # Extract description
-        description = extract_text(element)
+        # Find the corresponding body (next sibling div with class="listing-item-body")
+        body_elem = header_elem.find_next_sibling("div", class_="listing-item-body")
         
-        # Extract deadline if present
-        deadline = parser.extract_deadline(description)
+        # Extract location from body and parse it
+        location_dict = self._parse_location("")
+        if body_elem:
+            location_h6 = body_elem.find("h6", class_="meta-list-header")
+            # Find the location header by checking for 'Location:' text
+            for h6 in body_elem.find_all("h6", class_="meta-list-header"):
+                if h6 and "Location:" in extract_text(h6):
+                    location_text = extract_text(h6).replace("Location:", "").strip()
+                    location_dict = self._parse_location(location_text)
+                    break
         
-        if not title and not url:
+        # Extract deadline from body
+        deadline = ""
+        if body_elem:
+            deadline_div = body_elem.find("div", class_="application-deadline")
+            if deadline_div:
+                deadline_text = extract_text(deadline_div)
+                # Parse deadline from text like "Application deadline: 01/15/2026"
+                deadline = parser.extract_deadline(deadline_text)
+        
+        # Extract full description from body
+        description = extract_text(body_elem) if body_elem else ""
+        
+        # Extract application link
+        application_link = ""
+        if body_elem:
+            app_link = body_elem.find("a", class_="button", href=True)
+            if app_link:
+                app_href = app_link.get("href", "")
+                application_link = urljoin(self.BASE_URL, app_href) if app_href else ""
+        
+        if not title:
             return None
         
         return {
             "title": title,
+            "institution": institution,
+            "institution_type": "job_portal",  # AEA JOE is a job portal, not a university or institute
+            "department": department,
+            "department_category": "Economics",  # AEA JOE is specifically for economics
+            "location": location_dict,
             "source": self.source_name,
-            "source_url": url,
-            "description": description[:500] if description else "",  # Limit description length
+            "source_url": url if url else self.BASE_URL,
+            "description": description,
             "deadline": deadline,
+            "application_link": application_link,
             "scraped_date": self._get_current_date(),
         }
+    
+    def _parse_location(self, location_str: str) -> Dict[str, str]:
+        """
+        Parse location string into components (city, state, country, region).
+        
+        Args:
+            location_str: Location string like "Aalborg, DENMARK" or "Cambridge, MA"
+        
+        Returns:
+            Dictionary with city, state, country, region keys
+        """
+        location_dict = {
+            "city": None,
+            "state": None,
+            "country": None,
+            "region": "other_countries"  # Default region
+        }
+        
+        if not location_str:
+            return location_dict
+        
+        # Split by comma
+        parts = [p.strip() for p in location_str.split(",")]
+        
+        if len(parts) >= 1:
+            location_dict["city"] = parts[0]
+        
+        if len(parts) >= 2:
+            second_part = parts[1].upper()
+            
+            # Check if it's a state (2 letter code) or country
+            if len(second_part) == 2 and second_part.isalpha():
+                # Likely a US state
+                location_dict["state"] = second_part
+                location_dict["country"] = "United States"
+                location_dict["region"] = "united_states"
+            else:
+                # Treat as country name
+                location_dict["country"] = self._normalize_country(second_part)
+                location_dict["region"] = self._get_region_for_country(location_dict["country"])
+        
+        return location_dict
+    
+    def _normalize_country(self, country_str: str) -> str:
+        """
+        Normalize country name from abbreviation or full name.
+        
+        Args:
+            country_str: Country string
+        
+        Returns:
+            Normalized country name
+        """
+        country_map = {
+            "DENMARK": "Denmark",
+            "SWEDEN": "Sweden",
+            "GERMANY": "Germany",
+            "UK": "United Kingdom",
+            "UNITED KINGDOM": "United Kingdom",
+            "USA": "United States",
+            "US": "United States",
+            "UNITED STATES": "United States",
+            "CANADA": "Canada",
+            "AUSTRALIA": "Australia",
+            "CHINA": "China",
+            "MAINLAND CHINA": "China",
+        }
+        
+        upper_str = country_str.upper()
+        return country_map.get(upper_str, country_str)
+    
+    def _get_region_for_country(self, country: str) -> str:
+        """
+        Get region for a given country.
+        
+        Args:
+            country: Country name
+        
+        Returns:
+            Region code
+        """
+        region_map = {
+            "United States": "united_states",
+            "Canada": "canada",
+            "China": "mainland_china",
+            "United Kingdom": "united_kingdom",
+            "Australia": "australia",
+        }
+        
+        return region_map.get(country, "other_countries")
     
     def scrape(self) -> List[Dict[str, Any]]:
         """

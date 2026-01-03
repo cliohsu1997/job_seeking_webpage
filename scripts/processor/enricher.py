@@ -104,6 +104,21 @@ class DataEnricher:
         if "id" not in enriched or not enriched["id"]:
             enriched["id"] = self._generate_id(enriched)
         
+        # Infer institution_type from institution name if missing
+        if "institution_type" not in enriched or not enriched["institution_type"]:
+            enriched["institution_type"] = self._infer_institution_type(
+                enriched.get("institution", ""),
+                enriched.get("department", "")
+            )
+        
+        # Infer department_category from department name if missing
+        if "department_category" not in enriched or not enriched["department_category"]:
+            enriched["department_category"] = self._infer_department_category(
+                enriched.get("department", ""),
+                enriched.get("title", ""),
+                enriched.get("description", "")
+            )
+        
         # Detect/enhance region from location
         if "location" in enriched:
             enriched["location"] = self._detect_region(enriched["location"])
@@ -330,6 +345,84 @@ class DataEnricher:
                 materials["other"] = []
         
         return materials
+    
+    def _infer_institution_type(self, institution: str, department: str) -> str:
+        """
+        Infer institution type from institution and department names.
+        
+        Args:
+            institution: Institution name
+            department: Department name
+        
+        Returns:
+            Institution type (university, research_institute, government, company, other)
+        """
+        combined_text = f"{institution} {department}".lower()
+        
+        # Keywords for different institution types
+        university_keywords = ["university", "univeristy", "college", "school", "institute of technology", "polytechnic"]
+        research_keywords = ["research center", "research centre", "research institute", "academy", "academia"]
+        government_keywords = ["government", "federal reserve", "central bank", "ministry", "department of"]
+        company_keywords = ["company", "corporation", "inc.", "llc", "consulting"]
+        
+        # Check university first (most common in academic job market)
+        if any(kw in combined_text for kw in university_keywords):
+            return "university"
+        
+        # Check research institute
+        if any(kw in combined_text for kw in research_keywords):
+            return "research_institute"
+        
+        # Check government
+        if any(kw in combined_text for kw in government_keywords):
+            return "government"
+        
+        # Check company
+        if any(kw in combined_text for kw in company_keywords):
+            return "company"
+        
+        # Default to university if we have institution name (most AEA JOE listings are universities)
+        if institution:
+            return "university"
+        
+        return "other"
+    
+    def _infer_department_category(self, department: str, title: str, description: str) -> str:
+        """
+        Infer department category from department name, title, and description.
+        
+        Args:
+            department: Department name
+            title: Job title
+            description: Job description
+        
+        Returns:
+            Department category (economics, business, interdisciplinary, other)
+        """
+        combined_text = f"{department} {title} {description}".lower()
+        
+        # Keywords for different department categories
+        economics_keywords = ["economics", "econometrics", "economic"]
+        business_keywords = ["business", "management", "finance", "accounting", "marketing"]
+        interdisciplinary_keywords = ["policy", "development", "environmental", "health", "social", "public"]
+        
+        # Check economics first (most common in AEA JOE)
+        if any(kw in combined_text for kw in economics_keywords):
+            return "economics"
+        
+        # Check business
+        if any(kw in combined_text for kw in business_keywords):
+            return "business"
+        
+        # Check interdisciplinary
+        if any(kw in combined_text for kw in interdisciplinary_keywords):
+            return "interdisciplinary"
+        
+        # Default to economics if we have department (most AEA JOE listings)
+        if department:
+            return "economics"
+        
+        return "other"
     
     def _add_metadata(self, job_data: Dict[str, Any]) -> Dict[str, Any]:
         """

@@ -1,0 +1,2799 @@
+{
+  "category": "validation_issues",
+  "total": 398,
+  "unique_sources": [
+    "aea"
+  ],
+  "error_type_counts": {
+    "DUPLICATE_MERGE": 10,
+    "SCHEMA": 388
+  },
+  "issues": [
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194629"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194686"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194722"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194738"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194787"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 3 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194809"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194827"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 3 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194858"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194885"
+    },
+    {
+      "source": "aea",
+      "field": "deduplication",
+      "error": "Merged 2 duplicates",
+      "validation_type": "DUPLICATE_MERGE",
+      "timestamp": "2026-01-03T18:03:30.194950"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196654"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196665"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196668"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196671"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196675"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196838"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196844"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196847"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196850"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196853"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196979"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196985"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196987"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196991"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.196994"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197106"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197112"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197114"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197120"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197125"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197235"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197241"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197243"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197246"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197249"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197355"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197361"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197363"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197366"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197369"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197477"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197482"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197485"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197488"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197491"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197616"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197622"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197624"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197627"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197630"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197741"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197746"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197748"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197752"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197755"
+    },
+    {
+      "source": "aea",
+      "field": "source_url",
+      "error": "Field 'source_url': Expected str, got NoneType",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197757"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197863"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197869"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197872"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197875"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197878"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197993"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.197999"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198001"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198004"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198008"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198124"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198130"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198132"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198135"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198139"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198261"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198267"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198270"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198273"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198276"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198388"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198395"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198397"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198400"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198403"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198516"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198522"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198524"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198527"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198530"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198641"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198647"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198649"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198654"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198657"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198774"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198779"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198783"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198786"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198789"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198911"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198917"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198920"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198924"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.198927"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199037"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199043"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199046"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199049"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199052"
+    },
+    {
+      "source": "aea",
+      "field": "source_url",
+      "error": "Field 'source_url': Expected str, got NoneType",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199054"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199165"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199170"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199174"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199177"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199181"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199301"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199306"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199308"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199312"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199315"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199427"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199433"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199436"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199440"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199443"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199557"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199563"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199565"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199568"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199571"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199830"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199837"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199840"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199844"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199848"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199968"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199974"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199976"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199979"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.199982"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200090"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200096"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200098"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200101"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200103"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200215"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200220"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200223"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200225"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200228"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200333"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200338"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200341"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200344"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200347"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200453"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200458"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200460"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200463"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200466"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200568"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200573"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200575"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200578"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200581"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200683"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200688"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200690"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200694"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200696"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200799"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200804"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200806"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200809"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200812"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200915"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200920"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200923"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200926"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.200928"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201034"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201039"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201041"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201043"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201046"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201148"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201153"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201155"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201158"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201160"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201262"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201267"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201269"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201272"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201275"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201386"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201391"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201394"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201397"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201400"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201667"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201672"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201674"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201677"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201680"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201784"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201789"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201791"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201794"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201796"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201898"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201903"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201905"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201909"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.201912"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202015"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202020"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202022"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202025"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202029"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202135"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202140"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202142"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202145"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202148"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202248"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202253"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202255"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202258"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202260"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202360"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202365"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202367"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202370"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202372"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202474"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202479"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202481"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202484"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202487"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202589"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202594"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202597"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202599"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202602"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202703"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202707"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202709"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202712"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202715"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202815"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202820"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202823"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202826"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202830"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202931"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202935"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202938"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202941"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.202945"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203047"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203052"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203054"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203057"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203060"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203161"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203166"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203168"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203171"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203173"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203272"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203277"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203280"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203283"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203286"
+    },
+    {
+      "source": "aea",
+      "field": "source_url",
+      "error": "Field 'source_url': Expected str, got NoneType",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203287"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203392"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203397"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203399"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203402"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203405"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203509"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203514"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203517"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203520"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203522"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203625"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203630"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203633"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203635"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203638"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203740"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203745"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203747"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203750"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203753"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203853"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203857"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203859"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203862"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203865"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203966"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203972"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203975"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203978"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.203981"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204082"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204087"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204089"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204092"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204095"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204196"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204201"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204203"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204206"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204209"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204310"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204314"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204317"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204319"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204322"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204423"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204428"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204430"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204434"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204437"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204540"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204545"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204547"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204550"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204553"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204655"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204660"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204662"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204665"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204668"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204771"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204776"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204778"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204781"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204784"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204884"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204889"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204891"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204894"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.204897"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205001"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205005"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205008"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205010"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205014"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205114"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205119"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205121"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205124"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205127"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205228"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205233"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205235"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205238"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205242"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205343"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205348"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205350"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205353"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205356"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205519"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205525"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205527"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205530"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205533"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205878"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205885"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205888"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205891"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.205894"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206014"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206020"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206022"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206025"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206028"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206137"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206142"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206144"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206147"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206150"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206262"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206269"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206271"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206274"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206277"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206381"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206386"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206388"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206391"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206396"
+    },
+    {
+      "source": "aea",
+      "field": "institution",
+      "error": "Missing required field: 'institution'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206501"
+    },
+    {
+      "source": "aea",
+      "field": "institution_type",
+      "error": "Missing required field: 'institution_type'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206506"
+    },
+    {
+      "source": "aea",
+      "field": "department",
+      "error": "Missing required field: 'department'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206508"
+    },
+    {
+      "source": "aea",
+      "field": "department_category",
+      "error": "Missing required field: 'department_category'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206511"
+    },
+    {
+      "source": "aea",
+      "field": "location",
+      "error": "Missing required field: 'location'",
+      "validation_type": "SCHEMA",
+      "timestamp": "2026-01-03T18:03:30.206513"
+    }
+  ]
+}
