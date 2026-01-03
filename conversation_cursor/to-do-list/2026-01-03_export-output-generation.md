@@ -311,24 +311,27 @@ poetry run python -m scripts.generator.build_site
 ## Phase 3G: Deployment
 
 ### Task 7: Deploy MVP to GitHub Pages
-**Status**: ⏸️ Pending  
-**Estimated Time**: 1-2 hours
+**Status**: ✅ Complete  
+**Completed**: 2026-01-03
 
 **Subtasks**:
 
 **7.1: GitHub Pages Setup**
-- [ ] Create/update GitHub repository
-- [ ] Configure GitHub Pages (Settings → Pages)
-- [ ] Set source to `main` branch, `/static` folder or `/docs` folder
-- [ ] Add CNAME (if custom domain)
+- [x] GitHub repository created
+- [x] GitHub Pages enabled (Settings → Pages)
+- [x] Source set to GitHub Actions
+- [ ] Custom domain (optional, future)
 
 **7.2: Deployment Process**
-- [ ] Copy static site files to deployment folder
-- [ ] Commit and push to GitHub
-- [ ] Verify deployment (check GitHub Pages URL)
+- [x] Static site files in /static folder
+- [x] Workflow committed to .github/workflows/gh-pages.yml
+- [x] Pushed to main branch
+- [x] Deployment successful
 
-**Artifacts**:
-- GitHub Pages workflow: `.github/workflows/gh-pages.yml` (deploys /static on push to main)
+**Live Site**:
+- URL: https://cliohsu1997.github.io/job_seeking_webpage/
+- 211 job listings with filters, search, pagination, responsive design
+- Workflow: `.github/workflows/gh-pages.yml` (auto-deploys on push to main)
 - [ ] Test live site
 
 **7.3: Documentation**

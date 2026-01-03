@@ -126,9 +126,11 @@ poetry run python -m scripts.generator.build_site
 - **To-Do List**: `2026-01-03_export-output-generation.md`
 - **Proposal**: `conversation_cursor/dates/2026-01-03/create-webpage-display-proposal.md`
 
-### ⏸️ Phase 4: DEPLOY - Deployment & Automation (PENDING)
-- Waiting for Phase 3
-- GitHub Pages workflow active at `.github/workflows/gh-pages.yml`
+### 🚀 Phase 4: DEPLOY - Deployment & Automation (IN PROGRESS)
+- GitHub Pages enabled and workflow active at `.github/workflows/gh-pages.yml`
+- **Site deployed at**: https://cliohsu1997.github.io/job_seeking_webpage/
+- Filters, search, pagination, and responsive design all live
+- Custom domain available (optional, future enhancement)
 
 ## Current Focus
 

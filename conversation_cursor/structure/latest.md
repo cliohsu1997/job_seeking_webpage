@@ -88,7 +88,7 @@ job-seeking-webpage/
 
 .github/                            # GitHub configuration
 └── workflows/
-    └── gh-pages.yml               # GitHub Pages workflow (deploys /static)
+    └── gh-pages.yml               # GitHub Pages workflow (✅ active, deploys /static)
 ```
 
 ## Key Files & Modules
