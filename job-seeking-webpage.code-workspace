@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}/environment/python/venv/Scripts/python.exe"
+  },
+  "launch": "main"
+}
