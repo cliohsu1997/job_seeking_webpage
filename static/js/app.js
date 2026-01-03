@@ -75,6 +75,9 @@ function initializeApp() {
         initializeSearch(AppState);
     }
     
+    // Initialize scroll behavior for sidebar
+    initializeSidebarScroll();
+    
     console.log('App initialized with', AppState.allJobs.length, 'jobs');
 }
 
@@ -323,6 +326,40 @@ function showError(message) {
             </div>
         `;
     }
+}
+
+/**
+ * Initialize sidebar scroll behavior - hide on scroll up
+ */
+function initializeSidebarScroll() {
+    let lastScrollTop = 0;
+    let scrollTimeout;
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (!sidebar) return;
+    
+    window.addEventListener('scroll', () => {
+        // Clear existing timeout
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
+        // Debounce scroll event
+        scrollTimeout = setTimeout(() => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Scrolling up
+            if (currentScroll < lastScrollTop && currentScroll > 100) {
+                sidebar.classList.add('hidden-on-scroll');
+            } 
+            // Scrolling down or at top
+            else {
+                sidebar.classList.remove('hidden-on-scroll');
+            }
+            
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, 50);
+    }, { passive: true });
 }
 
 // Export functions for other modules
