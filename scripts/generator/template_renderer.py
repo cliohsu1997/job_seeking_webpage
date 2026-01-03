@@ -8,6 +8,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, List
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup
 
 logger = logging.getLogger(__name__)
 
@@ -172,7 +173,7 @@ class TemplateRenderer:
             return {"text": date_str, "urgency": "none", "class": ""}
     
     @staticmethod
-    def _json_dumps(obj: Any) -> str:
+    def _json_dumps(obj: Any) -> Markup:
         """
         Convert Python object to JSON string for HTML attributes.
         
@@ -180,15 +181,16 @@ class TemplateRenderer:
             obj: Python object to serialize
             
         Returns:
-            JSON string safe for HTML attributes
+            Markup object (JSON string marked as safe for HTML)
         """
         if obj is None or not obj:
-            return '[]'
+            return Markup('[]')
         try:
-            return json.dumps(obj, ensure_ascii=True)
+            json_str = json.dumps(obj, ensure_ascii=True)
+            return Markup(json_str)
         except (TypeError, ValueError) as e:
             logger.warning(f"Failed to serialize object to JSON: {e}")
-            return '[]'
+            return Markup('[]')
     
     def render_template(self, template_name: str, context: Dict[str, Any]) -> str:
         """
