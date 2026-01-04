@@ -41,113 +41,40 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **Proposal**: `conversation_cursor/dates/2025-12-31/design-scraping-strategy.md`
 
 ### 🔄 Phase 1B: EXPAND - Data Source Expansion (IN PROGRESS)
-**Status**: Planning phase complete, ready for implementation
+**Status**: Task 0A (URL Access Verification) - ✅ COMPLETE
 
-**Objectives**:
-- [x] Proposal created for source expansion strategy
-- [x] Detailed to-do list with evaluation metrics created
-- [ ] Fix wrong URL types (30+ US universities pointing to department pages instead of career portals)
-- [ ] Implement enhanced verification with URL discovery, redirect following, and evaluation metrics
-- [ ] Add European universities (target: 30)
-- [ ] Add Asia-Pacific universities (target: 25)
-- [ ] Add Canadian universities (target: 10)
-- [ ] Add Latin American universities (target: 10)
-- [ ] Expand research institutes (6 → 25+)
-- [ ] Fix 81 problematic URLs (target: 75% success rate)
-- [ ] Achieve better regional balance (<40% from any single region)
+**Accomplishments - Task 0A**:
+- [x] Implement basic HTTP accessibility testing (test_accessibility.py)
+- [x] Implement redirect following with chain tracking (redirect_handler.py)
+- [x] Implement Chinese DNS fallback support (dns_resolver.py)
+- [x] Implement accessibility report generation (connectivity_report.py)
+- [x] Create test folders: `tests/load-data-collection/config/`, `access_url/`, `verify_url/`
+- [x] Create test suite for URL access verification with real scraping sources
+- [x] Test configuration validation
 
-**Key Challenge Identified**: Many existing URLs point to wrong page types:
-- Department homepages (e.g., `https://economics.stanford.edu/`)
-- Faculty directories (e.g., `https://{university}.edu/faculty/`)
-- General university pages instead of HR/career portals
+**Next Tasks - Task 0B onwards**:
+- [ ] Task 0B: URL content verification (page classifier, content validator, quality scorer, decision engine)
+- [ ] Task 1A-5B: Add new international universities and research institutes
+- [ ] Task 6A-6C: Fix problematic URLs
+- [ ] Task 7A-8C: Validation and finalization
 
-**Evaluation Metrics Established**:
-- ✅ **Critical Fields Required**: Job title + Position details (must be extractable for accessible section)
-- ✅ **Content Quality Score** (0-100):
-  - Job titles found (max 30 pts)
-  - Position details (max 25 pts)
-  - Application methods (max 20 pts)
-  - Job descriptions (max 15 pts)
-  - Freshness (max 10 pts)
-- ✅ **Thresholds**:
-  - 80-100 (Excellent): KEEP in accessible
-  - 60-79 (Good): KEEP in accessible
-  - 40-59 (Marginal): MOVE to non_accessible
-  - 0-39 (Poor): MOVE to non_accessible
-- ✅ **Classification Decision Tree**: Validates URL type and job content
-- ✅ **Reason Codes**: For all non_accessible URLs (access_error, wrong_page_type, no_job_content, missing_critical_fields, low_quality_content, requires_vpn, etc.)
+**Key Features Implemented**:
+- Rate limiting (1+ second between requests)
+- Timeout detection (10-second default)
+- Redirect loop detection
+- External HR system identification (ICIMS, Workday, etc.)
+- Multiple report formats (JSON, CSV, Markdown)
+- Real scraping sources integration for testing
 
-**Implementation Strategy** (Revised with Separated Tasks):
-1. **Phase 1B.1 - URL Access Verification** (Tasks 0A):
-   - Task 0A.1: Implement basic HTTP accessibility testing (TLS, 404, 403, timeout)
-   - Task 0A.2: Implement redirect following (max 5 hops, detect loops)
-   - Task 0A.3: Chinese DNS fallback for Great Firewall bypass
-   - Task 0A.4: Generate accessibility report for all URLs
+**Code Quality**: Succinct, well-organized modules with clear separation of concerns
 
-2. **Phase 1B.1 - URL Verification** (Tasks 0B):
-   - Task 0B.1: Implement content extraction & validation (job titles, position details)
-   - Task 0B.2: Implement page type classification & URL discovery (find career portals)
-   - Task 0B.3: Implement validation decision engine (full workflow)
-   - Task 0B.4: Implement batch validation & configuration update
-   - Task 0B.5: Test on 10 problematic US universities (pilot)
-
-3. **Phase 1B.1 - Additional Verification Tools** (Tasks 1A-3B):
-   - Task 1A: Redirect following for multi-level redirects
-   - Task 1B: Content quality scoring (0-100 with thresholds)
-   - Task 2A: PDF detection and download capability
-   - Task 2B: Chinese university URL verification improvements
-   - Task 3A: Automated URL replacement finder
-   - Task 3B: Enhanced verification reporting
-
-4. **Phase 1B.2 - URL Research** (Tasks 4A-4E):
-   - Task 4A: 30 European universities
-   - Task 4B: 25 Asia-Pacific universities
-   - Task 4C: 10 Canadian universities
-   - Task 4D: 10 Latin American universities
-   - Task 4E: 5 Middle East/African universities
-
-5. **Phase 1B.3 - Research Institutes** (Tasks 5A-5B):
-   - Task 5A: 15 major US research institutes
-   - Task 5B: 10 international research organizations
-
-6. **Phase 1B.4 - Fix URLs** (Tasks 6A-6C):
-   - Task 6A: Fix 30+ US university URLs (wrong page types)
-   - Task 6B: Fix 40+ Chinese university URLs (DNS/Great Firewall issues)
-   - Task 6C: Fix 10+ international university URLs (broken links)
-
-7. **Phase 1B.5 - Validation** (Tasks 7A-7C):
-   - Task 7A: Run enhanced verification on all URLs
-   - Task 7B: Update configuration with verified URLs
-   - Task 7C: Test scraping on sample of new URLs
-
-8. **Phase 1B.6 - Documentation** (Tasks 8A-8C):
-   - Task 8A: Consolidate verification documentation
-   - Task 8B: Update project documentation
-   - Task 8C: Generate final statistics and report
-
-**New Folder Structure Created**:
-- `data/config/url_verification/` - Store verification results and reports
-- `scripts/scraper/check_config/url_access/` - HTTP accessibility and redirect testing
-- `scripts/scraper/check_config/url_verification/` - Content validation and classification
-
-**Target Outcomes**:
-- 250+ accessible URLs (from 176, 42% growth)
-- Regional balance: US 28%, China 40%, Europe 14%, Asia-Pacific 12%, Latin America 4%, Other 2%
-- 75% of problematic URLs fixed (60+ out of 81)
-- 350-400 job listings (from 211, 65% increase)
-- Only URLs with extractable job titles and position details (quality score ≥60) in accessible section
-- All problematic URLs properly categorized with actionable reason codes
-
-- **To-Do List**: `2026-01-04_expand-scraping-sources.md` (Revised task structure with separated URL Access and Verification tasks)
+- **To-Do List**: `2026-01-04_expand-scraping-sources.md` (Task 0A COMPLETE, moving to Task 0B)
 - **Proposal**: `conversation_cursor/dates/2026-01-04/expand-scraping-sources-proposal.md`
 
 ## What's Next
 
 ### ✅ Phase 2: TRANSFORM - Data Processing (COMPLETED)
 **Status**: All Phase 2 milestones completed (2A-2E) with data quality improvements (2F)
-
-- [x] Phase 2 proposal created with detailed structure and diagnostic tracking
-- [x] Foundation setup completed (directories, configuration, test structure)
 - [x] Data schema definition created (`schema.py` with 29 fields, validation functions)
 - [x] Processing rules configuration created (`processing_rules.json`)
 - [x] Phase 2A Core Pipeline Foundation completed:

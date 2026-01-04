@@ -40,12 +40,13 @@ job-seeking-webpage/
 │   │   └── check_config/           # ✅ PHASE 1B - Enhanced verification tools
 │   │       ├── verify_urls.py      # Legacy verification script (to be refactored)
 │   │       ├── find_url_replacements.py  # Helper to find replacement URLs
-│   │       ├── url_access/         # Task 0A - URL accessibility testing
-│   │       │   ├── test_accessibility.py      # HTTP connectivity testing
-│   │       │   ├── redirect_handler.py        # Redirect following & chain tracking
-│   │       │   ├── dns_resolver.py            # Chinese DNS fallback support
-│   │       │   └── connectivity_report.py     # Generate accessibility reports
-│   │       └── url_verification/  # Task 0B - Content validation
+│   │       ├── url_access/         # ✅ Task 0A - URL accessibility testing (COMPLETE)
+│   │       │   ├── __init__.py                # Module exports
+│   │       │   ├── test_accessibility.py     # ✅ HTTP connectivity testing
+│   │       │   ├── redirect_handler.py       # ✅ Redirect following & chain tracking
+│   │       │   ├── dns_resolver.py           # ✅ Chinese DNS fallback support
+│   │       │   └── connectivity_report.py    # ✅ Generate accessibility reports
+│   │       └── url_verification/  # Task 0B - Content validation (pending)
 │   │           ├── page_classifier.py        # Classify page type (career portal vs. department, etc.)
 │   │           ├── url_discoverer.py         # Discover alternative career portal URLs
 │   │           ├── content_validator.py      # Extract & validate job content
@@ -71,6 +72,15 @@ job-seeking-webpage/
 ├── tests/                          # Tests organized by phase
 │   ├── setup-project/              # Phase 0 tests
 │   ├── load-data-collection/       # Phase 1 tests
+│   │   ├── config/                 # ✅ Configuration tests
+│   │   │   └── test_scraping_sources.py  # Validate scraping sources config
+│   │   ├── access_url/             # ✅ Task 0A tests - URL access verification
+│   │   │   ├── test_accessibility.py    # Test HTTP connectivity
+│   │   │   ├── test_redirects.py        # Test redirect following
+│   │   │   └── test_connectivity_report.py  # Test report generation
+│   │   ├── scraper/                # Scraper tests
+│   │   ├── verify_url/             # Task 0B tests - URL content verification (pending)
+│   │   └── utils/                  # Utility tests
 │   ├── transform-data-processing/  # Phase 2 tests
 │   │   ├── parser/                 # Parser manager tests (✅ Phase 1 integration)
 │   │   ├── utils/                  # Utility tests (✅ location parser, 41 tests)
