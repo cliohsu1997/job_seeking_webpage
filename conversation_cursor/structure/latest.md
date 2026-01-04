@@ -21,8 +21,8 @@ job-seeking-webpage/
 │   │   └── diagnostics/            # Diagnostic reports
 │   └── config/
 │       ├── README.md               # Configuration guide with verification methodology
-│       ├── scraping_sources.json   # ✅ FLAT structure: 127 accessible + 83 non-accessible = 210 entries
-│       │                           # Format: {"accessible": [{"id": "...", "url": "...", "type": "...", ...}], "non_accessible": [...]}
+│       ├── scraping_sources.json   # ✅ NEW 3-CATEGORY structure: 127 verified + 83 unverified + 0 potential = 210 entries
+│       │                           # Format: {"accessible_verified": [...], "accessible_unverified": [...], "potential_links": [...]}
 │       ├── scraping_rules.json     # Scraping patterns
 │       ├── processing_rules.json   # Processing rules
 │       ├── url_replacements.json   # URL replacement patterns
@@ -37,17 +37,22 @@ job-seeking-webpage/
 │   │   ├── university_scraper.py   # University scraper
 │   │   ├── institute_scraper.py    # Institute scraper
 │   │   ├── parsers/                # HTML, RSS, text, date parsers
-│   │   ├── utils/                  # Rate limiter, retry handler, user agent
+│   │   ├── utils/                  # Rate limiter, retry handler, user agent, config_loader
 │   │   └── config/                 # ✅ PHASE 1B - Configuration verification tools
 │   │       ├── README.md                     # Documentation for verification tools
+│   │       ├── migrate_config_structure.py   # ✅ Task 0B - Migration script for config restructuring
 │   │       ├── url_access/                   # ✅ Task 0A - HTTP accessibility testing (COMPLETE)
 │   │       │   ├── __init__.py               # Module exports
 │   │       │   ├── test_accessibility.py     # ✅ HTTP connectivity testing
 │   │       │   ├── redirect_handler.py       # ✅ Redirect following & chain tracking
 │   │       │   ├── dns_resolver.py           # ✅ Chinese DNS fallback support
 │   │       │   └── connectivity_report.py    # ✅ Generate accessibility reports
-│   │       └── url_verification/             # Task 0B - Content validation (pending)
-│   │           └── (to be implemented)       # Page classifier, content validator, quality scorer, etc.
+│   │       └── url_verification/             # ✅ Task 0B - Content validation (COMPLETE)
+│   │           ├── __init__.py               # Module exports
+│   │           ├── content_validator.py      # ✅ Extract and validate job listings (431 lines)
+│   │           ├── page_classifier.py        # ✅ Classify page types - 8 types detected (268 lines)
+│   │           ├── quality_scorer.py         # ✅ Score URLs 0-100 with breakdown (236 lines)
+│   │           └── decision_engine.py        # ✅ Make validation decisions with suggestions (390 lines)
 │   ├── processor/                  # Phase 2 - ✅ COMPLETE
 │   │   ├── pipeline.py            # Main pipeline (✅ Phase 2E - full integration with archive retention)
 │   │   ├── parser_manager.py       # Route to parsers (✅ Phase 2A)
@@ -70,13 +75,18 @@ job-seeking-webpage/
 │   │   ├── README.md                       # Phase 1 test documentation
 │   │   ├── config/                         # ✅ Configuration and URL verification tests
 │   │   │   ├── test_scraping_sources.py    # Validate scraping sources config
-│   │   │   ├── test_config_loader.py       # Test config loader utility
+│   │   │   ├── test_config_loader.py       # ✅ Test config loader utility (11 tests passing)
 │   │   │   ├── url_access/                 # ✅ Task 0A - URL access verification tests
 │   │   │   │   ├── test_accessibility.py   # Test HTTP connectivity
 │   │   │   │   ├── test_redirects.py       # Test redirect following
 │   │   │   │   └── test_connectivity_report.py  # Test report generation
-│   │   │   └── url_verification/           # Task 0B - URL content validation tests (pending)
+│   │   │   └── url_verification/           # ✅ Task 0B - URL content validation tests (60 tests passing)
+│   │   │       ├── test_content_validator.py     # ✅ Test listing extraction and validation (13 tests)
+│   │   │       ├── test_page_classifier.py       # ✅ Test page type classification (15 tests)
+│   │   │       ├── test_quality_scorer.py        # ✅ Test quality scoring system (15 tests)
+│   │   │       └── test_decision_engine.py       # ✅ Test validation decisions (17 tests)
 │   │   ├── scraper/                        # Scraper tests
+│   │   │   └── test_link_following.py      # ✅ Test link-following functionality (2 tests passing)
 │   │   ├── parser/                         # Parser tests
 │   │   └── utils/                          # Utility tests
 │   ├── transform-data-processing/  # Phase 2 tests
