@@ -336,17 +336,26 @@ A URL is valid for the **accessible section** if it **contains extractable job l
 **Folder Structure**:
 ```
 scripts/scraper/config/url_replacement/         # Replacement logic
+├── __init__.py                                 # Module exports (enables: from .url_discovery import discover_urls)
 ├── url_discovery.py                            # ✅ Find alternatives (common paths, subdomains, predefined URLs)
 └── replacement_engine.py                       # (TO CREATE) Orchestrate full replacement workflow
 
 data/config/url_replacement/                    # Replacement data
+├── __init__.py                                 # Module init (optional for data folder, keeps structure consistent)
 ├── candidates.json                             # Candidate replacement URLs (before validation)
 ├── replacements_validated.json                 # Validated replacements (after testing)
 └── replacement_report.md                       # Execution report with statistics
 
 tests/load-data-collection/url_replacement/    # Replacement tests
+├── __init__.py                                 # Module init (enables test discovery in pytest)
 └── (to create test files)
 ```
+
+**Why __init__.py Files?**
+- **Package Recognition**: Marks directories as Python packages so they can be imported
+- **Import Convenience**: Enables `from scripts.scraper.config.url_replacement import discover_urls` instead of full paths
+- **Module Initialization**: Can contain setup code when package is imported
+- **Best Practice**: Explicit is better than implicit - consistent with Python standards
 
 **Files Created**:
 - ✅ `scripts/scraper/config/url_discovery.py` (271 lines): Discover alternative URLs with common paths, subdomains, predefined institution URLs
