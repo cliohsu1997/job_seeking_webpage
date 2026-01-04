@@ -13,7 +13,7 @@ from scripts.scraper.check_config.url_access import (
 @pytest.fixture
 def scraping_sources():
     """Load real scraping sources."""
-    config_path = Path(__file__).parent.parent.parent.parent / "data" / "config" / "scraping_sources.json"
+    config_path = Path(__file__).parent.parent.parent.parent.parent / "data" / "config" / "scraping_sources.json"
     with open(config_path) as f:
         return json.load(f)
 

@@ -41,16 +41,23 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **Proposal**: `conversation_cursor/dates/2025-12-31/design-scraping-strategy.md`
 
 ### 🔄 Phase 1B: EXPAND - Data Source Expansion (IN PROGRESS)
-**Status**: Task 0A (URL Access Verification) - ✅ COMPLETE
+**Status**: Task 0A (URL Access Verification) - ✅ COMPLETE, Structure Reorganized
 
 **Accomplishments - Task 0A**:
 - [x] Implement basic HTTP accessibility testing (test_accessibility.py)
 - [x] Implement redirect following with chain tracking (redirect_handler.py)
 - [x] Implement Chinese DNS fallback support (dns_resolver.py)
 - [x] Implement accessibility report generation (connectivity_report.py)
-- [x] Create test folders: `tests/load-data-collection/config/`, `access_url/`, `verify_url/`
-- [x] Create test suite for URL access verification with real scraping sources
-- [x] Test configuration validation
+- [x] Create comprehensive test suite with real scraping sources integration
+- [x] Reorganize folder structure for consistency
+  - Consolidated `scripts/scraper/check_config/` (removed redundant nesting)
+  - Merged test folders: `config/` contains `url_access/` and `url_verification/` tests
+  - Deleted legacy scripts (`verify_urls.py`, `find_url_replacements.py` - to be replaced by Task 0B)
+  - Updated all import paths and README files
+
+**Structure Now**:
+- Scripts: `scripts/scraper/check_config/url_access/` (4 modules)
+- Tests: `tests/load-data-collection/config/url_access/` (3 test files)
 
 **Next Tasks - Task 0B onwards**:
 - [ ] Task 0B: URL content verification (page classifier, content validator, quality scorer, decision engine)
@@ -66,7 +73,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - Multiple report formats (JSON, CSV, Markdown)
 - Real scraping sources integration for testing
 
-**Code Quality**: Succinct, well-organized modules with clear separation of concerns
+**Code Quality**: Succinct, well-organized modules with clear separation of concerns and consistent folder structure
 
 - **To-Do List**: `2026-01-04_expand-scraping-sources.md` (Task 0A COMPLETE, moving to Task 0B)
 - **Proposal**: `conversation_cursor/dates/2026-01-04/expand-scraping-sources-proposal.md`

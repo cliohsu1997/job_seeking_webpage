@@ -37,22 +37,16 @@ job-seeking-webpage/
 │   │   ├── institute_scraper.py    # Institute scraper
 │   │   ├── parsers/                # HTML, RSS, text, date parsers
 │   │   ├── utils/                  # Rate limiter, retry handler, user agent
-│   │   └── check_config/           # ✅ PHASE 1B - Enhanced verification tools
-│   │       ├── verify_urls.py      # Legacy verification script (to be refactored)
-│   │       ├── find_url_replacements.py  # Helper to find replacement URLs
-│   │       ├── url_access/         # ✅ Task 0A - URL accessibility testing (COMPLETE)
-│   │       │   ├── __init__.py                # Module exports
+│   │   └── check_config/           # ✅ PHASE 1B - Configuration verification tools
+│   │       ├── README.md                     # Documentation for verification tools
+│   │       ├── url_access/                   # ✅ Task 0A - HTTP accessibility testing (COMPLETE)
+│   │       │   ├── __init__.py               # Module exports
 │   │       │   ├── test_accessibility.py     # ✅ HTTP connectivity testing
 │   │       │   ├── redirect_handler.py       # ✅ Redirect following & chain tracking
 │   │       │   ├── dns_resolver.py           # ✅ Chinese DNS fallback support
 │   │       │   └── connectivity_report.py    # ✅ Generate accessibility reports
-│   │       └── url_verification/  # Task 0B - Content validation (pending)
-│   │           ├── page_classifier.py        # Classify page type (career portal vs. department, etc.)
-│   │           ├── url_discoverer.py         # Discover alternative career portal URLs
-│   │           ├── content_validator.py      # Extract & validate job content
-│   │           ├── quality_scorer.py         # Score content quality (0-100)
-│   │           ├── decision_engine.py        # Full validation decision tree
-│   │           └── batch_processor.py        # Batch URL validation & configuration update
+│   │       └── url_verification/             # Task 0B - Content validation (pending)
+│   │           └── (to be implemented)       # Page classifier, content validator, quality scorer, etc.
 │   ├── processor/                  # Phase 2 - ✅ COMPLETE
 │   │   ├── pipeline.py            # Main pipeline (✅ Phase 2E - full integration with archive retention)
 │   │   ├── parser_manager.py       # Route to parsers (✅ Phase 2A)
@@ -72,15 +66,18 @@ job-seeking-webpage/
 ├── tests/                          # Tests organized by phase
 │   ├── setup-project/              # Phase 0 tests
 │   ├── load-data-collection/       # Phase 1 tests
-│   │   ├── config/                 # ✅ Configuration tests
-│   │   │   └── test_scraping_sources.py  # Validate scraping sources config
-│   │   ├── access_url/             # ✅ Task 0A tests - URL access verification
-│   │   │   ├── test_accessibility.py    # Test HTTP connectivity
-│   │   │   ├── test_redirects.py        # Test redirect following
-│   │   │   └── test_connectivity_report.py  # Test report generation
-│   │   ├── scraper/                # Scraper tests
-│   │   ├── verify_url/             # Task 0B tests - URL content verification (pending)
-│   │   └── utils/                  # Utility tests
+│   │   ├── README.md                       # Phase 1 test documentation
+│   │   ├── config/                         # ✅ Configuration and URL verification tests
+│   │   │   ├── test_scraping_sources.py    # Validate scraping sources config
+│   │   │   ├── test_config_loader.py       # Test config loader utility
+│   │   │   ├── url_access/                 # ✅ Task 0A - URL access verification tests
+│   │   │   │   ├── test_accessibility.py   # Test HTTP connectivity
+│   │   │   │   ├── test_redirects.py       # Test redirect following
+│   │   │   │   └── test_connectivity_report.py  # Test report generation
+│   │   │   └── url_verification/           # Task 0B - URL content validation tests (pending)
+│   │   ├── scraper/                        # Scraper tests
+│   │   ├── parser/                         # Parser tests
+│   │   └── utils/                          # Utility tests
 │   ├── transform-data-processing/  # Phase 2 tests
 │   │   ├── parser/                 # Parser manager tests (✅ Phase 1 integration)
 │   │   ├── utils/                  # Utility tests (✅ location parser, 41 tests)

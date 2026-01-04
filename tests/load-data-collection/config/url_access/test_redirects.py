@@ -9,7 +9,7 @@ from scripts.scraper.check_config.url_access import follow_redirects
 @pytest.fixture
 def job_portal_urls():
     """Get job portal URLs from config."""
-    config_path = Path(__file__).parent.parent.parent.parent / "data" / "config" / "scraping_sources.json"
+    config_path = Path(__file__).parent.parent.parent.parent.parent / "data" / "config" / "scraping_sources.json"
     with open(config_path) as f:
         sources = json.load(f)
     

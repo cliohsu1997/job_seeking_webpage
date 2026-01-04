@@ -9,7 +9,7 @@ from scripts.scraper.check_config.url_access import generate_accessibility_repor
 @pytest.fixture
 def scraping_sources_path():
     """Get path to scraping sources config."""
-    return Path(__file__).parent.parent.parent.parent / "data" / "config" / "scraping_sources.json"
+    return Path(__file__).parent.parent.parent.parent.parent / "data" / "config" / "scraping_sources.json"
 
 
 @pytest.fixture
