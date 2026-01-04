@@ -1,5 +1,5 @@
 {
-  "accessible": [
+  "accessible_verified": [
     {
       "id": "aea",
       "type": "job_portal",
@@ -1898,7 +1898,7 @@
       "departments": []
     }
   ],
-  "non_accessible": [
+  "accessible_unverified": [
     {
       "id": "tsinghua_university_economics",
       "type": "university_department",
@@ -3144,5 +3144,6 @@
       "notes": "WSU Workday portal - filter by Economics",
       "departments": []
     }
-  ]
+  ],
+  "potential_links": []
 }

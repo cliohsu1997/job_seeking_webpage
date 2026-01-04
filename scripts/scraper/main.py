@@ -1,9 +1,9 @@
 """
-Main script to scrape all job listings from all accessible sources.
+Main script to scrape all job listings from all verified sources.
 
 This script scrapes:
-- All universities (from accessible section of config)
-- All research institutes (from accessible section of config)
+- All verified universities (from accessible_verified section of config)
+- All verified research institutes (from accessible_verified section of config)
 - AEA JOE job listings
 
 All scraped HTML files are saved to data/raw/ with subdirectories:
@@ -36,15 +36,15 @@ logger = logging.getLogger(__name__)
 
 def main():
     """
-    Main function to scrape all job listings from accessible sources.
+    Main function to scrape all job listings from verified sources.
     """
     logger.info("=" * 70)
-    logger.info("Starting scraping of all accessible job listings")
+    logger.info("Starting scraping of all verified job listings")
     logger.info("=" * 70)
     
     # Count URLs in configuration
-    total_urls, accessible_urls = count_urls()
-    logger.info(f"Configuration: {accessible_urls} accessible URLs (out of {total_urls} total)")
+    total_urls, verified_count, unverified_count, potential_count = count_urls()
+    logger.info(f"Configuration: {verified_count} verified URLs, {unverified_count} unverified, {potential_count} potential (Total: {total_urls})")
     logger.info("")
     
     all_listings = []

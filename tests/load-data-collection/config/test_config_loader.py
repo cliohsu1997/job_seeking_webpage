@@ -14,8 +14,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "scripts" / 
 from utils.config_loader import (
     load_config,
     save_config,
-    get_accessible_config,
-    get_non_accessible_config,
+    get_accessible_verified_config,
+    get_accessible_unverified_config,
+    get_potential_links_config,
+    get_accessible_config,  # Backward compatibility
+    get_non_accessible_config,  # Backward compatibility
     get_all_config,
     count_urls
 )
@@ -26,168 +29,165 @@ class TestConfigLoader(unittest.TestCase):
     
     def setUp(self):
         """Set up test fixtures."""
-        # Create a temporary config file for testing
+        # Create a test config with three categories
         self.test_config = {
-            "accessible": {
-                "job_portals": {
-                    "aea": {
-                        "name": "AEA JOE",
-                        "url": "https://www.aeaweb.org/joe"
-                    }
+            "accessible_verified": [
+                {
+                    "id": "aea",
+                    "name": "AEA JOE",
+                    "url": "https://www.aeaweb.org/joe",
+                    "type": "job_portal",
+                    "verified": True
                 },
-                "regions": {
-                    "united_states": {
-                        "universities": [
-                            {
-                                "name": "Test University",
-                                "departments": [
-                                    {"name": "Economics", "url": "https://example.com/econ"}
-                                ]
-                            }
-                        ]
-                    }
+                {
+                    "id": "test_uni_econ",
+                    "name": "Test University - Economics",
+                    "url": "https://example.com/econ",
+                    "type": "university_department",
+                    "verified": True
                 }
-            },
-            "non_accessible": {
-                "job_portals": {},
-                "regions": {
-                    "united_states": {
-                        "universities": [
-                            {
-                                "name": "Test University 2",
-                                "departments": [
-                                    {"name": "Economics", "url": "https://example.com/econ2"}
-                                ]
-                            }
-                        ]
-                    }
+            ],
+            "accessible_unverified": [
+                {
+                    "id": "test_uni_business",
+                    "name": "Test University 2 - Business",
+                    "url": "https://example.com/business",
+                    "type": "university_department",
+                    "verified": False
                 }
-            }
+            ],
+            "potential_links": [
+                {
+                    "id": "potential_uni",
+                    "name": "Potential University",
+                    "url": "https://example.com/potential",
+                    "type": "university_department",
+                    "verified": False
+                }
+            ]
         }
     
-    def test_get_accessible_config(self):
-        """Test getting accessible configuration."""
-        accessible = get_accessible_config(self.test_config)
-        self.assertIn("job_portals", accessible)
-        self.assertIn("regions", accessible)
-        self.assertIn("aea", accessible["job_portals"])
-        self.assertNotIn("non_accessible", accessible)
+    def test_get_accessible_verified_config(self):
+        """Test getting accessible verified configuration."""
+        verified = get_accessible_verified_config(self.test_config)
+        self.assertEqual(len(verified), 2)
+        self.assertEqual(verified[0]["id"], "aea")
+        self.assertEqual(verified[1]["id"], "test_uni_econ")
+        self.assertTrue(all(item["verified"] for item in verified))
     
-    def test_get_non_accessible_config(self):
-        """Test getting non-accessible configuration."""
-        non_accessible = get_non_accessible_config(self.test_config)
-        self.assertIn("job_portals", non_accessible)
-        self.assertIn("regions", non_accessible)
-        self.assertIn("united_states", non_accessible["regions"])
-        self.assertNotIn("accessible", non_accessible)
+    def test_get_accessible_unverified_config(self):
+        """Test getting accessible unverified configuration."""
+        unverified = get_accessible_unverified_config(self.test_config)
+        self.assertEqual(len(unverified), 1)
+        self.assertEqual(unverified[0]["id"], "test_uni_business")
+        self.assertFalse(unverified[0]["verified"])
+    
+    def test_get_potential_links_config(self):
+        """Test getting potential links configuration."""
+        potential = get_potential_links_config(self.test_config)
+        self.assertEqual(len(potential), 1)
+        self.assertEqual(potential[0]["id"], "potential_uni")
+    
+    def test_get_accessible_config_backward_compat(self):
+        """Test backward compatibility - accessible includes both verified and unverified."""
+        accessible = get_accessible_config(self.test_config)
+        # Should include both verified and unverified
+        self.assertEqual(len(accessible), 3)
+        ids = [item["id"] for item in accessible]
+        self.assertIn("aea", ids)
+        self.assertIn("test_uni_econ", ids)
+        self.assertIn("test_uni_business", ids)
+    
+    def test_get_non_accessible_config_backward_compat(self):
+        """Test backward compatibility - non_accessible now returns potential_links."""
+        potential = get_non_accessible_config(self.test_config)
+        self.assertEqual(len(potential), 1)
+        self.assertEqual(potential[0]["id"], "potential_uni")
     
     def test_get_all_config(self):
-        """Test getting all configuration combined."""
+        """Test getting all configuration organized by category."""
         all_config = get_all_config(self.test_config)
-        self.assertIn("job_portals", all_config)
-        self.assertIn("regions", all_config)
-        # Should have both accessible and non-accessible items
-        self.assertIn("aea", all_config["job_portals"])
-        # Should have universities from both sections
-        us_unis = all_config["regions"]["united_states"]["universities"]
-        self.assertGreaterEqual(len(us_unis), 1)
+        self.assertIn("accessible_verified", all_config)
+        self.assertIn("accessible_unverified", all_config)
+        self.assertIn("potential_links", all_config)
+        
+        self.assertEqual(len(all_config["accessible_verified"]), 2)
+        self.assertEqual(len(all_config["accessible_unverified"]), 1)
+        self.assertEqual(len(all_config["potential_links"]), 1)
     
     def test_count_urls(self):
-        """Test counting URLs in configuration."""
-        total, accessible = count_urls(self.test_config)
-        # Accessible: 1 job portal + 1 department = 2
-        # Non-accessible: 0 job portals + 1 department = 1
-        # Total: 3
-        self.assertEqual(accessible, 2)
-        self.assertEqual(total, 3)
+        """Test counting URLs in each category."""
+        total, verified, unverified, potential = count_urls(self.test_config)
+        # Verified: 2, Unverified: 1, Potential: 1, Total: 4
+        self.assertEqual(total, 4)
+        self.assertEqual(verified, 2)
+        self.assertEqual(unverified, 1)
+        self.assertEqual(potential, 1)
     
     def test_count_urls_empty_config(self):
         """Test counting URLs in empty configuration."""
         empty_config = {
-            "accessible": {"job_portals": {}, "regions": {}},
-            "non_accessible": {"job_portals": {}, "regions": {}}
+            "accessible_verified": [],
+            "accessible_unverified": [],
+            "potential_links": []
         }
-        total, accessible = count_urls(empty_config)
-        self.assertEqual(accessible, 0)
+        total, verified, unverified, potential = count_urls(empty_config)
         self.assertEqual(total, 0)
+        self.assertEqual(verified, 0)
+        self.assertEqual(unverified, 0)
+        self.assertEqual(potential, 0)
     
-    def test_count_urls_complex_structure(self):
-        """Test counting URLs in complex configuration structure."""
-        complex_config = {
-            "accessible": {
-                "job_portals": {
-                    "portal1": {},
-                    "portal2": {}
-                },
-                "regions": {
-                    "united_states": {
-                        "universities": [
-                            {
-                                "name": "Uni1",
-                                "departments": [
-                                    {"name": "Dept1", "url": "url1"},
-                                    {"name": "Dept2", "url": "url2"}
-                                ]
-                            }
-                        ],
-                        "research_institutes": [
-                            {"name": "Inst1", "url": "url3"}
-                        ]
-                    },
-                    "other_countries": {
-                        "countries": {
-                            "country1": {
-                                "universities": [
-                                    {
-                                        "name": "Uni2",
-                                        "departments": [
-                                            {"name": "Dept3", "url": "url4"}
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                }
-            },
-            "non_accessible": {
-                "job_portals": {},
-                "regions": {}
-            }
-        }
-        total, accessible = count_urls(complex_config)
-        # Accessible: 2 portals + 2 departments + 1 institute + 1 department = 6
-        self.assertEqual(accessible, 6)
-        self.assertEqual(total, 6)
-    
-    def test_get_accessible_config_none(self):
-        """Test getting accessible config when config is None (loads from file)."""
+    def test_get_accessible_verified_config_none(self):
+        """Test getting verified config when config is None (loads from file)."""
         # This will try to load from actual config file
-        # Just test that it doesn't crash
+        # Just test that it doesn't crash and returns a list
         try:
-            accessible = get_accessible_config()
-            self.assertIsInstance(accessible, dict)
+            verified = get_accessible_verified_config()
+            self.assertIsInstance(verified, list)
         except FileNotFoundError:
-            # Expected if config file doesn't exist in test environment
+            # Config file might not exist in test environment
             pass
     
-    def test_get_non_accessible_config_none(self):
-        """Test getting non-accessible config when config is None."""
+    def test_get_potential_links_config_none(self):
+        """Test getting potential links config when config is None (loads from file)."""
+        # This will try to load from actual config file
+        # Just test that it doesn't crash and returns a list
         try:
-            non_accessible = get_non_accessible_config()
-            self.assertIsInstance(non_accessible, dict)
+            potential = get_potential_links_config()
+            self.assertIsInstance(potential, list)
         except FileNotFoundError:
-            pass
-    
-    def test_get_all_config_none(self):
-        """Test getting all config when config is None."""
-        try:
-            all_config = get_all_config()
-            self.assertIsInstance(all_config, dict)
-        except FileNotFoundError:
+            # Config file might not exist in test environment
             pass
 
 
-if __name__ == "__main__":
+class TestConfigLoaderIntegration(unittest.TestCase):
+    """Integration tests with actual config file."""
+    
+    def test_real_config_structure(self):
+        """Test that real config has the expected structure."""
+        try:
+            config = load_config()
+            
+            # Check that all three categories exist
+            self.assertIn("accessible_verified", config)
+            self.assertIn("accessible_unverified", config)
+            self.assertIn("potential_links", config)
+            
+            # Check that they're lists
+            self.assertIsInstance(config["accessible_verified"], list)
+            self.assertIsInstance(config["accessible_unverified"], list)
+            self.assertIsInstance(config["potential_links"], list)
+            
+            # Check that entries are dictionaries with required fields
+            for entry in config["accessible_verified"]:
+                self.assertIn("id", entry)
+                self.assertIn("url", entry)
+                
+        except FileNotFoundError:
+            # Config file might not exist in test environment
+            self.skipTest("Config file not found")
+
+
+if __name__ == '__main__':
     unittest.main()
 

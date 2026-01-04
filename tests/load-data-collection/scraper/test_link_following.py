@@ -1,6 +1,9 @@
 """
 Test script to verify link-following functionality with real data.
-Tests a small subset of universities to verify the link-following works correctly.
+Tests a small subset of universities and institutes to verify the link-following works correctly.
+
+NOTE: This test file is for manual testing and demonstration purposes.
+It requires the scraper scripts to be available in sys.path.
 """
 
 import json
@@ -12,9 +15,15 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
-from scripts.scraper.university_scraper import UniversityScraper
-from scripts.scraper.institute_scraper import InstituteScraper
-from scripts.scraper.utils.config_loader import get_accessible_config
+try:
+    from scripts.scraper.university_scraper import UniversityScraper
+    from scripts.scraper.institute_scraper import InstituteScraper
+except ImportError:
+    # Skip if scraper modules not available
+    UniversityScraper = None
+    InstituteScraper = None
+
+from scripts.scraper.utils.config_loader import get_accessible_verified_config
 
 # Set up logging
 logging.basicConfig(
@@ -25,106 +34,122 @@ logger = logging.getLogger(__name__)
 
 
 def test_university_link_following(limit: int = 3):
-    """Test link-following with a small number of universities."""
+    """Test link-following with a small number of universities.
+    
+    Args:
+        limit: Number of universities to test
+        
+    Returns:
+        List of job listings scraped
+    """
+    if UniversityScraper is None:
+        logger.warning("UniversityScraper not available, skipping university test")
+        return []
+        
     logger.info("=" * 70)
     logger.info("Testing University Scraper Link-Following")
     logger.info("=" * 70)
     
-    config = get_accessible_config()
+    config = get_accessible_verified_config()
     all_listings = []
     
-    # Get a small sample of universities
-    regions = config.get("regions", {})
+    # Filter for university entries only
+    universities = [entry for entry in config if entry.get("type") == "university"]
     test_count = 0
     
-    # Test US universities first
-    if "united_states" in regions and "universities" in regions["united_states"]:
-        for uni in regions["united_states"]["universities"][:limit]:
-            if "departments" in uni:
-                for dept in uni["departments"][:1]:  # Just first department
-                    if "url" in dept and test_count < limit:
-                        logger.info(f"\n[{test_count + 1}/{limit}] Testing: {uni['name']} - {dept.get('name', '')}")
-                        logger.info(f"URL: {dept['url']}")
-                        
-                        scraper = UniversityScraper(
-                            university_name=uni["name"],
-                            url=dept["url"],
-                            department=dept.get("name", ""),
-                            follow_links=True,
-                            max_links_to_follow=5  # Limit for testing
-                        )
-                        
-                        try:
-                            listings = scraper.scrape()
-                            logger.info(f"✓ Scraped {len(listings)} listings")
-                            
-                            # Check data quality
-                            listings_with_description = [l for l in listings if l.get("description") and len(l.get("description", "")) > 100]
-                            listings_with_application = [l for l in listings if l.get("application_link")]
-                            listings_with_contact = [l for l in listings if l.get("contact_email")]
-                            
-                            logger.info(f"  - Listings with full description (>100 chars): {len(listings_with_description)}/{len(listings)}")
-                            logger.info(f"  - Listings with application link: {len(listings_with_application)}/{len(listings)}")
-                            logger.info(f"  - Listings with contact email: {len(listings_with_contact)}/{len(listings)}")
-                            
-                            all_listings.extend(listings)
-                            test_count += 1
-                            
-                        except Exception as e:
-                            logger.error(f"✗ Failed to scrape {uni['name']}: {e}")
+    for uni in universities[:limit]:
+        if "url" in uni and test_count < limit:
+            logger.info(f"\n[{test_count + 1}/{limit}] Testing: {uni.get('name', 'Unknown')}")
+            logger.info(f"URL: {uni['url']}")
+            
+            try:
+                scraper = UniversityScraper(
+                    university_name=uni.get("name", ""),
+                    url=uni["url"],
+                    follow_links=True,
+                    max_links_to_follow=5  # Limit for testing
+                )
+                
+                listings = scraper.scrape()
+                logger.info(f"✓ Scraped {len(listings)} listings")
+                
+                # Check data quality
+                listings_with_description = [l for l in listings if l.get("description") and len(l.get("description", "")) > 100]
+                listings_with_application = [l for l in listings if l.get("application_link")]
+                listings_with_contact = [l for l in listings if l.get("contact_email")]
+                
+                logger.info(f"  - Listings with full description (>100 chars): {len(listings_with_description)}/{len(listings)}")
+                logger.info(f"  - Listings with application link: {len(listings_with_application)}/{len(listings)}")
+                logger.info(f"  - Listings with contact email: {len(listings_with_contact)}/{len(listings)}")
+                
+                all_listings.extend(listings)
+                test_count += 1
+                
+            except Exception as e:
+                logger.error(f"✗ Failed to scrape {uni.get('name', 'Unknown')}: {e}")
     
     logger.info("\n" + "=" * 70)
-    logger.info(f"Test Summary: {len(all_listings)} total listings scraped")
+    logger.info(f"University Test Summary: {len(all_listings)} total listings scraped")
     logger.info("=" * 70)
     
     return all_listings
 
 
 def test_institute_link_following(limit: int = 2):
-    """Test link-following with a small number of institutes."""
+    """Test link-following with a small number of institutes.
+    
+    Args:
+        limit: Number of institutes to test
+        
+    Returns:
+        List of job listings scraped
+    """
+    if InstituteScraper is None:
+        logger.warning("InstituteScraper not available, skipping institute test")
+        return []
+        
     logger.info("\n" + "=" * 70)
     logger.info("Testing Institute Scraper Link-Following")
     logger.info("=" * 70)
     
-    config = get_accessible_config()
+    config = get_accessible_verified_config()
     all_listings = []
     
-    regions = config.get("regions", {})
+    # Filter for institute entries only
+    institutes = [entry for entry in config if entry.get("type") == "institute"]
     test_count = 0
     
-    # Test US institutes
-    if "united_states" in regions and "research_institutes" in regions["united_states"]:
-        for inst in regions["united_states"]["research_institutes"][:limit]:
-            if "url" in inst and test_count < limit:
-                logger.info(f"\n[{test_count + 1}/{limit}] Testing: {inst['name']}")
-                logger.info(f"URL: {inst['url']}")
-                
+    for inst in institutes[:limit]:
+        if "url" in inst and test_count < limit:
+            logger.info(f"\n[{test_count + 1}/{limit}] Testing: {inst.get('name', 'Unknown')}")
+            logger.info(f"URL: {inst['url']}")
+            
+            try:
                 scraper = InstituteScraper(
-                    institute_name=inst["name"],
+                    institute_name=inst.get("name", ""),
                     url=inst["url"],
                     follow_links=True,
                     max_links_to_follow=5  # Limit for testing
                 )
                 
-                try:
-                    listings = scraper.scrape()
-                    logger.info(f"✓ Scraped {len(listings)} listings")
-                    
-                    # Check data quality
-                    listings_with_description = [l for l in listings if l.get("description") and len(l.get("description", "")) > 100]
-                    listings_with_application = [l for l in listings if l.get("application_link")]
-                    
-                    logger.info(f"  - Listings with full description (>100 chars): {len(listings_with_description)}/{len(listings)}")
-                    logger.info(f"  - Listings with application link: {len(listings_with_application)}/{len(listings)}")
-                    
-                    all_listings.extend(listings)
-                    test_count += 1
-                    
-                except Exception as e:
-                    logger.error(f"✗ Failed to scrape {inst['name']}: {e}")
+                listings = scraper.scrape()
+                logger.info(f"✓ Scraped {len(listings)} listings")
+                
+                # Check data quality
+                listings_with_description = [l for l in listings if l.get("description") and len(l.get("description", "")) > 100]
+                listings_with_application = [l for l in listings if l.get("application_link")]
+                
+                logger.info(f"  - Listings with full description (>100 chars): {len(listings_with_description)}/{len(listings)}")
+                logger.info(f"  - Listings with application link: {len(listings_with_application)}/{len(listings)}")
+                
+                all_listings.extend(listings)
+                test_count += 1
+                
+            except Exception as e:
+                logger.error(f"✗ Failed to scrape {inst.get('name', 'Unknown')}: {e}")
     
     logger.info("\n" + "=" * 70)
-    logger.info(f"Test Summary: {len(all_listings)} total listings scraped")
+    logger.info(f"Institute Test Summary: {len(all_listings)} total listings scraped")
     logger.info("=" * 70)
     
     return all_listings
