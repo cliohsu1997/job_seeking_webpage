@@ -3,7 +3,7 @@
 import json
 import pytest
 from pathlib import Path
-from scripts.scraper.check_config.url_access import (
+from scripts.scraper.config.url_access import (
     test_accessibility,
     is_accessible,
     follow_redirects,

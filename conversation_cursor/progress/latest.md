@@ -50,13 +50,13 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - [x] Implement accessibility report generation (connectivity_report.py)
 - [x] Create comprehensive test suite with real scraping sources integration
 - [x] Reorganize folder structure for consistency
-  - Consolidated `scripts/scraper/check_config/` (removed redundant nesting)
+  - Consolidated `scripts/scraper/config/` (renamed from check_config)
   - Merged test folders: `config/` contains `url_access/` and `url_verification/` tests
   - Deleted legacy scripts (`verify_urls.py`, `find_url_replacements.py` - to be replaced by Task 0B)
   - Updated all import paths and README files
 
 **Structure Now**:
-- Scripts: `scripts/scraper/check_config/url_access/` (4 modules)
+- Scripts: `scripts/scraper/config/url_access/` (4 modules)
 - Tests: `tests/load-data-collection/config/url_access/` (3 test files)
 
 **Next Tasks - Task 0B onwards**:
@@ -256,7 +256,9 @@ poetry run python -m scripts.generator.build_site
 - **Impact**: This fix ensures all URLs extracted from HTML are resolved to absolute URLs immediately, eliminating the need for later resolution. When re-scraped, this should eliminate the 113 remaining relative URL errors.
 
 **Recent Updates (2026-01-03)**:
-- [x] **Enhanced URL verification script** - Updated `scripts/scraper/check_config/verify_urls.py` to:
+- [x] **Enhanced URL verification script** - Updated URL verification tools:
+  - Replaced legacy monolithic script with modular Task 0A/0B system
+  - New location: `scripts/scraper/config/url_access/`
   - Verify URLs in accessible section (not just non_accessible)
   - Verify job content (check for job listings, links, PDFs)
   - Move invalid URLs from accessible to non_accessible (instead of deleting)
@@ -266,7 +268,8 @@ poetry run python -m scripts.generator.build_site
   - **47 URLs moved from accessible to non_accessible** (job content not verified, errors, or forbidden)
   - **2 URLs moved from non_accessible to accessible** (Sichuan Normal University, Southwest Jiaotong University)
   - **81 URLs total with issues** requiring replacement or fixes
-  - Created helper script `scripts/scraper/check_config/find_url_replacements.py` to systematically find replacement URLs
+  - Helper scripts replaced by Task 0B modular implementation (pending)
+  - New location: `scripts/scraper/config/`
   - **Issue breakdown**: Job portals (1), US universities (30+), Chinese universities (40+), International universities (10+)
   - **Issue types**: 403 Forbidden, 404 Not Found, Connection errors (DNS failures), No job content verified, HTTP 202 errors, Timeouts
   - See verification output and `data/config/scraping_sources.json` (non_accessible section) for detailed list

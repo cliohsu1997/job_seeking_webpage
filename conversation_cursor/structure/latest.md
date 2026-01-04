@@ -37,7 +37,7 @@ job-seeking-webpage/
 │   │   ├── institute_scraper.py    # Institute scraper
 │   │   ├── parsers/                # HTML, RSS, text, date parsers
 │   │   ├── utils/                  # Rate limiter, retry handler, user agent
-│   │   └── check_config/           # ✅ PHASE 1B - Configuration verification tools
+│   │   └── config/                 # ✅ PHASE 1B - Configuration verification tools
 │   │       ├── README.md                     # Documentation for verification tools
 │   │       ├── url_access/                   # ✅ Task 0A - HTTP accessibility testing (COMPLETE)
 │   │       │   ├── __init__.py               # Module exports

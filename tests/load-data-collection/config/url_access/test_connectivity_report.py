@@ -3,7 +3,7 @@
 import json
 import pytest
 from pathlib import Path
-from scripts.scraper.check_config.url_access import generate_accessibility_report
+from scripts.scraper.config.url_access import generate_accessibility_report
 
 
 @pytest.fixture

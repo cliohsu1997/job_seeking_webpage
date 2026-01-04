@@ -67,7 +67,7 @@ Generate comprehensive accessibility reports.
 
 **Usage**:
 ```python
-from scripts.scraper.check_config.url_access import generate_accessibility_report
+from scripts.scraper.config.url_access import generate_accessibility_report
 
 report = generate_accessibility_report(
     "data/config/scraping_sources.json",

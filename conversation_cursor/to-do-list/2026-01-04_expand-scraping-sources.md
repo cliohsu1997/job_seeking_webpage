@@ -13,11 +13,11 @@
 The original Task 0 and Task 1 have been separated into distinct workflow components:
 
 **URL Access Verification (Task 0A)**: Test HTTP connectivity, follow redirects, detect errors
-- Files location: `scripts/scraper/check_config/url_access/`
+- Files location: `scripts/scraper/config/url_access/`
 - Config location: `data/config/url_verification/`
 
 **URL Verification (Task 0B)**: Classify page type, validate content, score quality
-- Files location: `scripts/scraper/check_config/url_verification/`
+- Files location: `scripts/scraper/config/url_verification/`
 - Results location: `data/config/url_verification/`
 
 This separation allows:
@@ -75,11 +75,11 @@ A URL is valid for the **accessible section** if it **contains extractable job l
 **Description**: Test HTTP connectivity, follow redirects, detect server-level errors
 
 **Files Created**:
-- ✅ `scripts/scraper/check_config/url_access/__init__.py` - Module exports
-- ✅ `scripts/scraper/check_config/url_access/test_accessibility.py` - HTTP connectivity testing
-- ✅ `scripts/scraper/check_config/url_access/redirect_handler.py` - Redirect following and chain tracking
-- ✅ `scripts/scraper/check_config/url_access/dns_resolver.py` - Chinese DNS fallback support
-- ✅ `scripts/scraper/check_config/url_access/connectivity_report.py` - Generate accessibility reports
+- ✅ `scripts/scraper/config/url_access/__init__.py` - Module exports
+- ✅ `scripts/scraper/config/url_access/test_accessibility.py` - HTTP connectivity testing
+- ✅ `scripts/scraper/config/url_access/redirect_handler.py` - Redirect following and chain tracking
+- ✅ `scripts/scraper/config/url_access/dns_resolver.py` - Chinese DNS fallback support
+- ✅ `scripts/scraper/config/url_access/connectivity_report.py` - Generate accessibility reports
 
 **Test Suite Created**:
 - ✅ `tests/load-data-collection/config/test_scraping_sources.py` - Config validation tests
@@ -164,11 +164,11 @@ A URL is valid for the **accessible section** if it **contains extractable job l
 **Description**: Classify page type, validate content, score quality, implement decision engine
 
 **Files to Create**:
-- `scripts/scraper/check_config/url_verification/page_classifier.py` - Classify page type
-- `scripts/scraper/check_config/url_verification/url_discoverer.py` - Discover career portals
-- `scripts/scraper/check_config/url_verification/content_validator.py` - Extract & validate jobs
-- `scripts/scraper/check_config/url_verification/quality_scorer.py` - Score content quality
-- `scripts/scraper/check_config/url_verification/decision_engine.py` - Full validation decision tree
+- `scripts/scraper/config/url_verification/page_classifier.py` - Classify page type
+- `scripts/scraper/config/url_verification/url_discoverer.py` - Discover career portals
+- `scripts/scraper/config/url_verification/content_validator.py` - Extract & validate jobs
+- `scripts/scraper/config/url_verification/quality_scorer.py` - Score content quality
+- `scripts/scraper/config/url_verification/decision_engine.py` - Full validation decision tree
 - `data/config/url_verification/verification_results.json` - Store all verification results
 - `data/config/url_verification/discovery_suggestions.json` - Store discovered alternatives
 
@@ -420,7 +420,7 @@ data/config/url_verification/
 ├── discovery_suggestions.json         # Discovered alternative URLs
 └── url_verification.md                # Consolidated documentation
 
-scripts/scraper/check_config/
+scripts/scraper/config/
 ├── url_access/
 │   ├── test_accessibility.py          # Task 0A.1
 │   ├── redirect_handler.py            # Task 0A.2
