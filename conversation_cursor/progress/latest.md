@@ -41,7 +41,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **Proposal**: `conversation_cursor/dates/2025-12-31/design-scraping-strategy.md`
 
 ### 🔄 Phase 1B: EXPAND - Data Source Expansion (IN PROGRESS)
-**Status**: Task 0A (URL Access Verification) - ✅ COMPLETE, Structure Reorganized
+**Status**: Task 0A (URL Access Verification) - ✅ COMPLETE, Config Structure Flattened
 
 **Accomplishments - Task 0A**:
 - [x] Implement basic HTTP accessibility testing (test_accessibility.py)
@@ -54,10 +54,17 @@ The project follows a **Load → Transform → Export** workflow structure for a
   - Merged test folders: `config/` contains `url_access/` and `url_verification/` tests
   - Deleted legacy scripts (`verify_urls.py`, `find_url_replacements.py` - to be replaced by Task 0B)
   - Updated all import paths and README files
+- [x] **Flatten configuration structure** (scraping_sources.json)
+  - Changed from hierarchical (regions → universities → departments) to flat list
+  - Each entry now has direct URL + metadata (type, region, country, city, department, etc.)
+  - Updated all scrapers, tests, and utilities to work with flat structure
+  - Config now: `{"accessible": [{"id": "...", "url": "...", "type": "...", ...}], "non_accessible": [...]}`
+  - All 5 config tests passing, 7/8 accessibility tests passing
 
 **Structure Now**:
 - Scripts: `scripts/scraper/config/url_access/` (4 modules)
 - Tests: `tests/load-data-collection/config/url_access/` (3 test files)
+- Config: Flat structure with 127 accessible + 83 non-accessible = 210 total entries
 
 **Next Tasks - Task 0B onwards**:
 - [ ] Task 0B: URL content verification (page classifier, content validator, quality scorer, decision engine)

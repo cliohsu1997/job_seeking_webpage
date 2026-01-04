@@ -436,42 +436,26 @@ class InstituteScraper(BaseScraper):
 
 def scrape_all_institutes(output_dir: Optional[Path] = None) -> List[Dict[str, Any]]:
     """Scrape job listings from all research institutes in the configuration."""
-    config = get_accessible_config()
+    config_entries = get_accessible_config()
     all_listings = []
-    
-    regions = config.get("regions", {})
-    
-    # United States research institutes
-    if "united_states" in regions and "research_institutes" in regions["united_states"]:
-        for inst in regions["united_states"]["research_institutes"]:
-            if "url" in inst:
-                scraper = InstituteScraper(
-                    institute_name=inst["name"],
-                    url=inst["url"],
-                    output_dir=output_dir
-                )
-                try:
-                    listings = scraper.scrape()
-                    all_listings.extend(listings)
-                except Exception as e:
-                    logger.error(f"Failed to scrape {inst['name']}: {e}")
-    
-    # Other countries research institutes
-    if "other_countries" in regions:
-        for country, country_data in regions["other_countries"].items():
-            if "research_institutes" in country_data:
-                for inst in country_data["research_institutes"]:
-                    if "url" in inst:
-                        scraper = InstituteScraper(
-                            institute_name=inst["name"],
-                            url=inst["url"],
-                            output_dir=output_dir
-                        )
-                        try:
-                            listings = scraper.scrape()
-                            all_listings.extend(listings)
-                        except Exception as e:
-                            logger.error(f"Failed to scrape {inst['name']}: {e}")
-    
+
+    for entry in config_entries:
+        if entry.get("type") != "research_institute":
+            continue
+        url = entry.get("url")
+        if not url:
+            continue
+
+        scraper = InstituteScraper(
+            institute_name=entry.get("institute", entry.get("name", "")),
+            url=url,
+            output_dir=output_dir,
+        )
+        try:
+            listings = scraper.scrape()
+            all_listings.extend(listings)
+        except Exception as e:
+            logger.error(f"Failed to scrape {entry.get('name', 'institute')}: {e}")
+
     return all_listings
 

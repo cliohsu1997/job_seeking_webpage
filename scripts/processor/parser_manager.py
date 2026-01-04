@@ -144,7 +144,7 @@ class ParserManager:
                     self._config_cache = json.load(f)
             except (FileNotFoundError, json.JSONDecodeError) as e:
                 logger.warning(f"Failed to load scraping sources config: {e}")
-                self._config_cache = {"accessible": {"job_portals": {}, "regions": {}}}
+                self._config_cache = {"accessible": [], "non_accessible": []}
         return self._config_cache
     
     def _lookup_base_url(self, filename: str, source_type: str, metadata: Dict[str, Any]) -> Optional[str]:
@@ -160,127 +160,44 @@ class ParserManager:
             Base URL string or None if not found
         """
         config = self._load_config()
-        accessible = config.get("accessible", {})
-        
+        accessible_entries = config.get("accessible", [])
+
         try:
             if source_type == "aea":
-                # Look up AEA JOE URL
-                job_portals = accessible.get("job_portals", {})
-                if "aea" in job_portals:
-                    return job_portals["aea"].get("url")
-            
+                for entry in accessible_entries:
+                    if entry.get("type") == "job_portal" and entry.get("id") == "aea":
+                        return entry.get("url")
+
             elif source_type == "university":
-                # Look up university URL from config
-                university_name = metadata.get("university_name", "")
-                department = metadata.get("department", "")
-                country = metadata.get("country", "")
-                
-                # Map country code to region
-                region_map = {
-                    "us": "united_states",
-                    "cn": "mainland_china",
-                    "uk": "other_countries",
-                    "ca": "other_countries",
-                    "au": "other_countries"
-                }
-                region = region_map.get(country.lower(), "other_countries")
-                
-                regions = accessible.get("regions", {})
-                if region in regions:
-                    region_data = regions[region]
-                    
-                    # Check universities
-                    if "universities" in region_data:
-                        for uni in region_data["universities"]:
-                            uni_name = uni.get("name", "").lower()
-                            # Try exact match first
-                            if uni_name == university_name.lower():
-                                # Check departments
-                                for dept in uni.get("departments", []):
-                                    if dept.get("name", "").lower() == department.lower():
-                                        return dept.get("url")
-                                # Fallback to first department URL
-                                if uni.get("departments"):
-                                    return uni["departments"][0].get("url")
-                            # Try partial match (university name contains or is contained in config name)
-                            elif university_name.lower() in uni_name or uni_name in university_name.lower():
-                                # Check departments
-                                for dept in uni.get("departments", []):
-                                    if dept.get("name", "").lower() == department.lower():
-                                        return dept.get("url")
-                                # Fallback to first department URL
-                                if uni.get("departments"):
-                                    return uni["departments"][0].get("url")
-                    
-                    # Check other_countries structure
-                    if region == "other_countries" and "countries" in region_data:
-                        # Try to find by country code
-                        for country_key, country_data in region_data["countries"].items():
-                            if country_key.lower() == country.lower():
-                                if "universities" in country_data:
-                                    for uni in country_data["universities"]:
-                                        uni_name = uni.get("name", "").lower()
-                                        # Try exact match first
-                                        if uni_name == university_name.lower():
-                                            for dept in uni.get("departments", []):
-                                                if dept.get("name", "").lower() == department.lower():
-                                                    return dept.get("url")
-                                            if uni.get("departments"):
-                                                return uni["departments"][0].get("url")
-                                        # Try partial match
-                                        elif university_name.lower() in uni_name or uni_name in university_name.lower():
-                                            for dept in uni.get("departments", []):
-                                                if dept.get("name", "").lower() == department.lower():
-                                                    return dept.get("url")
-                                            if uni.get("departments"):
-                                                return uni["departments"][0].get("url")
-            
+                university_name = metadata.get("university_name", "").lower()
+                department = metadata.get("department", "").lower()
+
+                for entry in accessible_entries:
+                    if entry.get("type") != "university_department":
+                        continue
+                    entry_uni = entry.get("university", "").lower()
+                    entry_dept = entry.get("department", "").lower()
+
+                    name_match = university_name and (entry_uni == university_name or university_name in entry_uni or entry_uni in university_name)
+                    dept_match = not department or entry_dept == department or department in entry_dept or entry_dept in department
+
+                    if name_match and dept_match:
+                        return entry.get("url")
+
             elif source_type == "institute":
-                # Look up institute URL from config
-                institute_name = metadata.get("institute_name", "")
-                country = metadata.get("country", "")
-                
-                region_map = {
-                    "us": "united_states",
-                    "cn": "mainland_china",
-                    "uk": "other_countries",
-                    "ca": "other_countries",
-                    "au": "other_countries"
-                }
-                region = region_map.get(country.lower(), "other_countries")
-                
-                regions = accessible.get("regions", {})
-                if region in regions:
-                    region_data = regions[region]
-                    
-                    # Check research_institutes
-                    if "research_institutes" in region_data:
-                        for inst in region_data["research_institutes"]:
-                            inst_name = inst.get("name", "").lower()
-                            # Try exact match first
-                            if inst_name == institute_name.lower():
-                                return inst.get("url")
-                            # Try partial match
-                            elif institute_name.lower() in inst_name or inst_name in institute_name.lower():
-                                return inst.get("url")
-                    
-                    # Check other_countries structure
-                    if region == "other_countries" and "countries" in region_data:
-                        for country_key, country_data in region_data["countries"].items():
-                            if country_key.lower() == country.lower():
-                                if "research_institutes" in country_data:
-                                    for inst in country_data["research_institutes"]:
-                                        inst_name = inst.get("name", "").lower()
-                                        # Try exact match first
-                                        if inst_name == institute_name.lower():
-                                            return inst.get("url")
-                                        # Try partial match
-                                        elif institute_name.lower() in inst_name or inst_name in institute_name.lower():
-                                            return inst.get("url")
-        
+                institute_name = metadata.get("institute_name", "").lower()
+
+                for entry in accessible_entries:
+                    if entry.get("type") != "research_institute":
+                        continue
+                    entry_name = entry.get("institute", entry.get("name", "")).lower()
+
+                    if institute_name and (entry_name == institute_name or institute_name in entry_name or entry_name in institute_name):
+                        return entry.get("url")
+
         except Exception as e:
             logger.debug(f"Error looking up base URL for {filename}: {e}")
-        
+
         return None
     
     def _extract_base_url_from_url(self, url: str) -> Optional[str]:

@@ -113,25 +113,29 @@ def generate_accessibility_report(
 
 
 def _extract_all_urls(sources: Dict) -> List[tuple]:
-    """Extract all URLs from sources config."""
+    """Extract all URLs from flat sources config."""
     urls = []
-    
+
     for section in ["accessible", "non_accessible"]:
-        if section not in sources:
+        entries = sources.get(section, []) if isinstance(sources, dict) else []
+        if not isinstance(entries, list):
             continue
-        
-        for category, items in sources[section].items():
-            if isinstance(items, dict):
-                for key, config in items.items():
-                    if "url" in config:
-                        urls.append((
-                            config["url"],
-                            {
-                                "region": config.get("region"),
-                                "category": category,
-                            }
-                        ))
-    
+
+        for entry in entries:
+            url = entry.get("url")
+            if not url:
+                continue
+
+            urls.append(
+                (
+                    url,
+                    {
+                        "region": entry.get("region"),
+                        "category": entry.get("type", "unknown"),
+                    },
+                )
+            )
+
     return urls
 
 

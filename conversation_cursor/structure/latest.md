@@ -21,7 +21,9 @@ job-seeking-webpage/
 │   │   └── diagnostics/            # Diagnostic reports
 │   └── config/
 │       ├── README.md               # Configuration guide with verification methodology
-│       ├── scraping_sources.json   # Scraping sources (176 accessible, 81 non-accessible)
+│       ├── scraping_sources.json   # ✅ FLAT structure: 127 accessible + 83 non-accessible = 210 entries
+│       │                           # Format: {"accessible": [{"id": "...", "url": "...", "type": "...", ...}], "non_accessible": [...]}
+│       ├── scraping_sources_hierarchical_backup.json  # Original hierarchical version (backup)
 │       ├── scraping_rules.json     # Scraping patterns
 │       ├── processing_rules.json   # Processing rules
 │       ├── url_replacements.json   # URL replacement patterns

@@ -485,49 +485,27 @@ def scrape_all_universities(output_dir: Optional[Path] = None) -> List[Dict[str,
     Returns:
         List of all job listings from all universities
     """
-    config = get_accessible_config()
+    config_entries = get_accessible_config()
     all_listings = []
-    
-    # Extract universities from config
-    regions = config.get("regions", {})
-    
-    # United States universities
-    if "united_states" in regions and "universities" in regions["united_states"]:
-        for uni in regions["united_states"]["universities"]:
-            if "departments" in uni:
-                for dept in uni["departments"]:
-                    if "url" in dept:
-                        scraper = UniversityScraper(
-                            university_name=uni["name"],
-                            url=dept["url"],
-                            department=dept.get("name", ""),
-                            output_dir=output_dir
-                        )
-                        try:
-                            listings = scraper.scrape()
-                            all_listings.extend(listings)
-                        except Exception as e:
-                            logger.error(f"Failed to scrape {uni['name']}: {e}")
-    
-    # Other countries universities (similar structure)
-    if "other_countries" in regions:
-        for country, country_data in regions["other_countries"].items():
-            if "universities" in country_data:
-                for uni in country_data["universities"]:
-                    if "departments" in uni:
-                        for dept in uni["departments"]:
-                            if "url" in dept:
-                                scraper = UniversityScraper(
-                                    university_name=uni["name"],
-                                    url=dept["url"],
-                                    department=dept.get("name", ""),
-                                    output_dir=output_dir
-                                )
-                                try:
-                                    listings = scraper.scrape()
-                                    all_listings.extend(listings)
-                                except Exception as e:
-                                    logger.error(f"Failed to scrape {uni['name']}: {e}")
-    
+
+    for entry in config_entries:
+        if entry.get("type") != "university_department":
+            continue
+        url = entry.get("url")
+        if not url:
+            continue
+
+        scraper = UniversityScraper(
+            university_name=entry.get("university", entry.get("name", "")),
+            url=url,
+            department=entry.get("department", ""),
+            output_dir=output_dir,
+        )
+        try:
+            listings = scraper.scrape()
+            all_listings.extend(listings)
+        except Exception as e:
+            logger.error(f"Failed to scrape {entry.get('name', 'university')}: {e}")
+
     return all_listings
 

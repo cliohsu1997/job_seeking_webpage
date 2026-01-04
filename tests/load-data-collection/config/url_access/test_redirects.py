@@ -14,10 +14,10 @@ def job_portal_urls():
         sources = json.load(f)
     
     urls = []
-    if "accessible" in sources and "job_portals" in sources["accessible"]:
-        for key, config in sources["accessible"]["job_portals"].items():
-            urls.append(config["url"])
-    
+    for entry in sources.get("accessible", []):
+        if entry.get("type") == "job_portal" and "url" in entry:
+            urls.append(entry["url"])
+
     return urls
 
 

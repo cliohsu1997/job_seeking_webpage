@@ -70,9 +70,9 @@ A URL is valid for the **accessible section** if it **contains extractable job l
 ## Phase 1B.1: URL Access Verification Tools
 
 ### Task 0A: Implement URL Access Verification System
-**Status**: ✅ COMPLETE  
+**Status**: ✅ COMPLETE (including config flattening)
 **Priority**: CRITICAL  
-**Description**: Test HTTP connectivity, follow redirects, detect server-level errors
+**Description**: Test HTTP connectivity, follow redirects, detect server-level errors. Config structure flattened to simple list format.
 
 **Files Created**:
 - ✅ `scripts/scraper/config/url_access/__init__.py` - Module exports

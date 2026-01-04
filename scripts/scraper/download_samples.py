@@ -3,6 +3,8 @@ Download sample HTML files from various sources for parsing approach analysis.
 
 This script reads from scraping_sources.json and downloads HTML samples from all
 accessible URLs to compare class-based vs pattern-based extraction.
+
+Config is flat: each entry already contains URL and metadata (type, region, etc.).
 """
 
 import re
@@ -34,104 +36,31 @@ def sanitize_filename(name):
     return name.lower()
 
 
-def extract_sources_from_config(config_data):
-    """Extract all accessible URLs from configuration (assumes config already filtered to accessible only)."""
+def extract_sources_from_config(entries):
+    """Extract all accessible URLs from flat configuration entries."""
     sources = []
-    
-    # Extract from job portals
-    if "job_portals" in config_data:
-        for portal_key, portal_data in config_data["job_portals"].items():
-            if "url" in portal_data:
-                name = sanitize_filename(portal_data.get("name", portal_key))
-                filename = f"portal_{name}.html"
-                sources.append({
-                    "name": portal_data.get("name", portal_key),
-                    "url": portal_data["url"],
-                    "filename": filename,
-                    "type": "portal"
-                })
-    
-    # Extract from regions
-    if "regions" in config_data:
-        regions = config_data["regions"]
-        
-        # United States universities
-        if "united_states" in regions and "universities" in regions["united_states"]:
-            for uni in regions["united_states"]["universities"]:
-                uni_name = sanitize_filename(uni["name"])
-                if "departments" in uni:
-                    for dept in uni["departments"]:
-                        if "url" in dept:
-                            dept_name = sanitize_filename(dept["name"])
-                            filename = f"us_{uni_name}_{dept_name}.html"
-                            sources.append({
-                                "name": f"{uni['name']} - {dept['name']}",
-                                "url": dept["url"],
-                                "filename": filename,
-                                "type": "university"
-                            })
-        
-        # United States research institutes
-        if "united_states" in regions and "research_institutes" in regions["united_states"]:
-            for inst in regions["united_states"]["research_institutes"]:
-                if "url" in inst:
-                    name = sanitize_filename(inst["name"])
-                    filename = f"us_institute_{name}.html"
-                    sources.append({
-                        "name": inst["name"],
-                        "url": inst["url"],
-                        "filename": filename,
-                        "type": "institute"
-                    })
-        
-        # Mainland China (added support)
-        if "mainland_china" in regions and "universities" in regions["mainland_china"]:
-            for uni in regions["mainland_china"]["universities"]:
-                uni_name = sanitize_filename(uni["name"])
-                if "departments" in uni:
-                    for dept in uni["departments"]:
-                        if "url" in dept:
-                            dept_name = sanitize_filename(dept["name"])
-                            filename = f"cn_{uni_name}_{dept_name}.html"
-                            sources.append({
-                                "name": f"{uni['name']} - {dept['name']}",
-                                "url": dept["url"],
-                                "filename": filename,
-                                "type": "university"
-                            })
-        
-        # Other countries
-        if "other_countries" in regions and "countries" in regions["other_countries"]:
-            for country_key, country_data in regions["other_countries"]["countries"].items():
-                # Universities
-                if "universities" in country_data:
-                    for uni in country_data["universities"]:
-                        uni_name = sanitize_filename(uni["name"])
-                        if "departments" in uni:
-                            for dept in uni["departments"]:
-                                if "url" in dept:
-                                    dept_name = sanitize_filename(dept["name"])
-                                    filename = f"{country_key}_{uni_name}_{dept_name}.html"
-                                    sources.append({
-                                        "name": f"{uni['name']} - {dept['name']}",
-                                        "url": dept["url"],
-                                        "filename": filename,
-                                        "type": "university"
-                                    })
-                
-                # Research institutes
-                if "research_institutes" in country_data:
-                    for inst in country_data["research_institutes"]:
-                        if "url" in inst:
-                            name = sanitize_filename(inst["name"])
-                            filename = f"{country_key}_institute_{name}.html"
-                            sources.append({
-                                "name": inst["name"],
-                                "url": inst["url"],
-                                "filename": filename,
-                                "type": "institute"
-                            })
-    
+
+    for entry in entries:
+        url = entry.get("url")
+        if not url:
+            continue
+
+        entry_id = entry.get("id") or entry.get("name", "unknown")
+        entry_type = entry.get("type", "unknown")
+
+        # Create deterministic filenames for saved samples
+        filename_prefix = "portal" if entry_type == "job_portal" else entry_type
+        filename = f"{filename_prefix}_{sanitize_filename(entry_id)}.html"
+
+        sources.append(
+            {
+                "name": entry.get("name", entry_id),
+                "url": url,
+                "filename": filename,
+                "type": entry_type,
+            }
+        )
+
     return sources
 
 

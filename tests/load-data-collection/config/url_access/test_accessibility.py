@@ -23,20 +23,16 @@ def sample_urls(scraping_sources):
     """Extract sample URLs for testing."""
     urls = []
     
-    # Get first URL from each category
+    # Get first URLs from flat entries
     for section in ["accessible", "non_accessible"]:
-        if section not in scraping_sources:
-            continue
-        
-        for category, items in scraping_sources[section].items():
-            if isinstance(items, dict):
-                for key, config in items.items():
-                    if "url" in config:
-                        urls.append(config["url"])
-                        if len(urls) >= 5:  # Limit to 5 for faster tests
-                            break
+        entries = scraping_sources.get(section, [])
+        for entry in entries:
+            if "url" in entry:
+                urls.append(entry["url"])
             if len(urls) >= 5:
                 break
+        if len(urls) >= 5:
+            break
     
     return urls[:5]
 
@@ -109,15 +105,11 @@ class TestWithRealSources:
         url_count = 0
         
         for section in ["accessible", "non_accessible"]:
-            if section not in scraping_sources:
-                continue
-            
-            for category, items in scraping_sources[section].items():
-                if isinstance(items, dict):
-                    for key, config in items.items():
-                        assert "url" in config, f"Missing URL in {section}/{category}/{key}"
-                        assert config["url"].startswith("http"), f"Invalid URL: {config['url']}"
-                        url_count += 1
+            entries = scraping_sources.get(section, [])
+            for entry in entries:
+                assert "url" in entry, f"Missing URL in {section} entry {entry.get('id') or entry.get('name')}"
+                assert entry["url"].startswith("http"), f"Invalid URL: {entry['url']}"
+                url_count += 1
         
         assert url_count > 0, "No URLs found in scraping sources"
         print(f"\nTotal URLs found: {url_count}")
