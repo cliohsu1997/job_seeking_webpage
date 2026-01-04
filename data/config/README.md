@@ -17,6 +17,14 @@ URLs that don't meet these criteria will be moved to the `non_accessible` sectio
 
 - **`scraping_sources.json`**: All sources organized by accessibility and region
 - **`scraping_rules.json`**: Patterns for extracting data (deadlines, keywords, dates)
+- **`processing_rules.json`**: Processing rules (job types, specializations, regions)
+- **`url_verification/`**: URL verification documentation and results
+
+## Verification Documentation
+
+See `url_verification/` folder for:
+- `01_url_verification_process.md` - URL verification methodology and common patterns
+- `02_verification_results_2026-01-03.md` - Latest verification results and problematic URLs
 
 ## Structure
 
