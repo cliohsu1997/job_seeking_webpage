@@ -2,7 +2,11 @@
 
 A daily-updated webpage that aggregates economics department faculty recruiting information from AEA JOE and university websites.
 
+**Current Phase**: 🔄 Phase 1B - Data Source Expansion (ACCESS → VALIDATE → REPLACE strategy)  
+**Latest Proposal**: [conversation_cursor/dates/2026-01-04/expand-scraping-sources-proposal.md](conversation_cursor/dates/2026-01-04/expand-scraping-sources-proposal.md)
+
 <!-- Last deployment: 2026-01-04 00:15 -->
+<!-- Last update: 2026-01-04 - Phase 1B Restructuring & URL Replacement Infrastructure -->
 
 ## What This Project Does
 

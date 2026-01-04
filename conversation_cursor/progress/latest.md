@@ -1,5 +1,9 @@
 # Progress: High-Level Pipeline
 
+**Project Lead**: User  
+**Current Work**: Phase 1B - Data Source Expansion (ACCESS → VALIDATE → REPLACE)  
+**Last Updated**: 2026-01-04
+
 ## Pipeline Overview
 
 The project follows a **Load → Transform → Export** workflow structure for aggregating economics faculty job listings.
@@ -9,6 +13,12 @@ The project follows a **Load → Transform → Export** workflow structure for a
 ```
 [✅ COMPLETED] Setup → [✅ COMPLETED] Load → [✅ COMPLETED] Transform → [✅ COMPLETED] Export → [⏸️ PENDING] Deploy
 ```
+
+## Current Phase Status
+
+### 🔄 Phase 1B: EXPAND - Data Source Expansion (IN PROGRESS)
+**Strategy**: ACCESS → VALIDATE → REPLACE  
+**Goal**: Expand from 210 to 250+ URLs with better global coverage
 
 ## What We've Accomplished
 

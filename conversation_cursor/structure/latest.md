@@ -64,8 +64,9 @@ job-seeking-webpage/
 │   │           └── batch_processor.py        # ✅ CLI tool for batch URL validation and config updates
 │   │       └── url_replacement/              # 🔄 Task 0C+ - URL replacement strategy (IN PROGRESS)
 │   │           ├── __init__.py               # Module exports
-│   │           ├── url_discovery.py          # ✅ Find alternative career/jobs URLs
-│   │           └── replacement_engine.py     # (TO CREATE) Orchestrate replacement workflow
+│   │           ├── url_discovery.py          # ✅ Find alternative career/jobs URLs (271 lines)
+│   │           ├── batch_processor.py        # ✅ CLI tool for batch URL validation and config updates
+│   │           └── find_replacements.py      # ✅ Main orchestration script for finding replacements
 │   ├── processor/                  # Phase 2 - ✅ COMPLETE
 │   │   ├── pipeline.py            # Main pipeline (✅ Phase 2E - full integration with archive retention)
 │   │   ├── parser_manager.py       # Route to parsers (✅ Phase 2A)
