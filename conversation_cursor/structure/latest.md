@@ -20,14 +20,14 @@ job-seeking-webpage/
 │   │   ├── archive/                # Historical snapshots
 │   │   └── diagnostics/            # Diagnostic reports
 │   └── config/
+│       ├── README.md               # Configuration guide with verification methodology
 │       ├── scraping_sources.json   # Scraping sources (176 accessible, 81 non-accessible)
 │       ├── scraping_rules.json     # Scraping patterns
 │       ├── processing_rules.json   # Processing rules
-│       └── url_verification/       # ✅ PHASE 1B - New folder for URL verification
-│           ├── accessibility_report.json  # Task 0A - URL access test results
-│           ├── verification_results.json  # Task 0B - Content validation results
-│           ├── discovery_suggestions.json # Task 0B - Discovered alternative URLs
-│           └── url_verification.md        # Consolidated verification documentation
+│       ├── url_replacements.json   # URL replacement patterns
+│       └── url_verification/       # ✅ URL verification results and documentation
+│           ├── README.md           # Folder documentation
+│           └── verification_results.md  # Latest verification results summary
 │
 ├── scripts/
 │   ├── scraper/                    # Phase 1 - COMPLETE
