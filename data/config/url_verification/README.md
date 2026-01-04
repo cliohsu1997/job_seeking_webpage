@@ -21,21 +21,16 @@ See `data/config/README.md` for:
 
 ## How Verification Works
 
-1. **Automated Testing**: `scripts/scraper/check_config/verify_urls.py` tests all URLs
-   - Checks HTTP accessibility (200 OK)
-   - Verifies job content presence
-   - Moves invalid URLs to non_accessible section
+1. **Automated Testing**: Use Task 0A/0B tools under `scripts/scraper/config/`
+  - URL access: `url_access/` (accessibility, redirects, DNS)
+  - Content validation: `url_verification/` (page type, extraction, quality scoring, decisions)
+  - Works with 3-category config: accessible_verified, accessible_unverified, potential_links
 
 2. **Documentation**: Results are reviewed and documented here
 
 ## Phase 1B Enhancement
 
-Phase 1B will automate report generation (Tasks 0A-0B):
-- Generate accessibility reports (JSON)
-- Generate content validation reports (JSON)
-- Generate consolidated reports (Markdown)
-
-These will eventually replace manual documentation.
+Phase 1B implements report generation through the verification modules. This folder stores generated outputs and summaries from those runs.
 
 
 

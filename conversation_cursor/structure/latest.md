@@ -26,9 +26,17 @@ job-seeking-webpage/
 │       ├── scraping_rules.json     # Scraping patterns
 │       ├── processing_rules.json   # Processing rules
 │       ├── url_replacements.json   # URL replacement patterns
-│       └── url_verification/       # ✅ URL verification results and documentation
-│           ├── README.md           # Folder documentation
-│           └── verification_results.md  # Latest verification results summary
+│       ├── url_verification/       # ✅ URL verification results and documentation
+│       │   ├── README.md           # Folder documentation
+│       │   ├── verification_results_latest.json   # Latest verification results
+│       │   ├── verification_report_latest.md      # Latest verification report
+│       │   ├── pilot_test_urls.txt # Test URLs for pilot validation
+│       │   └── discovery_results.json            # URL discovery results
+│       └── url_replacement/        # 🔄 URL replacement data (IN PROGRESS)
+│           ├── README.md           # Replacement strategy documentation
+│           ├── candidates.json     # Candidate replacement URLs
+│           ├── replacements_validated.json  # Validated replacement URLs
+│           └── replacement_report.md        # Replacement execution report
 │
 ├── scripts/
 │   ├── scraper/                    # Phase 1 - COMPLETE
@@ -52,7 +60,12 @@ job-seeking-webpage/
 │   │           ├── content_validator.py      # ✅ Extract and validate job listings (431 lines)
 │   │           ├── page_classifier.py        # ✅ Classify page types - 8 types detected (268 lines)
 │   │           ├── quality_scorer.py         # ✅ Score URLs 0-100 with breakdown (236 lines)
-│   │           └── decision_engine.py        # ✅ Make validation decisions with suggestions (390 lines)
+│   │           ├── decision_engine.py        # ✅ Make validation decisions + batch processing (500+ lines)
+│   │           └── batch_processor.py        # ✅ CLI tool for batch URL validation and config updates
+│   │       └── url_replacement/              # 🔄 Task 0C+ - URL replacement strategy (IN PROGRESS)
+│   │           ├── __init__.py               # Module exports
+│   │           ├── url_discovery.py          # ✅ Find alternative career/jobs URLs
+│   │           └── replacement_engine.py     # (TO CREATE) Orchestrate replacement workflow
 │   ├── processor/                  # Phase 2 - ✅ COMPLETE
 │   │   ├── pipeline.py            # Main pipeline (✅ Phase 2E - full integration with archive retention)
 │   │   ├── parser_manager.py       # Route to parsers (✅ Phase 2A)
@@ -85,6 +98,8 @@ job-seeking-webpage/
 │   │   │       ├── test_page_classifier.py       # ✅ Test page type classification (15 tests)
 │   │   │       ├── test_quality_scorer.py        # ✅ Test quality scoring system (15 tests)
 │   │   │       └── test_decision_engine.py       # ✅ Test validation decisions (17 tests)
+│   │   ├── url_replacement/                # 🔄 Task 0C+ - URL replacement strategy tests (IN PROGRESS)
+│   │   │   └── (tests to create)           # Replacement discovery and validation tests
 │   │   ├── scraper/                        # Scraper tests
 │   │   │   └── test_link_following.py      # ✅ Test link-following functionality (2 tests passing)
 │   │   ├── parser/                         # Parser tests

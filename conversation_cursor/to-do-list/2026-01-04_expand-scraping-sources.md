@@ -3,28 +3,33 @@
 **Date Created**: 2026-01-04  
 **Last Updated**: 2026-01-04  
 **Phase**: Phase 1B - Expand Data Collection  
-**Status**: In Progress  
-**Objective**: Expand scraping sources from 176 to 250+ URLs with better global coverage and fix 81 problematic URLs
+**Status**: In Progress (ACCESS ✅ COMPLETE, VALIDATE ✅ COMPLETE, REPLACE 🔄 IN PROGRESS)
+**Objective**: Expand scraping sources from 210 to 250+ URLs with better global coverage by systematically replacing problematic URLs
 
 ---
 
-## Revised Task Structure
+## Strategy: ACCESS → VALIDATE → REPLACE
 
-The original Task 0 and Task 1 have been separated into distinct workflow components:
+The Phase 1B expansion uses a three-phase strategy to identify and fix problematic URLs:
 
-**URL Access Verification (Task 0A)**: Test HTTP connectivity, follow redirects, detect errors
-- Files location: `scripts/scraper/config/url_access/`
-- Config location: `data/config/url_verification/`
+### 1. **ACCESS Phase** (✅ COMPLETE)
+- Test HTTP connectivity to all URLs
+- Follow redirects and detect issues
+- Identify which URLs are accessible vs. unreachable
+- **Result**: 210 total URLs verified (127 accessible_verified + 83 accessible_unverified)
 
-**URL Verification (Task 0B)**: Classify page type, validate content, score quality
-- Files location: `scripts/scraper/config/url_verification/`
-- Results location: `data/config/url_verification/`
+### 2. **VALIDATE Phase** (✅ COMPLETE)
+- Classify page types (job portal, faculty directory, department page, etc.)
+- Extract and validate job content
+- Score quality 0-100 based on extractable data
+- Make keep/move/replace decisions
+- **Result**: Pilot tested 10 problematic US universities → All 10 classified as "MOVE"
 
-This separation allows:
-- Testing URL accessibility independently (no content parsing needed)
-- Verifying content quality separately (only on accessible URLs)
-- Easier maintenance and debugging
-- Clear responsibility for each set of tools
+### 3. **REPLACE Phase** (🔄 IN PROGRESS)
+- For URLs identified as "MOVE" or "REPLACE": find better alternatives
+- Test replacement URLs with full validation workflow
+- Update config with validated replacements
+- **Goal**: Fix 60+ problematic URLs systematically
 
 ---
 
@@ -318,6 +323,201 @@ A URL is valid for the **accessible section** if it **contains extractable job l
 - ✅ All discoveries manually confirmed
 - ✅ Pilot report generated with clear findings
 - ✅ Ready to roll out to full 30+ US universities
+
+---
+
+## Phase 1B.1.5: REPLACE - URL Replacement & Expansion
+
+### Task 0C: Implement Full URL Replacement Workflow
+**Status**: 🔄 IN PROGRESS (Pilot validation complete, working on replacements)
+**Priority**: CRITICAL
+**Description**: For each "MOVE" URL, discover better alternatives, validate them, and update config
+
+**Folder Structure**:
+```
+scripts/scraper/config/url_replacement/         # Replacement logic
+├── url_discovery.py                            # ✅ Find alternatives (common paths, subdomains, predefined URLs)
+└── replacement_engine.py                       # (TO CREATE) Orchestrate full replacement workflow
+
+data/config/url_replacement/                    # Replacement data
+├── candidates.json                             # Candidate replacement URLs (before validation)
+├── replacements_validated.json                 # Validated replacements (after testing)
+└── replacement_report.md                       # Execution report with statistics
+
+tests/load-data-collection/url_replacement/    # Replacement tests
+└── (to create test files)
+```
+
+**Files Created**:
+- ✅ `scripts/scraper/config/url_discovery.py` (271 lines): Discover alternative URLs with common paths, subdomains, predefined institution URLs
+- ✅ `scripts/scraper/find_replacements.py` (main script for testing replacements)
+- ✅ `data/config/url_replacement/` folder structure created
+- ✅ `tests/load-data-collection/url_replacement/` folder structure created
+
+#### Subtask 0C.1: Discover Replacement URLs for Problematic Universities
+**Status**: 🔄 IN PROGRESS
+- [x] Created `url_discovery.py` module with:
+  - `discover_urls()` - Test common paths and subdomains for a domain
+  - `suggest_replacement_urls()` - Generate alternatives for problematic URLs
+  - `get_predefined_urls()` - Return predefined good URLs for known institutions
+  - Predefined URLs for 12 major institutions (Princeton, UPenn, Columbia, NYU, Chicago, MIT, Stanford, Harvard, Yale, Michigan, Wisconsin, Berkeley)
+- [ ] Run discovery on all 10 pilot problematic universities
+- [ ] Test discovered URLs with full validation workflow
+- [ ] Validate discovered alternatives meet quality threshold (≥60 score)
+- [ ] Save candidates to `data/config/url_replacement/candidates.json`
+
+**Acceptance Criteria**:
+- [ ] Discover 2+ alternatives per problematic university
+- [ ] All alternatives tested with full validation
+- [ ] Validated replacements have quality score ≥60
+- [ ] Candidates documented with source information
+
+#### Subtask 0C.2: Create Replacement Engine & Workflow
+**Status**: Not Started
+- [ ] Create `replacement_engine.py` in `scripts/scraper/config/url_replacement/`
+- [ ] Implement `find_replacements_for_url()` function
+- [ ] Implement `validate_replacement()` function (uses decision_engine.validate_url)
+- [ ] Implement `create_replacement_job()` function
+  - Input: problematic_url (from accessible_unverified)
+  - Process: discover alternatives → validate each → select best (highest quality score)
+  - Output: replacement candidate with metadata
+- [ ] Implement `execute_replacements()` function
+  - Batch process all problematic URLs
+  - Generate candidates.json
+  - Show progress (X/Y replacements found)
+- [ ] Implement `validate_and_finalize()` function
+  - Validate all candidate replacements work correctly
+  - Update scraping_sources.json with replacements
+  - Move old URL to archive with reason
+  - Create replacement_report.md with statistics
+
+#### Subtask 0C.3: Execute Pilot Replacement Workflow (10 US Universities)
+**Status**: Not Started
+- [ ] Run discovery on all 10 pilot universities
+- [ ] Validate discovered alternatives
+- [ ] Create candidates.json with results
+- [ ] Manually verify top alternatives for each university
+- [ ] Execute replacements and update config (with backup)
+- [ ] Test scraping with new URLs to confirm data extraction works
+- [ ] Generate pilot replacement report
+  - Old URL → Reason for replacement → New URL → Quality improvement
+  - Success rate (% URLs successfully replaced)
+  - Quality improvement (avg quality score before/after)
+
+**Acceptance Criteria**:
+- ✅ Discover alternatives for 10 pilot universities
+- [ ] Validate replacements (quality ≥60)
+- [ ] Update config with replacements
+- [ ] Test scraping with new URLs
+- [ ] Pilot report shows success rate and quality improvement
+
+---
+
+### Task 1A: Execute Full URL Replacement for All Problematic URLs
+**Status**: Not Started
+**Priority**: High
+**Description**: Systematically replace all problematic URLs (60+ identified in Phase 1B)
+
+- [ ] Run replacement workflow on all non_accessible URLs
+- [ ] Document replacement candidates with reasoning
+- [ ] Validate each replacement meets quality threshold
+- [ ] Batch update config with validated replacements
+- [ ] Generate comprehensive replacement report
+
+---
+
+### Task 1B: Add New International Universities (30+ URLs)
+**Status**: Not Started
+**Priority**: High
+**Target**: 30 universities
+
+[EUROPEAN UNIVERSITIES RESEARCH]
+
+---
+
+### Task 1C: Add Major US Research Institutes (15+ URLs)
+**Status**: Not Started
+**Priority**: High
+**Target**: 15 organizations
+
+[RESEARCH INSTITUTES]
+
+---
+
+### Task 1D: Expand Asia-Pacific Coverage (20+ URLs)
+**Status**: Not Started
+**Priority**: Medium
+**Target**: 20 universities
+
+[ASIA-PACIFIC UNIVERSITIES]
+
+---
+
+### Task 1E: Add Latin America & Other Regions (10+ URLs)
+**Status**: Not Started
+**Priority**: Low
+**Target**: 10 universities
+
+[LATIN AMERICA & OTHER REGIONS]
+
+---
+
+### Task 2A: Final Verification & Quality Assurance
+**Status**: Not Started
+**Priority**: High
+**Description**: Run comprehensive verification on all 250+ URLs after expansion
+
+- [ ] Batch validate all URLs with decision_engine
+- [ ] Generate final verification report
+- [ ] Ensure all URLs meet quality threshold
+- [ ] Document any remaining issues
+
+---
+
+### Task 2B: Prepare for Scraping & Data Collection
+**Status**: Not Started
+**Priority**: High
+**Description**: Ensure all URLs are scraper-ready
+
+- [ ] Test scraping on sample of new URLs
+- [ ] Verify data extraction works correctly
+- [ ] Update scraper patterns if needed
+- [ ] Prepare for full data collection
+
+---
+
+### Task 3A: Documentation & Final Report
+**Status**: Not Started
+**Priority**: Medium
+**Description**: Consolidate and document all Phase 1B work
+
+- [ ] Consolidate all verification reports
+- [ ] Create comprehensive expansion summary
+- [ ] Document lessons learned
+- [ ] Generate final statistics and success metrics
+
+---
+
+## Summary of Changes from Previous Plan
+
+**Old Task Structure**: Tasks 0A-0B, then 1-8 (unclear mapping to work items)
+
+**New Task Structure (ACCESS → VALIDATE → REPLACE)**:
+- **ACCESS Phase** (0A-0B): ✅ COMPLETE - Verify URL accessibility
+- **VALIDATE Phase** (0B pilot): ✅ COMPLETE - Test with 10 problematic universities
+- **REPLACE Phase** (0C+): 🔄 IN PROGRESS - Fix problematic URLs systematically
+  - Task 0C: URL replacement workflow
+  - Task 1A: Full replacement for all problematic URLs
+  - Task 1B-1E: Add new international sources
+  - Task 2A-2B: Final verification and scraper integration
+  - Task 3A: Documentation and reporting
+
+**Key Improvements**:
+1. Clear separation of concerns (access → validate → replace)
+2. Pilot-first approach (test workflow on 10 before rolling out to all)
+3. Structured folder organization (url_access/, url_verification/, url_replacement/)
+4. Comprehensive documentation at each phase
+5. Built-in backup and rollback capabilities
 
 ---
 

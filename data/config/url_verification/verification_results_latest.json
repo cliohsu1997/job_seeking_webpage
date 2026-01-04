@@ -1,0 +1,593 @@
+[
+  {
+    "url": "https://economics.princeton.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='economics.princeton.edu', port=443): Read timed out. (read timeout=10)"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='economics.princeton.edu', port=443): Read timed out. (read timeout=10)"
+    }
+  },
+  {
+    "url": "https://economics.upenn.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='economics.upenn.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.upenn.edu', port=443): Failed to resolve 'economics.upenn.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='economics.upenn.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.upenn.edu', port=443): Failed to resolve 'economics.upenn.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  },
+  {
+    "url": "https://management.upenn.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='management.upenn.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='management.upenn.edu', port=443): Failed to resolve 'management.upenn.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='management.upenn.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='management.upenn.edu', port=443): Failed to resolve 'management.upenn.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  },
+  {
+    "url": "https://economics.columbia.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='economics.columbia.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.columbia.edu', port=443): Failed to resolve 'economics.columbia.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='economics.columbia.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.columbia.edu', port=443): Failed to resolve 'economics.columbia.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  },
+  {
+    "url": "https://business.columbia.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: 403 Client Error: Forbidden for url: https://business.columbia.edu/"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "403 Client Error: Forbidden for url: https://business.columbia.edu/"
+    }
+  },
+  {
+    "url": "https://economics.nyu.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='economics.nyu.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.nyu.edu', port=443): Failed to resolve 'economics.nyu.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='economics.nyu.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.nyu.edu', port=443): Failed to resolve 'economics.nyu.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  },
+  {
+    "url": "https://stern.nyu.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "job_portal",
+      "confidence": 0.7
+    },
+    "content": {
+      "num_listings": 11,
+      "sample_listings": [
+        {
+          "title": "Academic Affairs & Advising",
+          "url": "https://stern.nyu.edu/portal-partners/academic-affairs-advising",
+          "context": "\nAcademic Affairs & Advising\n"
+        },
+        {
+          "title": "Faculty & Staff",
+          "url": "https://stern.nyu.edu/portal-partners",
+          "context": "\nFaculty & Staff\n\nFaculty & Staff menu\n\n\n\n\nJoin Stern's Faculty\n\n\nRenwick Visiting Faculty Fellows\n\n\nLeadership\n\n\nNew Faculty Resources\n\n\nLearning Science Lab\n\n\nCenter for Research Computing\n\n\nCenter "
+        },
+        {
+          "title": "Join Stern's Faculty",
+          "url": "https://stern.nyu.edu/experience-stern/about/working-at-stern/join-sterns-faculty",
+          "context": "\nJoin Stern's Faculty\n"
+        }
+      ]
+    },
+    "quality": {
+      "total_score": 30,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 30,
+          "max": 30,
+          "count": 11
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [
+        "Only 0/11 listings have complete data"
+      ],
+      "warnings": [
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)",
+        "No position details found (type/department/deadline/contact)"
+      ]
+    },
+    "suggestions": [
+      "Low quality source - move to non_accessible section",
+      "Quality score too low - insufficient extractable data"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "NYU Stern School of Business | Full-time MBA, Part-time (Langone) MBA, Undergraduate, PhD, Executive MBA Business Programs - NYU Stern",
+      "error": null
+    }
+  },
+  {
+    "url": "https://economics.wisc.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='economics.wisc.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.wisc.edu', port=443): Failed to resolve 'economics.wisc.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='economics.wisc.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.wisc.edu', port=443): Failed to resolve 'economics.wisc.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  },
+  {
+    "url": "https://michigan-ross.umich.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='michigan-ross.umich.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='michigan-ross.umich.edu', port=443): Failed to resolve 'michigan-ross.umich.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='michigan-ross.umich.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='michigan-ross.umich.edu', port=443): Failed to resolve 'michigan-ross.umich.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  },
+  {
+    "url": "https://economics.umich.edu/",
+    "decision": "move",
+    "page_classification": {
+      "type": "error",
+      "confidence": 1.0
+    },
+    "content": {
+      "num_listings": 0,
+      "sample_listings": []
+    },
+    "quality": {
+      "total_score": 0,
+      "max_score": 100,
+      "recommendation": "poor",
+      "action": "move_to_non_accessible",
+      "breakdown": {
+        "job_titles": {
+          "score": 0,
+          "max": 30,
+          "count": 0
+        },
+        "position_details": {
+          "score": 0,
+          "max": 25,
+          "avg_fields": 0.0
+        },
+        "application_links": {
+          "score": 0,
+          "max": 20,
+          "apply_links": 0,
+          "emails": 0
+        },
+        "descriptions": {
+          "score": 0,
+          "max": 15,
+          "avg_length": 0
+        },
+        "freshness": {
+          "score": 0,
+          "max": 10,
+          "recent_count": 0
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "suggestions": [
+      "URL not accessible: HTTPSConnectionPool(host='economics.umich.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.umich.edu', port=443): Failed to resolve 'economics.umich.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    ],
+    "alternative_urls": [],
+    "metadata": {
+      "title": "",
+      "error": "HTTPSConnectionPool(host='economics.umich.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='economics.umich.edu', port=443): Failed to resolve 'economics.umich.edu' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  }
+]

@@ -4,18 +4,16 @@ Configuration files for scraping sources and rules.
 
 ## IMPORTANT RULE
 
-**Only URLs containing relevant job information should be in the accessible section.**
+**Use the 3-category structure in `scraping_sources.json`:**
+- `accessible_verified`: Confirmed accessible and content-validated
+- `accessible_unverified`: Accessible but content not yet validated
+- `potential_links`: Not yet tested; candidates for discovery/verification
 
-URLs in the `accessible` section must:
-- Be accessible (HTTP 200 response)
-- Contain actual job listings (verified through keyword detection, link analysis, and PDF detection)
-- Have a verification score of at least 3 (based on job keywords, job links, and PDFs)
-
-URLs that don't meet these criteria will be moved to the `non_accessible` section during verification.
+URLs should only move into `accessible_verified` after passing content validation (Task 0B). Keep exploratory or unvalidated URLs in `accessible_unverified` or `potential_links` until verified.
 
 ## Files
 
-- **`scraping_sources.json`**: All sources organized by accessibility and region
+- **`scraping_sources.json`**: All sources organized by verification status (3-category flat list)
 - **`scraping_rules.json`**: Patterns for extracting data (deadlines, keywords, dates)
 - **`processing_rules.json`**: Processing rules (job types, specializations, regions)
 - **`url_verification/`**: URL verification documentation and results
@@ -66,42 +64,47 @@ When verifying or discovering URLs, test these patterns in order:
 
 ## Structure
 
+Flat list grouped by category:
+
 ```json
 {
-  "accessible": {
-    "job_portals": { ... },
-    "regions": {
-      "united_states": { ... },
-      "mainland_china": { ... },
-      "other_countries": { ... }
-    }
-  },
-  "non_accessible": { ... }
+  "accessible_verified": [
+    {"id": "us_princeton", "name": "Princeton University", "type": "university", "url": "https://..."}
+  ],
+  "accessible_unverified": [
+    {"id": "us_example", "name": "Example University", "type": "university", "url": "https://..."}
+  ],
+  "potential_links": [
+    {"id": "discovery_candidate_1", "type": "university", "url": "https://..."}
+  ]
 }
 ```
 
 ## Adding a Source
 
-1. Add entry to appropriate region in `scraping_sources.json`
-2. Run `scripts/scraper/check_config/verify_urls.py` to verify
-3. Verified URLs move from `non_accessible` to `accessible`
+1. Add entry to the appropriate category in `scraping_sources.json`:
+  - `accessible_unverified` for new accessible URLs pending validation
+  - `potential_links` for URLs that need accessibility testing
+2. Run validation tools (Task 0B modules) or targeted tests to move items into `accessible_verified`
 
 ## Entry Format
 
 ```json
 {
-  "name": "University Name",
-  "departments": [{
-    "name": "Economics",
-    "url": "https://example.edu/jobs",
-    "scraping_method": "html_parser"
-  }]
+  "id": "us_example",
+  "name": "Example University",
+  "type": "university",
+  "url": "https://example.edu/jobs",
+  "scraping_method": "html_parser"
 }
 ```
 
 ## Current Status
 
-- **176 accessible URLs** (70% success rate)
-- **74 non-accessible URLs** (pending verification)
+- **accessible_verified**: 127 URLs (validated)
+- **accessible_unverified**: 83 URLs (accessible, pending validation)
+- **potential_links**: 0 URLs (reserved for discovery)
+
+The legacy hierarchical layout and the old `accessible`/`non_accessible` sections have been retired. The migration script `scripts/scraper/config/migrate_config_structure.py` is kept only as a legacy one-time tool.
 
 See `docs/SCRAPING_GUIDE.md` for detailed adding instructions.

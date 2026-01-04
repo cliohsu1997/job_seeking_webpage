@@ -41,71 +41,69 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **Proposal**: `conversation_cursor/dates/2025-12-31/design-scraping-strategy.md`
 
 ### 🔄 Phase 1B: EXPAND - Data Source Expansion (IN PROGRESS)
-**Status**: Task 0A (URL Access Verification) - ✅ COMPLETE, Task 0B (Config Structure Redesign) - ✅ COMPLETE
+**Status**: Following ACCESS → VALIDATE → REPLACE strategy
+- ✅ **ACCESS** Phase: URL access verification complete (127 verified + 83 accessible)
+- ✅ **VALIDATE** Phase: URL validation tools implemented and pilot tested
+- 🔄 **REPLACE** Phase: Finding and validating replacement URLs for problematic ones (IN PROGRESS)
 
-**Accomplishments - Task 0A**:
+**Accomplishments - ACCESS Phase**:
 - [x] Implement basic HTTP accessibility testing (test_accessibility.py)
 - [x] Implement redirect following with chain tracking (redirect_handler.py)
 - [x] Implement Chinese DNS fallback support (dns_resolver.py)
 - [x] Implement accessibility report generation (connectivity_report.py)
 
-**Accomplishments - Task 0B (NEW)**:
-- [x] Redesigned config structure from 2 categories to 3 categories:
-  - `accessible_verified`: 127 URLs confirmed working + content validated
-  - `accessible_unverified`: 83 URLs accessible but not yet content-validated
-  - `potential_links`: Placeholder for URLs to be tested (currently 0)
-- [x] Migration script created and executed successfully
-- [x] Updated `config_loader.py` with new functions:
-  - `get_accessible_verified_config()` - Returns verified URLs
-  - `get_accessible_unverified_config()` - Returns unverified accessible URLs
-  - `get_potential_links_config()` - Returns potential links to test
-  - Backward compatibility functions maintained: `get_accessible_config()`, `get_non_accessible_config()`
-- [x] Updated all tests to work with new flat list structure:
-  - `test_config_loader.py`: 11 tests passing ✅
-  - `test_link_following.py`: 2 tests passing ✅
-  - `url_verification` tests: 60 tests passing ✅
-  - **Total**: 71 tests passing
-- [x] Implemented 4-module URL verification system (Task 0B substeps):
+**Accomplishments - VALIDATE Phase**:
+- [x] Redesigned config structure (accessible_verified, accessible_unverified, potential_links)
+- [x] Implemented 4-module URL verification system:
   - `content_validator.py` (431 lines): Extract and validate job listings
   - `page_classifier.py` (268 lines): Classify page types (8 types detected)
   - `quality_scorer.py` (236 lines): Score URLs 0-100 with breakdown
-  - `decision_engine.py` (390 lines): Make validation decisions with suggestions
-- [x] Git commit and push completed
-- [x] Create comprehensive test suite with real scraping sources integration
-- [x] Reorganize folder structure for consistency
-  - Consolidated `scripts/scraper/config/` (renamed from check_config)
-  - Merged test folders: `config/` contains `url_access/` and `url_verification/` tests
-  - Deleted legacy scripts (`verify_urls.py`, `find_url_replacements.py` - to be replaced by Task 0B)
-  - Updated all import paths and README files
-- [x] **Flatten configuration structure** (scraping_sources.json)
-  - Changed from hierarchical (regions → universities → departments) to flat list
-  - Each entry now has direct URL + metadata (type, region, country, city, department, etc.)
-  - Updated all scrapers, tests, and utilities to work with flat structure
-  - Config now: `{"accessible": [{"id": "...", "url": "...", "type": "...", ...}], "non_accessible": [...]}`
-  - All 5 config tests passing, 7/8 accessibility tests passing
+  - `decision_engine.py` (390 lines + batch functions): Full validation decision tree
+- [x] Created batch processor: `batch_processor.py` for processing multiple URLs efficiently
+- [x] Pilot tested on 10 problematic US universities:
+  - All 10 URLs classified as "MOVE" (confirmed problematic)
+  - 9 URLs: DNS resolution failures (wrong domain names)
+  - 1 URL: Accessible but low quality (score 30/100 - wrong page type)
 
-**Structure Now**:
-- Scripts: `scripts/scraper/config/url_access/` (4 modules)
-- Tests: `tests/load-data-collection/config/url_access/` (3 test files)
-- Config: Flat structure with 127 accessible + 83 non-accessible = 210 total entries
+**Accomplishments - REPLACE Phase (STARTED)**:
+- [x] Created folder structure for URL replacement:
+  - `scripts/scraper/config/url_replacement/` - Replacement logic
+  - `data/config/url_replacement/` - Replacement data and results
+  - `tests/load-data-collection/url_replacement/` - Replacement tests
+- [x] Created URL discovery tool: `url_discovery.py` for finding alternatives
+- [x] Generated pilot discovery results for 10 problematic universities
 
-**Next Tasks - Task 0B onwards**:
-- [ ] Task 0B: URL content verification (page classifier, content validator, quality scorer, decision engine)
+**Next Tasks - REPLACE Phase onwards**:
+- [ ] Task 0C: Full URL replacement workflow (discovery → validation → config update)
 - [ ] Task 1A-5B: Add new international universities and research institutes
-- [ ] Task 6A-6C: Fix problematic URLs
-- [ ] Task 7A-8C: Validation and finalization
+- [ ] Task 6A-6C: Systematically fix all 60+ problematic URLs
+- [ ] Task 7A-8C: Final validation and completion
 
 **Key Features Implemented**:
 - Rate limiting (1+ second between requests)
 - Timeout detection (10-second default)
 - Redirect loop detection
 - External HR system identification (ICIMS, Workday, etc.)
-- Multiple report formats (JSON, CSV, Markdown)
-- Real scraping sources integration for testing
+- Multiple report formats (JSON, Markdown)
+- Batch validation with progress tracking
+- URL discovery and alternative finding
 
-**Code Quality**: Succinct, well-organized modules with clear separation of concerns and consistent folder structure
+**Structure Now**:
+```
+scripts/scraper/config/
+├── url_access/              # ACCESS phase (4 modules, complete)
+├── url_verification/        # VALIDATE phase (6 modules, complete)
+└── url_replacement/         # REPLACE phase (in progress)
 
-- **To-Do List**: `2026-01-04_expand-scraping-sources.md` (Task 0A COMPLETE, moving to Task 0B)
+data/config/
+├── url_verification/        # Validation results and reports
+└── url_replacement/         # Replacement data and alternatives
+
+tests/load-data-collection/
+└── url_replacement/         # Replacement strategy tests
+```
+
+- **To-Do List**: `2026-01-04_expand-scraping-sources.md` (Tasks structured by phase)
 - **Proposal**: `conversation_cursor/dates/2026-01-04/expand-scraping-sources-proposal.md`
 
 ## What's Next

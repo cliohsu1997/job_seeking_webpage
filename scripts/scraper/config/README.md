@@ -1,20 +1,25 @@
 # Configuration Verification Tools
 
-Tools for verifying and maintaining scraping sources configuration.
+Tools for verifying and maintaining scraping sources in the 3-category structure (accessible_verified, accessible_unverified, potential_links).
 
 ## Structure
 
 ```
-check_config/
-├── README.md                    # This file
-├── url_access/                  # ✅ Task 0A - HTTP accessibility testing (COMPLETE)
+config/
+├── README.md                       # This file
+├── migrate_config_structure.py     # Legacy one-time migration script (keep for history)
+├── url_access/                     # ✅ Task 0A - HTTP accessibility testing (COMPLETE)
 │   ├── __init__.py
-│   ├── test_accessibility.py   # HTTP connectivity testing
-│   ├── redirect_handler.py     # Redirect following & chain tracking
-│   ├── dns_resolver.py         # Chinese DNS fallback support
-│   └── connectivity_report.py  # Generate accessibility reports
-└── url_verification/            # Task 0B - Content validation (pending)
-    └── (to be implemented)
+│   ├── test_accessibility.py       # HTTP connectivity testing
+│   ├── redirect_handler.py         # Redirect following & chain tracking
+│   ├── dns_resolver.py             # Chinese DNS fallback support
+│   └── connectivity_report.py      # Generate accessibility reports
+└── url_verification/               # ✅ Task 0B - Content validation (COMPLETE)
+    ├── __init__.py
+    ├── content_validator.py        # Extract & validate job listings
+    ├── page_classifier.py          # Classify page types
+    ├── quality_scorer.py           # Score content quality (0-100)
+    └── decision_engine.py          # Validation decision tree + suggestions
 ```
 
 ## Task 0A: URL Access Verification (✅ COMPLETE)
@@ -75,27 +80,18 @@ report = generate_accessibility_report(
 )
 ```
 
-## Task 0B: URL Verification (Pending)
+## Task 0B: URL Verification (✅ COMPLETE)
 
-Content validation tools will be implemented in `url_verification/`:
+Content validation implemented in `url_verification/`:
 - Page type classification
-- URL discovery for career portals
 - Job content extraction and validation
 - Quality scoring (0-100)
-- Decision engine for accessible/non_accessible classification
-
-**Future Files**:
-- `page_classifier.py` - Classify page type (career portal vs department)
-- `url_discoverer.py` - Discover alternative career portal URLs
-- `content_validator.py` - Extract & validate job content
-- `quality_scorer.py` - Score content quality (0-100)
-- `decision_engine.py` - Full validation decision tree
-- `batch_processor.py` - Batch validation & configuration update
+- Decision engine for category decisions and suggestions
 
 ## Configuration Files
 
 See `data/config/` for:
-- `scraping_sources.json` - Main configuration (accessible and non_accessible URLs)
+- `scraping_sources.json` - Main configuration (3-category flat list)
 - `scraping_rules.json` - Scraping patterns
 - `processing_rules.json` - Processing rules
 - `url_verification/` - Verification documentation and results

@@ -369,3 +369,229 @@ def batch_validate_urls(
             time.sleep(delay)
     
     return results
+
+
+def update_scraping_sources(
+    validation_results: Dict[str, URLValidationResult],
+    config_path: str = "data/config/scraping_sources.json",
+    backup: bool = True,
+) -> Dict[str, int]:
+    """Update scraping_sources.json based on validation results.
+    
+    This function reorganizes URLs based on validation decisions:
+    - KEEP: Remains in accessible_verified
+    - MOVE: Moves to accessible_unverified
+    - REPLACE/REVIEW: Marked for review in accessible_unverified
+    
+    Args:
+        validation_results: Dictionary of URL -> URLValidationResult
+        config_path: Path to scraping_sources.json
+        backup: Whether to create a backup before updating
+        
+    Returns:
+        Dictionary with update statistics
+    """
+    import json
+    import shutil
+    from pathlib import Path
+    from datetime import datetime
+    
+    config_path_obj = Path(config_path)
+    
+    # Create backup
+    if backup:
+        backup_path = config_path_obj.with_stem(f"{config_path_obj.stem}_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}")
+        shutil.copy(config_path_obj, backup_path)
+        logger.info(f"Backup created: {backup_path}")
+    
+    # Load current config
+    with open(config_path_obj, 'r') as f:
+        config = json.load(f)
+    
+    # Initialize result tracking
+    stats = {
+        "total_validated": len(validation_results),
+        "kept_in_verified": 0,
+        "moved_to_unverified": 0,
+        "moved_to_potential": 0,
+        "errors": 0,
+    }
+    
+    # Process each validation result
+    verified_list = config.get("accessible_verified", [])
+    unverified_list = config.get("accessible_unverified", [])
+    
+    # Create URL to entry mapping for easy lookup
+    verified_map = {entry["url"]: entry for entry in verified_list}
+    unverified_map = {entry["url"]: entry for entry in unverified_list}
+    
+    for url, result in validation_results.items():
+        # Find the entry in current config
+        entry = verified_map.get(url) or unverified_map.get(url)
+        
+        if not entry:
+            logger.warning(f"URL {url} not found in current config")
+            stats["errors"] += 1
+            continue
+        
+        # Add validation metadata to entry
+        entry["validation"] = {
+            "decision": result.decision.value,
+            "page_type": result.page_type,
+            "page_confidence": round(result.page_confidence, 3),
+            "num_listings": result.num_listings,
+            "quality_score": result.quality_score.total_score,
+            "suggestions": result.suggestions[:2],  # Top 2 suggestions
+            "timestamp": datetime.now().isoformat(),
+        }
+        
+        # Remove from old location
+        if url in verified_map:
+            verified_list = [e for e in verified_list if e["url"] != url]
+        if url in unverified_map:
+            unverified_list = [e for e in unverified_list if e["url"] != url]
+        
+        # Place in new location based on decision
+        if result.decision == ValidationDecision.KEEP:
+            verified_list.append(entry)
+            stats["kept_in_verified"] += 1
+        elif result.decision == ValidationDecision.MOVE:
+            unverified_list.append(entry)
+            stats["moved_to_unverified"] += 1
+        elif result.decision in [ValidationDecision.REVIEW, ValidationDecision.REPLACE]:
+            # Add to unverified with review flag
+            entry["needs_review"] = True
+            entry["alternative_urls"] = result.alternative_urls
+            unverified_list.append(entry)
+            stats["moved_to_unverified"] += 1
+    
+    # Update config
+    config["accessible_verified"] = verified_list
+    config["accessible_unverified"] = unverified_list
+    
+    # Save updated config
+    with open(config_path_obj, 'w') as f:
+        json.dump(config, f, indent=2, ensure_ascii=False)
+    
+    logger.info(f"Config updated: {stats['kept_in_verified']} kept, {stats['moved_to_unverified']} moved")
+    return stats
+
+
+def generate_validation_report(
+    validation_results: Dict[str, URLValidationResult],
+    output_dir: str = "data/config/url_verification",
+) -> None:
+    """Generate comprehensive validation report in multiple formats.
+    
+    Args:
+        validation_results: Dictionary of URL -> URLValidationResult
+        output_dir: Directory to save report files
+    """
+    import json
+    from pathlib import Path
+    from datetime import datetime
+    from collections import defaultdict
+    
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Organize results by decision
+    by_decision = defaultdict(list)
+    by_page_type = defaultdict(list)
+    quality_stats = {
+        "excellent": [],  # >= 80
+        "good": [],       # 60-79
+        "marginal": [],   # 40-59
+        "poor": [],       # < 40
+    }
+    
+    json_results = []
+    
+    for url, result in validation_results.items():
+        by_decision[result.decision.value].append(result)
+        by_page_type[result.page_type].append(result)
+        
+        # Quality categorization
+        score = result.quality_score.total_score
+        if score >= 80:
+            quality_stats["excellent"].append(result)
+        elif score >= 60:
+            quality_stats["good"].append(result)
+        elif score >= 40:
+            quality_stats["marginal"].append(result)
+        else:
+            quality_stats["poor"].append(result)
+        
+        json_results.append(result.to_dict())
+    
+    # Save JSON report
+    json_report_path = output_path / f"verification_results_latest.json"
+    with open(json_report_path, 'w') as f:
+        json.dump(json_results, f, indent=2, ensure_ascii=False)
+    logger.info(f"JSON report saved: {json_report_path}")
+    
+    # Generate markdown report
+    md_lines = [
+        "# URL Validation Report",
+        f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+        "",
+        "## Summary Statistics",
+        f"- Total URLs Validated: {len(validation_results)}",
+        f"- KEEP: {len(by_decision.get('keep', []))} URLs",
+        f"- MOVE: {len(by_decision.get('move', []))} URLs",
+        f"- REPLACE: {len(by_decision.get('replace', []))} URLs",
+        f"- REVIEW: {len(by_decision.get('review', []))} URLs",
+        "",
+        "## Quality Distribution",
+        f"- Excellent (80+): {len(quality_stats['excellent'])} URLs",
+        f"- Good (60-79): {len(quality_stats['good'])} URLs",
+        f"- Marginal (40-59): {len(quality_stats['marginal'])} URLs",
+        f"- Poor (<40): {len(quality_stats['poor'])} URLs",
+        "",
+        "## By Page Type",
+    ]
+    
+    for page_type, results in sorted(by_page_type.items()):
+        md_lines.append(f"- {page_type}: {len(results)} URLs")
+    
+    md_lines.extend([
+        "",
+        "## URLs to KEEP (in accessible_verified)",
+        "High quality sources - maintained in accessible section",
+        "",
+    ])
+    
+    for result in by_decision.get("keep", []):
+        md_lines.append(f"- {result.url}")
+        md_lines.append(f"  - Quality: {result.quality_score.total_score}/100")
+        md_lines.append(f"  - Listings: {result.num_listings}")
+        md_lines.append("")
+    
+    md_lines.extend([
+        "",
+        "## URLs to MOVE (to accessible_unverified)",
+        "Lower quality or needs review - moved out of verified section",
+        "",
+    ])
+    
+    for result in by_decision.get("move", []):
+        md_lines.append(f"- {result.url}")
+        md_lines.append(f"  - Reason: {result.suggestions[0] if result.suggestions else 'Low quality'}")
+        md_lines.append(f"  - Quality: {result.quality_score.total_score}/100")
+        md_lines.append("")
+    
+    # Save markdown report
+    md_report_path = output_path / f"verification_report_latest.md"
+    with open(md_report_path, 'w') as f:
+        f.write("\n".join(md_lines))
+    logger.info(f"Markdown report saved: {md_report_path}")
+    
+    # Print summary
+    logger.info("=" * 60)
+    logger.info("VALIDATION REPORT SUMMARY")
+    logger.info("=" * 60)
+    logger.info(f"Total URLs Validated: {len(validation_results)}")
+    logger.info(f"KEEP: {len(by_decision.get('keep', []))} | MOVE: {len(by_decision.get('move', []))} | REPLACE: {len(by_decision.get('replace', []))} | REVIEW: {len(by_decision.get('review', []))}")
+    logger.info(f"Quality: Excellent {len(quality_stats['excellent'])} | Good {len(quality_stats['good'])} | Marginal {len(quality_stats['marginal'])} | Poor {len(quality_stats['poor'])}")
+    logger.info("=" * 60)

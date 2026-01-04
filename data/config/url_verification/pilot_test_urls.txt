@@ -1,0 +1,14 @@
+# List of 10 High-Priority US Universities for Validation Pilot
+# These are problematic URLs that need verification and potential replacement
+
+# Universities with known issues (wrong URL type, no job content, etc.)
+https://economics.princeton.edu/
+https://economics.upenn.edu/
+https://management.upenn.edu/
+https://economics.columbia.edu/
+https://business.columbia.edu/
+https://economics.nyu.edu/
+https://stern.nyu.edu/
+https://economics.wisc.edu/
+https://michigan-ross.umich.edu/
+https://economics.umich.edu/

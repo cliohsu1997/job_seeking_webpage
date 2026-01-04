@@ -6,7 +6,7 @@ A daily-updated webpage that aggregates economics department faculty recruiting 
 
 ## What This Project Does
 
-1. **Scrapes** job listings from 176+ sources (AEA, universities, research institutes)
+1. **Scrapes** job listings from 210 sources (AEA, universities, research institutes)
 2. **Processes** raw data into structured format (Phase 2 - in progress)
 3. **Generates** HTML webpage and JSON/CSV files (Phase 3 - planned)
 4. **Updates** automatically on a schedule (Phase 4 - planned)
@@ -17,8 +17,8 @@ A daily-updated webpage that aggregates economics department faculty recruiting 
 # 1. Install dependencies
 poetry install
 
-# 2. Verify URLs in configuration
-poetry run python scripts/scraper/check_config/verify_urls.py
+# 2. Run config tests (ensures 3-category structure works)
+poetry run pytest tests/load-data-collection/config/test_config_loader.py -v
 
 # 3. Run scraper
 poetry run python scripts/scraper/aea_scraper.py
@@ -30,7 +30,7 @@ poetry run python scripts/scraper/aea_scraper.py
 
 | Phase | Status | Description |
 |-------|--------|-------------|
-| **Phase 1: LOAD** | ✅ Complete | Scraper framework with 176 accessible URLs |
+| **Phase 1: LOAD** | ✅ Complete | Scraper framework with 210 sources (127 verified, 83 unverified) |
 | **Phase 2: TRANSFORM** | ⏸️ Ready | Parse, normalize, deduplicate data |
 | **Phase 3: EXPORT** | ⏸️ Pending | Generate HTML/JSON/CSV outputs |
 | **Phase 4: DEPLOY** | ⏸️ Pending | Automation and hosting |
@@ -66,11 +66,11 @@ poetry run python scripts/scraper/aea_scraper.py
 
 ## Current Coverage
 
-**176 accessible URLs:**
-- 🇨🇳 Mainland China: 100 universities
-- 🇺🇸 United States: ~60 universities  
-- 🌍 Other: UK, Canada, Australia, Germany, France, Netherlands, Singapore, Switzerland
-- 🏛️ Research Institutes: NBER, CEPR, Federal Reserve Banks, etc.
+**210 sources (3-category config):**
+- accessible_verified: 127 (confirmed working + validated)
+- accessible_unverified: 83 (accessible, content not yet validated)
+- potential_links: 0 (placeholder for future exploration)
+	- Regions include Mainland China (~100), United States (~60), and other global sources
 
 ## Project Structure
 
