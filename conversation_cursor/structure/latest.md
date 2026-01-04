@@ -94,15 +94,16 @@ job-seeking-webpage/
 ## Key Files & Modules
 
 ### Configuration
-- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, EconJobMarket, EJMR, AEA Scramble), universities, research institutes. **Rule**: Only URLs containing relevant job information should be in accessible section. **Status**: 81 URLs currently have issues (47 moved to non_accessible, 34 in non_accessible with issues) - see verification results. **IMPORTANT**: Only update URLs in `non_accessible` section - accessible URLs are working fine and should remain unchanged. Initial fixes completed for Chinese and international universities in non_accessible section; remaining URLs (US universities, etc.) to be fixed later.
+- **`data/config/scraping_sources.json`**: 176+ accessible URLs across job portals (AEA JOE, HigherEdJobs, EconJobMarket, EJMR, AEA Scramble), universities, research institutes. **Rule**: Only URLs containing relevant job information should be in accessible section. **Status**: 81 URLs currently have issues (47 moved to non_accessible, 34 in non_accessible with issues) - see verification results. **Phase 1B Challenge**: Many URLs point to wrong page types (department pages, faculty directories) instead of actual career portals - requires URL discovery to find correct job pages. **IMPORTANT**: Only update URLs in `non_accessible` section - accessible URLs are working fine and should remain unchanged. Initial fixes completed for Chinese and international universities in non_accessible section; remaining URLs (US universities, etc.) to be fixed later.
 - **`data/config/scraping_rules.json`**: Scraping patterns (deadlines, keywords, date formats)
 - **`data/config/processing_rules.json`**: Processing rules (job type keywords, specialization keywords, region mapping, materials parsing)
 - **`scripts/scraper/check_config/verify_urls.py`**: URL verification script that checks accessible and non_accessible URLs, verifies job content (keywords, links, PDFs), and moves invalid URLs to non_accessible section
 - **`scripts/scraper/check_config/find_url_replacements.py`**: Helper script to find replacement URLs by testing common URL patterns (jobs.*, careers.*, etc.) for problematic universities
 - **`data/config/URL_VERIFICATION.md`**: Documentation for URL verification process and common patterns
 
-### Scraper Framework (Phase 1 - Complete)
+### Scraper Framework (Phase 1 - Complete, Phase 1B - In Progress)
 - **`scripts/scraper/main.py`**: Main script to scrape all accessible sources (universities, institutes, AEA) with one command ✅
+- **Phase 1B - Expand Sources** (🔄 In Progress): Expanding from 176 to 250+ URLs with better global coverage
 - **`scripts/scraper/base_scraper.py`**: Abstract base class (fetch, parse, extract, save)
 - **`scripts/scraper/aea_scraper.py`**: AEA JOE scraper (RSS/HTML fallback). **Phase 2F**: Immediate URL resolution ✅
 - **`scripts/scraper/university_scraper.py`**: Generic university scraper (pattern-based, **link-following enabled** - automatically follows links to detail pages to extract full job information). **Phase 2F**: Enhanced requirements and materials extraction, always sets source_url, immediate URL resolution ✅
@@ -128,7 +129,9 @@ job-seeking-webpage/
 ## Workflow
 
 **Load → Transform → Export**
-1. **LOAD (Phase 1 - ✅)**: Scrape raw HTML from sources
+1. **LOAD**:
+   - **Phase 1 (✅)**: Scrape raw HTML from sources (176 URLs)
+   - **Phase 1B (🔄)**: Expand sources to 250+ URLs with better global coverage
 2. **TRANSFORM (Phase 2 - ✅)**: Process, normalize, deduplicate, validate data (complete pipeline with archive retention)
 3. **EXPORT (Phase 3 - ✅)**: Generate static webpage with filters, search, and responsive design (static/index.html, styles.css, app.js, filters.js, search.js)
 4. **DEPLOY (Phase 4 - ⏸️)**: Automation and hosting (GitHub Pages)

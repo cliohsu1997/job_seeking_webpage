@@ -40,6 +40,62 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - **To-Do List**: `2025-12-31_load-data-collection.md`
 - **Proposal**: `conversation_cursor/dates/2025-12-31/design-scraping-strategy.md`
 
+### 🔄 Phase 1B: EXPAND - Data Source Expansion (IN PROGRESS)
+**Status**: Planning phase complete, ready for implementation
+
+**Objectives**:
+- [x] Proposal created for source expansion strategy
+- [x] Detailed to-do list with evaluation metrics created
+- [ ] Fix wrong URL types (30+ US universities pointing to department pages instead of career portals)
+- [ ] Implement enhanced verification with URL discovery, redirect following, and evaluation metrics
+- [ ] Add European universities (target: 30)
+- [ ] Add Asia-Pacific universities (target: 25)
+- [ ] Add Canadian universities (target: 10)
+- [ ] Add Latin American universities (target: 10)
+- [ ] Expand research institutes (6 → 25+)
+- [ ] Fix 81 problematic URLs (target: 75% success rate)
+- [ ] Achieve better regional balance (<40% from any single region)
+
+**Key Challenge Identified**: Many existing URLs point to wrong page types:
+- Department homepages (e.g., `https://economics.stanford.edu/`)
+- Faculty directories (e.g., `https://{university}.edu/faculty/`)
+- General university pages instead of HR/career portals
+
+**Evaluation Metrics Established**:
+- ✅ **Critical Fields Required**: Job title + Position details (must be extractable for accessible section)
+- ✅ **Content Quality Score** (0-100):
+  - Job titles found (max 30 pts)
+  - Position details (max 25 pts)
+  - Application methods (max 20 pts)
+  - Job descriptions (max 15 pts)
+  - Freshness (max 10 pts)
+- ✅ **Thresholds**:
+  - 80-100 (Excellent): KEEP in accessible
+  - 60-79 (Good): KEEP in accessible
+  - 40-59 (Marginal): MOVE to non_accessible
+  - 0-39 (Poor): MOVE to non_accessible
+- ✅ **Classification Decision Tree**: Validates URL type and job content
+- ✅ **Reason Codes**: For all non_accessible URLs (access_error, wrong_page_type, no_job_content, missing_critical_fields, low_quality_content, requires_vpn, etc.)
+
+**Implementation Strategy**:
+1. **Tasks 0-6**: Build enhanced verification tools (URL discovery, classification, redirect handling, quality scoring)
+2. **Tasks 7-11**: Research and add international universities (Europe, Asia-Pacific, Canada, Latin America, Middle East/Africa)
+3. **Tasks 12-13**: Add research institutes and think tanks
+4. **Tasks 14-16**: Fix problematic URLs (US wrong types, Chinese DNS failures, international errors)
+5. **Tasks 17-19**: Verification, configuration update, and scraping tests
+6. **Tasks 20-22**: Documentation, reporting, and finalization
+
+**Target Outcomes**:
+- 250+ accessible URLs (from 176, 42% growth)
+- Regional balance: US 28%, China 40%, Europe 14%, Asia-Pacific 12%, Latin America 4%, Other 2%
+- 75% of problematic URLs fixed (60+ out of 81)
+- 350-400 job listings (from 211, 65% increase)
+- Only URLs with extractable job titles and position details (quality score ≥60) in accessible section
+- All problematic URLs properly categorized with actionable reason codes
+
+- **To-Do List**: `2026-01-04_expand-scraping-sources.md` (22 detailed tasks with step-by-step instructions)
+- **Proposal**: `conversation_cursor/dates/2026-01-04/expand-scraping-sources-proposal.md`
+
 ## What's Next
 
 ### ✅ Phase 2: TRANSFORM - Data Processing (COMPLETED)
