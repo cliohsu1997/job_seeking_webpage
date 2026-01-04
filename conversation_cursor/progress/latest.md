@@ -77,13 +77,58 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - ✅ **Classification Decision Tree**: Validates URL type and job content
 - ✅ **Reason Codes**: For all non_accessible URLs (access_error, wrong_page_type, no_job_content, missing_critical_fields, low_quality_content, requires_vpn, etc.)
 
-**Implementation Strategy**:
-1. **Tasks 0-6**: Build enhanced verification tools (URL discovery, classification, redirect handling, quality scoring)
-2. **Tasks 7-11**: Research and add international universities (Europe, Asia-Pacific, Canada, Latin America, Middle East/Africa)
-3. **Tasks 12-13**: Add research institutes and think tanks
-4. **Tasks 14-16**: Fix problematic URLs (US wrong types, Chinese DNS failures, international errors)
-5. **Tasks 17-19**: Verification, configuration update, and scraping tests
-6. **Tasks 20-22**: Documentation, reporting, and finalization
+**Implementation Strategy** (Revised with Separated Tasks):
+1. **Phase 1B.1 - URL Access Verification** (Tasks 0A):
+   - Task 0A.1: Implement basic HTTP accessibility testing (TLS, 404, 403, timeout)
+   - Task 0A.2: Implement redirect following (max 5 hops, detect loops)
+   - Task 0A.3: Chinese DNS fallback for Great Firewall bypass
+   - Task 0A.4: Generate accessibility report for all URLs
+
+2. **Phase 1B.1 - URL Verification** (Tasks 0B):
+   - Task 0B.1: Implement content extraction & validation (job titles, position details)
+   - Task 0B.2: Implement page type classification & URL discovery (find career portals)
+   - Task 0B.3: Implement validation decision engine (full workflow)
+   - Task 0B.4: Implement batch validation & configuration update
+   - Task 0B.5: Test on 10 problematic US universities (pilot)
+
+3. **Phase 1B.1 - Additional Verification Tools** (Tasks 1A-3B):
+   - Task 1A: Redirect following for multi-level redirects
+   - Task 1B: Content quality scoring (0-100 with thresholds)
+   - Task 2A: PDF detection and download capability
+   - Task 2B: Chinese university URL verification improvements
+   - Task 3A: Automated URL replacement finder
+   - Task 3B: Enhanced verification reporting
+
+4. **Phase 1B.2 - URL Research** (Tasks 4A-4E):
+   - Task 4A: 30 European universities
+   - Task 4B: 25 Asia-Pacific universities
+   - Task 4C: 10 Canadian universities
+   - Task 4D: 10 Latin American universities
+   - Task 4E: 5 Middle East/African universities
+
+5. **Phase 1B.3 - Research Institutes** (Tasks 5A-5B):
+   - Task 5A: 15 major US research institutes
+   - Task 5B: 10 international research organizations
+
+6. **Phase 1B.4 - Fix URLs** (Tasks 6A-6C):
+   - Task 6A: Fix 30+ US university URLs (wrong page types)
+   - Task 6B: Fix 40+ Chinese university URLs (DNS/Great Firewall issues)
+   - Task 6C: Fix 10+ international university URLs (broken links)
+
+7. **Phase 1B.5 - Validation** (Tasks 7A-7C):
+   - Task 7A: Run enhanced verification on all URLs
+   - Task 7B: Update configuration with verified URLs
+   - Task 7C: Test scraping on sample of new URLs
+
+8. **Phase 1B.6 - Documentation** (Tasks 8A-8C):
+   - Task 8A: Consolidate verification documentation
+   - Task 8B: Update project documentation
+   - Task 8C: Generate final statistics and report
+
+**New Folder Structure Created**:
+- `data/config/url_verification/` - Store verification results and reports
+- `scripts/scraper/check_config/url_access/` - HTTP accessibility and redirect testing
+- `scripts/scraper/check_config/url_verification/` - Content validation and classification
 
 **Target Outcomes**:
 - 250+ accessible URLs (from 176, 42% growth)
@@ -93,7 +138,7 @@ The project follows a **Load → Transform → Export** workflow structure for a
 - Only URLs with extractable job titles and position details (quality score ≥60) in accessible section
 - All problematic URLs properly categorized with actionable reason codes
 
-- **To-Do List**: `2026-01-04_expand-scraping-sources.md` (22 detailed tasks with step-by-step instructions)
+- **To-Do List**: `2026-01-04_expand-scraping-sources.md` (Revised task structure with separated URL Access and Verification tasks)
 - **Proposal**: `conversation_cursor/dates/2026-01-04/expand-scraping-sources-proposal.md`
 
 ## What's Next

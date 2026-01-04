@@ -20,11 +20,14 @@ job-seeking-webpage/
 │   │   ├── archive/                # Historical snapshots
 │   │   └── diagnostics/            # Diagnostic reports
 │   └── config/
-│       ├── scraping_sources.json   # Scraping sources (176 accessible URLs, 81 URLs with issues documented in non_accessible)
+│       ├── scraping_sources.json   # Scraping sources (176 accessible, 81 non-accessible)
 │       ├── scraping_rules.json     # Scraping patterns
-│       ├── processing_rules.json   # Processing rules (job types, specializations, regions)
-│       ├── URL_VERIFICATION.md     # URL verification process documentation
-│       └── URL_VERIFICATION_RESULTS.md  # Detailed verification results (81 problematic URLs documented)
+│       ├── processing_rules.json   # Processing rules
+│       └── url_verification/       # ✅ PHASE 1B - New folder for URL verification
+│           ├── accessibility_report.json  # Task 0A - URL access test results
+│           ├── verification_results.json  # Task 0B - Content validation results
+│           ├── discovery_suggestions.json # Task 0B - Discovered alternative URLs
+│           └── url_verification.md        # Consolidated verification documentation
 │
 ├── scripts/
 │   ├── scraper/                    # Phase 1 - COMPLETE
@@ -34,9 +37,21 @@ job-seeking-webpage/
 │   │   ├── institute_scraper.py    # Institute scraper
 │   │   ├── parsers/                # HTML, RSS, text, date parsers
 │   │   ├── utils/                  # Rate limiter, retry handler, user agent
-│   │   └── check_config/           # Configuration verification tools
-│   │       ├── verify_urls.py      # URL verification script (checks accessible/non_accessible, verifies job content)
-│   │       └── find_url_replacements.py  # Helper script to find replacement URLs by testing common patterns
+│   │   └── check_config/           # ✅ PHASE 1B - Enhanced verification tools
+│   │       ├── verify_urls.py      # Legacy verification script (to be refactored)
+│   │       ├── find_url_replacements.py  # Helper to find replacement URLs
+│   │       ├── url_access/         # Task 0A - URL accessibility testing
+│   │       │   ├── test_accessibility.py      # HTTP connectivity testing
+│   │       │   ├── redirect_handler.py        # Redirect following & chain tracking
+│   │       │   ├── dns_resolver.py            # Chinese DNS fallback support
+│   │       │   └── connectivity_report.py     # Generate accessibility reports
+│   │       └── url_verification/  # Task 0B - Content validation
+│   │           ├── page_classifier.py        # Classify page type (career portal vs. department, etc.)
+│   │           ├── url_discoverer.py         # Discover alternative career portal URLs
+│   │           ├── content_validator.py      # Extract & validate job content
+│   │           ├── quality_scorer.py         # Score content quality (0-100)
+│   │           ├── decision_engine.py        # Full validation decision tree
+│   │           └── batch_processor.py        # Batch URL validation & configuration update
 │   ├── processor/                  # Phase 2 - ✅ COMPLETE
 │   │   ├── pipeline.py            # Main pipeline (✅ Phase 2E - full integration with archive retention)
 │   │   ├── parser_manager.py       # Route to parsers (✅ Phase 2A)
