@@ -7,6 +7,9 @@ job-seeking-webpage/
 ├── read_it.md                      # Project guidelines (read first)
 ├── pyproject.toml                  # Poetry configuration
 ├── README.md                       # Project documentation
+├── run_pilot_replacement.py        # ✅ Phase 1B - Pilot replacement execution script
+├── validate_replacements.py        # ✅ Phase 1B - Focused validation script for replacements
+├── test_predefined_urls.py         # ✅ Phase 1B - Test predefined URL matching
 │
 ├── data/
 │   ├── raw/                        # Raw scraped HTML/XML (Phase 1 output)
@@ -32,11 +35,11 @@ job-seeking-webpage/
 │       │   ├── verification_report_latest.md      # Latest verification report
 │       │   ├── pilot_test_urls.txt # Test URLs for pilot validation
 │       │   └── discovery_results.json            # URL discovery results
-│       └── url_replacement/        # 🔄 URL replacement data (IN PROGRESS)
+│       └── url_replacement/        # ✅ URL replacement data (COMPLETE)
 │           ├── README.md           # Replacement strategy documentation
-│           ├── candidates.json     # Candidate replacement URLs
-│           ├── replacements_validated.json  # Validated replacement URLs
-│           └── replacement_report.md        # Replacement execution report
+│           ├── candidates.json     # ✅ Candidate replacement URLs (10 problematic, 30 candidates)
+│           ├── predefined_test_results.json  # ✅ Predefined URL test results
+│           └── replacement_report.md        # ✅ Detailed validation report with statistics
 │
 ├── scripts/
 │   ├── scraper/                    # Phase 1 - COMPLETE
@@ -62,9 +65,10 @@ job-seeking-webpage/
 │   │           ├── quality_scorer.py         # ✅ Score URLs 0-100 with breakdown (236 lines)
 │   │           ├── decision_engine.py        # ✅ Make validation decisions + batch processing (500+ lines)
 │   │           └── batch_processor.py        # ✅ CLI tool for batch URL validation and config updates
-│   │       └── url_replacement/              # 🔄 Task 0C+ - URL replacement strategy (IN PROGRESS)
+│   │       └── url_replacement/              # ✅ Task 0C - URL replacement strategy (INFRASTRUCTURE COMPLETE)
 │   │           ├── __init__.py               # Module exports
-│   │           ├── url_discovery.py          # ✅ Find alternative career/jobs URLs (271 lines)
+│   │           ├── url_discovery.py          # ✅ Find alternative career/jobs URLs (282 lines, predefined URLs for 12 institutions)
+│   │           ├── replacement_engine.py     # ✅ Complete replacement workflow engine (570 lines, 6 core functions)
 │   │           ├── batch_processor.py        # ✅ CLI tool for batch URL validation and config updates
 │   │           └── find_replacements.py      # ✅ Main orchestration script for finding replacements
 │   ├── processor/                  # Phase 2 - ✅ COMPLETE

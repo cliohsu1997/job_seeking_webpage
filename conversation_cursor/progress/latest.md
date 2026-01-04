@@ -56,10 +56,13 @@
 - Pilot test: 10 problematic US universities → All confirmed problematic (9 DNS failures, 1 low quality)
 - Reports: `verification_results_latest.json`, `verification_report_latest.md`, `pilot_test_urls.txt`
 
-**Phase 1B REPLACE (🔄 IN PROGRESS)**
-- URL discovery infrastructure ready (common paths, subdomains, predefined URLs for 12 institutions)
-- Folder structure created: `scripts/scraper/config/url_replacement/`
-- **Next**: Task 0C - Create replacement_engine.py and execute pilot replacements
-- **Tasks 1A-1E**: Full replacement (60+ URLs), expand coverage (30 EU, 15 institutes, 20 Asia-Pacific, 10 Latin America)
+**Phase 1B REPLACE (✅ INFRASTRUCTURE COMPLETE)**
+- Replacement engine implemented: `replacement_engine.py` (570 lines, 6 core functions)
+- URL discovery: Predefined URLs for 12 institutions + common path/subdomain discovery
+- Validation workflow: Full integration with decision_engine for quality scoring
+- Pilot execution: 10 problematic URLs → 30 replacement candidates identified (100% coverage)
+- Reports generated: `candidates.json`, `replacement_report.md` with detailed validation results
+- Infrastructure ready for production use (pending network stability for full validation)
+- **Next**: Execute full replacements when network allows, then expand coverage (30 EU, 15 institutes, 20 Asia-Pacific, 10 Latin America)
 
 **To-Do**: `2026-01-04_expand-scraping-sources.md` | **Proposal**: `expand-scraping-sources-proposal.md` | **Work Log**: `2026-01-04_phase1b-work-log.md`

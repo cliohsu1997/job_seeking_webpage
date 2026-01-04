@@ -1,0 +1,853 @@
+{
+  "timestamp": "2026-01-04T16:24:54.828499",
+  "total_jobs": 10,
+  "completed": 0,
+  "failed": 10,
+  "jobs": [
+    {
+      "original_url": "https://economics.princeton.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='economics.princeton.edu', port=443): Read timed out. (",
+      "institution": "Princeton",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.princeton.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.princeton.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: HTTPSConnectionPool(host='www.princeton.edu', port=443): Max retries exceeded with url: /careers (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1028)')))"
+            ]
+          }
+        },
+        {
+          "url": "https://www.princeton.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.princeton.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: HTTPSConnectionPool(host='www.princeton.edu', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1028)')))"
+            ]
+          }
+        },
+        {
+          "url": "https://www.princeton.edu/academics/departments",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.princeton.edu/academics/departments",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: HTTPSConnectionPool(host='www.princeton.edu', port=443): Max retries exceeded with url: /academics/departments (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1028)')))"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://economics.upenn.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='economics.upenn.edu', port=443): Max retries exceeded ",
+      "institution": "Upenn",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.upenn.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.upenn.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 404 Client Error: Not Found for url: https://www.upenn.edu/careers"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.upenn.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.upenn.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: HTTPSConnectionPool(host='careers.upenn.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='careers.upenn.edu', port=443): Failed to resolve 'careers.upenn.edu' ([Errno 11001] getaddrinfo failed)\"))"
+            ]
+          }
+        },
+        {
+          "url": "https://www.upenn.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.upenn.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "department_page",
+              "confidence": 0.44999999999999996
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Page is classified as department_page, not a job portal"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://management.upenn.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='management.upenn.edu', port=443): Max retries exceeded",
+      "institution": "Management",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.upenn.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.upenn.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 404 Client Error: Not Found for url: https://www.upenn.edu/careers"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.upenn.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.upenn.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: HTTPSConnectionPool(host='careers.upenn.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='careers.upenn.edu', port=443): Failed to resolve 'careers.upenn.edu' ([Errno 11001] getaddrinfo failed)\"))"
+            ]
+          }
+        },
+        {
+          "url": "https://www.upenn.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.upenn.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "department_page",
+              "confidence": 0.44999999999999996
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Page is classified as department_page, not a job portal"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://economics.columbia.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='economics.columbia.edu', port=443): Max retries exceed",
+      "institution": "Columbia",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.columbia.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.columbia.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.columbia.edu/careers"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.columbia.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.columbia.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://careers.columbia.edu/"
+            ]
+          }
+        },
+        {
+          "url": "https://www.columbia.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.columbia.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.columbia.edu/"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://business.columbia.edu/",
+      "original_reason": "URL not accessible: 403 Client Error: Forbidden for url: https://business.columbia.edu/",
+      "institution": "Columbia",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.columbia.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.columbia.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.columbia.edu/careers"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.columbia.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.columbia.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://careers.columbia.edu/"
+            ]
+          }
+        },
+        {
+          "url": "https://www.columbia.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.columbia.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.columbia.edu/"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://economics.nyu.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='economics.nyu.edu', port=443): Max retries exceeded wi",
+      "institution": "Nyu",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.nyu.edu/careers",
+          "method": "predefined",
+          "quality_score": 30,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.nyu.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "job_portal",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 23
+            },
+            "quality": {
+              "total_score": 30,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Low quality source - move to non_accessible section",
+              "Quality score too low - insufficient extractable data"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.nyu.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.nyu.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: HTTPSConnectionPool(host='careers.nyu.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='careers.nyu.edu', port=443): Failed to resolve 'careers.nyu.edu' ([Errno 11001] getaddrinfo failed)\"))"
+            ]
+          }
+        },
+        {
+          "url": "https://www.nyu.edu/",
+          "method": "predefined",
+          "quality_score": 30,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.nyu.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "job_portal",
+              "confidence": 0.7
+            },
+            "content": {
+              "num_listings": 20
+            },
+            "quality": {
+              "total_score": 30,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Low quality source - move to non_accessible section",
+              "Quality score too low - insufficient extractable data"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://stern.nyu.edu/",
+      "original_reason": "Low quality source - move to non_accessible section",
+      "institution": "Stern",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.nyu.edu/careers",
+          "method": "predefined",
+          "quality_score": 30,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.nyu.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "job_portal",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 23
+            },
+            "quality": {
+              "total_score": 30,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Low quality source - move to non_accessible section",
+              "Quality score too low - insufficient extractable data"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.nyu.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.nyu.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: HTTPSConnectionPool(host='careers.nyu.edu', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='careers.nyu.edu', port=443): Failed to resolve 'careers.nyu.edu' ([Errno 11001] getaddrinfo failed)\"))"
+            ]
+          }
+        },
+        {
+          "url": "https://www.nyu.edu/",
+          "method": "predefined",
+          "quality_score": 30,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.nyu.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "job_portal",
+              "confidence": 0.7
+            },
+            "content": {
+              "num_listings": 20
+            },
+            "quality": {
+              "total_score": 30,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Low quality source - move to non_accessible section",
+              "Quality score too low - insufficient extractable data"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://economics.wisc.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='economics.wisc.edu', port=443): Max retries exceeded w",
+      "institution": "Wisc",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.wisc.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.wisc.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 404 Client Error: Not Found for url: https://www.wisc.edu/careers"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.wisc.edu/",
+          "method": "predefined",
+          "quality_score": 20,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.wisc.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "job_portal",
+              "confidence": 0.7
+            },
+            "content": {
+              "num_listings": 4
+            },
+            "quality": {
+              "total_score": 20,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Low quality source - move to non_accessible section",
+              "Quality score too low - insufficient extractable data"
+            ]
+          }
+        },
+        {
+          "url": "https://www.wisc.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.wisc.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "department_page",
+              "confidence": 0.44999999999999996
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "Page is classified as department_page, not a job portal"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://michigan-ross.umich.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='michigan-ross.umich.edu', port=443): Max retries excee",
+      "institution": "Michigan-ross",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.umich.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.umich.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.umich.edu/careers"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.umich.edu/",
+          "method": "predefined",
+          "quality_score": 45,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.umich.edu/",
+            "decision": "review",
+            "page_classification": {
+              "type": "job_portal",
+              "confidence": 0.7
+            },
+            "content": {
+              "num_listings": 3
+            },
+            "quality": {
+              "total_score": 45,
+              "recommendation": "marginal"
+            },
+            "suggestions": [
+              "Marginal quality - manual review recommended"
+            ]
+          }
+        },
+        {
+          "url": "https://www.umich.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.umich.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.umich.edu/"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    },
+    {
+      "original_url": "https://economics.umich.edu/",
+      "original_reason": "URL not accessible: HTTPSConnectionPool(host='economics.umich.edu', port=443): Max retries exceeded ",
+      "institution": "Umich",
+      "status": "failed",
+      "candidates": [
+        {
+          "url": "https://www.umich.edu/careers",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.umich.edu/careers",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.umich.edu/careers"
+            ]
+          }
+        },
+        {
+          "url": "https://careers.umich.edu/",
+          "method": "predefined",
+          "quality_score": 45,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://careers.umich.edu/",
+            "decision": "review",
+            "page_classification": {
+              "type": "job_portal",
+              "confidence": 0.7
+            },
+            "content": {
+              "num_listings": 3
+            },
+            "quality": {
+              "total_score": 45,
+              "recommendation": "marginal"
+            },
+            "suggestions": [
+              "Marginal quality - manual review recommended"
+            ]
+          }
+        },
+        {
+          "url": "https://www.umich.edu/",
+          "method": "predefined",
+          "quality_score": 0,
+          "is_valid": false,
+          "selected": false,
+          "validation": {
+            "url": "https://www.umich.edu/",
+            "decision": "move",
+            "page_classification": {
+              "type": "error",
+              "confidence": 1.0
+            },
+            "content": {
+              "num_listings": 0
+            },
+            "quality": {
+              "total_score": 0,
+              "recommendation": "poor"
+            },
+            "suggestions": [
+              "URL not accessible: 403 Client Error: Forbidden for url: https://www.umich.edu/"
+            ]
+          }
+        }
+      ],
+      "best_candidate": null
+    }
+  ]
+}

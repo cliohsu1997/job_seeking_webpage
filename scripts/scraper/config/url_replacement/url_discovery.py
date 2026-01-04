@@ -250,16 +250,45 @@ INSTITUTION_URLS = {
 }
 
 
-def get_predefined_urls(institution_name: str) -> List[str]:
+def get_predefined_urls(url_or_name: str) -> List[str]:
     """Get predefined good URLs for known institutions.
     
     Args:
-        institution_name: Institution name (key in INSTITUTION_URLS)
+        url_or_name: Institution name (key in INSTITUTION_URLS) or URL containing institution domain
         
     Returns:
         List of URLs to try
     """
-    return INSTITUTION_URLS.get(institution_name, [])
+    # If it's a URL, try to extract institution name from domain
+    if url_or_name.startswith('http'):
+        parsed = urlparse(url_or_name)
+        domain = parsed.netloc.lower()
+        
+        # Map domains to institution names
+        domain_mapping = {
+            'princeton.edu': 'Princeton',
+            'upenn.edu': 'UPenn',
+            'columbia.edu': 'Columbia',
+            'nyu.edu': 'NYU',
+            'uchicago.edu': 'University of Chicago',
+            'mit.edu': 'MIT',
+            'stanford.edu': 'Stanford',
+            'harvard.edu': 'Harvard',
+            'yale.edu': 'Yale',
+            'umich.edu': 'Michigan',
+            'wisc.edu': 'Wisconsin-Madison',
+            'berkeley.edu': 'UC Berkeley',
+        }
+        
+        # Find matching institution
+        for domain_key, inst_name in domain_mapping.items():
+            if domain_key in domain:
+                return INSTITUTION_URLS.get(inst_name, [])
+        
+        return []
+    
+    # Direct lookup by institution name
+    return INSTITUTION_URLS.get(url_or_name, [])
 
 
 if __name__ == "__main__":

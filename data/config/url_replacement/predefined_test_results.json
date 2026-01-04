@@ -1,0 +1,152 @@
+{
+  "timestamp": "2026-01-04T15:50:00",
+  "problematic_urls": [
+    {
+      "url": "https://economics.princeton.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='economics.princeton.edu', port=443): Read timed out. ("
+    },
+    {
+      "url": "https://economics.upenn.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='economics.upenn.edu', port=443): Max retries exceeded "
+    },
+    {
+      "url": "https://management.upenn.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='management.upenn.edu', port=443): Max retries exceeded"
+    },
+    {
+      "url": "https://economics.columbia.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='economics.columbia.edu', port=443): Max retries exceed"
+    },
+    {
+      "url": "https://business.columbia.edu/",
+      "reason": "URL not accessible: 403 Client Error: Forbidden for url: https://business.columbia.edu/"
+    },
+    {
+      "url": "https://economics.nyu.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='economics.nyu.edu', port=443): Max retries exceeded wi"
+    },
+    {
+      "url": "https://stern.nyu.edu/",
+      "reason": "Low quality source - move to non_accessible section"
+    },
+    {
+      "url": "https://economics.wisc.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='economics.wisc.edu', port=443): Max retries exceeded w"
+    },
+    {
+      "url": "https://michigan-ross.umich.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='michigan-ross.umich.edu', port=443): Max retries excee"
+    },
+    {
+      "url": "https://economics.umich.edu/",
+      "reason": "URL not accessible: HTTPSConnectionPool(host='economics.umich.edu', port=443): Max retries exceeded "
+    }
+  ],
+  "predefined_results": [
+    {
+      "original": "https://economics.princeton.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.princeton.edu/careers",
+        "https://www.princeton.edu/",
+        "https://www.princeton.edu/academics/departments"
+      ]
+    },
+    {
+      "original": "https://economics.upenn.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.upenn.edu/careers",
+        "https://careers.upenn.edu/",
+        "https://www.upenn.edu/"
+      ]
+    },
+    {
+      "original": "https://management.upenn.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.upenn.edu/careers",
+        "https://careers.upenn.edu/",
+        "https://www.upenn.edu/"
+      ]
+    },
+    {
+      "original": "https://economics.columbia.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.columbia.edu/careers",
+        "https://careers.columbia.edu/",
+        "https://www.columbia.edu/"
+      ]
+    },
+    {
+      "original": "https://business.columbia.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.columbia.edu/careers",
+        "https://careers.columbia.edu/",
+        "https://www.columbia.edu/"
+      ]
+    },
+    {
+      "original": "https://economics.nyu.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.nyu.edu/careers",
+        "https://careers.nyu.edu/",
+        "https://www.nyu.edu/"
+      ]
+    },
+    {
+      "original": "https://stern.nyu.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.nyu.edu/careers",
+        "https://careers.nyu.edu/",
+        "https://www.nyu.edu/"
+      ]
+    },
+    {
+      "original": "https://economics.wisc.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.wisc.edu/careers",
+        "https://careers.wisc.edu/",
+        "https://www.wisc.edu/"
+      ]
+    },
+    {
+      "original": "https://michigan-ross.umich.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.umich.edu/careers",
+        "https://careers.umich.edu/",
+        "https://www.umich.edu/"
+      ]
+    },
+    {
+      "original": "https://economics.umich.edu/",
+      "has_predefined": true,
+      "count": 3,
+      "urls": [
+        "https://www.umich.edu/careers",
+        "https://careers.umich.edu/",
+        "https://www.umich.edu/"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "with_predefined": 10,
+    "total_replacements": 30
+  }
+}
