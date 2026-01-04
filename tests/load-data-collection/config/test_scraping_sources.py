@@ -8,7 +8,7 @@ from pathlib import Path
 @pytest.fixture
 def scraping_sources():
     """Load scraping sources configuration."""
-    config_path = Path(__file__).parent.parent.parent / "data" / "config" / "scraping_sources.json"
+    config_path = Path(__file__).parent.parent.parent.parent / "data" / "config" / "scraping_sources.json"
     with open(config_path) as f:
         return json.load(f)
 
